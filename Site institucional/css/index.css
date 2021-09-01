@@ -1,0 +1,249 @@
+*{
+    margin: 0%;
+}
+
+@media only screen and (min-width: 600px){
+
+    body{
+        background-color: red;
+    }
+
+}
+
+@media only screen and (min-width: 768px){
+
+    body{
+        background-color: rgba(0, 0, 255, 0.308);
+    }
+
+    .menu_principal{
+        /* background-color: red; */
+        height: 10vh;
+        /* background-color: #006eff8e; */
+        transition: all .5s;
+    }
+
+    ul{
+        list-style: none;
+        /* background-color: green; */
+        /* color: white; */
+        position: absolute;
+        top: 4%;
+        left: 40%;
+    
+    }
+    
+    nav li {
+        /*text-transform: uppercase; serve para colocar as letras em maiusculo  */
+            /* float: left; */
+            margin-left: 10px;
+            text-transform: uppercase;
+        }
+    
+    .imagem_principal{
+        width: 100%;
+        margin: 0;
+    }
+
+    .titulo_sobre{
+        margin: 5vh 0 0 50%;
+    }
+
+    .equipe{
+        height: 100vh;
+        text-align: center;
+    }
+
+    .equipe h1{
+        position: absolute;
+        margin: 3% 0 0 45%;
+    }
+
+    .equipe p{
+        margin-top: 1vh;
+        font-size: 1.5em;
+    }
+
+    .foto img{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    .integrante_1{
+        /* background-color: red; */
+        height: 40vh;
+        width: 25vw;
+        position: absolute;
+        margin: 10%;
+    }
+
+    .integrante_2{
+        /* background-color: red; */
+        height: 40vh;
+        width: 25vw;
+        position: absolute;
+        margin: 10% 0 0 40%;
+    }    
+
+    .integrante_3{
+        /* background-color: red; */
+        height: 40vh;
+        width: 25vw;
+        position: absolute;
+        margin: 10% 0 0 70%;
+    }
+
+    .integrante_6{
+        /* background-color: red; */
+        height: 40vh;
+        width: 25vw;
+        position: absolute;
+        margin: 40% 0 0 70%;
+    }
+
+    .integrante_4{
+        /* background-color: red; */
+        height: 40vh;
+        width: 25vw;
+        position: absolute;
+        margin: 40% 0 0 10%;
+    }
+
+    .integrante_5{
+        /* background-color: red; */
+        height: 40vh;
+        width: 25vw;
+        position: absolute;
+        margin: 40% 0 0 40%;
+    }
+
+    .foto{
+        /* background-color: blue; */
+        width: 100%;
+        height: 75%;
+        border-radius: 50%;
+    }
+
+    .servicos{
+        /* background-color: rgba(255, 0, 0, 0.315); */
+        height: 130vh;
+
+    }
+
+    .servicos h1{
+        position: absolute;
+        margin: 10% 0 0 45%;
+    }
+
+    .texto_direita{
+        position: absolute;
+        margin: 20% 0 0 45%;
+        width: 50vw;
+
+    }
+
+    .texto_esquerda{
+        position: absolute;
+        margin: 80% 0 0 7%;
+        width: 50vw;
+    }
+
+}
+
+
+@media only screen and (min-width: 992px){
+
+    body{
+        background-color: green;
+    }
+
+    .integrante_1{
+        /* background-color: red; */
+        height: 40vh;
+        width: 25vw;
+        position: absolute;
+        margin: 10%;
+    }
+
+    .integrante_2{
+        /* background-color: red; */
+        height: 40vh;
+        width: 25vw;
+        position: absolute;
+        margin: 10% 0 0 40%;
+    }    
+
+    .integrante_3{
+        /* background-color: red; */
+        height: 40vh;
+        width: 25vw;
+        position: absolute;
+        margin: 10% 0 0 70%;
+    }
+
+    .integrante_6{
+        /* background-color: red; */
+        height: 40vh;
+        width: 25vw;
+        position: absolute;
+        margin: 40% 0 0 70%;
+    }
+
+    .integrante_4{
+        /* background-color: red; */
+        height: 40vh;
+        width: 25vw;
+        position: absolute;
+        margin: 40% 0 0 10%;
+    }
+
+    .integrante_5{
+        /* background-color: red; */
+        height: 40vh;
+        width: 25vw;
+        position: absolute;
+        margin: 40% 0 0 40%;
+    }
+
+}
+
+@media only screen and (min-width: 1200px){
+
+    body{
+        background-color: pink;
+    }
+
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+nav li {
+    /*text-transform: uppercase; serve para colocar as letras em maiusculo  */
+        float: left;
+        margin-left: 10px;
+        text-transform: uppercase;
+    }
+
+.linha{
+    background-color: black;
+    height: 2px;
+}
+
+.texto_sobre{
+    /* background-color: red; */
+    margin: 3vh 0 0 20%;
+    width: 65%;
+    height: 50vh;
+}
+
+.equipe{
+    background-color: rgba(0, 0, 255, 0.301);
+}
+
