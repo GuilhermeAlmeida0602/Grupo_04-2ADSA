@@ -1,0 +1,260 @@
+*{
+    margin: 0%;
+}
+
+nav{
+    height: 10vh;
+    transition: all .5s;
+    
+}
+
+ul{
+    padding: 20px;
+    list-style: none;
+    float: right;
+
+}
+
+nav li {
+    margin-left: 15px;
+    margin-right: 10px;
+    text-transform: uppercase;
+    float: left;
+
+}
+
+nav img{
+    width: 5vw;
+    height: 100%;
+    margin: 0%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: blue;
+}
+
+.linha{
+    background-color: black;
+    height: 2px;
+}
+
+.imagem_principal{
+    width: 100%;
+}
+
+#sobre{
+    height: 50vh;
+    text-align: center;
+}
+
+.sobre_nos h1{
+    padding: 20px;
+}
+
+.sobre_nos p{
+    width: 50%;
+    padding-left: 25%;
+    text-align: justify;
+}
+
+.equipe{
+    background-color: rgba(0, 0, 255, 0.397);
+    height: 150vh;
+}
+
+.equipe h1{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.integrante{
+    padding: 10vh 0 0 5vh;
+    width: 25vw;
+    height: 55vh;
+    text-align: center;
+    /* background-color: red; */
+    margin-left: 4vw;
+    float: left;
+}
+
+.nome{
+    padding: 15px;
+    text-align: center;
+    /* text-transform: uppercase; */
+    font-size: 1.5em;
+
+}
+
+.foto img{
+    border-radius: 50%;
+    width: 70%;
+}
+
+.icons img{
+    padding-left: 10px;
+    width: 3vw;
+}
+
+#servicos{
+    text-align: center;
+    height: 80vh;
+}
+
+#servicos h1{
+    padding: 20px;
+}
+
+.texto_direita{
+    width: 50vw;
+    float: right;
+    padding-right: 60px;
+    padding-top: 20px;
+    text-align: justify;
+}
+
+#beneficios{
+    background-color: rgba(0, 0, 255, 0.452);
+    height: 80vh;
+}
+
+#beneficios h1{
+    text-align: center;
+    padding-top: 20px;
+    color: white;
+}
+
+#beneficios p{
+    width: 35vw;
+    color: white;
+    /* backround-color: red; */
+    padding: 70px 0 0 150px;
+    text-align: justify;
+    float: left;
+}
+
+#beneficios img{
+    width: 80px;
+    padding-top: 89px;
+    padding-left: 70px;
+}
+
+#contato{
+    /* text-align: center; */
+    height: 130vh;
+    /* background-color: thistle; */
+}
+
+#contato h1{
+    padding: 40px;
+}
+
+.telefone{
+    background-color: rgba(128, 128, 128, 0.356);
+    margin: 50px;
+    width: 40vw;
+    height: 70vh;
+    border-radius: 30px;
+    box-shadow: 7px 7px rgba(0, 0, 255, 0.575);
+    float: left;
+}
+
+.telefone img{
+    float: inline-start;
+    width: 100px;
+    padding-top: 30px;
+}
+
+.mensagem{
+    background-color: rgba(128, 128, 128, 0.356);
+    margin: 50px;
+    width: 40vw;
+    height: 90vh;
+    border-radius: 30px;
+    box-shadow: 7px 7px rgba(0, 0, 255, 0.575);
+    float: left;
+
+}
+
+.fomulario{
+    /* background-color: red; */
+    padding: 30px 0 0 70px;
+    width: 70%;
+}
+
+.fomulario h2{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.input_box{
+    position: relative;
+}
+
+.input_user{
+    background: none;
+    border: none;
+    border-bottom: 1.5px solid black;
+    outline: none;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 2px;
+}
+
+.label_input{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    transition: .5px;
+}
+
+.input_mensagem{
+    background: none;
+    border: 1.5px solid black;
+    outline: none;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 2px;
+}
+
+.input_user:focus ~ .label_input,
+.input_user:valid ~ .label_input{
+    top: -20px;
+    font-size: 12px;
+    color: dodgerblue;
+}
+
+
+#submit{
+    background-image: linear-gradient(to right, rgb(0,92,197), rgb(90,20,220));
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#submit:hover{
+    background-image: linear-gradient(to right, rgb(0,80,192), rgb(80,19,195));
+}
+
+
+
+footer{
+    background-color: black;
+    color: white;
+    height: 10vh;
+    text-align: center;
+}
+
+footer p{
+    padding-top: 5vh;
+}
+
