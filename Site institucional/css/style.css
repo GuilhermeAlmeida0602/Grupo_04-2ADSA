@@ -38,6 +38,13 @@ a:hover{
     color: blue;
 }
 
+.login{
+    border-radius: 10px;
+    background-color: rgba(0, 0, 255, 0.521);
+    padding: 0.5vw;
+    color: white;
+}
+
 .linha{
     background-color: black;
     height: 2px;
@@ -73,6 +80,16 @@ a:hover{
 }
 
 .integrante{
+    padding: 10vh 0 0 5vh;
+    width: 25vw;
+    height: 55vh;
+    text-align: center;
+    /* background-color: red; */
+    margin-left: 4vw;
+    float: left;
+}
+
+.integrante_2{
     padding: 10vh 0 0 5vh;
     width: 25vw;
     height: 55vh;
@@ -151,7 +168,14 @@ a:hover{
 
 #contato h1{
     padding: 40px;
+    text-align: center;
 }
+
+#contato p{
+    text-align: center;
+}
+
+/* telefone, email e suporte */
 
 .telefone{
     background-color: rgba(128, 128, 128, 0.356);
@@ -164,10 +188,28 @@ a:hover{
 }
 
 .telefone img{
-    float: inline-start;
     width: 100px;
     padding-top: 30px;
 }
+
+.box_imagens{
+    /* background-color: red; */
+    width: 8vw;
+    float: left;
+    padding: 0  0 0 5vw;
+}
+
+.numero{
+    /* background-color: black; */
+    padding: 6vh 5vw;
+    position: relative;
+    top: 12vh;
+    /* color: white; */
+    border-radius: 30px;
+
+}
+
+/* fim telefone, email e suporte */
 
 .mensagem{
     background-color: rgba(128, 128, 128, 0.356);
@@ -258,3 +300,227 @@ footer p{
     padding-top: 5vh;
 }
 
+@media only screen and (max-width: 1200px){
+
+    body{
+        background-color: pink;
+    }
+
+    nav{
+        height: 7vh;        
+    }
+
+    nav img{
+        width: 7vw;
+        margin-left: 3vw;
+    }
+
+    #sobre{
+        height: 30vh;
+    }
+
+    .equipe{
+        background-color: rgba(0, 0, 255, 0.397);
+        height: 90vh;
+    }
+
+    .integrante{
+        padding: 10vh 0 0 3vh;
+        width: 25vw;
+        height: 30vh;
+    }
+
+    .integrante_2{
+        padding: 10vh 0 0 3vh;
+        width: 25vw;
+        height: 30vh;
+     }
+
+    #servicos{
+        text-align: center;
+        height: 60vh;
+    }
+
+    #beneficios{
+       height: 60vh;
+    }
+
+    #beneficios p{
+        padding: 7vh 0 0 10vw;
+    }
+
+    .telefone{
+        height: 50vh;
+    }
+
+    .mensagem{
+        height: 50vh;    
+    }
+
+    #contato{
+        height: 80vh;
+    }
+
+    #contato p{
+        width: 60%;
+        margin-left: 20%;
+    }
+
+}
+
+@media only screen and (max-width: 992px){
+
+    body{
+        background-color: green;
+    }
+
+    nav img{
+        width: 8vw;
+    }
+
+    nav{
+        height: 6vh;       
+    }
+
+    #sobre{
+        height: 30vh;
+        text-align: center;
+    }
+
+    .integrante{
+        padding: 10vh 0 0 2vh;
+        height: 35vh;
+    }
+
+    .integrante_2{
+        padding: 0vh 0 0 2vh;
+        height: 35vh;
+    }
+
+    .equipe{
+        height: 90vh;
+    }
+
+    #servicos{
+        height: 60vh;
+    }
+
+    #beneficios{
+        height: 60vh;
+    }
+
+    #beneficios p{
+        padding: 7vh 0 0 10vw;
+    }
+
+    #contato{
+        height: 80vh;
+    }  
+
+    #contato p{
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    .telefone{
+        margin-left: 6vw;
+        width: 40vw;
+        height: 50vh;
+    }
+
+    .mensagem{
+        width: 40vw;
+        height: 50vh; 
+        margin: 5vh 2vw;   
+    }
+}
+
+@media only screen and (max-width: 768px){
+
+    .login{
+        padding: 1vw;
+    }
+
+    .sobre_nos p{
+        width: 70%;
+        padding-left: 15%;
+        text-align: justify;
+    }
+
+    #servicos{
+        height: 70vh;
+    }
+
+    #beneficios p{
+        padding: 5vh 0 0 10vw;
+    }
+
+    #contato{
+        height: 150vh;
+    }
+    
+    #contato p{
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    .telefone{
+        background-color: rgba(128, 128, 128, 0.356);
+        margin-left: 25%;
+        width: 50vw;
+        height: 50vh;
+
+    }
+
+    .mensagem{
+        margin-left: 15%;
+        width: 70vw;
+        height: 50vh;
+    
+    }
+
+}
+
+@media only screen and (max-width: 600px){
+
+    body{
+        background-color: red;
+    }
+
+    .equipe{
+        height: 80vh;
+    }
+
+    #servicos{
+        height: 90vh;
+    }
+
+    .texto_direita{
+        width: 80vw;
+        padding-top: 20px;
+        text-align: justify;
+    }
+
+    #beneficios{
+        height: 80vh;
+    }
+
+    #beneficios p{
+        width: 80vw;
+        color: white;
+    }
+
+    .telefone{
+        margin-left: 10%;
+        width: 80vw;
+        height: 50vh;
+    }
+
+    .mensagem{
+        margin-left: 10%;
+        width: 80vw;
+        height: 50vh;
+            
+    }
+
+}
