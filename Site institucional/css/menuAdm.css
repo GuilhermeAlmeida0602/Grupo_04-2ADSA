@@ -1,0 +1,98 @@
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    
+    overflow: auto;
+}
+
+.container {
+    width: 92%;
+    margin: auto;
+    margin-top: 2%;
+    
+}
+
+.font-logo{
+    font-weight: 900;
+    font-size: 40px;
+    color: #0A3D62;
+    float: left;
+}
+
+.btn_boasVindas {
+    border-radius: 26px;
+    color: #FFFFFF;
+    font-family: Noto Sans JP;
+    font-size: 23px;
+    font-weight: 500;
+    padding: 13px;
+    background-color: #0A3D62;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    float: right;
+    
+ }
+ 
+ .btn_boasVindas:hover {
+    background: #184f75;
+    border-radius: 24px;
+    text-decoration: none;
+ }
+
+ .menuFuncoes{
+     border: 1px solid red;
+     height: 400px;
+     width: 100px;
+     margin-top: 80px;
+ }
+
+ .divMenuFuncoes{
+    margin-top: 30px;
+    border-radius: 26px;
+    height: 400px;
+    width: auto;
+    line-height: 50px;
+    color: #FFFFFF;
+    font-family: Verdana;
+    font-size: 23px;
+    font-weight: 500;
+    padding: 13px;
+    background-color: #C4C4C4;
+    box-shadow: 10px 7px 0 0 #0A3D62;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+ }
+
+ .divOpcoes {
+    border-radius: 27px;
+    height: 50px;
+    line-height: 50px;
+    color: #FFFFFF;
+    font-family: Verdana;
+    width: 300px;
+    margin: 16px 9px 24px 9px;
+    font-size: 23px;
+    font-weight: 600;
+    padding: 13px;
+    background-color: #60A3BC;
+    box-shadow: 7px 10px 4px 1px rgb(5 2 2 / 59%);
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+ }
+ 
+ .divOpcoes:hover {
+    background: #72B6CF;
+    border-radius: 24px;
+    text-decoration: none;
+ }
