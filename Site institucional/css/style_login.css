@@ -1,0 +1,419 @@
+body {
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+nav{
+    height: 10vh;
+    transition: all .5s;
+    
+}
+
+ul{
+    padding: 0.6%;
+    list-style: none;
+    float: right;
+
+}
+
+nav li {
+    margin-left: 15px;
+    margin-right: 10px;
+    text-transform: uppercase;
+    float: left;
+
+}
+
+.font_logo{
+    font-weight: 900;
+    font-size: 40px;
+    margin-top: 20%;
+    color: #0A3D62;
+    text-decoration: none;
+}
+
+.menu a{
+    text-decoration: none;
+    color: #0A3D62;
+    font-weight: 500;
+
+}
+
+a:hover{
+    color: #3C6382;
+}
+
+li .login{
+    border-radius: 10px;
+    background-color: #0A3D62;
+    padding: 1vw;
+    font-weight: 700;
+    color: white;
+}
+
+.login:hover{
+    color: #3C6382;
+}
+
+.login:before{
+    background-color: #0A3D62;
+}
+
+/* Lado esquerdo */
+
+.lado_esquerdo{
+    float:left;
+    width: 50%;
+    margin: auto;
+    margin-top: 7%;
+}
+
+.img_login{
+    width: 80%;
+}
+
+.frase_negrito{
+    font-weight: 700;
+    font-size: 25px;
+    text-align: center;
+    display: block;
+}
+
+/* Lado direito */
+
+.lado_direito{
+    float: right;
+    width: 50%;
+    margin: auto;
+    margin-top: 7%;
+}
+
+
+.quadro_cinza{
+    width: 63%;
+    height: 56vh;
+    margin: auto;
+    background-color: #C4C4C4;
+    box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.8);
+    border-radius: 10px;
+}
+
+.div_negrito{
+    padding-top: 15%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 21.5px;
+}
+
+.div_centralizando{
+    width: 90%;
+    margin: 7% auto;
+    text-align: center;
+}
+
+.label_negrito{
+    font-weight: 500;
+    padding-left: 2%;
+}
+
+.input_login{
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #0A3D62;
+    border: none;
+    height: 20px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+input:focus{
+    outline: none;
+}
+
+.input_button{
+    font-family: 'Noto Sans JP', sans-serif;
+    margin-top: 12%;
+    color: #ffffff;
+    font-weight: 700;
+    background-color: #60A3BC;
+    border: none;
+    height: 30px;
+    width: 45%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.div_suporte{
+    text-align: center;
+    color: #0A3D62;
+    font-weight: 700;
+}
+
+.input_button::after{
+    background-color: #000000;
+}
+
+.div_suporte a {
+    text-decoration: none;
+    color: #0A3D62;
+}
+
+
+
+@media screen and (min-width: 300px) and (max-width: 500px){
+    /*Celular Smartphone*/
+
+    .font_logo{
+        font-size: 35px;
+    }
+
+    .menu_invisivel{
+        display: none;
+    }
+
+    .login{
+        display: none;
+    }
+
+    ul{
+        margin-top: 3.8%;
+    }
+
+    li .login{
+        padding: 5px 10px 5px 10px;
+        margin-left: 70%;
+    }
+
+    .frase_negrito{
+        font-size: 20px;
+    }
+
+    .lado_esquerdo{
+        width: 100%;
+        margin-top: 10%;
+    } 
+    
+    /* Lado direito */
+    
+    .lado_direito{
+        width: 100%;
+        margin: auto;
+        margin-top: 7%;
+    }
+    
+    .quadro_cinza{
+        width: 75%;
+        height: 57vh;
+        margin:  auto auto 10%;
+    }
+
+    .div_negrito{
+        padding-top: 7%;
+        text-align: center;
+        font-weight: 700;
+        font-size: 16.5px;
+    }
+    
+    .input_login{
+        font-family: 'Noto Sans JP', sans-serif;
+        background-color: #0A3D62;
+        border: none;
+        height: 20px;
+        width: 80%;
+        border-radius: 10px;
+        color: #ffffff;
+        font-weight: 500;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 600px){
+    /*Celular Smartphone*/
+
+    nav {
+        text-align: left;
+    }
+
+    .menu_invisivel{
+        display: none;
+    }
+
+    .login{
+        display: none;
+    }
+
+    .lado_esquerdo{
+        width: 100%;
+        margin-top: 10%;
+    } 
+
+    .frase_negrito{
+        font-size: 21px;
+    }
+    
+    /* Lado direito */
+    
+    .lado_direito{
+        width: 100%;
+        margin: auto;
+        margin-top: 7%;
+    }
+
+    .quadro_cinza{
+        width: 75%;
+        height: 60vh;
+        margin:  auto auto 10%;
+    }
+
+    .div_negrito{
+        padding-top: 8.5%;
+        text-align: center;
+        font-weight: 700;
+        font-size: 16.5px;
+    }
+    
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px){
+    /* Celular/tablet */
+
+    .menu_invisivel{
+        display: none;
+    }
+
+    ul{
+        margin-top: 3.8%;
+    }
+
+    li .login{
+        padding: 1vw;
+        margin-left: 174%;
+    }
+
+     /* Lado esquerdo */
+
+    .lado_esquerdo{
+        width: 100%;
+        margin-top: 10%;
+    }
+
+    .frase_negrito{
+        font-size: 22px;
+    }
+
+    .div_negrito{
+        padding-top: 8.5%;
+        text-align: center;
+        font-weight: 700;
+        font-size: 17.5px;
+    }
+    
+/* Lado direito */
+
+.lado_direito{
+    width: 100%;
+    margin: auto;
+    margin-top: 7%;
+}
+
+.quadro_cinza{
+    width: 75%;
+    height: 63vh;
+    margin-bottom: 10%;
+}
+
+
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 1024px){
+    /* tablets */
+    .menu_invisivel{
+        display: none;
+    }
+
+    li .login{
+        padding: 1vw;
+        margin-left: 174%;
+    }
+
+    .lado_esquerdo{
+        float: left;
+        width: 50%;
+        margin-top: 7%;
+    }
+
+    
+    /* Lado direito */
+    
+    .lado_direito{
+        float: right;
+        width: 50%;
+        margin: auto;
+        margin-top: 7%;
+    }
+    
+    .quadro_cinza{
+        width: 63%;
+        height: 56vh;
+    }
+
+    .input_login{
+        font-family: 'Noto Sans JP', sans-serif;
+        background-color: #0A3D62;
+        border: none;
+        height: 20px;
+        width: 75%;
+        border-radius: 10px;
+        color: #ffffff;
+        font-weight: 500;
+    }
+    
+    
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px){
+    /* Desktop */
+
+    nav li {
+        margin-left: 5px;
+        margin-right: 5px;
+        text-transform: uppercase;
+        font-weight: 500;
+        float: left;
+    }
+
+    li .login{
+        padding: 1vw;
+        /* margin-left: 60%; */
+    }
+
+    .lado_esquerdo{
+        float: left;
+        width: 50%;
+        margin-top: 7%;
+    }
+    
+    .frase_normal{
+        font-size: 21px;
+    }
+    
+    /* Lado direito */
+    
+    .quadro_cinza{
+        width: 63%;
+        height: 56vh;
+    }
+}
+
+
+@media screen and (max-width: 1280px){
+    /* Desktop extragrandes */
+}
+
+
