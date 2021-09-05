@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style_cad_empresa.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon" />
+    <title>Cadastro Empresa</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="menu_principal">
+            <a href="index.html" class="font_logo">InfoSystems</a>
+            <ul>
+                <li class="menu"><a href="#menuADM" class="menu_adm">Menu</a></li>
+
+                <li class="menu"><a href="entrar.html" class="login">Entrar</a></li>
+            </ul>
+
+        </nav>
+
+        <div class="container_complementar">
+            <div class="lado_esquerdo">
+                <b class="frase_negrito">Descreva todas as informações necessárias para o contato da nossa equipe</b>
+                    <img src="Imagens/undraw_Online_cv_re_gn0a.svg" class="img_login" alt="">
+
+            </div>
+            <div class="lado_direito">
+                <div class="quadro_cinza">
+
+                    <form action="">
+                        <div class="div_negrito"><b class="cad_usuario">Cadastrar empresa</b></div>
+
+                        <div class="quadrado_cinza_esquerdo">
+                            <p class="p_dados">Dados da empresa</p>
+                            <div class="div_centralizando">
+                                <input type="text" class="input_login" name="empresa" placeholder="Empresa">
+                                <input type="text" class="input_login" name="cnpj" placeholder="CNPJ">
+                                <input type="email" class="input_login" name="email"
+                                    placeholder="Email">
+                                    <input type="password" class="input_login" name="senha" placeholder="Senha">
+                                    <input type="password" class="input_login" name="senha_confirmacao"
+                                        placeholder="Confirmação de senha">
+                            </div>
+
+                        </div>
+                        <div class="quadrado_cinza_direito">
+                            <p class="p_dados">Dados da empresa</p>
+                            <div class="div_centralizando">
+                                <input type="text" class="input_login" name="logradouro" placeholder="Logradouro">
+                                <input type="number" class="input_login" name="numero" placeholder="Número">
+                                <input type="text" class="input_login" name="complemento" placeholder="Complemento">
+                                <input type="text" class="input_login" name="bairro" placeholder="Bairro">
+                                <input type="text" class="input_login" name="uf" placeholder="UF">
+                                <input type="text" class="input_login" name="cep" placeholder="CEP">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="input_button">Cadastrar</button>
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
