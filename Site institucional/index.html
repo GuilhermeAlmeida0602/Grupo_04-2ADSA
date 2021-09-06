@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
@@ -18,15 +20,15 @@
 
     <nav class="menu_principal">
 
-        <img src="Imagens/Logo_TV_2015.png" alt="">
+        <a href="index.html" class="font_logo">InfoSystems</a>
 
         <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="#sobre">Sobre nós</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#beneficios">Beneficios</a></li>
-            <li><a href="#contato">Contato</a></li>
-            <li><a href="" class="login">Login</a></li>
+            <li class="none"><a href="#">Home</a></li>
+            <li class="none"><a href="#sobre">Quem somos</a></li>
+            <li class="none"><a href="#servicos">Serviços</a></li>
+            <li class="none"><a href="#beneficios">Beneficios</a></li>
+            <li class="none"><a href="#contato">Contato</a></li>
+            <li><a href="entrar.html" class="login">Entrar</a></li>
         </ul>
 
     </nav>
@@ -39,16 +41,15 @@
 
         <div class="sobre_nos">
 
-            <h1>Sobre Nós</h1>
+            <h1>Quem Somos</h1>
 
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum dolor,
-                quod eveniet tempore libero accusamus numquam aut corporis cumque est
-                veniam praesentium fuga iure quaerat assumenda, labore quibusdam! Nesciunt,
-                laudantium? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Possimus perspiciatis dolorum expedita! Omnis ab eveniet odio amet fuga architecto
-                voluptatem distinctio,
-                sunt perferendis nisi aliquid sequi esse officia vero rem. Lorem ipsum, dolor sit amet consectetur
-                adipisicing elit. Quam, repellendus quisquam. Ducimus maiores minima error?
+            <p>A empresa InfoSystems é uma empresa fundada em 2021, especializada no monitoramento de
+                máquinas.
+                A Start-up é focada no desenvolvimento de softwares que monitoram o hardware de máquinas como processador,
+                memória ram e disco,
+                entregando ao usuário um relatório em tempo real da situação de seus terminais. A nossa empresa fornece além
+                do monitoramento,
+                algumas funcionalidades que podem ajudar no desenvolvimento e sustentação do seu negócio!
 
 
             </p>
@@ -68,7 +69,7 @@
             <div class="integrante">
 
                 <div class="foto">
-                    <img src="Imagens/among.jpg" alt="">
+                    <img src="Imagens/GF.jpg" alt="">
                 </div>
 
                 <div class="nome">
@@ -89,7 +90,7 @@
             <div class="integrante">
 
                 <div class="foto">
-                    <img src="Imagens/among.jpg" alt="">
+                    <img src="Imagens/GA.jpg" alt="">
                 </div>
 
                 <div class="nome">
@@ -130,7 +131,7 @@
             <div class="integrante_2">
 
                 <div class="foto">
-                    <img src="Imagens/among.jpg" alt="">
+                    <img src="Imagens/MA.jpeg" alt="">
                 </div>
 
                 <div class="nome">
@@ -150,7 +151,7 @@
             <div class="integrante_2">
 
                 <div class="foto">
-                    <img src="Imagens/among.jpg" alt="">
+                    <img src="Imagens/mf.png" alt="">
                 </div>
 
                 <div class="nome">
@@ -170,7 +171,7 @@
             <div class="integrante_2">
 
                 <div class="foto">
-                    <img src="Imagens/among.jpg" alt="">
+                    <img src="Imagens/VS.png" alt="">
                 </div>
 
                 <div class="nome">
@@ -197,13 +198,18 @@
 
         <h1>Serviços</h1>
 
-        <p class="texto_direita">A empresa InfoSystems é uma empresa fundada em 2021, especializada no monitoramento de máquinas. 
-            A Start-up é focada no desenvolvimento de softwares que monitoram o hardware de máquinas como processador, memória ram e disco, 
-            entregando ao usuário um relatório em tempo real da situação de seus terminais. A nossa empresa fornece além do monitoramento, 
+        <img src="Imagens/undraw_Organize_resume_re_k45b.png" alt="">
+
+        <p class="texto_direita">A empresa InfoSystems é uma empresa fundada em 2021, especializada no monitoramento de
+            máquinas.
+            A Start-up é focada no desenvolvimento de softwares que monitoram o hardware de máquinas como processador,
+            memória ram e disco,
+            entregando ao usuário um relatório em tempo real da situação de seus terminais. A nossa empresa fornece além
+            do monitoramento,
             algumas funcionalidades que podem ajudar no desenvolvimento e sustentação do seu negócio!
         </p>
 
-        <img src="Imagens/undraw_Organize_resume_re_k45b.png" alt="">
+        
 
     </section>
 
@@ -228,19 +234,19 @@
 
         </p>
 
-        <img src="Imagens/monitor.png" alt="">
+        
 
-        <div class="pc_txt">
+        <p class="monitores">
+            <img src="Imagens/monitor.png" alt="">
             Potenciação do Totem
-        </div>
+        </p>
 
         <br>
 
-        <img src="Imagens/monitor.png" alt="">
-
-        <div class="pc_txt">
+        <p class="monitores">
+            <img src="Imagens/monitor.png" alt="">
             Otimização do Totem
-        </div>
+        </p>
 
     </section>
 
@@ -251,37 +257,34 @@
         <h1>Contato</h1>
 
         <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Harum modi reprehenderit obcaecati et inventore voluptatem?
-            Cumque nesciunt suscipit beatae repellendus
+            Entre em contato com nosso atendimento via telefone ou e-mail para tirar dúvidas, resolver problemas ou dar sugestões
         </p>
 
         <div class="telefone">
 
-            <!-- <div class="box_imagens">
+            <div class="teste">
+
+            <div class="infos">
+
+                <img src="Imagens/telefone (2).png" alt="">
+                +55 11 96349-5871
+
+            </div>
+
+            <div class="infos">
+
+                <img src="Imagens/correspondencia.png" alt="">
+                contato@infosystem.com.br
+
+            </div>
+
+            <div class="infos">
+
+                <img src="Imagens/balao-de-fala.png" alt="">
+                Suporte
                 
-                <img src="Imagens/o-email.png" alt="">
-                <img src="Imagens/suporte-tecnico.png" alt="">
-            </div> -->
-
-            <span class="numero_txt">
-
-                <img src="Imagens/telefone.png" alt="">
-
-                <span class="txt_numero">
-                    + 55 1 96349-5871
-                </span>
-                
-            </span>
-            
-
-
-
-
-            <!-- <span class="email">contato@empresateste.com.br</span>
-            <span class="suporte">suporte</span> -->
-
-
+            </div>
+        </div>
 
         </div>
 
@@ -333,11 +336,11 @@
 
 
     </section>
-    
+
     <div class="linha"></div>
 
     <footer>
-        <p>© Copyright 2021 Bandted Digital School</p>
+        <p>© Copyright 2021 InfoSystems</p>
     </footer>
 
 </body>
