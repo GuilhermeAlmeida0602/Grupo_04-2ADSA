@@ -224,7 +224,7 @@ a:hover{
     color: white;
     width: 80%;
     height: 15vh;
-    margin: 35px 10%;
+    margin: 35px auto;
     border-radius: 30px;
 }
 
@@ -328,7 +328,7 @@ footer p{
 
 
 
-@media screen and (min-width: 300px) and (max-width: 499px){
+@media screen and (min-width: 300px) and (max-width: 500px){
    
     nav{
         height: 10vh;
@@ -442,14 +442,16 @@ footer p{
         /* margin-left: 5%; */
         padding: 2% 1%;
         float: none;
+        border-radius: 30px;
+
     }
 
     .infos{
         width: 85%;
         height: 7vh;
         margin: 7% auto 0 auto;
-        border-radius: 30px;
-        font-size: 11px;
+        border-radius: 10px;
+        font-size: 15px;
     }
 
     .infos img{
@@ -461,9 +463,9 @@ footer p{
     .mensagem{
         margin: 15% auto;
         width: 85%;
-        height: 75vh !important;
+        height: 80vh !important;
         float: none;
-        font-size: 11px;
+        font-size: 15px;
     
     }
 
@@ -471,7 +473,7 @@ footer p{
 
 }
 
-@media screen and (min-width: 500px) and (max-width: 599px){
+@media screen and (min-width: 501px) and (max-width: 599px){
 
     nav{
         height: 10vh;
@@ -763,7 +765,13 @@ footer p{
 
     .infos{
         width: 90%;
+        height: 15vh;
         margin: 10% auto 0 auto;
+    }
+
+    .infos img{
+        height: 30%;
+        margin: 10px 5px 0 30px;
     }
 
     .mensagem{
@@ -815,6 +823,11 @@ footer p{
         padding-top: 10px;
         padding-left: 70px;
         vertical-align: middle;
+    }
+
+    .infos{
+        width: 90%;
+        margin: 35px auto;
     }
 
     .mensagem{
