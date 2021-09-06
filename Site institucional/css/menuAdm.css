@@ -15,7 +15,7 @@ header {
 .container {
     width: 92%;
     margin: auto;
-    margin-top: 2%;
+    margin-top: 1%;
 
 }
 
@@ -70,7 +70,6 @@ header {
     box-shadow: 10px 7px 0 0 #0A3D62;
     text-decoration: none;
     display: inline-block;
-
 }
 
 .divOpcoes {
@@ -140,12 +139,81 @@ header {
     overflow: auto;
 }
 
-.divOpcoesText h1{
+
+.divOpcoesText h1 {
     font-size: 35px;
-    
+    text-align: end;
     font-family: Noto Sans JP;
-    display:inline-block;
+    display: inline-block;
     height: 85px;
     position: fixed;
+
+}
+
+/* Daqui pra baixo */
+
+.divOpcoesAn {
+    margin-top: 60px;
+    margin-bottom: 10px;
+    border-radius: 26px;
+    height: max-content;
+    width: auto;
+    line-height: 50px;
+    color: #FFFFFF;
+    font-family: Noto Sans JP;
+    font-size: 23px;
+    font-weight: 500;
+    padding: 13px;
+    background-color: #C4C4C4;
+    box-shadow: 10px 7px 0 0 #0A3D62;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/**/
+.divOpcoesBtnAN {
+    border-radius: 27px;
+    height: 50px;
+    line-height: 50px;
+    color: #FFFFFF;
+    width: 300px;
+    margin: 16px 9px 24px 9px;
+    font-size: 23px;
+    font-family: Noto Sans JP;
+    font-weight: 600;
+    padding: 13px;
+    background-color: #60A3BC;
+    /* box-shadow: 7px 10px 4px 1px rgb(5 2 2 / 59%); (RGBA + Intensidade do blur, caso necessario) */
+    box-shadow: 7px 10px 4px 0px #0a3d6287;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.divOpcoesBtnAN:hover {
+    background: #72B6CF;
+    border-radius: 24px;
+    text-decoration: none;
+}
+
+.divImgAn {
+    position: relative;
+    top: 90px;
+    margin-left: 50px;
     
+    height: 250px;
+    width: 350px;
+    
+    display: inline-block;
+}
+
+.divFraseAn {
+    position: relative;
+    text-align: end;
+    font-size: 32px;
+    right: -70px;
+    top: -207px;
+    
+    width: max-content;
+    display: inline-block;
 }
