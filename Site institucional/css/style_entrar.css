@@ -327,9 +327,13 @@ li .login{
         margin-top: 3.8%;
     }
 
+    nav li {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
     li .login{
         padding: 1vw;
-        margin-left: 174%;
     }
 
      /* Lado esquerdo */
