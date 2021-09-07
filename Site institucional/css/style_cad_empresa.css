@@ -117,9 +117,6 @@ li .login{
     background-color: #C4C4C4;
     box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.8);
     border-radius: 10px;
-}
-
-form{
     text-align: center;
 }
 
@@ -220,6 +217,10 @@ button:hover{
 
     .font_logo{
         font-size: 24px;
+    }
+
+    .menu_invisivel{
+        display: none;
     }
 
     .menu_adm{
@@ -376,12 +377,8 @@ button:hover{
         display: none;
     }
 
-    ul{
-        margin-top: 3.8%;
-    }
-
     li .login{
-        margin-left: 20%;
+        margin-left: 170%;
     }
 
     li .menu_adm{
@@ -432,7 +429,7 @@ button:hover{
     }
 
     li .login{
-        margin-left: 20%;
+        margin-left: 170%;
     }
 
     li .menu_adm{
@@ -492,6 +489,14 @@ button:hover{
 
 @media screen and (min-width: 1091px) and (max-width: 1280px){
     /* Desktop */
+
+    nav li {
+        margin-left: 5px;
+        margin-right: 5px;
+        text-transform: uppercase;
+        font-weight: 500;
+        float: left;
+    }
 
     li .login{
         padding: 1vw;

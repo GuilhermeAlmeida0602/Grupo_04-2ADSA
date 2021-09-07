@@ -21,7 +21,7 @@
             <ul>
                 <li class="menu"><a href="#menuADM" class="menu_adm">Menu</a></li>
 
-                <li class="menu"><span class="login">Ola, ADM</span></li>
+                <li class="menu"><span class="login">Olá, ADM</span></li>
             </ul>
 
         </nav>
@@ -36,7 +36,7 @@
             <div class="lado_direito">
                 <div class="quadro_cinza">
 
-                    <form action="">
+                    <!-- <form action=""> -->
                         <div class="div_negrito"><b class="cad_usuario">Cadastrar usuário</b></div>
 
                         <p class="p_dados">Dados do usuário</p>
@@ -63,10 +63,10 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="input_button">Cadastrar</button>
+                        <button type="submit" class="input_button" onclick="cadastrar()">Cadastrar</button>
 
 
-                    </form>
+                    <!-- </form> -->
 
                 </div>
             </div>
@@ -74,5 +74,13 @@
 
     </div>
 </body>
+<script>
+
+    function cadastrar() {
+
+        window.location.href = "menuAdm.html"
+
+    }
+</script>
 
 </html>

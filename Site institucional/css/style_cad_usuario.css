@@ -55,6 +55,7 @@ li .menu_adm{
     padding: 1vw;
     font-weight: 700;
     color: white;
+    text-transform: none;
 }
 
 .menu_adm:hover{
@@ -71,6 +72,7 @@ li .login{
     padding: 1vw;
     font-weight: 700;
     color: white;
+    text-transform: none;
 }
 
 .login:hover{
@@ -125,9 +127,6 @@ li .login{
     background-color: #C4C4C4;
     box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.8);
     border-radius: 10px;
-}
-
-form{
     text-align: center;
 }
 
@@ -591,9 +590,6 @@ button:hover{
     .quadro_cinza{
         width: 90%;
         height: 65.5vh;
-    }
-    
-    form{
         text-align: center;
     }
     
