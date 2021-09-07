@@ -227,12 +227,22 @@ button:hover{
     /*Celular Smartphone*/
 
     .font_logo{
-        font-size: 35px;
+        font-size: 38px;
     }
 
-    .login, .menu_invisivel, .menu_adm{
+    nav li {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .login, .menu_invisivel{
         display: none;
     }
+
+    .font_logo{
+        font-size: 27px;
+    }
+
 
     ul{
         margin-top: 3.8%;
@@ -298,14 +308,23 @@ button:hover{
 
 }
 
-@media screen and (min-width: 500px) and (max-width: 600px){
+@media screen and (min-width: 500px) and (max-width: 630px){
     /*Celular Smartphone*/
 
     nav {
         text-align: left;
     }
 
-    .menu_invisivel, .login, .menu_adm{
+    .font_logo{
+        font-size: 38px;
+    }
+
+    nav li {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .menu_invisivel, .login{
         display: none;
     }
 
@@ -363,7 +382,7 @@ button:hover{
     
 }
 
-@media screen and (min-width: 600px) and (max-width: 800px){
+@media screen and (min-width: 631px) and (max-width: 900px){
     /* Celular/tablet */
 
     .menu_invisivel{
@@ -375,7 +394,7 @@ button:hover{
     }
 
     li .login{
-        margin-left: 20%;
+        margin-left: 0%;
     }
 
     li .menu_adm{
@@ -415,18 +434,23 @@ button:hover{
     margin-bottom: 10%;
 }
 
+.div_centralizando{
+    width: 90%;
+    margin: 7% auto;
+    text-align: center;
+}
+
+.quadrado_cinza_esquerdo, .quadrado_cinza_direito{
+    width: 50%;
+}
 
 
 }
 
-@media screen and (min-width: 800px) and (max-width: 1024px){
+@media screen and (min-width: 900px) and (max-width: 1024px){
     /* tablets */
     .menu_invisivel{
         display: none;
-    }
-
-    li .login{
-        margin-left: 20%;
     }
 
     li .menu_adm{
@@ -455,7 +479,20 @@ button:hover{
     
     .quadro_cinza{
         width: 80%;
-        height: 60vh;
+        height: 88vh;
+        margin-bottom: 10%;
+    }
+
+    .quadrado_cinza_esquerdo{
+        float: left;
+        width: 100%;
+        margin: auto;
+    }
+    
+    .quadrado_cinza_direito{
+        float: left;
+        width: 100%;
+        margin: auto;
     }
 
     .input_login{
@@ -514,79 +551,11 @@ button:hover{
 }
 
 
-@media only screen and (min-width: 1280px){
+@media only screen and (min-width: 1280px) and (max-width: 1366px){
     /* Desktop extragrandes */
-
-    nav{
-        height: 10vh;
-        transition: all .5s;
-        
-    }
-    
-    ul{
-        padding: 0.6%;
-        list-style: none;
-        float: right;
-    
-    }
-    
-    nav li {
-        margin-left: 15px;
-        margin-right: 10px;
-        text-transform: uppercase;
-        float: left;
-    
-    }
-    
-    .font_logo{
-        font-weight: 900;
-        font-size: 40px;
-        margin-top: 20%;
-        color: #0A3D62;
-        text-decoration: none;
-    }
-    
-    .menu a{
-        text-decoration: none;
-        color: #0A3D62;
-        font-weight: 500;
-    
-    }
-    
-    a:hover{
-        color: #3C6382;
-    }
-    
-    li .menu_adm{
-        border-radius: 10px;
-        background-color: #60A3BC;
-        padding: 1vw;
-        font-weight: 700;
-        color: white;
-    }
-    
-    .menu_adm:hover{
-        color: #3C6382;
-    }
-    
-    .menu_adm:before{
-        background-color: #60A3BC;
-    }
-    
-    li .login{
-        border-radius: 10px;
-        background-color: #0A3D62;
-        padding: 1vw;
-        font-weight: 700;
-        color: white;
-    }
     
     .login:hover{
         color: #3C6382;
-    }
-    
-    .login:before{
-        background-color: #0A3D62;
     }
     
     .container_complementar{
@@ -605,10 +574,10 @@ button:hover{
     
     .frase_negrito{
         font-weight: 700;
-        font-size: 20px;
+        font-size: 21.5px;
         text-align: left;
         display: block;
-        width: 85%;
+        width: 75%;
         padding-bottom: 5%;
     }
     
@@ -618,21 +587,10 @@ button:hover{
     
     /* Lado direito */
     
-    .lado_direito{
-        float: right;
-        width: 50%;
-        margin: auto;
-        margin-top: 7%;
-    }
-    
     
     .quadro_cinza{
         width: 90%;
-        height: 60vh;
-        margin: auto;
-        background-color: #C4C4C4;
-        box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.8);
-        border-radius: 10px;
+        height: 65.5vh;
     }
     
     form{
@@ -657,25 +615,7 @@ button:hover{
         text-align: center;
         padding-top: 2%;
     }
-    
-    .quadrado_cinza_esquerdo{
-        float: left;
-        width: 50%;
-        margin: auto;
-    }
-    
-    .div_centralizando{
-        width: 90%;
-        margin: 7% auto;
-        text-align: center;
-    }
-    
-    .quadrado_cinza_direito{
-        float: left;
-        width: 50%;
-        margin: auto;
-    }
-    
+     
     .label_negrito{
         font-weight: 500;
         padding-left: 2%;
@@ -722,6 +662,7 @@ button:hover{
         width: 40%;
         border-radius: 10px;
         cursor: pointer;
+        overflow: auto;
     }
     
     button:hover{

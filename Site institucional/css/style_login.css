@@ -170,24 +170,25 @@ input:focus{
     /*Celular Smartphone*/
 
     .font_logo{
-        font-size: 35px;
+        font-size: 24px;
     }
 
     .menu_invisivel{
         display: none;
     }
 
-    .login{
-        display: none;
+    nav li {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    li .login{
+        font-size: 13px;
+        padding: 5px 10px 5px 10px;
     }
 
     ul{
         margin-top: 3.8%;
-    }
-
-    li .login{
-        padding: 5px 10px 5px 10px;
-        margin-left: 70%;
     }
 
     .frase_negrito{
@@ -239,11 +240,16 @@ input:focus{
         text-align: left;
     }
 
-    .menu_invisivel{
-        display: none;
+    nav li {
+        margin-left: 0px;
+        margin-right: 0px;
     }
 
-    .login{
+    .font_logo{
+        font-size: 35px;
+    }
+
+    .menu_invisivel{
         display: none;
     }
 
@@ -279,7 +285,7 @@ input:focus{
     
 }
 
-@media screen and (min-width: 600px) and (max-width: 800px){
+@media screen and (min-width: 600px) and (max-width: 850px){
     /* Celular/tablet */
 
     .menu_invisivel{
@@ -331,7 +337,7 @@ input:focus{
 
 }
 
-@media screen and (min-width: 800px) and (max-width: 1024px){
+@media screen and (min-width: 851px) and (max-width: 1024px){
     /* tablets */
     .menu_invisivel{
         display: none;

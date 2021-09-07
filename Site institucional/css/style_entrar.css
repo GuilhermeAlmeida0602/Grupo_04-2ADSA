@@ -171,15 +171,16 @@ li .login{
     /*Celular Smartphone*/
 
     .font_logo{
-        font-size: 35px;
+        font-size: 24px;
     }
 
     .menu_invisivel{
         display: none;
     }
 
-    .login{
-        display: none;
+    nav li {
+        margin-left: 0px;
+        margin-right: 0px;
     }
 
     ul{
@@ -188,7 +189,7 @@ li .login{
 
     li .login{
         padding: 5px 10px 5px 10px;
-        margin-left: 70%;
+        font-size: 13px;
     }
 
     .frase_negrito{
@@ -250,11 +251,16 @@ li .login{
         text-align: left;
     }
 
-    .menu_invisivel{
-        display: none;
+    nav li {
+        margin-left: 0px;
+        margin-right: 0px;
     }
 
-    .login{
+    .font_logo{
+        font-size: 35px;
+    }
+
+    .menu_invisivel{
         display: none;
     }
 

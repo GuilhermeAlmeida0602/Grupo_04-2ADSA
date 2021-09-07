@@ -57,14 +57,6 @@ li .menu_adm{
     color: white;
 }
 
-.menu_adm:hover{
-    color: #3C6382;
-}
-
-.menu_adm:before{
-    background-color: #60A3BC;
-}
-
 li .login{
     border-radius: 10px;
     background-color: #0A3D62;
@@ -223,15 +215,20 @@ button:hover{
 
 
 
-@media screen and (min-width: 300px) and (max-width: 500px){
+@media screen and (min-width: 300px) and (max-width: 410px){
     /*Celular Smartphone*/
 
     .font_logo{
-        font-size: 35px;
+        font-size: 24px;
     }
 
-    .login, .menu_invisivel, .menu_adm{
+    .menu_adm{
         display: none;
+    }
+
+    nav li {
+        margin-left: 0px;
+        margin-right: 0px;
     }
 
     ul{
@@ -240,7 +237,7 @@ button:hover{
 
     li .login{
         padding: 5px 10px 5px 10px;
-        margin-left: 70%;
+        font-size: 13px;
     }
 
     .lado_esquerdo{
@@ -263,7 +260,7 @@ button:hover{
     
     .quadro_cinza{
         width: 80%;
-        height: 80vh;
+        height: 95vh;
         margin:  auto auto 10%;
     }
 
@@ -298,14 +295,23 @@ button:hover{
 
 }
 
-@media screen and (min-width: 500px) and (max-width: 600px){
+@media screen and (min-width: 411px) and (max-width: 640px){
     /*Celular Smartphone*/
 
     nav {
         text-align: left;
     }
 
-    .menu_invisivel, .login, .menu_adm{
+    .font_logo{
+        font-size: 32px;
+    }
+
+    li .login{
+        padding: 5px 10px 5px 10px;
+        font-size: 14px;
+    }
+
+    .menu_invisivel{
         display: none;
     }
 
@@ -329,7 +335,7 @@ button:hover{
 
     .quadro_cinza{
         width: 80%;
-        height: 87vh;
+        height: 105vh;
         margin:  auto auto 10%;
     }
 
@@ -363,7 +369,7 @@ button:hover{
     
 }
 
-@media screen and (min-width: 600px) and (max-width: 800px){
+@media screen and (min-width: 641px) and (max-width: 900px){
     /* Celular/tablet */
 
     .menu_invisivel{
@@ -411,7 +417,7 @@ button:hover{
 
 .quadro_cinza{
     width: 80%;
-    height: 63vh;
+    height: 68vh;
     margin-bottom: 10%;
 }
 
@@ -419,7 +425,7 @@ button:hover{
 
 }
 
-@media screen and (min-width: 800px) and (max-width: 1024px){
+@media screen and (min-width: 900px) and (max-width: 1090px){
     /* tablets */
     .menu_invisivel{
         display: none;
@@ -455,7 +461,20 @@ button:hover{
     
     .quadro_cinza{
         width: 80%;
-        height: 60vh;
+        height: 110vh;
+        margin-bottom: 10%;
+    }
+
+    .quadrado_cinza_esquerdo{
+        float: left;
+        width: 100%;
+        margin: auto;
+    }
+    
+    .quadrado_cinza_direito{
+        float: left;
+        width: 100%;
+        margin: auto;
     }
 
     .input_login{
@@ -469,10 +488,9 @@ button:hover{
         font-weight: 500;
     }
     
-    
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1280px){
+@media screen and (min-width: 1091px) and (max-width: 1280px){
     /* Desktop */
 
     li .login{
@@ -502,7 +520,7 @@ button:hover{
     
     .quadro_cinza{
         width: 80%;
-        height: 65vh;
+        height: 70vh;
     }
 
     .input_login{
@@ -514,37 +532,8 @@ button:hover{
 }
 
 
-@media only screen and (min-width: 1280px){
+@media only screen and (min-width: 1280px) and (max-width: 1366px){
     /* Desktop extragrandes */
-
-    nav{
-        height: 10vh;
-        transition: all .5s;
-        
-    }
-    
-    ul{
-        padding: 0.6%;
-        list-style: none;
-        float: right;
-    
-    }
-    
-    nav li {
-        margin-left: 15px;
-        margin-right: 10px;
-        text-transform: uppercase;
-        float: left;
-    
-    }
-    
-    .font_logo{
-        font-weight: 900;
-        font-size: 40px;
-        margin-top: 20%;
-        color: #0A3D62;
-        text-decoration: none;
-    }
     
     .menu a{
         text-decoration: none;
@@ -628,7 +617,7 @@ button:hover{
     
     .quadro_cinza{
         width: 90%;
-        height: 60vh;
+        height: 72vh;
         margin: auto;
         background-color: #C4C4C4;
         box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.8);
@@ -728,6 +717,9 @@ button:hover{
         background-color: #000000;
         transition: 2s;
     }
+
 }
+
+
 
 
