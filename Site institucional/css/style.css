@@ -6,6 +6,8 @@
 
 body, html{
     scroll-behavior: smooth;
+    margin: 0%;
+    padding: 0%;
 }
 
 .img_principal{
@@ -57,22 +59,21 @@ body, html{
 
 }
 
-
+.container_menu{
+    width: 80%;
+    margin: auto;
+}
 
 .font_logo{
     font-weight: 900;
     font-size: 40px;
     color: #0A3D62;
     text-decoration: none;
-    margin-left: 10vw;
 }
 
 nav{
-    height: 15vh;
+    height: 10vh;
     transition: all .5s;
-    margin: auto auto auto 30px;
-    display: inline-block;
-    width: 90%;
 }
 
 ul{
@@ -136,7 +137,7 @@ a:hover{
 }
 
 #sobre{
-    height: 40vh;
+    height: 39vh;
     text-align: center;
     display: inline-block;
     width: 100%;
@@ -159,7 +160,7 @@ a:hover{
 
 .equipe{
     background-color: #60A3BC;
-    height: 130vh;
+    height: 128vh;
     margin: auto;
     display: inline-block;
     width: 100%;
@@ -167,7 +168,8 @@ a:hover{
 
 .equipe h1{
     text-align: center;
-    padding-top: 20px;
+    padding-top: 25px;
+    color: white;
 }
 
 .integrante{
@@ -180,11 +182,12 @@ a:hover{
 }
 
 .integrante_2{
-    padding: 10vh 0 0 5vh;
+    padding: 15vh 0 0 5vh;
     width: 25vw;
     height: 40vh;
     text-align: center;
-    float: right !important;
+    display:block;
+    float: left;
 }
 
 .nome{
@@ -197,6 +200,8 @@ a:hover{
 .foto img{
     border-radius: 50%;
     width: 40%;
+    padding: 3%;
+    background-color: #C4C4C4;
 }
 
 .icons img{
@@ -211,7 +216,7 @@ a:hover{
 
 #servicos{
     text-align: center;
-    height: 60vh;
+    height: 55vh;
     margin: auto;
     display: inline-block;
     width: 100%;
@@ -250,16 +255,21 @@ a:hover{
 
 #beneficios h1{
     text-align: center;
-    padding-top: 20px;
+    padding: 2.5% 0 6% 0;
     color: white;
+}
+
+.class_beneficio{
+    padding-top: 20px;
 }
 
 #beneficios p{
     width: 35vw;
     color: white;
-    padding-top: 30px;
+    /* padding-top: 30px; */
     text-align: justify;
     float: left;
+    width: 50%;
 }
 
 #beneficios img{
@@ -275,7 +285,7 @@ a:hover{
 }
 
 #contato{
-    height: 150vh;
+    height: 142vh;
     margin: auto;
     display: inline-block;
     width: 100%;
@@ -290,40 +300,55 @@ a:hover{
     text-align: center;
 }
 
+.container_tele{
+    margin: 5% auto;
+    width: 50%;
+    float: left;
+}
+
 .telefone{
     background-color: rgba(128, 128, 128, 0.356);
-    margin: 50px;
-    width: 33vw;
-    height: 70vh;
-    border-radius: 30px;
+    width: 31vw;
+    height: 55vh;
+    border-radius: 15px;
     box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.9);
+}
+
+.teste{
+    margin: 13px auto;
     float: left;
+    width: 100%;
 }
 
 .infos{
     background: rgba(0, 0, 0, 0.75);
     color: white;
     width: 80%;
-    height: 15vh;
-    margin: 35px auto;
-    border-radius: 30px;
+    height: 12vh;
+    margin: 25px auto;
+    border-radius: 15px;
 }
 
 .infos img{
-    height: 80%;
-    margin: 10px 30px 0 30px;
+    height: 70%;
+    margin: 10px 15px 10px 30px;
     vertical-align: middle;
+}
+
+.container_mensa{
+    float: right;
+    margin: 5% auto;
+    width: 50%;
 }
 
 .mensagem{
     background-color: rgba(128, 128, 128, 0.356);
-    margin: 50px;
     width: 33vw;
-    height: 110vh !important;
-    border-radius: 30px;
+    height: 115vh;
+    border-radius: 15px;
     box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.9);
-    float: left;
 
+    margin: auto;
 }
 
 .fomulario{
@@ -387,18 +412,20 @@ a:hover{
 }
 
 #submit:hover{
-    background-image: linear-gradient(to right, rgb(0,80,192), rgb(80,19,195));
+    /* background-image: linear-gradient(to right, rgb(0,80,192), rgb(80,19,195)); */
+    background-color: black;
+    transition: 3s;
 }
 
 footer{
     background-color: #0A3D62;
     color: white;
-    height: 10vh;
+    height: 7vh;
     text-align: center;
 }
 
 footer p{
-    padding-top: 5vh;
+    padding: 7px 0 5px 0;
 }
 
 @media screen and (min-width: 300px) and (max-width: 500px){
@@ -416,9 +443,23 @@ footer p{
         height: 10vh;
     }
 
+    nav li {
+        text-transform: uppercase;
+        float: left;
+    
+    }
+
+    ul {
+        padding-top: 20px;
+    }
+
     .font_logo{
-        font-size: 40px;
+        font-size: 22px;
         
+    }
+
+    .login{
+        font-size: 14px;;
     }
 
     .none{
@@ -1040,7 +1081,7 @@ footer p{
 @media screen and (min-width: 1280px) and (max-width: 1366px){
 
     .img_principal img{
-        width: 95.3vw;
+        width: 94vw;
         height: 100%;
     }
 
@@ -1062,75 +1103,393 @@ footer p{
     }
 
     #beneficios img{
-        width: 7vw;
+        width: 5.7vw;
         margin-right: 20px;
-        padding-top: 10px;
-        padding-left: 0px;
+        padding-top: 20px;
+        padding-left: 60px;
         vertical-align: middle;
     }
 
     #beneficios p{
-        padding-right: 60px;
         text-align: justify;
         float: left;
+        width: 50%;
     }
   
     .mensagem{
-        height: 90vh !important;
+        height: 100vh;
     }
 
 }
 
 @media screen and (min-width: 1367px){  
 
-    .img_principal{
-        height: 90vh;
+    .font_logo{
+        font-weight: 900;
+        font-size: 40px;
+        color: #0A3D62;
+        text-decoration: none;
+    }
+    
+    nav{
+        height: 10vh;
+        transition: all .5s;
+    }
+    
+    ul{
+        padding: 20px;
+        list-style: none;
+        float: right;
+    
+    }
+    
+    nav li {
+        margin-left: 15px;
+        margin-right: 10px;
+        text-transform: uppercase;
+        float: left;
+    
+    }
+    
+    nav img{
+        width: 5vw;
+        height: 100%;
+        margin: 0%;
+    }
+    
+    a{
+        text-decoration: none;
+        color: #0A3D62;
+        font-weight: 500;
+    }
+    
+    a:hover{
+        color: #3C6382;
+    }
+    
+    .login{
+        border-radius: 10px;
+        background-color: #0A3D62;
+        padding: 1vw;
+        font-weight: 700;
+        color: white;
+        width: 100%;
+    }
+    
+    .linha{
+        background-color: black;
+        height: 2px;
+    }
+    
+    .slider img{
+        width: 100%;
+    }
+    
+    .imagem_principal{
+        width: 100%;
     }
 
     .img_principal img{
-        width: 95.5vw;
-        height: 80%;
+        width: 94vw;
+        height: 100%;
     }
-
-    nav{
-        height: 10vh !important;
+    
+    .container_somos{
+        width: 80%;
+        margin: auto;
+        align-items: center;
+    
     }
-
+    
+    #sobre{
+        height: 31vh;
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+    }
+    
+    .sobre_nos h1{
+        padding: 20px;
+    }
+    
     .sobre_nos p{
-        width: 60%;
+        width: 80%;
+        text-align: justify;
     }
-
+    
+    .container_equipe{
+        width: 85%;
+        margin: auto;
+    
+    }
+    
+    .equipe{
+        background-color: #60A3BC;
+        height: 113vh;
+        margin: auto;
+        display: inline-block;
+        width: 100%;
+    }
+    
+    .equipe h1{
+        text-align: center;
+        padding-top: 35px;
+    }
+    
+    .integrante{
+        padding: 10vh 0 0 5vh;
+        width: 25vw;
+        height: 40vh;
+        text-align: center;
+        float: left;
+        
+    }
+    
+    .integrante_2{
+        padding: 9vh 0 0 5vh;
+        width: 25vw;
+        height: 40vh;
+        text-align: center;
+        display:block;
+        float: left;
+    }
+    
+    .nome{
+        padding: 15px;
+        text-align: center;
+        font-size: 1em;
+    
+    }
+    
+    .foto img{
+        border-radius: 50%;
+        width: 40%;
+        padding: 3%;
+        background-color: #C4C4C4;
+    }
+    
+    .icons img{
+        padding-left: 10px;
+        width: 2vw;
+    }
+    
+    .containe_servicos{
+        width: 80%;
+        margin: auto;
+    }
+    
+    #servicos{
+        text-align: center;
+        height: 60vh;
+        margin: auto;
+        display: inline-block;
+        width: 100%;
+    }
+    
+    #servicos h1{
+        padding-top: 30px;
+    }
+    
+    #servicos img{
+        width: 32%;
+    }
+    
     .texto_direita{
-        width: 30%;
-        padding-right: 300px;
-        padding-top: 80px;
-
+        width: 40vw;
+        float: right;
+        padding-top: 65px;
+        text-align: justify;
+        vertical-align: center;
+        display: flex;
     }
-
+    
+    .container_beneficios{
+        width: 80%;
+        margin: auto;
+    }
+    
+    #beneficios{
+        background-color: #3C6382;
+        height: 60vh;
+        margin: auto;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+    
+    #beneficios h1{
+        text-align: center;
+        padding: 2.5% 0 6% 0;
+        color: white;
+    }
+    
+    .class_beneficio{
+        padding-top: 20px;
+    }
+    
     #beneficios p{
-        /* padding-right: 30px; */
-
+        width: 35vw;
+        color: white;
+        /* padding-top: 30px; */
+        text-align: justify;
+        float: left;
+        width: 50%;
     }
-
+    
     #beneficios img{
-        width: 7vw;
-        padding-top: 0px;
+        width: 5.5vw;
+        padding: 10px 20px 10px 0;
         padding-left: 70px;
-        padding-right: 20px;
         vertical-align: middle;
     }
-
+    
+    .container_contato{
+        width: 85%;
+        margin: auto;
+    }
+    
+    #contato{
+        height: 125vh;
+        margin: auto;
+        display: inline-block;
+        width: 100%;
+    }
+    
+    #contato h1{
+        padding: 40px;
+        text-align: center;
+    }
+    
+    #contato p{
+        text-align: center;
+    }
+    
+    .container_tele{
+        margin: 5% auto;
+        width: 50%;
+        float: left;
+    }
+    
+    .telefone{
+        background-color: rgba(128, 128, 128, 0.356);
+        width: 31vw;
+        height: 55vh;
+        border-radius: 15px;
+        box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.9);
+    }
+    
+    .teste{
+        margin: 13px auto;
+        float: left;
+        width: 100%;
+    }
+    
+    .infos{
+        background: rgba(0, 0, 0, 0.75);
+        color: white;
+        width: 80%;
+        height: 12vh;
+        margin: 25px auto;
+        border-radius: 15px;
+    }
+    
+    .infos img{
+        height: 70%;
+        margin: 10px 15px 10px 30px;
+        vertical-align: middle;
+    }
+    
+    .container_mensa{
+        float: right;
+        margin: 5% auto;
+        width: 50%;
+    }
+    
     .mensagem{
-        height: 80vh !important;
+        background-color: rgba(128, 128, 128, 0.356);
+        width: 33vw;
+        height: 85vh;
+        border-radius: 15px;
+        box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.9);
+    
+        margin: auto;
     }
-
+    
+    .fomulario{
+        padding: 30px 0 0 0px;
+        width: 70%;
+    }
+    
+    .fomulario h2{
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    
+    .input_box{
+        position: relative;
+    }
+    
+    .input_user{
+        background: none;
+        border: none;
+        border-bottom: 1.5px solid black;
+        outline: none;
+        font-size: 15px;
+        width: 100%;
+        letter-spacing: 2px;
+    }
+    
+    .label_input{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        pointer-events: none;
+        transition: .5px;
+    }
+    
+    .input_mensagem{
+        background: none;
+        border: 1.5px solid black;
+        outline: none;
+        font-size: 15px;
+        width: 100%;
+        letter-spacing: 2px;
+    }
+    
+    .input_user:focus ~ .label_input,
+    .input_user:valid ~ .label_input{
+        top: -20px;
+        font-size: 12px;
+        color: dodgerblue;
+    }
+    
+    
+    #submit{
+        background: #0A3D62;
+        width: 100%;
+        border: none;
+        padding: 15px;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+    
+    #submit:hover{
+        /* background-image: linear-gradient(to right, rgb(0,80,192), rgb(80,19,195)); */
+        background-color: black;
+        transition: 3s;
+    }
+    
     footer{
+        background-color: #0A3D62;
+        color: white;
         height: 7vh;
+        text-align: center;
     }
-
+    
     footer p{
-        align-items: center;
-        padding: 2vh 0 0 0;
+        padding: 11px 0 11px 0;
     }
 }
 

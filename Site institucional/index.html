@@ -17,7 +17,7 @@
 
 <body>
 
-    <div class="container_menu"></div>
+    <div class="container_menu">
 
     <nav class="menu_principal">
 
@@ -27,7 +27,7 @@
             <li class="none"><a href="#">Home</a></li>
             <li class="none"><a href="#sobre">Quem somos</a></li>
             <li class="none"><a href="#servicos">Serviços</a></li>
-            <li class="none"><a href="#beneficios">Beneficios</a></li>
+            <li class="none"><a href="#beneficios">Benefícios</a></li>
             <li class="none"><a href="#contato">Contato</a></li>
             <li><a href="entrar.html" class="login">Entrar</a></li>
         </ul>
@@ -90,6 +90,26 @@
                 <div class="integrante">
 
                     <div class="foto">
+                        <img src="Imagens/GA.jpg" alt="">
+                    </div>
+
+                    <div class="nome">
+                        Guilherme Almeida
+                    </div>
+
+                    <div class="icons">
+
+                        <a href="https://www.linkedin.com/in/guilherme-almeida-ferreira-bispo0602/"><img
+                                src="Imagens/linkedin.png" alt=""></a>
+                        <a href="https://github.com/GuilhermeAlmeida0602"><img src="Imagens/github.png" alt=""></a>
+
+                    </div>
+
+                </div>
+
+                <div class="integrante">
+
+                    <div class="foto">
                         <div class="container_foto">
                             <img src="Imagens/GF.jpg" alt="">
                         </div>
@@ -109,28 +129,6 @@
 
                 </div>
 
-
-                <div class="integrante">
-
-                    <div class="foto">
-                        <img src="Imagens/GA.jpg" alt="">
-                    </div>
-
-                    <div class="nome">
-                        Guilherme Almeida
-                    </div>
-
-                    <div class="icons">
-
-                        <a href="https://www.linkedin.com/in/guilherme-almeida-ferreira-bispo0602/"><img
-                                src="Imagens/linkedin.png" alt=""></a>
-                        <a href="https://github.com/GuilhermeAlmeida0602"><img src="Imagens/github.png" alt=""></a>
-
-                    </div>
-
-                </div>
-
-
                 <div class="integrante">
 
                     <div class="foto">
@@ -138,7 +136,7 @@
                     </div>
 
                     <div class="nome">
-                        Henri Caua
+                        Henri Cauã
                     </div>
 
                     <div class="icons">
@@ -150,6 +148,7 @@
                     </div>
 
                 </div>
+                <br>
 
                 <div class="integrante_2">
 
@@ -198,7 +197,7 @@
                     </div>
 
                     <div class="nome">
-                        Vitoria da Silva
+                        Vitória da Silva
                     </div>
 
                     <div class="icons">
@@ -249,7 +248,7 @@
 
             <h1>Benefícios</h1>
 
-            <p>
+            <p class="class_beneficio">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Perferendis in, minima odit fugit maiores necessitatibus rem
                 obcaecati aut provident optio molestias consequuntur repellendus
@@ -258,9 +257,6 @@
                 Perferendis in, minima odit fugit maiores necessitatibus rem
                 obcaecati aut provident optio molestias consequuntur repellendus
                 animi voluptate non vitae accusamus asperiores tempore!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Perferendis in, minima odit fugit maiores necessitatibus rem
-                obcaecati aut provident optio molestias consequuntur repellendus
 
             </p>
 
@@ -294,79 +290,82 @@
                 sugestões
             </p>
 
-            <div class="telefone">
+            <div class="container_tele">
+                <div class="telefone">
 
-                <div class="teste">
+                    <div class="teste">
 
-                    <div class="infos">
+                        <div class="infos">
 
-                        <img src="Imagens/telefone (2).png" alt="">
-                        +55 11 96349-5871
+                            <img src="Imagens/telefone (2).png" alt="">
+                            +55 11 96349-5871
 
+                        </div>
+
+                        <div class="infos">
+
+                            <img src="Imagens/correspondencia.png" alt="">
+                            contato@infosystem.com.br
+
+                        </div>
+
+                        <div class="infos">
+
+                            <img src="Imagens/balao-de-fala.png" alt="">
+                            Suporte
+
+                        </div>
                     </div>
 
-                    <div class="infos">
+                </div>
+            </div>
 
-                        <img src="Imagens/correspondencia.png" alt="">
-                        contato@infosystem.com.br
 
-                    </div>
+            <div class="container_mensa">
+                <div class="mensagem">
 
-                    <div class="infos">
+                    <form action="" class="fomulario">
 
-                        <img src="Imagens/balao-de-fala.png" alt="">
-                        Suporte
+                        <h2>Entre em contato conosco</h2>
 
-                    </div>
+                        <div class="input_box">
+
+                            <input type="text" name="nome" id="nome" class="input_user" autocomplete="off" required>
+                            <label for="nome" class="label_input">Nome Completo</label>
+
+                        </div> <br><br>
+
+                        <div class="input_box">
+
+                            <input type="text" name="email" id="email" class="input_user" autocomplete="off" required>
+                            <label for="email" class="label_input">Email</label>
+
+                        </div><br><br>
+
+                        <div class="input_box">
+
+                            <input type="tel" name="telefone" id="telefone" class="input_user" autocomplete="off"
+                                required>
+                            <label for="telefone" class="label_input">Telefone</label>
+
+                        </div> <br><br>
+
+                        <div class="input_box">
+
+                            <textarea name="mensagem" id="mensagem" cols="30" rows="6" class="input_mensagem"
+                                placeholder="Mensagem" required></textarea>
+
+                        </div> <br><br>
+
+                        <input type="submit" name="submit" id="submit">
+
+
+
+                    </form>
+
                 </div>
 
             </div>
-
-
-
-            <div class="mensagem">
-
-                <form action="" class="fomulario">
-
-                    <h2>Entre em contato conosco</h2>
-
-                    <div class="input_box">
-
-                        <input type="text" name="nome" id="nome" class="input_user" autocomplete="off" required>
-                        <label for="nome" class="label_input">Nome Completo</label>
-
-                    </div> <br><br>
-
-                    <div class="input_box">
-
-                        <input type="text" name="email" id="email" class="input_user" autocomplete="off" required>
-                        <label for="email" class="label_input">Email</label>
-
-                    </div><br><br>
-
-                    <div class="input_box">
-
-                        <input type="tel" name="telefone" id="telefone" class="input_user" autocomplete="off" required>
-                        <label for="telefone" class="label_input">Telefone</label>
-
-                    </div> <br><br>
-
-                    <div class="input_box">
-
-                        <textarea name="mensagem" id="mensagem" cols="30" rows="6" class="input_mensagem"
-                            placeholder="Mensagem" required></textarea>
-
-                    </div> <br><br>
-
-                    <input type="submit" name="submit" id="submit">
-
-
-
-                </form>
-
-            </div>
-
-        </div>
     </section>
 
     <footer>
