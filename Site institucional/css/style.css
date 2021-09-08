@@ -4,7 +4,7 @@
 
 }
 
-body{
+body, html{
     scroll-behavior: smooth;
 }
 
@@ -159,7 +159,7 @@ a:hover{
 
 .equipe{
     background-color: #60A3BC;
-    height: 120vh;
+    height: 130vh;
     margin: auto;
     display: inline-block;
     width: 100%;
@@ -970,7 +970,7 @@ footer p{
 
     .equipe{
         background-color: #60A3BC;
-        height: 100vh;
+        height: 110vh;
         margin: auto;
         display: inline-block;
         width: 100%;
