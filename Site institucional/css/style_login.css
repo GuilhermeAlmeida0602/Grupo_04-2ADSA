@@ -130,6 +130,7 @@ li .login{
     border-radius: 10px;
     color: #ffffff;
     font-weight: 500;
+    text-align: center;
 }
 
 input:focus{
@@ -230,6 +231,7 @@ input:focus{
         border-radius: 10px;
         color: #ffffff;
         font-weight: 500;
+        text-align: center;
     }
 }
 
@@ -285,11 +287,15 @@ input:focus{
     
 }
 
-@media screen and (min-width: 600px) and (max-width: 850px){
+@media screen and (min-width: 601px) and (max-width: 850px){
     /* Celular/tablet */
 
     .menu_invisivel{
         display: none;
+    }
+
+    .font_logo{
+        font-size: 38px;
     }
 
     ul{
@@ -378,6 +384,7 @@ input:focus{
         border-radius: 10px;
         color: #ffffff;
         font-weight: 500;
+        text-align: center;
     }
     
     

@@ -1,10 +1,10 @@
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
-}
-
-body {
-    font-family: 'Noto Sans JP', sans-serif;
 }
 
 header {
@@ -46,19 +46,20 @@ header {
     text-decoration: none;
 }
 
-
-.menuFuncoes {
-    height: 400px;
-    width: 100px;
-    margin-top: 80px;
+.imgOpcoes {
+    height: 100%;
+    width: max-content;
+    float: left;
 }
 
-/*Divisão que vai suportar as opções*/
-.divMenuFuncoes {
-    margin-top: 30px;
+
+/* Daqui pra baixo */
+
+.divOpcoesAn {
+    margin-top: 100px;
     margin-bottom: 10px;
     border-radius: 26px;
-    height: 400px;
+    height: max-content;
     width: auto;
     line-height: 50px;
     color: #FFFFFF;
@@ -72,102 +73,76 @@ header {
     display: inline-block;
 }
 
-.divOpcoes {
-    border-radius: 15px;
+/**/
+.divOpcoesBtnAN {
+    margin-top: 30px;
     height: 50px;
     line-height: 50px;
+    border-radius: 26px;
     color: #FFFFFF;
     width: 300px;
     margin: 16px 9px 24px 9px;
     font-size: 23px;
     font-family: Noto Sans JP;
-    font-weight: 600;
+    font-weight: 500;
     padding: 13px;
     background-color: #60A3BC;
     box-shadow: 10px 15px 4px rgba(10, 61, 98, 0.5);
     text-decoration: none;
     cursor: pointer;
-
 }
 
-.divOpcoes:hover {
+.divOpcoesBtnAN:hover {
     background: #72B6CF;
-    border-radius: 13px;
+    border-radius: 24px;
     text-decoration: none;
 }
 
-.imgOpcoes {
-    height: 100%;
-    width: max-content;
-    float: left;
-}
-
-.divOpcoesImg {
-    display: inline-block;
-    border: solid red 5px;
-    height: max-content;
-    height: 400px;
-    width: auto;
-    margin-left: 50px;
-}
-
-.divOpcoesContent {
-    margin-top: -8px;
-    margin-bottom: 10px;
-    border-radius: 26px;
-    margin-left: 80px;
-    height: 100px;
-    width: 300px;
-    line-height: 50px;
-    color: #FFFFFF;
-    font-family: Noto Sans JP;
-    font-size: 23px;
-    font-weight: 500;
-    padding: 13px;
-    display: inline-block;
-    text-decoration: none;
+.divImgAn {
     position: relative;
-    left: 11px;
-    bottom: -150px;
+    top: 60px;
+    margin-left: 145px;
+    height: 250px;
+    width: 350px;
+    display: inline-block;
 }
 
-.divOpcoesText {
-    font-weight: 400;
+.divImgAn h4{
+    position: relative;
+    font-weight: 550;
     color: black;
+    text-align: end;
+    font-size: 30px;
+    left: 200px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.divImgAn img{
+    position: relative;
+    right: 50px;
+    height: 250px;
+}
+
+.divFraseAn {
     position: relative;
     text-align: end;
     font-size: 32px;
-    right: -290px;
-    bottom: 440px;
+    right: -70px;
+    top: -207px;
     width: max-content;
     display: inline-block;
 }
 
-.divOpcoesText h1 {
-    font-size: 28px;
-    text-align: end;
-    font-family: Noto Sans JP;
-    display: inline-block;
-    height: 85px;
-}
 
 /*Responsividade*/
 
 @media only screen and (max-width:1024px) {
 
-    .container {
-        width: 90%;
-        margin: auto;
-        margin-top: 1%;
-        height: 70px;
-    }
-
-    /*Divisão que vai suportar as opções*/
-    .divMenuFuncoes {
-        margin-top: 15px;
-        margin-bottom: 1px;
+    .divOpcoesAn {
+        margin-top: 60px;
+        margin-bottom: 10px;
         border-radius: 26px;
-        height: 371px;
+        height: max-content;
         width: auto;
         line-height: 50px;
         color: #FFFFFF;
@@ -176,88 +151,43 @@ header {
         font-weight: 500;
         padding: 13px;
         background-color: #C4C4C4;
-        box-shadow: 10px 7px 0 0 #0a3d62;
+        box-shadow: 14px 16px 4px rgb(10 61 98 / 80%);
         text-decoration: none;
         display: inline-block;
     }
-
-    .divOpcoes {
-        border-radius: 27px;
-        height: 40px;
-        line-height: 40px;
-        color: #FFFFFF;
-        width: 268px;
-        margin: 16px 9px 24px 9px;
-        font-size: 23px;
-        font-family: Noto Sans JP;
-        font-weight: 600;
-        padding: 13px;
-        background-color: #60A3BC;
-        box-shadow: 7px 10px 4px 0px #0a3d6287;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    .divOpcoesContent {
-        margin-top: 30px;
-        margin-bottom: 10px;
-        border-radius: 26px;
-        margin-left: 80px;
-        height: 300px;
-        width: 500px;
-        line-height: 50px;
-        color: #FFFFFF;
-        font-family: Noto Sans JP;
-        font-size: 23px;
-        font-weight: 500;
-        padding: 13px;
-        display: inline-block;
-        text-decoration: none;
+    
+    .divImgAn {
         position: relative;
-        left: 312px;
-        bottom: 400px;
+        top: -350px;
+        margin-left: 550px;
+        height: 150px;
+        width: 350px;
+        display: inline-block;
     }
 
-    .divOpcoesText {
-        font-weight: 400;
+    .divImgAn img{
+        position: relative;
+        top: 50px;
+        height: 200px;
+    }
+    .divImgAn h4{
+        position: relative;
+        font-weight: 550;
         color: black;
-        position: relative;
         text-align: end;
-        right: -218px;
-        bottom: 381px;
-        width: max-content;
-        display: inline-block;
+        font-size: 30px;
+        left: -100px;
+        font-family: 'Noto Sans JP', sans-serif;
     }
-
-
-
-    .divOpcoesText h1 {
-        font-size: 25px;
-        text-align: end;
-        font-family: Noto Sans JP;
-        display: inline-block;
-        height: 85px;
-
-    }
-
-
 }
 
 @media only screen and (max-width:768px) {
-
-    .container {
-        width: 90%;
-        margin: auto;
-        margin-top: 1%;
-        height: 70px;
-    }
-
-    /*Divisão que vai suportar as opções*/
-    .divMenuFuncoes {
-        margin-top: 30px;
+    
+    .divOpcoesAn {
+        margin-top: 60px;
         margin-bottom: 10px;
         border-radius: 26px;
-        height: 350px;
+        height: max-content;
         width: auto;
         line-height: 50px;
         color: #FFFFFF;
@@ -266,111 +196,106 @@ header {
         font-weight: 500;
         padding: 13px;
         background-color: #C4C4C4;
-        box-shadow: 10px 7px 0 0 #0A3D62;
+        box-shadow: 14px 16px 4px rgb(10 61 98 / 80%);
         text-decoration: none;
         display: inline-block;
     }
-    
-    .divOpcoes {
-        border-radius: 27px;
-        height: 45px;
-        line-height: 42px;
-        color: #FFFFFF;
-        width: 240px;
-        margin: 10px 9px 24px 9px;
-        font-size: 23px;
-        font-family: Noto Sans JP;
-        font-weight: 600;
-        padding: 10px;
-        background-color: #60A3BC;
-        /* box-shadow: 7px 10px 4px 1px rgb(5 2 2 / 59%); (RGBA + Intensidade do blur, caso necessario) */
-        box-shadow: 7px 10px 4px 0px #0a3d6287;
-        text-decoration: none;
-        cursor: pointer;
-    
-    }
-    
-    .divOpcoes:hover {
-        background: #72B6CF;
-        border-radius: 24px;
-        text-decoration: none;
-    }
-    
-    .imgOpcoes {
-        height: 100%;
-        width: max-content;
-        float: left;
-    }
-    
-    .divOpcoesImg {
-        display: inline-block;
-        border: solid red 5px;
-        height: max-content;
-        height: 400px;
-        width: auto;
-        margin-left: 50px;
-    }
-    
-    .divOpcoesContent {
-        margin-top: 15px;
-        margin-bottom: 10px;
-        border-radius: 26px;
-        margin-left: 80px;
-        height: 100px;
-        width: 299px;
+
+    .divOpcoesBtnAN {
+        margin-top: 30px;
+        height: 50px;
         line-height: 50px;
+        border-radius: 26px;
         color: #FFFFFF;
-        font-family: Noto Sans JP;
+        width: 250px;
+        margin: 16px 9px 24px 9px;
         font-size: 23px;
+        font-family: Noto Sans JP;
         font-weight: 500;
         padding: 13px;
-        display: inline-block;
+        background-color: #60A3BC;
+        box-shadow: 10px 15px 4px rgba(10, 61, 98, 0.5);
         text-decoration: none;
-        position: relative;
-        left: 237px;
-        bottom: 264px;
-    }
-
-    .divOpcoesContent img{
-        height: 230px;
+        cursor: pointer;
     }
     
-    .divOpcoesText {
-        font-weight: 400;
+    .divImgAn {
+        position: relative;
+        top: -300px;
+        margin-left: 450px;
+        height: 150px;
+        width: 236px;
+        display: inline-block;
+    }
+
+    .divImgAn img{
+        position: relative;
+        top: 30px;
+        right: 80px;
+        height: 170px;
+    }
+    .divImgAn h4{
+        position: relative;
+        font-weight: 550;
         color: black;
-        position: relative;
         text-align: end;
-        right: -80px;
-        bottom: 400px;
-        width: max-content;
-        display: inline-block;
-    }
-    
-    
-    .divOpcoesText h1 {
         font-size: 25px;
-        text-align: end;
-        font-family: Noto Sans JP;
-        display: inline-block;
-        height: 1px;
+        bottom: 50px;
+        left: -100px;
+        font-family: 'Noto Sans JP', sans-serif;
     }
-
 
 }
 
 @media only screen and (max-width:425px) {
-    
+
     .container {
         width: 90%;
         margin-top: 3%;
         height: 50px;
     }
 
-    .container h1{
+    .container h1 {
         font-size: 28px;
         line-height: 40px;
     }
-    
+
+    .divOpcoesAn {
+        margin-top: 43px;
+        margin-bottom: 10px;
+        border-radius: 26px;
+        height: max-content;
+        width: 88%;
+        line-height: 50px;
+        color: #FFFFFF;
+        font-family: Noto Sans JP;
+        font-size: 23px;
+        font-weight: 500;
+        padding: 13px;
+        background-color: #C4C4C4;
+        box-shadow: 14px 16px 4px rgb(10 61 98 / 80%);
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .divOpcoesBtnAN {
+        margin-top: 30px;
+        height: 50px;
+        line-height: 50px;
+        border-radius: 26px;
+        color: #FFFFFF;
+        width: 86%;
+        margin: 16px 9px 24px 9px;
+        font-size: 23px;
+        font-family: Noto Sans JP;
+        font-weight: 500;
+        padding: 13px;
+        background-color: #60A3BC;
+        box-shadow: 10px 15px 4px rgba(10, 61, 98, 0.5);
+        text-decoration: none;
+        cursor: pointer;
+    }
+
     .btn_boasVindas {
         border-radius: 10px;
         color: #FFFFFF;
@@ -381,103 +306,43 @@ header {
         text-decoration: none;
         text-align: center;
         float: right;
-    
+
     }
 
-    /*Divisão que vai suportar as opções*/
-    .divMenuFuncoes {
-        height: 360px;
-        width: 91%;
-        line-height: 50px;
-        color: #FFFFFF;
-        font-family: Noto Sans JP;
-        font-size: 23px;
-        font-weight: 500;
-        padding: 13px;
-        background-color: #C4C4C4;
-        box-shadow: 10px 7px 0 0 #0A3D62;
-        text-decoration: none;
-        display: block;
-    }
-    
-    .divOpcoes {
-        border-radius: 27px;
-        height: 45px;
-        line-height: 42px;
-        color: #FFFFFF;
-        width: 87%;
-        margin: 10px 9px 24px 9px;
-        font-size: 23px;
-        font-family: Noto Sans JP;
-        font-weight: 600;
-        padding: 10px;
-        background-color: #60A3BC;
-        /* box-shadow: 7px 10px 4px 1px rgb(5 2 2 / 59%); (RGBA + Intensidade do blur, caso necessario) */
-        box-shadow: 7px 10px 4px 0px #0a3d6287;
-        text-decoration: none;
-        cursor: pointer;
-    
-    }
-    
     .divOpcoes:hover {
         background: #72B6CF;
         border-radius: 24px;
         text-decoration: none;
     }
-    
-    .imgOpcoes {
-        height: 100%;
-        width: max-content;
-        float: left;
-    }
-    
-    .divOpcoesImg {
+
+
+    .divImgAn {
         display: inline-block;
         height: max-content;
         height: 400px;
         width: auto;
         margin-left: 50px;
-    }
-    
-    .divOpcoesContent {
-        margin-top: 15px;
-        margin-bottom: 10px;
-        border-radius: 26px;
-        margin-left: 80px;
-        height: 100px;
-        width: 299px;
-        line-height: 50px;
-        color: #FFFFFF;
-        font-family: Noto Sans JP;
-        font-size: 23px;
-        font-weight: 500;
-        padding: 13px;
-        display: inline-block;
-        text-decoration: none;
-        position: relative;
-        left: 237px;
-        bottom: 264px;
         display: none;
     }
 
-    
+
 
 
 }
 
 @media only screen and (max-width:375px) {
-    
+
     .container {
         width: 90%;
         margin-top: 3%;
         height: 50px;
     }
 
-    .container h1{
+    .container h1 {
         font-size: 24px;
         line-height: 40px;
     }
-    
+
     .btn_boasVindas {
         border-radius: 10px;
         color: #FFFFFF;
@@ -488,7 +353,7 @@ header {
         text-decoration: none;
         text-align: center;
         float: right;
-    
+
     }
 
     /*Divisão que vai suportar as opções*/
@@ -506,7 +371,7 @@ header {
         text-decoration: none;
         display: block;
     }
-    
+
     .divOpcoes {
         border-radius: 27px;
         height: 45px;
@@ -523,21 +388,21 @@ header {
         box-shadow: 7px 10px 4px 0px #0a3d6287;
         text-decoration: none;
         cursor: pointer;
-    
+
     }
-    
+
     .divOpcoes:hover {
         background: #72B6CF;
         border-radius: 24px;
         text-decoration: none;
     }
-    
+
     .imgOpcoes {
         height: 100%;
         width: max-content;
         float: left;
     }
-    
+
     .divOpcoesImg {
         display: inline-block;
         height: max-content;
@@ -545,7 +410,7 @@ header {
         width: auto;
         margin-left: 50px;
     }
-    
+
     .divOpcoesContent {
         margin-top: 15px;
         margin-bottom: 10px;
@@ -567,24 +432,24 @@ header {
         display: none;
     }
 
-    
+
 
 
 }
 
 @media only screen and (max-width:320px) {
-    
+
     .container {
         width: 90%;
         margin-top: 3%;
         height: 50px;
     }
 
-    .container h1{
+    .container h1 {
         font-size: 22px;
         line-height: 40px;
     }
-    
+
     .btn_boasVindas {
         border-radius: 10px;
         color: #FFFFFF;
@@ -595,7 +460,7 @@ header {
         text-decoration: none;
         text-align: center;
         float: right;
-    
+
     }
 
     /*Divisão que vai suportar as opções*/
@@ -613,7 +478,7 @@ header {
         text-decoration: none;
         display: block;
     }
-    
+
     .divOpcoes {
         border-radius: 27px;
         height: 45px;
@@ -630,21 +495,21 @@ header {
         box-shadow: 7px 10px 4px 0px #0a3d6287;
         text-decoration: none;
         cursor: pointer;
-    
+
     }
-    
+
     .divOpcoes:hover {
         background: #72B6CF;
         border-radius: 24px;
         text-decoration: none;
     }
-    
+
     .imgOpcoes {
         height: 100%;
         width: max-content;
         float: left;
     }
-    
+
     .divOpcoesImg {
         display: inline-block;
         height: max-content;
@@ -652,7 +517,7 @@ header {
         width: auto;
         margin-left: 50px;
     }
-    
+
     .divOpcoesContent {
         margin-top: 15px;
         margin-bottom: 10px;
