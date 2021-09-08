@@ -5,6 +5,11 @@ body {
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;
+}
+
+a{
+    color:inherit
 }
 
 header {
@@ -136,7 +141,7 @@ header {
 
 /*Responsividade*/
 
-@media only screen and (max-width:1024px) {
+@media only screen and (min-width:1024px) and (max-width:1374px){
 
     .divOpcoesAn {
         margin-top: 60px;
@@ -181,7 +186,7 @@ header {
     }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:768px) and (max-width:1024px){
     
     .divOpcoesAn {
         margin-top: 60px;
@@ -247,7 +252,7 @@ header {
 
 }
 
-@media only screen and (max-width:425px) {
+@media only screen and (max-width:425px) and (max-width:768px){
 
     .container {
         width: 90%;
@@ -330,7 +335,7 @@ header {
 
 }
 
-@media only screen and (max-width:375px) {
+@media only screen and (max-width:375px) and (max-width:570px){
 
     .container {
         width: 90%;
@@ -437,7 +442,7 @@ header {
 
 }
 
-@media only screen and (max-width:320px) {
+@media only screen and (max-width:320px) and (max-width:374px){
 
     .container {
         width: 90%;
