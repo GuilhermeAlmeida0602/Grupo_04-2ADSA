@@ -1,3 +1,4 @@
+
 body {
     margin: 0%;
     padding: 0%;
@@ -58,14 +59,6 @@ li .menu_adm{
     text-transform: none;
 }
 
-.menu_adm:hover{
-    color: #3C6382;
-}
-
-.menu_adm:before{
-    background-color: #60A3BC;
-}
-
 li .login{
     border-radius: 10px;
     background-color: #0A3D62;
@@ -73,6 +66,14 @@ li .login{
     font-weight: 700;
     color: white;
     text-transform: none;
+}
+
+.menu_adm:hover{
+    color: #3C6382;
+}
+
+.menu_adm:before{
+    background-color: #60A3BC;
 }
 
 .login:hover{
@@ -88,50 +89,28 @@ li .login{
     margin: auto;
 }
 
-/* Lado esquerdo */
-
-.lado_esquerdo{
-    float:left;
-    width: 50%;
-    margin: auto;
-    margin-top: 7%;
-}
-
 .frase_negrito{
     font-weight: 700;
     font-size: 20px;
-    text-align: left;
+    text-align: center;
     display: block;
-    width: 85%;
+    width: 100%;
     padding-bottom: 5%;
+    margin-top: 5%;
 }
-
-.img_login{
-    width: 70%;
-}
-
-/* Lado direito */
-
-.lado_direito{
-    float: right;
-    width: 50%;
-    margin: auto;
-    margin-top: 7%;
-}
-
 
 .quadro_cinza{
-    width: 90%;
-    height: 60vh;
-    margin: auto;
+    width: 50%;
+    height: 105vh;
+    margin: auto auto 7% auto;
     background-color: #C4C4C4;
-    box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.8);
+    box-shadow: 15px 17px 4px rgb(10 61 98 / 80%);
     border-radius: 10px;
     text-align: center;
 }
 
 .div_negrito{
-    padding-top: 15%;
+    padding-top: 10%;
     text-align: center;
 }
 
@@ -139,20 +118,11 @@ li .login{
     font-weight: 700;
     font-size: 19.5px;
     color: #ffffff;
-    background-color: #0A3D62;
-    padding: 3px 10px;
-    border-radius: 10px;
 }
 
 .p_dados{
     text-align: center;
     padding-top: 2%;
-}
-
-.quadrado_cinza_esquerdo{
-    float: left;
-    width: 50%;
-    margin: auto;
 }
 
 .div_centralizando{
@@ -161,27 +131,64 @@ li .login{
     text-align: center;
 }
 
-.quadrado_cinza_direito{
-    float: left;
-    width: 50%;
-    margin: auto;
-}
-
 .label_negrito{
     font-weight: 500;
     padding-left: 2%;
 }
 
-.input_login{
-    font-family: 'Noto Sans JP', sans-serif;
-    background-color: #0A3D62;
-    border: none;
-    height: 20px;
-    border-radius: 10px;
-    color: #ffffff;
-    font-weight: 500;
-    text-align: center;
+
+.input_box{
+    position: relative;
 }
+
+.input_user{
+    background: none;
+    border: none;
+    border-bottom: 1.5px solid black;
+    outline: none;
+    font-size: 15px;
+    width: 90%;
+    letter-spacing: 2px;
+    margin-bottom: 5%;
+    margin-top: 3%;
+}
+
+.label_input{
+    position: absolute;
+    top: 0px;
+    left: 25.5px;
+    pointer-events: none;
+    transition: .5px;
+    margin-top: 2%;
+}
+
+
+.input_user:focus ~ .label_input,
+.input_user:valid ~ .label_input{
+    top: -20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #0A3D62;
+}
+
+
+#submit{
+    background: #0A3D62;
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#submit:hover{
+    /* background-image: linear-gradient(to right, rgb(0,80,192), rgb(80,19,195)); */
+    background-color: black;
+    transition: 3s;
+}
+
 
 input[type=number]::-webkit-inner-spin-button { 
     -webkit-appearance: none;
@@ -191,15 +198,6 @@ input[type=number] {
    -moz-appearance: textfield;
    appearance: textfield;
 
-}
-
-input::placeholder{
-    color: #ffffff;
-    text-align: center;
-}
-
-input:focus{
-    outline: none;
 }
 
 .input_button{
@@ -222,58 +220,49 @@ button:hover{
 
 
 
-@media screen and (min-width: 300px) and (max-width: 500px){
+@media screen and (min-width: 300px) and (max-width: 410px){
     /*Celular Smartphone*/
 
     .font_logo{
-        font-size: 38px;
+        font-size: 26px;
+    }
+
+    .menu_principal{
+        text-align: center;
+        margin-top: 2%;
     }
 
     nav li {
         margin-left: 0px;
         margin-right: 0px;
+        float: none;
+        display: inline;
     }
-
-    .login, .menu_invisivel{
-        display: none;
-    }
-
-    .font_logo{
-        font-size: 27px;
-    }
-
 
     ul{
         margin-top: 3.8%;
+        float: none;
     }
 
-    li .login{
+
+    li .login, li .menu_adm{
         padding: 5px 10px 5px 10px;
-        margin-left: 70%;
+        font-size: 13px;
+        text-align: center;
+        
+        /* margin:2% 2% 2% 2%; */
     }
-
-    .lado_esquerdo{
-        width: 100%;
-        margin-top: 10%;
-    } 
     
     .frase_negrito{
         font-size: 17px;
-        width: 95%;
-    }
-    
-    /* Lado direito */
-    
-    .lado_direito{
-        width: 100%;
-        margin: auto;
-        margin-top: 7%;
+        margin-bottom: 3%;
+        padding-top: 3%
     }
     
     .quadro_cinza{
-        width: 80%;
-        height: 80vh;
-        margin:  auto auto 10%;
+        width: 82%;
+        height: 85vh;
+        margin:  auto auto 12%;
     }
 
     .div_negrito{
@@ -292,11 +281,42 @@ button:hover{
     }
     
     .input_login{
-        width: 80%;
+        width: 79%;
     }
 
-    .quadrado_cinza_esquerdo, .quadrado_cinza_direito{
-        width: 100%;
+    .input_box{
+        position: relative;
+    }
+    
+    .input_user{
+        background: none;
+        border: none;
+        border-bottom: 1.5px solid black;
+        outline: none;
+        font-size: 15px;
+        width: 90%;
+        letter-spacing: 2px;
+        margin-bottom: 7%;
+        margin-top: 7%;
+    }
+    
+    .label_input{
+        position: absolute;
+        top: 0px;
+        left: 10px;
+        pointer-events: none;
+        transition: .5px;
+        margin-top: 6%;
+        font-size: 14.5px;
+    }
+    
+    .input_user:focus ~ .label_input,
+    .input_user:valid ~ .label_input{
+        top: -20px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #0A3D62;
+        padding-top: 2%;
     }
 
     input::placeholder{
@@ -307,47 +327,54 @@ button:hover{
 
 }
 
-@media screen and (min-width: 500px) and (max-width: 630px){
+@media screen and (min-width: 410px) and (max-width: 640px){
     /*Celular Smartphone*/
 
-    nav {
-        text-align: left;
+    .font_logo{
+        font-size: 32px;
     }
 
-    .font_logo{
-        font-size: 38px;
+    .menu_principal{
+        text-align: center;
+        margin-top: 2%;
     }
 
     nav li {
         margin-left: 0px;
         margin-right: 0px;
+        float: none;
+        display: inline;
     }
 
-    .menu_invisivel, .login{
-        display: none;
+    ul{
+        margin-top: 3.8%;
+        float: none;
     }
 
-    .lado_esquerdo{
-        width: 100%;
-        margin-top: 10%;
-    } 
+    /* li .login{
+        padding: 5px 10px 5px 10px;
+        font-size: 14px;
+        margin-left: 5%;
+    } */
+
+
+    li .login, li .menu_adm{
+        padding: 7px 11px 7px 11px;
+        font-size: 14px;
+        text-align: center;
+        
+        margin:2% 2% 0% 2%;
+    }
 
     .frase_negrito{
         font-size: 18px;
-        width: 87%;
-    }
-    
-    /* Lado direito */
-    
-    .lado_direito{
-        width: 100%;
-        margin: auto;
-        margin-top: 7%;
+        padding-top: 10%;
+        padding-bottom: 7%;
     }
 
     .quadro_cinza{
         width: 80%;
-        height: 87vh;
+        height: 110vh;
         margin:  auto auto 10%;
     }
 
@@ -369,8 +396,35 @@ button:hover{
         width: 80%;
     }
 
-    .quadrado_cinza_esquerdo, .quadrado_cinza_direito{
-        width: 100%;
+    .input_user{
+        background: none;
+        border: none;
+        border-bottom: 1.5px solid black;
+        outline: none;
+        font-size: 15px;
+        width: 90%;
+        letter-spacing: 2px;
+        margin-bottom: 7%;
+        margin-top: 7%;
+    }
+    
+    .label_input{
+        position: absolute;
+        top: 0px;
+        left: 15px;
+        pointer-events: none;
+        transition: .5px;
+        margin-top: 6%;
+        font-size: 14.5px;
+    }
+    
+    .input_user:focus ~ .label_input,
+    .input_user:valid ~ .label_input{
+        top: -20px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #0A3D62;
+        padding-top: 2%;
     }
 
     input::placeholder{
@@ -381,7 +435,7 @@ button:hover{
     
 }
 
-@media screen and (min-width: 631px) and (max-width: 900px){
+@media screen and (min-width: 641px) and (max-width: 770px){
     /* Celular/tablet */
 
     .menu_invisivel{
@@ -400,16 +454,10 @@ button:hover{
         margin-left: 25%;
     }
 
-     /* Lado esquerdo */
-
-    .lado_esquerdo{
-        width: 100%;
-        margin-top: 10%;
-    }
-
     .frase_negrito{
         font-size: 19px;
-        width: 70%;
+        padding-top: 5%;
+        padding-bottom: 5%;
     }
 
     .div_negrito{
@@ -418,35 +466,92 @@ button:hover{
         font-weight: 700;
         font-size: 17.5px;
     }
-    
-/* Lado direito */
-
-.lado_direito{
-    width: 100%;
-    margin: auto;
-    margin-top: 7%;
-}
 
 .quadro_cinza{
-    width: 80%;
-    height: 63vh;
+    width: 76%;
+    height: 95vh;
     margin-bottom: 10%;
 }
 
-.div_centralizando{
+.input_user{
+    background: none;
+    border: none;
+    border-bottom: 1.5px solid black;
+    outline: none;
+    font-size: 15px;
     width: 90%;
-    margin: 7% auto;
-    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 5%;
+    margin-top: 3%;
 }
 
-.quadrado_cinza_esquerdo, .quadrado_cinza_direito{
-    width: 50%;
+.label_input{
+    margin-top: 2%;
+    font-size: 14.5px;
+}
+
+}
+
+@media screen and (min-width: 771px) and (max-width: 900px){
+    /* Celular/tablet */
+
+    .menu_invisivel{
+        display: none;
+    }
+
+    ul{
+        margin-top: 3.8%;
+    }
+
+    li .login{
+        margin-left: 0%;
+    }
+
+    li .menu_adm{
+        margin-left: 25%;
+    }
+
+    .frase_negrito{
+        font-size: 19px;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    .div_negrito{
+        padding-top: 8.5%;
+        text-align: center;
+        font-weight: 700;
+        font-size: 17.5px;
+    }
+
+.quadro_cinza{
+    width: 74%;
+    height: 105vh;
+    margin-bottom: 10%;
+}
+
+.input_user{
+    background: none;
+    border: none;
+    border-bottom: 1.5px solid black;
+    outline: none;
+    font-size: 15px;
+    width: 90%;
+    letter-spacing: 2px;
+    margin-bottom: 5%;
+    margin-top: 3%;
+}
+
+.label_input{
+    margin-top: 2%;
+    font-size: 14.5px;
 }
 
 
+
 }
 
-@media screen and (min-width: 900px) and (max-width: 1024px){
+@media screen and (min-width: 900px) and (max-width: 1090px){
     /* tablets */
     .menu_invisivel{
         display: none;
@@ -456,89 +561,75 @@ button:hover{
         margin-left: 25%;
     }
 
-    .lado_esquerdo{
-        float: left;
-        width: 50%;
-        margin-top: 7%;
-    }
-
     .frase_negrito{
         font-size: 20px;
-        width: 85%;
-    }
-    
-    /* Lado direito */
-    
-    .lado_direito{
-        float: right;
-        width: 50%;
-        margin: auto;
-        margin-top: 7%;
+        padding-top: 4%;
+        padding-bottom: 4%;
     }
     
     .quadro_cinza{
-        width: 80%;
-        height: 88vh;
+        width: 72%;
+        height: 115vh;
         margin-bottom: 10%;
     }
 
-    .quadrado_cinza_esquerdo{
-        float: left;
-        width: 100%;
-        margin: auto;
-    }
-    
-    .quadrado_cinza_direito{
-        float: left;
-        width: 100%;
-        margin: auto;
-    }
-
-    .input_login{
-        font-family: 'Noto Sans JP', sans-serif;
-        background-color: #0A3D62;
+    .input_user{
+        background: none;
         border: none;
-        height: 20px;
-        width: 95%;
-        border-radius: 10px;
-        color: #ffffff;
-        font-weight: 500;
+        border-bottom: 1.5px solid black;
+        outline: none;
+        font-size: 15px;
+        width: 90%;
+        letter-spacing: 2px;
+        margin-bottom: 5%;
+        margin-top: 3%;
     }
     
+    .label_input{
+        margin-top: 2%;
+        font-size: 14.5px;
+    }
     
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1280px){
+@media screen and (min-width: 1091px) and (max-width: 1280px){
     /* Desktop */
+
+    nav li {
+        margin-left: 5px;
+        margin-right: 5px;
+        text-transform: uppercase;
+        font-weight: 500;
+        float: left;
+    }
 
     li .login{
         padding: 1vw;
         /* margin-left: 60%; */
     }
 
-    .lado_esquerdo{
-        float: left;
-        width: 50%;
-        margin-top: 7%;
-    }
-
     .frase_negrito{
         font-size: 21px;
-        width: 88%;
+        padding-top: 4%;
+        padding-bottom: 4%;
     }
 
-    .lado_direito{
-        float: right;
-        width: 50%;
-        margin: auto;
-        margin-top: 7%;
-    }
-    
-    /* Lado direito */
     
     .quadro_cinza{
-        width: 80%;
-        height: 65vh;
+        width: 57%;
+        height: 110vh;
+        margin-bottom: 10%;
+    }
+
+    .input_user{
+        margin-bottom: 5%;
+        margin-top: 3%;
+    }
+    
+    .label_input{
+        margin-top: 2%;
+        font-size: 14.5px;
+        left: 20px;
     }
 
     .input_login{
@@ -553,8 +644,47 @@ button:hover{
 @media only screen and (min-width: 1280px) and (max-width: 1366px){
     /* Desktop extragrandes */
     
+    .menu a{
+        text-decoration: none;
+        color: #0A3D62;
+        font-weight: 500;
+    
+    }
+    
+    a:hover{
+        color: #3C6382;
+    }
+    
+    li .menu_adm{
+        border-radius: 10px;
+        background-color: #60A3BC;
+        padding: 1vw;
+        font-weight: 700;
+        color: white;
+    }
+    
+    .menu_adm:hover{
+        color: #3C6382;
+    }
+    
+    .menu_adm:before{
+        background-color: #60A3BC;
+    }
+    
+    li .login{
+        border-radius: 10px;
+        background-color: #0A3D62;
+        padding: 1vw;
+        font-weight: 700;
+        color: white;
+    }
+    
     .login:hover{
         color: #3C6382;
+    }
+    
+    .login:before{
+        background-color: #0A3D62;
     }
     
     .container_complementar{
@@ -562,72 +692,62 @@ button:hover{
         margin: auto;
     }
     
-    /* Lado esquerdo */
-    
-    .lado_esquerdo{
-        float:left;
-        width: 50%;
-        margin: auto;
-        margin-top: 7%;
-    }
-    
     .frase_negrito{
         font-weight: 700;
-        font-size: 21.5px;
-        text-align: left;
-        display: block;
-        width: 75%;
-        padding-bottom: 5%;
+        font-size: 20px;
+        padding-top: 4%;
+        padding-bottom: 4%;
     }
     
     .img_login{
         width: 70%;
     }
     
-    /* Lado direito */
-    
-    
     .quadro_cinza{
-        width: 90%;
-        height: 65.5vh;
+        width: 55%;
+        height: 115vh;
+        margin-bottom: 10%;
+    }
+    
+    form{
         text-align: center;
     }
-    
-    .div_negrito{
-        padding-top: 15%;
-        text-align: center;
-    }
-    
-    .cad_usuario {
-        font-weight: 700;
-        font-size: 19.5px;
-        color: #ffffff;
-        background-color: #0A3D62;
-        padding: 3px 10px;
-        border-radius: 10px;
-    }
-    
+
     .p_dados{
         text-align: center;
         padding-top: 2%;
     }
-     
+    
+    .div_centralizando{
+        width: 90%;
+        margin: 7% auto;
+        text-align: center;
+    }
+    
+    .input_box{
+        position: relative;
+    }
+    
+    .input_user{
+        background: none;
+        border: none;
+        border-bottom: 1.5px solid black;
+        outline: none;
+        font-size: 15px;
+        width: 90%;
+        letter-spacing: 2px;
+        margin-bottom: 5%;
+    }
+    
+    .label_input{
+        left: 30px;
+    }
+ 
     .label_negrito{
         font-weight: 500;
         padding-left: 2%;
     }
-    
-    .input_login{
-        font-family: 'Noto Sans JP', sans-serif;
-        background-color: #0A3D62;
-        border: none;
-        height: 20px;
-        border-radius: 10px;
-        color: #ffffff;
-        font-weight: 500;
-        text-align: center;
-    }
-    
+
     input[type=number]::-webkit-inner-spin-button { 
         -webkit-appearance: none;
         
@@ -658,13 +778,17 @@ button:hover{
         width: 40%;
         border-radius: 10px;
         cursor: pointer;
-        overflow: auto;
     }
     
     button:hover{
         background-color: #000000;
         transition: 2s;
     }
+
 }
+
+
+
+
 
 

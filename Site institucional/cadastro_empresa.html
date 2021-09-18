@@ -31,52 +31,89 @@
         </nav>
 
         <div class="container_complementar">
-            <div class="lado_esquerdo">
-                <b class="frase_negrito">Descreva todas as informações necessárias para o contato da nossa equipe</b>
-                <img src="Imagens/undraw_Online_cv_re_gn0a.svg" class="img_login" alt="">
 
-            </div>
-            <div class="lado_direito">
-                <div class="quadro_cinza">
+            <b class="frase_negrito">Descreva todas as informações necessárias para o contato da nossa equipe</b>
 
-                    <!-- <form action=""> -->
-                    <div class="div_negrito"><b class="cad_usuario">Cadastrar empresa</b></div>
+            <div class="quadro_cinza">
 
-                    <div class="quadrado_cinza_esquerdo">
-                        <p class="p_dados">Dados da empresa</p>
-                        <div class="div_centralizando">
-                            <input type="text" class="input_login" name="empresa" placeholder="Empresa">
-                            <input type="text" class="input_login" name="cnpj" placeholder="CNPJ">
-                            <input type="email" class="input_login" name="email" placeholder="Email">
-                            <input type="password" class="input_login" name="senha" placeholder="Senha">
-                            <input type="password" class="input_login" name="senha_confirmacao"
-                                placeholder="Confirmação de senha">
-                        </div>
+                <!-- <form action=""> -->
+                <div class="div_negrito"><b class="cad_usuario">Cadastrar empresa</b></div>
 
+
+                <p class="p_dados">Dados da empresa</p>
+                <div class="div_centralizando">
+                    <div class="input_box">
+                        <input type="text" class="input_user" name="empresa" autocomplete="off" required>
+                        <label for="nome" class="label_input">Nome da Empresa</label>
                     </div>
-                    <div class="quadrado_cinza_direito">
-                        <p class="p_dados">Dados da empresa</p>
-                        <div class="div_centralizando">
-                            <input type="text" class="input_login" name="logradouro" placeholder="Logradouro">
-                            <input type="number" class="input_login" name="numero" placeholder="Número">
-                            <input type="text" class="input_login" name="complemento" placeholder="Complemento">
-                            <input type="text" class="input_login" name="bairro" placeholder="Bairro">
-                            <input type="text" class="input_login" name="uf" placeholder="UF">
-                            <input type="text" class="input_login" name="cep" placeholder="CEP">
-                        </div>
+
+                    <div class="input_box">
+                        <input type="text" class="input_user" name="cnpj" autocomplete="off" required>
+                        <label for="nome" class="label_input">CNPJ</label>
+                    </div>
+
+                    <div class="input_box">
+                        <input type="email" class="input_user" name="email" autocomplete="off" required>
+                        <label for="nome" class="label_input">Email da empresa</label>
+                    </div>
+
+                    <div class="input_box">
+                        <input type="password" class="input_user" name="senha" autocomplete="off" required>
+                        <label for="nome" class="label_input">Senha</label>
+                    </div>
+
+                    <div class="input_box">
+                        <input type="password" class="input_user" name="senha_confirmacao" autocomplete="off" required>
+                        <label for="nome" class="label_input">Confirmação de senha</label>
+                    </div>
+
+
+                    <p class="p_dados">Dados do endereço</p>
+
+                    <div class="input_box">
+                        <input type="text" class="input_user" name="cep" id="cep" autocomplete="off" required>
+                        <label for="nome" class="label_input">CEP</label>
+                    </div>
+
+                    <div class="input_box">
+                        <input type="text" class="input_user" name="logradouro" id="logradouro" autocomplete="off" required>
+                        <label for="nome" class="label_input">Logradouro</label>
+                    </div>
+
+                    <div class="input_box">
+                        <input type="number" class="input_user" name="numero" id="numero" autocomplete="off" required>
+                        <label for="nome" class="label_input">Número</label>
+                    </div>
+
+                    <div class="input_box">
+                        <input type="text" class="input_user" name="complemento" id="complemento" autocomplete="off" required>
+                        <label for="nome" class="label_input">Complemento</label>
+                    </div>
+
+                    <div class="input_box">
+                        <input type="text" class="input_user" name="bairro" id="bairro" autocomplete="off" required>
+                        <label for="nome" class="label_input">Bairro</label>
+                    </div>
+
+                    <div class="input_box">
+                        <input type="text" class="input_user" name="localidade" id="cidade" autocomplete="off" required>
+                        <label for="nome" class="label_input">Cidade</label>
+                    </div>
+
+                    <div class="input_box">
+                        <input type="text" class="input_user" name="uf" id="uf" autocomplete="off" required>
+                        <label for="nome" class="label_input">UF</label>
                     </div>
 
                     <button type="submit" class="input_button" onclick="cadastrar()">Cadastrar</button>
 
-
                     <!-- </form> -->
-
                 </div>
             </div>
-        </div>
 
-    </div>
+        </div>
 </body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 
     function cadastrar() {
@@ -84,6 +121,37 @@
         window.location.href = "login.html"
 
     }
+
+    $(document).ready(
+        function () {
+            $("#cep").blur(
+                function () {
+                    var cep = $(this).val();
+                    var validacep = /^[0-9]{5}-?[0-9]{3}$/;
+
+                    if (validacep.test(cep)) {
+                        $("#logradouro").val("...")
+                        $("#bairro").val("...")
+                        $("#cidade").val("...")
+                        $("#uf").val("...")
+                        $.getJSON("http://viacep.com.br/ws/" + cep
+                            + "/json/?callback=?", function (dados) {
+                                if (!("erro" in dados)) {
+                                    $("#logradouro").val(dados.logradouro)
+                                    $("#bairro").val(dados.bairro)
+                                    $("#cidade").val(dados.localidade)
+                                    $("#uf").val(dados.uf)
+                                    $("#numero").focus();
+                                } else {
+                                    alert("CEP não encontrado");
+                                }
+                            });
+                    } else {
+                        alert("Formato de CEP inválido")
+                    }
+                })
+        })
+
 </script>
 
 </html>

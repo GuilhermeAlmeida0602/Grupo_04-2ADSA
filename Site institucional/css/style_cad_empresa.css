@@ -78,50 +78,28 @@ li .login{
     margin: auto;
 }
 
-/* Lado esquerdo */
-
-.lado_esquerdo{
-    float:left;
-    width: 50%;
-    margin: auto;
-    margin-top: 7%;
-}
-
 .frase_negrito{
     font-weight: 700;
     font-size: 20px;
-    text-align: left;
+    text-align: center;
     display: block;
-    width: 85%;
+    width: 100%;
     padding-bottom: 5%;
+    margin-top: 5%;
 }
-
-.img_login{
-    width: 70%;
-}
-
-/* Lado direito */
-
-.lado_direito{
-    float: right;
-    width: 50%;
-    margin: auto;
-    margin-top: 7%;
-}
-
 
 .quadro_cinza{
-    width: 90%;
-    height: 60vh;
-    margin: auto;
+    width: 50%;
+    height: 170vh;
+    margin: auto auto 7% auto;
     background-color: #C4C4C4;
-    box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.8);
+    box-shadow: 15px 17px 4px rgb(10 61 98 / 80%);
     border-radius: 10px;
     text-align: center;
 }
 
 .div_negrito{
-    padding-top: 15%;
+    padding-top: 10%;
     text-align: center;
 }
 
@@ -129,20 +107,11 @@ li .login{
     font-weight: 700;
     font-size: 19.5px;
     color: #ffffff;
-    background-color: #0A3D62;
-    padding: 3px 10px;
-    border-radius: 10px;
 }
 
 .p_dados{
     text-align: center;
     padding-top: 2%;
-}
-
-.quadrado_cinza_esquerdo{
-    float: left;
-    width: 50%;
-    margin: auto;
 }
 
 .div_centralizando{
@@ -151,27 +120,64 @@ li .login{
     text-align: center;
 }
 
-.quadrado_cinza_direito{
-    float: left;
-    width: 50%;
-    margin: auto;
-}
-
 .label_negrito{
     font-weight: 500;
     padding-left: 2%;
 }
 
-.input_login{
-    font-family: 'Noto Sans JP', sans-serif;
-    background-color: #0A3D62;
-    border: none;
-    height: 20px;
-    border-radius: 10px;
-    color: #ffffff;
-    font-weight: 500;
-    text-align: center;
+
+.input_box{
+    position: relative;
 }
+
+.input_user{
+    background: none;
+    border: none;
+    border-bottom: 1.5px solid black;
+    outline: none;
+    font-size: 15px;
+    width: 90%;
+    letter-spacing: 2px;
+    margin-bottom: 5%;
+    margin-top: 3%;
+}
+
+.label_input{
+    position: absolute;
+    top: 0px;
+    left: 25.5px;
+    pointer-events: none;
+    transition: .5px;
+    margin-top: 2%;
+}
+
+
+.input_user:focus ~ .label_input,
+.input_user:valid ~ .label_input{
+    top: -20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #0A3D62;
+}
+
+
+#submit{
+    background: #0A3D62;
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#submit:hover{
+    /* background-image: linear-gradient(to right, rgb(0,80,192), rgb(80,19,195)); */
+    background-color: black;
+    transition: 3s;
+}
+
 
 input[type=number]::-webkit-inner-spin-button { 
     -webkit-appearance: none;
@@ -181,15 +187,6 @@ input[type=number] {
    -moz-appearance: textfield;
    appearance: textfield;
 
-}
-
-input::placeholder{
-    color: #ffffff;
-    text-align: center;
-}
-
-input:focus{
-    outline: none;
 }
 
 .input_button{
@@ -240,29 +237,16 @@ button:hover{
         padding: 5px 10px 5px 10px;
         font-size: 13px;
     }
-
-    .lado_esquerdo{
-        width: 100%;
-        margin-top: 10%;
-    } 
     
     .frase_negrito{
         font-size: 17px;
-        width: 95%;
-    }
-    
-    /* Lado direito */
-    
-    .lado_direito{
-        width: 100%;
-        margin: auto;
-        margin-top: 7%;
+        margin-bottom: 3%;
     }
     
     .quadro_cinza{
-        width: 80%;
-        height: 95vh;
-        margin:  auto auto 10%;
+        width: 82%;
+        height: 135vh;
+        margin:  auto auto 12%;
     }
 
     .div_negrito{
@@ -281,11 +265,42 @@ button:hover{
     }
     
     .input_login{
-        width: 80%;
+        width: 79%;
     }
 
-    .quadrado_cinza_esquerdo, .quadrado_cinza_direito{
-        width: 100%;
+    .input_box{
+        position: relative;
+    }
+    
+    .input_user{
+        background: none;
+        border: none;
+        border-bottom: 1.5px solid black;
+        outline: none;
+        font-size: 15px;
+        width: 90%;
+        letter-spacing: 2px;
+        margin-bottom: 7%;
+        margin-top: 7%;
+    }
+    
+    .label_input{
+        position: absolute;
+        top: 0px;
+        left: 10px;
+        pointer-events: none;
+        transition: .5px;
+        margin-top: 6%;
+        font-size: 14.5px;
+    }
+    
+    .input_user:focus ~ .label_input,
+    .input_user:valid ~ .label_input{
+        top: -20px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #0A3D62;
+        padding-top: 2%;
     }
 
     input::placeholder{
@@ -296,7 +311,7 @@ button:hover{
 
 }
 
-@media screen and (min-width: 411px) and (max-width: 640px){
+@media screen and (min-width: 410px) and (max-width: 640px){
     /*Celular Smartphone*/
 
     nav {
@@ -305,6 +320,11 @@ button:hover{
 
     .font_logo{
         font-size: 32px;
+    }
+
+    nav li {
+        margin-left: 0px;
+        margin-right: 0px;
     }
 
     li .login{
@@ -316,27 +336,15 @@ button:hover{
         display: none;
     }
 
-    .lado_esquerdo{
-        width: 100%;
-        margin-top: 10%;
-    } 
-
     .frase_negrito{
         font-size: 18px;
-        width: 87%;
-    }
-    
-    /* Lado direito */
-    
-    .lado_direito{
-        width: 100%;
-        margin: auto;
-        margin-top: 7%;
+        padding-top: 10%;
+        padding-bottom: 7%;
     }
 
     .quadro_cinza{
         width: 80%;
-        height: 105vh;
+        height: 175vh;
         margin:  auto auto 10%;
     }
 
@@ -358,8 +366,35 @@ button:hover{
         width: 80%;
     }
 
-    .quadrado_cinza_esquerdo, .quadrado_cinza_direito{
-        width: 100%;
+    .input_user{
+        background: none;
+        border: none;
+        border-bottom: 1.5px solid black;
+        outline: none;
+        font-size: 15px;
+        width: 90%;
+        letter-spacing: 2px;
+        margin-bottom: 7%;
+        margin-top: 7%;
+    }
+    
+    .label_input{
+        position: absolute;
+        top: 0px;
+        left: 15px;
+        pointer-events: none;
+        transition: .5px;
+        margin-top: 6%;
+        font-size: 14.5px;
+    }
+    
+    .input_user:focus ~ .label_input,
+    .input_user:valid ~ .label_input{
+        top: -20px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #0A3D62;
+        padding-top: 2%;
     }
 
     input::placeholder{
@@ -370,7 +405,7 @@ button:hover{
     
 }
 
-@media screen and (min-width: 641px) and (max-width: 900px){
+@media screen and (min-width: 641px) and (max-width: 770px){
     /* Celular/tablet */
 
     .menu_invisivel{
@@ -385,16 +420,10 @@ button:hover{
         margin-left: 25%;
     }
 
-     /* Lado esquerdo */
-
-    .lado_esquerdo{
-        width: 100%;
-        margin-top: 10%;
-    }
-
     .frase_negrito{
         font-size: 19px;
-        width: 70%;
+        padding-top: 5%;
+        padding-bottom: 5%;
     }
 
     .div_negrito{
@@ -403,19 +432,81 @@ button:hover{
         font-weight: 700;
         font-size: 17.5px;
     }
-    
-/* Lado direito */
-
-.lado_direito{
-    width: 100%;
-    margin: auto;
-    margin-top: 7%;
-}
 
 .quadro_cinza{
-    width: 80%;
-    height: 68vh;
+    width: 76%;
+    height: 146vh;
     margin-bottom: 10%;
+}
+
+.input_user{
+    background: none;
+    border: none;
+    border-bottom: 1.5px solid black;
+    outline: none;
+    font-size: 15px;
+    width: 90%;
+    letter-spacing: 2px;
+    margin-bottom: 5%;
+    margin-top: 3%;
+}
+
+.label_input{
+    margin-top: 2%;
+    font-size: 14.5px;
+}
+
+}
+
+@media screen and (min-width: 771px) and (max-width: 900px){
+    /* Celular/tablet */
+
+    .menu_invisivel{
+        display: none;
+    }
+
+    li .login{
+        margin-left: 170%;
+    }
+
+    li .menu_adm{
+        margin-left: 25%;
+    }
+
+    .frase_negrito{
+        font-size: 19px;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    .div_negrito{
+        padding-top: 8.5%;
+        text-align: center;
+        font-weight: 700;
+        font-size: 17.5px;
+    }
+
+.quadro_cinza{
+    width: 74%;
+    height: 165vh;
+    margin-bottom: 10%;
+}
+
+.input_user{
+    background: none;
+    border: none;
+    border-bottom: 1.5px solid black;
+    outline: none;
+    font-size: 15px;
+    width: 90%;
+    letter-spacing: 2px;
+    margin-bottom: 5%;
+    margin-top: 3%;
+}
+
+.label_input{
+    margin-top: 2%;
+    font-size: 14.5px;
 }
 
 
@@ -436,53 +527,33 @@ button:hover{
         margin-left: 25%;
     }
 
-    .lado_esquerdo{
-        float: left;
-        width: 50%;
-        margin-top: 7%;
-    }
-
     .frase_negrito{
         font-size: 20px;
-        width: 85%;
-    }
-    
-    /* Lado direito */
-    
-    .lado_direito{
-        float: right;
-        width: 50%;
-        margin: auto;
-        margin-top: 7%;
+        padding-top: 4%;
+        padding-bottom: 4%;
     }
     
     .quadro_cinza{
-        width: 80%;
-        height: 110vh;
+        width: 72%;
+        height: 175vh;
         margin-bottom: 10%;
     }
 
-    .quadrado_cinza_esquerdo{
-        float: left;
-        width: 100%;
-        margin: auto;
+    .input_user{
+        background: none;
+        border: none;
+        border-bottom: 1.5px solid black;
+        outline: none;
+        font-size: 15px;
+        width: 90%;
+        letter-spacing: 2px;
+        margin-bottom: 5%;
+        margin-top: 3%;
     }
     
-    .quadrado_cinza_direito{
-        float: left;
-        width: 100%;
-        margin: auto;
-    }
-
-    .input_login{
-        font-family: 'Noto Sans JP', sans-serif;
-        background-color: #0A3D62;
-        border: none;
-        height: 20px;
-        width: 95%;
-        border-radius: 10px;
-        color: #ffffff;
-        font-weight: 500;
+    .label_input{
+        margin-top: 2%;
+        font-size: 14.5px;
     }
     
 }
@@ -503,29 +574,28 @@ button:hover{
         /* margin-left: 60%; */
     }
 
-    .lado_esquerdo{
-        float: left;
-        width: 50%;
-        margin-top: 7%;
-    }
-
     .frase_negrito{
         font-size: 21px;
-        width: 88%;
+        padding-top: 4%;
+        padding-bottom: 4%;
     }
 
-    .lado_direito{
-        float: right;
-        width: 50%;
-        margin: auto;
-        margin-top: 7%;
-    }
-    
-    /* Lado direito */
     
     .quadro_cinza{
-        width: 80%;
-        height: 70vh;
+        width: 57%;
+        height: 195vh;
+        margin-bottom: 10%;
+    }
+
+    .input_user{
+        margin-bottom: 5%;
+        margin-top: 3%;
+    }
+    
+    .label_input{
+        margin-top: 2%;
+        font-size: 14.5px;
+        left: 20px;
     }
 
     .input_login{
@@ -588,74 +658,30 @@ button:hover{
         margin: auto;
     }
     
-    /* Lado esquerdo */
-    
-    .lado_esquerdo{
-        float:left;
-        width: 50%;
-        margin: auto;
-        margin-top: 7%;
-    }
-    
     .frase_negrito{
         font-weight: 700;
         font-size: 20px;
-        text-align: left;
-        display: block;
-        width: 85%;
-        padding-bottom: 5%;
+        padding-top: 4%;
+        padding-bottom: 4%;
     }
     
     .img_login{
         width: 70%;
     }
     
-    /* Lado direito */
-    
-    .lado_direito{
-        float: right;
-        width: 50%;
-        margin: auto;
-        margin-top: 7%;
-    }
-    
-    
     .quadro_cinza{
-        width: 90%;
-        height: 72vh;
-        margin: auto;
-        background-color: #C4C4C4;
-        box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.8);
-        border-radius: 10px;
+        width: 55%;
+        height: 170vh;
+        margin-bottom: 10%;
     }
     
     form{
         text-align: center;
     }
-    
-    .div_negrito{
-        padding-top: 15%;
-        text-align: center;
-    }
-    
-    .cad_usuario {
-        font-weight: 700;
-        font-size: 19.5px;
-        color: #ffffff;
-        background-color: #0A3D62;
-        padding: 3px 10px;
-        border-radius: 10px;
-    }
-    
+
     .p_dados{
         text-align: center;
         padding-top: 2%;
-    }
-    
-    .quadrado_cinza_esquerdo{
-        float: left;
-        width: 50%;
-        margin: auto;
     }
     
     .div_centralizando{
@@ -664,28 +690,30 @@ button:hover{
         text-align: center;
     }
     
-    .quadrado_cinza_direito{
-        float: left;
-        width: 50%;
-        margin: auto;
+    .input_box{
+        position: relative;
     }
     
+    .input_user{
+        background: none;
+        border: none;
+        border-bottom: 1.5px solid black;
+        outline: none;
+        font-size: 15px;
+        width: 90%;
+        letter-spacing: 2px;
+        margin-bottom: 5%;
+    }
+    
+    .label_input{
+        left: 30px;
+    }
+ 
     .label_negrito{
         font-weight: 500;
         padding-left: 2%;
     }
-    
-    .input_login{
-        font-family: 'Noto Sans JP', sans-serif;
-        background-color: #0A3D62;
-        border: none;
-        height: 20px;
-        border-radius: 10px;
-        color: #ffffff;
-        font-weight: 500;
-        text-align: center;
-    }
-    
+
     input[type=number]::-webkit-inner-spin-button { 
         -webkit-appearance: none;
         
