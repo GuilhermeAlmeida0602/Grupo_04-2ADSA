@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+a {
+    color: inherit
+}
+
+header {
+    overflow: auto;
+    margin-bottom: 2%;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+    height: 1px;
+}
+
+.font-logo {
+    font-weight: 900;
+    font-size: 40px;
+    color: #0A3D62;
+    float: left;
+}
+
+.btn_boasVindas {
+    border-radius: 10px;
+    background-color: #0A3D62;
+    padding: 13.66px;
+    font-weight: 700;
+    color: white;
+    text-transform: none;
+    float: right;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    border: none;
+    margin-top: 0.8%;
+    margin-right: 1.5%;
+
+}
+
+.btn_boasVindas:hover {
+    background: #184f75;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+.div-contatos {
+    margin: auto;
+    color: #0A3D62;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    text-align: center;
+}
+
+.txtUC {
+    margin-bottom: -30px;
+}
+
+#linha-horizontal {
+    width: 430px;
+    display: inline-block;
+    border: 2px solid #0A3D62;
+    background-color: #0A3D62;
+
+}
+
+.div-conteudo {
+    height: 400px;
+    width: 100%;
+    margin-top: 20px;
+    border: 3px solid #0A3D62;
+    box-sizing: border-box;
+    border-radius: 21px;
+
+}
+
+.div-usuarios {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 91%;
+    height: max-content;
+    display: block;
+    text-align: start;
+    border: 1.5px solid #0A3D62;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.info-usuario {
+    border-right: #0A3D62 solid 3px;
+    width: 32%;
+    display: inline-block;
+}
+
+.nome_usuario {
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: 00;
+}
