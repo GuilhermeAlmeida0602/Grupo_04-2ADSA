@@ -22,55 +22,6 @@ body, html{
 }
 
 
-.img_principal{
-    height: 110vh;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.img_principal img{
-    width: 100%;
-    height: 80%;
-}
-
-.foto_principal{
-    position: absolute;
-    top: 15vh;
-    opacity: 0;
-    animation-name: animacao;
-    animation-duration: 20s;
-    animation-iteration-count: infinite;
-}
-
-.foto_principal:nth-child(1){
-
-}
-
-.foto_principal:nth-child(2){
-    animation-delay: 5s;
-}
-
-.foto_principal:nth-child(3){
-    animation-delay: 10s;
-}
-
-.foto_principal:nth-child(4){
-    animation-delay: 15s;
-}
-
-@keyframes animacao{
-    25%{
-        opacity: 1;
-        transform: scale(1.1,1.1);
-    }
-
-    50%{
-        opacity: 0;
-    }
-
-}
-
 .container_menu{
     width: 80%;
     margin: auto;
@@ -131,9 +82,32 @@ a:hover{
     width: 100%;
 }
 
-.linha{
-    background-color: black;
-    height: 2px;
+.home{
+    height: 82vh;
+}
+
+.titulo-home{
+    font-size: 32px;
+    width: 25vw;
+    float: left;
+    margin: 100px 0 0 120px;
+}
+
+.legenda-home{
+    margin-top: 30px;
+    font-size: 16px;
+    width: 35vw;
+    
+}
+
+.primeira-img{
+    float: right;
+    margin: 100px 120px 0 0;
+}
+
+.primeira-img img{
+    width: 40vw;
+
 }
 
 .slider img{
@@ -151,6 +125,11 @@ a:hover{
 
 }
 
+.container_somos{
+    background-color: #60A3BC;
+    width: 100%;
+}
+
 #sobre{
     height: 39vh;
     text-align: center;
@@ -159,7 +138,7 @@ a:hover{
 }
 
 .sobre_nos h1{
-    padding: 20px;
+    padding: 20px 0 20px 0;
 }
 
 .sobre_nos p{
@@ -174,7 +153,6 @@ a:hover{
 }
 
 .equipe{
-    background-color: #60A3BC;
     height: 128vh;
     margin: auto;
     display: inline-block;
@@ -184,7 +162,6 @@ a:hover{
 .equipe h1{
     text-align: center;
     padding-top: 25px;
-    color: white;
 }
 
 .integrante{
@@ -216,7 +193,7 @@ a:hover{
     border-radius: 50%;
     width: 40%;
     padding: 3%;
-    background-color: #C4C4C4;
+    background-color: #60A3BC;
 }
 
 .icons img{
@@ -227,11 +204,13 @@ a:hover{
 .containe_servicos{
     width: 80%;
     margin: auto;
+
 }
 
 #servicos{
+    background-color: #60A3BC;
     text-align: center;
-    height: 55vh;
+    height: 60vh;
     margin: auto;
     display: inline-block;
     width: 100%;
@@ -260,7 +239,6 @@ a:hover{
 }
 
 #beneficios{
-    background-color: #3C6382;
     height: 70vh;
     margin: auto;
     display: inline-block;
@@ -270,8 +248,7 @@ a:hover{
 
 #beneficios h1{
     text-align: center;
-    padding: 2.5% 0 6% 0;
-    color: white;
+    padding: 2.5% 0 4% 0;
 }
 
 .class_beneficio{
@@ -280,8 +257,6 @@ a:hover{
 
 #beneficios p{
     width: 35vw;
-    color: white;
-    /* padding-top: 30px; */
     text-align: justify;
     float: left;
     width: 50%;
@@ -289,7 +264,7 @@ a:hover{
 
 #beneficios img{
     width: 7vw;
-    padding-top: 50px;
+    padding-top: 20px;
     padding-left: 70px;
     vertical-align: middle;
 }
@@ -305,11 +280,6 @@ a:hover{
     display: inline-block;
     width: 100%;
 }
-
-/* #contato h1{
-    padding: 40px;
-    text-align: center;
-} */
 
 .container_tele{
     margin: 5% auto;
@@ -363,7 +333,7 @@ a:hover{
 }
 
 .fomulario{
-    padding:60px 0 0 0px;
+    padding:40px 0 0 0px;
     width: 80%;
 }
 
@@ -402,6 +372,7 @@ a:hover{
     outline: none;
     font-size: 15px;
     width: 100%;
+    height: 100px;
     letter-spacing: 2px;
 }
 
@@ -425,7 +396,7 @@ a:hover{
     background: #165c8f;
     width: 100%;
     border: none;
-    padding: 15px;
+    padding: 10px;
     color: white;
     font-size: 15px;
     cursor: pointer;
@@ -448,7 +419,7 @@ a:hover{
 .container-contato{
     background-color: #3C6382;
     width: 80%;
-    height: 90vh;
+    height: 80%;
     margin-top: 10vh;
     border-radius: 20px;
     display: flex;
@@ -456,10 +427,11 @@ a:hover{
 }
 
 .form-contato{
+    margin-top: 2%;
     font-size: 16px;
     background-color: rgb(197, 197, 197);
     width: 40%;
-    height: 80%;
+    height: 90%;
     border-radius: 20px;
     box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.9);
 
@@ -510,9 +482,9 @@ footer{
 }
 
 
-/*  */
+/* Responsividade @media */
 
-@media screen and (min-width: 300px) and (max-width: 500px){
+/* @media screen and (min-width: 300px) and (max-width: 500px){
    
     .img_principal{
         height: 60vh;
@@ -532,7 +504,6 @@ footer{
         float: left;
         margin-left: 0; 
         margin-right: 0;
-        /* margin-top: 10px; */
     
     }
 
@@ -1142,7 +1113,6 @@ footer{
     #beneficios p{
         width: 45%;
         float: left;
-        /* padding: 5% 0 0 5%; */
     }
 
 
@@ -1417,7 +1387,6 @@ footer{
     #beneficios p{
         width: 35vw;
         color: white;
-        /* padding-top: 30px; */
         text-align: justify;
         float: left;
         width: 50%;
@@ -1563,7 +1532,6 @@ footer{
     }
     
     #submit:hover{
-        /* background-image: linear-gradient(to right, rgb(0,80,192), rgb(80,19,195)); */
         background-color: black;
         transition: 3s;
     }
@@ -1578,5 +1546,5 @@ footer{
     footer p{
         padding: 11px 0 11px 0;
     }
-}
+} */
 
