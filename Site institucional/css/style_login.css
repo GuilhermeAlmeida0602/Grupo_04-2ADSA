@@ -97,7 +97,7 @@ li .login{
 
 .quadro_cinza{
     width: 63%;
-    height: 56vh;
+    padding-bottom: 6%;
     margin: auto;
     background-color: #C4C4C4;
     box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.8);
@@ -142,12 +142,45 @@ input:focus{
     margin-top: 12%;
     color: #ffffff;
     font-weight: 700;
-    background-color: #60A3BC;
+    background-color: #3c6382;
     border: none;
     height: 30px;
     width: 45%;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.input_box{
+    position: relative;
+}
+
+.label_input{
+    position: absolute;
+    top: 0px;
+    left: 40px;
+    pointer-events: none;
+    transition: .5px;
+    margin-top: 2%;
+}
+
+.input_user{
+    background: none;
+    border: none;
+    border-bottom: 3px solid #3c6382;
+    outline: none;
+    font-size: 15px;
+    width: 75%;
+    letter-spacing: 2px;
+    margin-bottom: 6%;
+    margin-top: 4%;
+}
+
+.input_user:focus ~ .label_input,
+.input_user:valid ~ .label_input{
+    top: -20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #0A3D62;
 }
 
 .div_suporte{
@@ -211,7 +244,6 @@ input:focus{
     
     .quadro_cinza{
         width: 75%;
-        height: 57vh;
         margin:  auto auto 10%;
     }
 
@@ -274,7 +306,6 @@ input:focus{
 
     .quadro_cinza{
         width: 75%;
-        height: 60vh;
         margin:  auto auto 10%;
     }
 
@@ -335,7 +366,6 @@ input:focus{
 
 .quadro_cinza{
     width: 75%;
-    height: 63vh;
     margin-bottom: 10%;
 }
 
@@ -372,7 +402,6 @@ input:focus{
     
     .quadro_cinza{
         width: 63%;
-        height: 56vh;
     }
 
     .input_login{
@@ -420,7 +449,6 @@ input:focus{
     
     .quadro_cinza{
         width: 63%;
-        height: 56vh;
     }
 }
 

@@ -41,13 +41,23 @@
                     <div class="div_negrito">Acesso</div>
 
                     <div class="div_centralizando">
-                        <label class="label_negrito">Login</label>
-                        <input type="text" class="input_login" name="login" id="input_login">
-                    </div>
+                        <!-- <label class="label_negrito">Login</label>
+                        <input type="text" class="input_login" name="login" id="input_login"> -->
 
-                    <div class="div_centralizando">
-                        <label class="label_negrito">Senha</label>
-                        <input type="password" class="input_login" name="senha" id="input_senha">
+                        <div class="input_box">
+                            <input type="text" class="input_user" name="login" id="login" autocomplete="off"
+                                required>
+                            <label for="nome" class="label_input">Login</label>
+                        </div>
+
+                        <div class="input_box">
+                            <input type="password" class="input_user" name="senha" id="senha" autocomplete="off"
+                                required>
+                            <label for="nome" class="label_input">Senha</label>
+                        </div>
+
+                        <!-- <label class="label_negrito">Senha</label>
+                        <input type="password" class="input_login" name="senha" id="input_senha"> -->
                         <button class="input_button" onclick="autentificar()">Acessar</button>
                     </div>
                 <!-- </form> -->
