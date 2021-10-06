@@ -17,6 +17,19 @@ header {
     margin-bottom: 2%;
 }
 
+
+::-webkit-scrollbar{
+    width: 5px;
+    
+    background-color: #ffffff00;
+}
+
+
+::-webkit-scrollbar-thumb{
+    background-color: #0A3D62;
+    border-radius: 30px;
+}
+
 .container {
     width: 85%;
     margin: auto;
@@ -74,13 +87,15 @@ header {
 }
 
 .div-conteudo {
-    height: 400px;
-    width: 100%;
+    height: 500px;
+    width: 90%;
     margin-top: 20px;
+    margin: 20px auto;
     border: 3px solid #0A3D62;
     box-sizing: border-box;
     border-radius: 21px;
-
+    overflow:auto;
+    
 }
 
 .div-usuarios {
@@ -94,6 +109,7 @@ header {
     box-sizing: border-box;
     border-radius: 20px;
     padding: 10px;
+
 }
 
 .info-usuario {
@@ -107,3 +123,45 @@ header {
     font-size: 15px;
     font-weight: 00;
 }
+
+.users{
+    margin: 50px 0 0 auto;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 15px;
+    border-color: #0A3D62;
+}
+
+th, td {
+    font-size: 20px;
+    padding: 10px;
+}
+
+th img{
+    width: 50px;
+}
+
+.options{
+    margin: 0 0 0 15vw;
+}
+
+.box-1{
+    float: left;
+}
+
+.box-2{
+    float: right;
+}
+
+.users-2{
+    margin: 50px auto 0 0;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 15px;
+    border-color: #0A3D62;
+}
+
+.options-2{
+    margin: 0 15vw 0 0;
+}
+
