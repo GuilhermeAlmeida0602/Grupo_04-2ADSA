@@ -1,0 +1,30 @@
+.table-totens{
+    background: rgba(196, 196, 196, 0.18);
+    border-radius: 20px;
+    margin: 3% 5% auto 5%;
+}
+
+.table-totens table{
+    width: 100%;
+    text-align: center;
+    
+}
+
+.table-totens a{
+    color: white;
+}
+
+.table-totens table, th, td{
+    border:1px solid black;
+}
+
+.ferramenta{
+    font-size: 24px;
+    margin: 5%;
+    border: 1px solid black;
+    padding: 7%;
+    border-radius: 5px;
+}
+
+
+

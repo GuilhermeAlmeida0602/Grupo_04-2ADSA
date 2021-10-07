@@ -464,7 +464,7 @@ a:hover{
     width: 70%;
     float: left;
     color: rgba(255, 255, 255, 0.623);
-
+    padding-bottom: 10px;
 
 }
 
@@ -476,9 +476,18 @@ a:hover{
 
 
 footer{
-    /* background-color: #0A3D62; */
     height: 7vh;
     text-align: center;
+}
+
+.icons-contato{
+    font-size: 30px;
+    padding-right: 10px;
+}
+
+.box-icons table{
+    padding: 0%;
+    margin: 0%;
 }
 
 
