@@ -14,7 +14,7 @@
     color: white;
 }
 
-.table-totens table, th, td{
+.table-totens table, th{
     border:1px solid black;
 }
 
@@ -24,6 +24,19 @@
     border: 1px solid black;
     padding: 7%;
     border-radius: 5px;
+    background-color: #165c8f;
+}
+
+.alerta{
+    color: goldenrod;
+}
+
+.emergencia{
+    color: red;
+}
+
+.bom{
+    color: green;
 }
 
 
