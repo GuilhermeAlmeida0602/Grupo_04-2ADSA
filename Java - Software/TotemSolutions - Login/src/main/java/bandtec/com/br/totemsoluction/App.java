@@ -20,8 +20,6 @@ public class App {
         // Instanciando um objeto da classe Sistema
         Sistema sistema = looca.getSistema();
 
-
-        // ---------------------------------------------------------------------- //
         // Retornando o Sistema Operacional
         String SO = looca.getSistema().getSistemaOperacional();
 
@@ -41,21 +39,21 @@ public class App {
         Boolean perm = looca.getSistema().getPermissao();
 
         System.out.println("Listando as informações do Sistema da Máquina\n");
-        
+
         System.out.println(sistema);
-        
-        System.out.println("\n_______________________________________\n");
+
+        System.out.println("\n______________________________________\n");
 
         System.out.println("Listando as informações dos Processos da Máquina\n");
-        
+
         ProcessosGroup grupoDeProcessos = looca.getGrupoDeProcessos();
-        
+
         List<Processo> processos = grupoDeProcessos.getProcessos();
 
         for (Processo proc : processos) {
             System.out.println(proc);
         }
-        
-        System.out.println("\n_______________________________________\n");
+
+        System.out.println("\n______________________________________\n");
     }
 }
