@@ -1,0 +1,60 @@
+*{
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: auto;
+
+}
+
+.quadros{
+    /* background-color: rgb(192, 192, 192); */
+    width: 45%;
+    height: 45vh;
+    margin: 40px 0 0 20px;
+}
+
+.componentes{
+    background: rgba(196, 196, 196, 0.5);
+    width: 30%;
+    padding-bottom: 9%;
+    float: left;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.75);
+    text-align: center;
+    
+}
+
+.componentes p{
+    font-weight: bold;
+    font-size: 29px;
+    line-height: 42px;
+    margin-top: 25%;
+
+}
+
+a{
+    color: black;
+}
+
+.kit{
+    background: #c4c4c4;
+    box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.75);
+    border-radius: 15px;
+    width: 70%;
+    padding-bottom: 6%;
+    float: left;
+    margin: 0 0 0 20px;
+}
+
+.kit button{
+    width: 45%;
+    height: 5vh;
+    margin: 45px 0 0 20px;   
+    border-radius: 10px;
+    background: #0a3d62;
+    color: white;
+    line-height: 29px;
+    font-size: 20px;
+    font-weight: bold; 
+    font-style: normal;
+    
+}
