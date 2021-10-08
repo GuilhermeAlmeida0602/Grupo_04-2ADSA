@@ -55,5 +55,23 @@ public class App {
         }
 
         System.out.println("\n______________________________________\n");
+
+        DiscosGroup grupoDeDiscos = looca.getGrupoDeDiscos();
+
+        List<Disco> discos = grupoDeDiscos.getDiscos();
+
+        for (Disco disco : discos) {
+            System.out.println(disco);
+        }
+
+        Long usoMem = looca.getMemoria().getEmUso();
+        Integer usoMemConvert = usoMem.intValue();
+
+        Double usoProc = looca.getProcessador().getUso();
+        Integer procXXX = usoProc.intValue();
+
+        System.out.println(procXXX);
+        System.out.println(usoMemConvert);
+
     }
 }
