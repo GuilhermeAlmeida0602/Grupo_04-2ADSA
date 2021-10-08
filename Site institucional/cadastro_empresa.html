@@ -39,26 +39,36 @@
                 <!-- <form action=""> -->
 
                 <div id="invisivel_etapa1">
-                    <p class="p_dados">Dados da empresa</p>
+                    <p class="p_dados">Informações da empresa</p>
                     <div class="div_centralizando">
                         <div class="input_box">
                             <input type="text" class="input_user" name="empresa" autocomplete="off" required>
-                            <label for="nome" class="label_input">Nome da Empresa</label>
+                            <label for="nomeEmpresa" class="label_input">Nome da Empresa</label>
                         </div>
 
                         <div class="input_box">
                             <input type="text" class="input_user" name="cnpj" autocomplete="off" required>
-                            <label for="nome" class="label_input">CNPJ</label>
+                            <label for="cnpj" class="label_input">CNPJ</label>
+                        </div>
+
+                        <div class="input_box">
+                            <input type="text" class="input_user" name="nomeResponsavel" autocomplete="off" required>
+                            <label for="nomeResponsavel" class="label_input">Nome do responsável</label>
+                        </div>
+
+                        <div class="input_box">
+                            <input type="text" class="input_user" name="Telefone" autocomplete="off" required>
+                            <label for="telefone" class="label_input">Telefone</label>
                         </div>
 
                         <div class="input_box">
                             <input type="email" class="input_user" name="email" autocomplete="off" required>
-                            <label for="nome" class="label_input">Email da empresa</label>
+                            <label for="email" class="label_input">Email da empresa</label>
                         </div>
 
                         <div class="input_box">
                             <input type="password" class="input_user" name="senha" autocomplete="off" required>
-                            <label for="nome" class="label_input">Senha</label>
+                            <label for="senha" class="label_input">Senha</label>
                         </div>
 
                         <div class="input_box">
@@ -67,11 +77,11 @@
                             <label for="nome" class="label_input">Confirmação de senha</label>
                         </div>
                     </div>
-                    <button class="input_button" onclick="etapa1Cadastro()">Dados do endereço</button>
+                    <button class="input_button" onclick="etapa1Cadastro()">Próxima etapa</button>
                 </div>
 
                 <div id="invisivel_etapa2">
-                    <p class="p_dados">Dados do endereço</p>
+                    <p class="p_dados">Informações do endereço</p>
                     <div class="div_centralizando">
                         <div class="input_box">
                             <input type="text" class="input_user" name="cep" id="cep" autocomplete="off" required>
@@ -112,7 +122,7 @@
                             <label for="nome" class="label_input">UF</label>
                         </div>
                     </div>
-                    <button type="submit" class="input_button" onclick="etapa2Cadastro()">Dados da empresa</button>
+                    <button type="submit" class="input_button" onclick="etapa2Cadastro()">Etapa anterior</button>
                     <button type="submit" class="input_button" onclick="cadastrar()">Finalizar Cadastro</button>
                 </div>
                 <!-- </form> -->
