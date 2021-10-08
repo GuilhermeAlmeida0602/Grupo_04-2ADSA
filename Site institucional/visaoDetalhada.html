@@ -61,73 +61,88 @@
         </ul>
     </div>
     <section class="home-section">
+
         <div class="text">Totem</div>
         <div class="sub-text">Visão detalhada</div>
         <div class="user-text">Olá Analista</div>
 
+        <div class="container_grafico">
 
-        <div class="desenpenho">
+            <div class="desempenho">
 
-            <div class="quadros">
+                <div class="quadros">
 
-                <!-- Quadro Cpu -->
+                    <!-- Quadro Cpu -->
 
-                <a href="">
+                    <a href="">
 
-                    <div class="componentes">
+                        <div class="componentes">
 
-                        <p>CPU</p>
+                            <p>CPU</p>
 
-                    </div>
+                        </div>
 
-                </a>
+                    </a>
 
-                <!-- Fim quadro cpu  -->
+                    <!-- Fim quadro cpu  -->
 
-                <!-- Quadro Ram  -->
+                    <!-- Quadro Ram  -->
 
-                <a href="">
+                    <a href="">
 
-                    <div class="componentes">
-    
-                        <p>RAM</p>
-    
-                    </div>
+                        <div class="componentes">
 
-                </a>
+                            <p>RAM</p>
 
-                <!-- Fim quadro Ram  -->
+                        </div>
 
-                <!-- Quadro hd -->
+                    </a>
 
-                <a href="">
+                    <!-- Fim quadro Ram  -->
 
-                    <div class="componentes">
+                    <!-- Quadro hd -->
 
-                        <p>HD</p>
+                    <a href="">
 
-                    </div>
+                        <div class="componentes">
 
-                </a>
+                            <p>HD</p>
 
-                <!-- fim quadro hd -->
+                        </div>
 
-                <a href="">
+                    </a>
 
-                    <div class="componentes">
+                    <!-- fim quadro hd -->
 
-                        <p>Processos</p>
-    
-                    </div>
+                    <a href="">
 
-                </a>
+                        <div class="componentes">
+
+                            <p>Processos</p>
+
+                        </div>
+
+                    </a>
 
 
+
+
+                </div>
 
 
             </div>
 
+            <div class="grafico">
+
+                <div class="meu-grafico">
+                    <canvas id="myChart"></canvas>
+                </div>
+
+            </div>
+
         </div>
+
+
 
         <div class="kit">
 
@@ -171,3 +186,61 @@
 </body>
 
 </html>
+
+<script>
+
+    var ctx = document.getElementById('myChart');
+
+   
+    var meuGrafico = new Chart(ctx, {
+    
+        type: 'line',
+
+        data: {
+            labels: ["jan", "fev", "mar", "abr", "mai", "jun"],
+            datasets: [
+            {
+                label: "Rendimentos 2021",
+                data: [6000, 2000, 5000, 4000, 11000, 9000],
+                borderWidth: 10,
+
+                borderColor: 'rgba(230, 0, 90, .5)',
+                backgroundColor: 'transparent',
+            },
+
+            {
+                type: 'line',
+                label: "Rendimentos 2020",
+                data: [4000, 11000, 6000, 6000, 2000, 7000],
+                borderWidth: 10,
+                borderColor: 'rgba(50, 185, 205, .5)',
+                backgroundColor: 'transparent'
+            }
+            ]
+        },
+        
+        options: {
+            
+            title: {
+                display: true,
+                fontSize: 20,
+                text: "Meus rendimentos",
+                position: 'top',
+            },
+            legend: {
+                display: true,
+                reverse: true,
+                position: 'right'
+            },
+            layout: {
+            padding: {
+                left: 50,
+                top: 50
+            },
+           
+        }
+        }
+    })
+
+    Chart.defaults.global.defaultFontColor = "#f0f";
+</script>
