@@ -6,122 +6,192 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/usuarios_cadastrados.css">
+    <link rel="stylesheet" href="css/menu_style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
+    <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon" />
     <title>Usuários Cadastrados</title>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <a href="index.html">
-                <h1 class="font-logo">InfoSystems</h1>
-            </a>
-            <button class="btn_boasVindas">Olá, ADM</button>
-        </header>
 
-        <section>
-            <div class="div-contatos">
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name"><a href="index.html" class="nav-list">InfoSystem</a></div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="cadastro_usuario.html">
+                    <i class="fas fa-user"></i>
+                    <span class="links_name">Criar usuário</span>
+                </a>
+                <span class="tooltip">Criar usuário</span>
+            </li>
+            <li>
+                <a href="usuarios_cadastrados.html">
+                    <i class="fas fa-users"></i>
+                    <span class="links_name">Cadastros</span>
+                </a>
+                <span class="tooltip">Cadastros</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-headset"></i>
+                    <span class="links_name">Suporte</span>
+                </a>
+                <span class="tooltip">Suporte</span>
+            </li>
 
-                <p class="txtUC">Usuários do nosso sistema</p>
-
-                <div id="linha-horizontal"></div>
-
-                <div class="div-conteudo">
-
-                    <div class="box-1">
-
-                        <table class="users">
-
-                            <tr>
-                                <th><img src="Imagens/usuario-masculino.png" alt=""></th>
-                                <td>John Doe</td>
-                            </tr>
-
-                            <tr>
-                                <th><img src="Imagens/email_icon.png" alt=""></th>
-                                <td>john.doe@example.com</td>
-                            </tr>
-
-                            <tr>
-                                <th><img src="Imagens/telephone.png" alt=""></th>
-                                <td>123-45-678</td>
-                            </tr>
-
-                            <tr>
-                                <th><img src="Imagens/cracha-de-identificacao.png" alt=""></th>
-                                <td>212-00-546</td>
-                            </tr>
-
-                        </table>
-
-                        <table class="options">
-
-                            <tr>
-                                <th><img src="Imagens/trash.png" alt=""></th>
-                                <td>Excluir</td>
-                                <th><img src="Imagens/ferramenta-lapis.png" alt=""></th>
-                                <td>Modificar</td>
-                            </tr>
-
-                        </table>
-
-                    </div>
-
-
-
-                    <!-- 2 COLUNA -->
-
-                    <div class="box-2">
-
-                        <table class="users-2">
-
-                            <tr>
-                                <th><img src="Imagens/usuario-masculino.png" alt=""></th>
-                                <td>John Doe</td>
-                            </tr>
-
-                            <tr>
-                                <th><img src="Imagens/email_icon.png" alt=""></th>
-                                <td>john.doe@example.com</td>
-                            </tr>
-
-                            <tr>
-                                <th><img src="Imagens/telephone.png" alt=""></th>
-                                <td>123-45-678</td>
-                            </tr>
-
-                            <tr>
-                                <th><img src="Imagens/cracha-de-identificacao.png" alt=""></th>
-                                <td>212-00-546</td>
-                            </tr>
-
-                        </table>
-
-
-                        <table class="options-2">
-
-                            <tr>
-                                <th><img src="Imagens/trash.png" alt=""></th>
-                                <td>Excluir</td>
-                                <th><img src="Imagens/ferramenta-lapis.png" alt=""></th>
-                                <td>Modificar</td>
-                            </tr>
-
-                        </table>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
+            <li class="profile">
+                <a href="#">
+                    <i class='bx bx-log-out' id="log_out"></i>
+                    <span class="links_name">Logout</span>
+                </a>
+                <span class="tooltip">Logout</span>
+            </li>
+        </ul>
     </div>
+    <section class="home-section">
+        <div class="text">Usuários cadastrados</div>
+        <div class="user-session">Olá adm!</div>
+
+        <div class="container">
+
+            <section>
+                <div class="div-contatos">
+                    <p class="txtUC">Lista de usuários</p>
+                    <div id="linha-horizontal"></div>
+                    <div class="div-conteudo">
+                        <div class="box-1">
+                            <table class="users">
+                                <tr>
+                                    <th><i class="fas fa-id-card"></i></th>
+                                    <td>212-00-546</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fas fa-user"></i></th>
+                                    <td>John Doe</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="far fa-envelope"></i></th>
+                                    <td>john.doe@example.com</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fas fa-phone"></i></th>
+                                    <td>123-45-678</td>
+                                </tr>
+                                <table class="options">
+                                    <tr>
+                                        <td><i class="fas fa-trash-alt"></i> Excluir</td>
+                                        <td><i class="fas fa-edit"></i> Editar</td>
+                                    </tr>
+                                </table>
+                            </table>
+                        </div>
+                        <div class="box-2">
+                            <table class="users-2">
+                                <tr>
+                                    <th><i class="fas fa-id-card"></i></th>
+                                    <td>212-00-546</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fas fa-user"></i></th>
+                                    <td>John Doe</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="far fa-envelope"></i></th>
+                                    <td>john.doe@example.com</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fas fa-phone"></i></th>
+                                    <td>123-45-678</td>
+                                </tr>
+                                <table class="options">
+                                    <tr>
+                                        <td><i class="fas fa-trash-alt"></i> Excluir</td>
+                                        <td><i class="fas fa-edit"></i> Editar</td>
+                                    </tr>
+                                </table>
+                            </table>
+                        </div>
+
+                        <div class="box-1">
+
+                            <table class="users">
+                                <tr>
+                                    <th><i class="fas fa-id-card"></i></th>
+                                    <td>212-00-546</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fas fa-user"></i></th>
+                                    <td>John Doe</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="far fa-envelope"></i></th>
+                                    <td>john.doe@example.com</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fas fa-phone"></i></th>
+                                    <td>123-45-678</td>
+                                </tr>
+                                <table class="options">
+
+                                    <tr>
+                                        <td><i class="fas fa-trash-alt"></i> Excluir</td>
+                                        <td><i class="fas fa-edit"></i> Editar</td>
+                                    </tr>
+
+                                </table>
+                            </table>
+                        </div>
+
+                        <div class="box-2">
+                            <table class="users-2">
+                                <tr>
+                                    <th><i class="fas fa-id-card"></i></th>
+                                    <td>212-00-546</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fas fa-user"></i></th>
+                                    <td>John Doe</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="far fa-envelope"></i></th>
+                                    <td>john.doe@example.com</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fas fa-phone"></i></th>
+                                    <td>123-45-678</td>
+                                </tr>
+                                <table class="options">
+                                    <tr>
+                                        <td><i class="fas fa-trash-alt"></i> Excluir</td>
+                                        <td><i class="fas fa-edit"></i> Editar</td>
+                                    </tr>
+                                </table>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </section>
+    <script src="JavaScript/js_menu.js"></script>
+    <!-- <script>
+
+        // function cadastrar() {
+    
+        //     window.location.href = "menuAdm.html"
+    
+        // }
+
+    </script> -->
 </body>
 
 </html>

@@ -78,6 +78,10 @@ header {
     display: inline-block;
 }
 
+.imgADM{
+    width: 90%;
+}
+
 /**/
 .divOpcoesBtnAN {
     margin-top: 30px;
@@ -122,11 +126,11 @@ header {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-.divImgAn img{
+/* .divImgAn img{
     position: relative;
     right: 50px;
     height: 250px;
-}
+} */
 
 .divFraseAn {
     position: relative;
@@ -170,11 +174,11 @@ header {
         display: inline-block;
     }
 
-    .divImgAn img{
+    /* .divImgAn img{
         position: relative;
         top: 50px;
         height: 200px;
-    }
+    } */
     .divImgAn h4{
         position: relative;
         font-weight: 550;
@@ -233,12 +237,12 @@ header {
         display: inline-block;
     }
 
-    .divImgAn img{
+    /* .divImgAn img{
         position: relative;
         top: 30px;
         right: 80px;
         height: 170px;
-    }
+    } */
     .divImgAn h4{
         position: relative;
         font-weight: 550;
