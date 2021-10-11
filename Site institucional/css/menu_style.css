@@ -258,10 +258,11 @@
 .home-section{
   position: relative;
   /* background: #E4E9F7; */
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  max-height: 100vh;
   top: 0;
   left: 78px;
-  width: calc(100% - 100px);
+  width: calc(100% - 160px);
   transition: all 0.5s ease;
   z-index: 2;
 }
@@ -291,7 +292,7 @@
   color: #0A3D62;
   font-size: 16px;
   font-weight: 500;
-  margin: 18px 25px;
+  margin: 18px 10vw;
   float: right;
 }
 
