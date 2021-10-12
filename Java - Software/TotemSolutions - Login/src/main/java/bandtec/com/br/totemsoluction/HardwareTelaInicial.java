@@ -14,12 +14,12 @@ import javax.swing.border.Border;
  *
  * @author M.Araujo
  */
-public class HardwarTelaInicial extends javax.swing.JFrame {
+public class HardwareTelaInicial extends javax.swing.JFrame {
 
     /**
      * Creates new form HardwareSo
      */
-    public HardwarTelaInicial() {
+    public HardwareTelaInicial() {
         initComponents();
     }
 
@@ -48,6 +48,7 @@ public class HardwarTelaInicial extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
         setMinimumSize(new java.awt.Dimension(1080, 650));
+        setPreferredSize(new java.awt.Dimension(1302, 564));
 
         jPanel1.setBackground(new java.awt.Color(247, 247, 247));
 
@@ -285,21 +286,23 @@ public class HardwarTelaInicial extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HardwarTelaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HardwareTelaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HardwarTelaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HardwareTelaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HardwarTelaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HardwareTelaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HardwarTelaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HardwareTelaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HardwarTelaInicial().setVisible(true);
+                new HardwareTelaInicial().setVisible(true);
 
             }
 
