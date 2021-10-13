@@ -1,6 +1,6 @@
 *{
     font-family: 'Noto Sans JP', sans-serif;
-    margin: auto;
+     margin: 0;
 
 }
 
@@ -12,7 +12,6 @@
 }
 
 .quadros{
-    /* background-color: rgb(192, 192, 192); */
     width: 80%;
     height: 45vh;
     margin: 10px 0 0 5px;
@@ -85,16 +84,17 @@ a{
 }
 
 .grafico{
-    background-color: red;
-    width: 40%;
+    /* background-color: red; */
+    width: 45%;
     padding-bottom: 9%;
-    /* margin: 0 20px 0 0; */
     
 }
 
 .meu-grafico{
-    width: 10%;
-    /* margin: auto; */
+    /* background-color: red; */
+    width: 45vw;
+    margin: auto;
+    padding-bottom: 9%;
 }
 
 @media only screen and (max-width: 1280px){

@@ -9,12 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
     <link rel="stylesheet" href="css/menu_style.css">
     <link rel="stylesheet" href="css/visaoDetalhada.css">
-    <title>Document</title>
+    <title>Visão detalhada</title>
 </head>
 
-<body>
+<body onload="teste()">
 
     <div class="sidebar">
         <div class="logo-details">
@@ -157,31 +160,6 @@
 
 
     </section>
-    <script>
-        let sidebar = document.querySelector(".sidebar");
-        let closeBtn = document.querySelector("#btn");
-        let searchBtn = document.querySelector(".bx-search");
-
-        closeBtn.addEventListener("click", () => {
-            sidebar.classList.toggle("open");
-            menuBtnChange();//calling the function(optional)
-        });
-
-        searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
-            sidebar.classList.toggle("open");
-            menuBtnChange(); //calling the function(optional)
-        });
-
-        // following are the code to change sidebar button(optional)
-        function menuBtnChange() {
-            if (sidebar.classList.contains("open")) {
-                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
-            } else {
-                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
-            }
-        }
-    </script>
-
 
 </body>
 
@@ -189,58 +167,87 @@
 
 <script>
 
-    var ctx = document.getElementById('myChart');
+    function teste() {
+        var ctx = document.getElementById('myChart');
 
-   
-    var meuGrafico = new Chart(ctx, {
-    
-        type: 'line',
 
-        data: {
-            labels: ["jan", "fev", "mar", "abr", "mai", "jun"],
-            datasets: [
-            {
-                label: "Rendimentos 2021",
-                data: [6000, 2000, 5000, 4000, 11000, 9000],
-                borderWidth: 10,
+        var meuGrafico = new Chart(ctx, {
 
-                borderColor: 'rgba(230, 0, 90, .5)',
-                backgroundColor: 'transparent',
+            type: 'line',
+
+            data: {
+                labels: ["seg", "ter", "qua", "qui", "sex", "sab", "dom"],
+                datasets: [
+                    {
+                        label: "",
+                        data: [6000, 2000, 5000, 4000, 11000, 9000, 1000],
+                        borderWidth: 5,
+
+                        borderColor: 'rgba(230, 0, 90, .5)',
+
+                    },
+
+                    {
+                        type: 'line',
+                        label: "",
+                        data: [4000, 11000, 6000, 6000, 2000, 7000, 5000],
+                        borderWidth: 5,
+                        borderColor: 'cyan',
+
+                    }
+                ]
             },
 
-            {
-                type: 'line',
-                label: "Rendimentos 2020",
-                data: [4000, 11000, 6000, 6000, 2000, 7000],
-                borderWidth: 10,
-                borderColor: 'rgba(50, 185, 205, .5)',
-                backgroundColor: 'transparent'
+            options: {
+
+                // title: {
+                //     display: true,
+                //     fontSize: 20,
+                //     text: "",
+                //     position: 'top',
+                // },
+                legend: {
+                    display: true,
+                    reverse: true,
+                    position: 'right'
+                },
+                layout: {
+                    padding: {
+                        left: 50,
+                        top: 50
+                    },
+
+                }
             }
-            ]
-        },
-        
-        options: {
-            
-            title: {
-                display: true,
-                fontSize: 20,
-                text: "Meus rendimentos",
-                position: 'top',
-            },
-            legend: {
-                display: true,
-                reverse: true,
-                position: 'right'
-            },
-            layout: {
-            padding: {
-                left: 50,
-                top: 50
-            },
-           
-        }
-        }
-    })
+        })
+    }
+    
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+    let searchBtn = document.querySelector(".bx-search");
 
-    Chart.defaults.global.defaultFontColor = "#f0f";
+    closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange();//calling the function(optional)
+    });
+
+    searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+        sidebar.classList.toggle("open");
+        menuBtnChange(); //calling the function(optional)
+    });
+
+    // following are the code to change sidebar button(optional)
+    function menuBtnChange() {
+        if (sidebar.classList.contains("open")) {
+            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+        } else {
+            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
+        }
+    }
+
+
+
+
+
+
 </script>
