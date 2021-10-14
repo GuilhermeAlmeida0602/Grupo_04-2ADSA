@@ -39,13 +39,7 @@
                 </a>
                 <span class="tooltip">Totens</span>
             </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-cog"></i>
-                    <span class="links_name">Configuração</span>
-                </a>
-                <span class="tooltip">Configuração</span>
-            </li>
+
             <li>
                 <a href="#">
                     <i class="fas fa-headset"></i>
@@ -75,11 +69,13 @@
 
                 <div class="quadros">
 
+                    <h1>Desempenho</h1>
+
                     <!-- Quadro Cpu -->
 
                     <a href="">
 
-                        <div class="componentes">
+                        <div class="componentes" id="comp" onclick="seleto()" name="teste">
 
                             <p>CPU</p>
 
@@ -127,9 +123,6 @@
 
                     </a>
 
-
-
-
                 </div>
 
 
@@ -143,20 +136,71 @@
 
             </div>
 
+            <div class="kit_ferramentas">
+
+                <h1>Kit de ferramentas:</h1>
+
+                <a href="">
+
+                    <div class="ferramentas">
+
+                        <p>Emissão de relatorio</p>
+
+                    </div>
+
+                </a>
+
+                <!-- Fim quadro Emissao  -->
+
+                <!-- Quadro Reiniciar  -->
+
+                <a href="" onclick="seleto()">
+
+                    <div class="ferramentas">
+
+                        <p>Reiniciar</p>
+
+                    </div>
+
+                </a>
+
+                <!-- Fim quadro Reiniciar  -->
+
+                <!-- Quadro Encerrar processos -->
+
+                <a href="" onclick="seleto()">
+
+                    <div class="ferramentas">
+
+                        <p>Encerrar Processos</p>
+
+                    </div>
+
+                </a>
+
+                <!-- fim quadro Encerrar processos -->
+
+                <!-- Quadro Informações do hardware -->
+
+                <a href="" onclick="seleto()">
+
+                    <div class="ferramentas">
+
+                        <p>Hardware</p>
+
+                    </div>
+
+                </a>
+
+                <!-- Fim do Informações -->
+
+
+
+
+            </div>
+
         </div>
 
-
-
-        <div class="kit">
-
-            <button>Emissão de relatório</button>
-            <button>Reiniciar</button>
-            <button>Encerrar processos</button>
-            <button>Informações do hadware</button>
-            <button>Limpar cache</button>
-            <button>Atualização do SO</button>
-
-        </div>
 
 
     </section>
@@ -167,61 +211,90 @@
 
 <script>
 
+    
     function teste() {
         var ctx = document.getElementById('myChart');
-
-
+        
+        
         var meuGrafico = new Chart(ctx, {
-
-            type: 'line',
-
+            
+            type: 'bar',
+            
             data: {
-                labels: ["seg", "ter", "qua", "qui", "sex", "sab", "dom"],
+                labels: ["seg", "ter", "qua", "qui", "sex", "sab"],
                 datasets: [
                     {
                         label: "",
                         data: [6000, 2000, 5000, 4000, 11000, 9000, 1000],
                         borderWidth: 5,
-
-                        borderColor: 'rgba(230, 0, 90, .5)',
-
+                        
+                        borderColor: '#0A3D62',
+                        
                     },
-
-                    {
-                        type: 'line',
-                        label: "",
-                        data: [4000, 11000, 6000, 6000, 2000, 7000, 5000],
-                        borderWidth: 5,
-                        borderColor: 'cyan',
-
-                    }
+                    
+                    
                 ]
             },
-
+            
             options: {
-
+                
                 // title: {
-                //     display: true,
-                //     fontSize: 20,
-                //     text: "",
-                //     position: 'top',
-                // },
-                legend: {
-                    display: true,
-                    reverse: true,
-                    position: 'right'
-                },
-                layout: {
-                    padding: {
-                        left: 50,
-                        top: 50
+                    //     display: true,
+                    //     fontSize: 20,
+                    //     text: "",
+                    //     position: 'top',
+                    // },
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                drawOnChartArea: false
+                            }
+                        }],
+                        yAxes: [{
+                            gridLines: {
+                                drawOnChartArea: false
+                            }
+                        }]
                     },
-
+                    legend: {
+                        display: true,
+                        reverse: true,
+                        position: 'bottom'
+                    },
+                    layout: {
+                        padding: {
+                            left: 50,
+                            top: 50
+                        },
+                        
+                    },
+                    
+                    gridLines: {
+                        display: false
+                    },
                 }
-            }
-        })
+            })
+        }
+        
+        function seleto() {
+                        
+            // let el = document.getElementById('comp');
+            
+            // el.classList.remove('componentes');
+            
+            // el.classList.toggle('testando123');
+            
+            // document.comp.style.color = yellow;
+            
+            // comp.style.backgroundColor = `red`;
+            
+            // let compBtn = document.querySelector(".componentes");
+            
+        // compBtn.addEventListener("click", () => {
+        //     compBtn.style.background = red;
+        // })   
     }
-    
+
     let sidebar = document.querySelector(".sidebar");
     let closeBtn = document.querySelector("#btn");
     let searchBtn = document.querySelector(".bx-search");
