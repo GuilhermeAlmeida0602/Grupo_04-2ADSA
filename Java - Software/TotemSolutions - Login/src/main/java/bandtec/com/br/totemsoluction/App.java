@@ -4,6 +4,7 @@ package bandtec.com.br.totemsoluction;
 import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.discos.Disco;
 import com.github.britooo.looca.api.group.discos.DiscosGroup;
+import com.github.britooo.looca.api.group.processador.Processador;
 import com.github.britooo.looca.api.group.processos.Processo;
 import com.github.britooo.looca.api.group.processos.ProcessosGroup;
 import com.github.britooo.looca.api.group.sistema.Sistema;
@@ -63,15 +64,12 @@ public class App {
         for (Disco disco : discos) {
             System.out.println(disco);
         }
+        
+        System.out.println("\n______________________________________\n");
 
-        Long usoMem = looca.getMemoria().getEmUso();
-        Integer usoMemConvert = usoMem.intValue();
-
-        Double usoProc = looca.getProcessador().getUso();
-        Integer procXXX = usoProc.intValue();
-
-        System.out.println(procXXX);
-        System.out.println(usoMemConvert);
-
+        Processador procUm = new Processador();
+        
+        System.out.println(looca.getProcessador());
+        
     }
 }
