@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <link rel="stylesheet" href="css/menu_style.css">
+    <link rel="stylesheet" href="css/visaoDetalhada.css">
+    <title>Visão detalhada</title>
+</head>
+
+<body onload="teste()">
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name">InfoSystem</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="#">
+                    <i class="fas fa-chart-pie"></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-desktop"></i>
+                    <span class="links_name">Totens</span>
+                </a>
+                <span class="tooltip">Totens</span>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fas fa-headset"></i>
+                    <span class="links_name">Suporte</span>
+                </a>
+                <span class="tooltip">Suporte</span>
+            </li>
+
+            <li class="profile">
+                <a href="#">
+                    <i class='bx bx-log-out' id="log_out"></i>
+                    <span class="links_name">Logout</span>
+                </a>
+                <span class="tooltip">Logout</span>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+
+        <div class="text">Totem</div>
+        <div class="sub-text">Visão detalhada</div>
+        <div class="user-text">Olá Analista</div>
+
+        <div class="container_grafico">
+
+            <div class="desempenho">
+
+                <div class="quadros">
+
+                    <h1>Desempenho</h1>
+
+                    <!-- Quadro Cpu -->
+
+                    <a href="">
+
+                        <div class="componentes" id="comp" onclick="seleto()" name="teste">
+
+                            <p>CPU</p>
+
+                        </div>
+
+                    </a>
+
+                    <!-- Fim quadro cpu  -->
+
+                    <!-- Quadro Ram  -->
+
+                    <a href="">
+
+                        <div class="componentes">
+
+                            <p>RAM</p>
+
+                        </div>
+
+                    </a>
+
+                    <!-- Fim quadro Ram  -->
+
+                    <!-- Quadro hd -->
+
+                    <a href="">
+
+                        <div class="componentes">
+
+                            <p>HD</p>
+
+                        </div>
+
+                    </a>
+
+                    <!-- fim quadro hd -->
+
+                    <a href="">
+
+                        <div class="componentes">
+
+                            <p>Processos</p>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+            <div class="grafico">
+
+                <div class="meu-grafico">
+                    <canvas id="myChart"></canvas>
+                </div>
+
+            </div>
+
+            <div class="kit_ferramentas">
+
+                <h1>Kit de ferramentas:</h1>
+
+                <a href="">
+
+                    <div class="ferramentas">
+
+                        <p>Emissão de relatorio</p>
+
+                    </div>
+
+                </a>
+
+                <!-- Fim quadro Emissao  -->
+
+                <!-- Quadro Reiniciar  -->
+
+                <a href="" onclick="seleto()">
+
+                    <div class="ferramentas">
+
+                        <p>Reiniciar</p>
+
+                    </div>
+
+                </a>
+
+                <!-- Fim quadro Reiniciar  -->
+
+                <!-- Quadro Encerrar processos -->
+
+                <a href="" onclick="seleto()">
+
+                    <div class="ferramentas">
+
+                        <p>Encerrar Processos</p>
+
+                    </div>
+
+                </a>
+
+                <!-- fim quadro Encerrar processos -->
+
+                <!-- Quadro Informações do hardware -->
+
+                <a href="" onclick="seleto()">
+
+                    <div class="ferramentas">
+
+                        <p>Hardware</p>
+
+                    </div>
+
+                </a>
+
+                <!-- Fim do Informações -->
+
+
+
+
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+</body>
+
+</html>
+
+<script>
+
+    
+    function teste() {
+        var ctx = document.getElementById('myChart');
+        
+        
+        var meuGrafico = new Chart(ctx, {
+            
+            type: 'bar',
+            
+            data: {
+                labels: ["seg", "ter", "qua", "qui", "sex", "sab"],
+                datasets: [
+                    {
+                        label: "",
+                        data: [6000, 2000, 5000, 4000, 11000, 9000, 1000],
+                        borderWidth: 5,
+                        
+                        borderColor: '#0A3D62',
+                        
+                    },
+                    
+                    
+                ]
+            },
+            
+            options: {
+                
+                // title: {
+                    //     display: true,
+                    //     fontSize: 20,
+                    //     text: "",
+                    //     position: 'top',
+                    // },
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                drawOnChartArea: false
+                            }
+                        }],
+                        yAxes: [{
+                            gridLines: {
+                                drawOnChartArea: false
+                            }
+                        }]
+                    },
+                    legend: {
+                        display: true,
+                        reverse: true,
+                        position: 'bottom'
+                    },
+                    layout: {
+                        padding: {
+                            left: 50,
+                            top: 50
+                        },
+                        
+                    },
+                    
+                    gridLines: {
+                        display: false
+                    },
+                }
+            })
+        }
+        
+        function seleto() {
+                        
+            // let el = document.getElementById('comp');
+            
+            // el.classList.remove('componentes');
+            
+            // el.classList.toggle('testando123');
+            
+            // document.comp.style.color = yellow;
+            
+            // comp.style.backgroundColor = `red`;
+            
+            // let compBtn = document.querySelector(".componentes");
+            
+        // compBtn.addEventListener("click", () => {
+        //     compBtn.style.background = red;
+        // })   
+    }
+
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+    let searchBtn = document.querySelector(".bx-search");
+
+    closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange();//calling the function(optional)
+    });
+
+    searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+        sidebar.classList.toggle("open");
+        menuBtnChange(); //calling the function(optional)
+    });
+
+    // following are the code to change sidebar button(optional)
+    function menuBtnChange() {
+        if (sidebar.classList.contains("open")) {
+            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+        } else {
+            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
+        }
+    }
+
+
+
+
+
+
+</script>

@@ -1,11 +1,10 @@
-* {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-}
+
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
 }
 
 a {
@@ -17,17 +16,12 @@ header {
     margin-bottom: 2%;
 }
 
-
-::-webkit-scrollbar{
-    width: 5px;
-    
-    background-color: #ffffff00;
-}
-
-
-::-webkit-scrollbar-thumb{
-    background-color: #0A3D62;
-    border-radius: 30px;
+.user-session{
+    display: inline-block;
+    color: #0A3D62;
+    font-size: 20px;
+    font-weight:normal;
+    margin: 18px;
 }
 
 .container {
@@ -66,7 +60,7 @@ header {
 }
 
 .div-contatos {
-    margin: auto;
+    margin: 2% auto;
     color: #0A3D62;
     font-style: normal;
     font-weight: 500;
@@ -76,24 +70,26 @@ header {
 
 .txtUC {
     margin-bottom: -30px;
+    font-size: 25px;
 }
 
 #linha-horizontal {
-    width: 430px;
+    width: 250px;
     display: inline-block;
-    border: 2px solid #0A3D62;
-    background-color: #0A3D62;
+    border: 2px solid black; 
+    background-color: black;
+    border-radius: 50px;
 
 }
 
 .div-conteudo {
-    height: 500px;
-    width: 90%;
+    width: 75%;
+    height: 375px;
     margin-top: 20px;
     margin: 20px auto;
     border: 3px solid #0A3D62;
     box-sizing: border-box;
-    border-radius: 21px;
+    border-radius: 8px;
     overflow:auto;
     
 }
@@ -124,44 +120,53 @@ header {
     font-weight: 00;
 }
 
-.users{
-    margin: 50px 0 0 auto;
-    border: 1px solid black;
-    padding: 20px;
+.users, .users-2{
+    margin: 50px auto 10px;
+    padding: 15px;
     border-radius: 15px;
-    border-color: #0A3D62;
+    background: rgba(196, 196, 196, 0.5);
 }
 
-th, td {
-    font-size: 20px;
+i{
+    font-size: 28px;
+    color: #0A3D62;
+}
+
+.users th,td{
+    font-size: 19px;
+    padding: 7px;
+    text-align: left;
+    color: black;
+}
+
+.users-2 th,td{
+    font-size: 19px;
+    padding: 7px;
+    text-align: left; 
+    color: black; 
+}
+
+.options td {
     padding: 10px;
-}
-
-th img{
-    width: 50px;
+    background-color: #C4C4C4;
+    border-radius: 5px;
+    margin: 20px;
+    font-size: 19px;
 }
 
 .options{
-    margin: 0 0 0 15vw;
+    margin: auto;
 }
 
 .box-1{
     float: left;
+    width: 50%;
+    margin: auto;
+
 }
 
 .box-2{
     float: right;
+    width: 50%;
+    margin: auto;
 }
-
-.users-2{
-    margin: 50px auto 0 0;
-    border: 1px solid black;
-    padding: 20px;
-    border-radius: 15px;
-    border-color: #0A3D62;
-}
-
-.options-2{
-    margin: 0 15vw 0 0;
-}
-

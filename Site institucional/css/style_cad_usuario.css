@@ -10,20 +10,29 @@ body {
     margin: auto;
 }
 
-nav{
+/* .user-session{
+    display: inline-block;
+    color: #0A3D62;
+    font-size: 20px;
+    font-weight:normal;
+    margin: 18px;
+    float: right;
+} */
+
+.menu_principal{
     height: 10vh;
     transition: all .5s;
     
 }
 
-ul{
+.menu_principal ul{
     padding: 0.6%;
     list-style: none;
     float: right;
 
 }
 
-nav li {
+.menu_principal li {
     margin-left: 15px;
     margin-right: 10px;
     text-transform: uppercase;
@@ -102,8 +111,9 @@ li .login{
 .quadro_cinza{
     width: 47%;
     padding-bottom: 3%;
-    margin: auto auto 7% auto;
-    background-color: #C4C4C4;
+    margin: 3% auto 5% auto;
+    /* background-color: #C4C4C4; */
+    background: rgba(196, 196, 196, 0.7);
     box-shadow: 15px 17px 4px rgb(10 61 98 / 80%);
     border-radius: 10px;
     text-align: center;
@@ -150,8 +160,8 @@ li .login{
     font-size: 15px;
     width: 90%;
     letter-spacing: 2px;
-    margin-bottom: 5%;
-    margin-top: 3%;
+    margin-bottom: 6%;
+    margin-top: 4%;
 }
 
 .label_input{
@@ -232,20 +242,20 @@ button:hover{
         margin-top: 2%;
     }
 
-    nav li {
+    .menu_principal li {
         margin-left: 0px;
         margin-right: 0px;
         float: none;
         display: inline;
     }
 
-    ul{
+    .menu_principal ul{
         margin-top: 3.8%;
         float: none;
     }
 
 
-    li .login, li .menu_adm{
+    .menu_principal li .login, .menu_principal li .menu_adm{
         padding: 5px 10px 5px 10px;
         font-size: 13px;
         text-align: center;
@@ -343,14 +353,14 @@ button:hover{
         margin-top: 2%;
     }
 
-    nav li {
+    .menu_principal li {
         margin-left: 0px;
         margin-right: 0px;
         float: none;
         display: inline;
     }
 
-    ul{
+    .menu_principal ul{
         margin-top: 3.8%;
         float: none;
     }
@@ -444,15 +454,15 @@ button:hover{
         display: none;
     }
 
-    ul{
+    .menu_principal ul{
         margin-top: 3.8%;
     }
 
-    li .login{
+    .menu_principal li .login{
         margin-left: 0%;
     }
 
-    li .menu_adm{
+    .menu_principal li .menu_adm{
         margin-left: 25%;
     }
 
@@ -487,15 +497,15 @@ button:hover{
         display: none;
     }
 
-    ul{
+    .menu_principal ul{
         margin-top: 3.8%;
     }
 
-    li .login{
+    .menu_principal li .login{
         margin-left: 0%;
     }
 
-    li .menu_adm{
+    .menu_principal li .menu_adm{
         margin-left: 25%;
     }
 
@@ -549,7 +559,7 @@ button:hover{
 @media screen and (min-width: 1091px) and (max-width: 1280px){
     /* Desktop */
 
-    nav li {
+    .menu_principal li {
         margin-left: 5px;
         margin-right: 5px;
         text-transform: uppercase;

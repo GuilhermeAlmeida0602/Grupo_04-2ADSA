@@ -64,12 +64,15 @@ public class LoginPage extends javax.swing.JFrame {
 
         LeftDecoration.setBackground(new java.awt.Color(247, 247, 247));
 
+<<<<<<< HEAD
         lblProduto.setIcon(new javax.swing.ImageIcon("C:\\temp\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\TotemSoluctions.png")); // NOI18N
 
         pessoa.setIcon(new javax.swing.ImageIcon("C:\\temp\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\pessoa.png")); // NOI18N
 
         totem.setIcon(new javax.swing.ImageIcon("C:\\temp\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\totem.png")); // NOI18N
 
+=======
+>>>>>>> 30b01199adcf290b1d4471f9a7054953e1d4d5f8
         javax.swing.GroupLayout LeftDecorationLayout = new javax.swing.GroupLayout(LeftDecoration);
         LeftDecoration.setLayout(LeftDecorationLayout);
         LeftDecorationLayout.setHorizontalGroup(
@@ -102,8 +105,11 @@ public class LoginPage extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(90, 215, 255)));
 
+<<<<<<< HEAD
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\temp\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\user (1).png")); // NOI18N
 
+=======
+>>>>>>> 30b01199adcf290b1d4471f9a7054953e1d4d5f8
         jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(0, 153, 255));
@@ -136,11 +142,18 @@ public class LoginPage extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(90, 215, 255)));
 
+<<<<<<< HEAD
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\temp\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\password.png")); // NOI18N
 
         jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
         jPasswordField1.setText("jPasswordField1");
         jPasswordField1.setBorder(null);
+=======
+        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(0, 153, 255));
+        jTextField2.setBorder(null);
+>>>>>>> 30b01199adcf290b1d4471f9a7054953e1d4d5f8
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -149,9 +162,18 @@ public class LoginPage extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE)
                 .addContainerGap())
+=======
+                .addContainerGap(518, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(60, 60, 60)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
+                    .addContainerGap()))
+>>>>>>> 30b01199adcf290b1d4471f9a7054953e1d4d5f8
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,8 +184,11 @@ public class LoginPage extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+<<<<<<< HEAD
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\temp\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\msgBoasVindas.png")); // NOI18N
 
+=======
+>>>>>>> 30b01199adcf290b1d4471f9a7054953e1d4d5f8
         jButton1.setBackground(new java.awt.Color(35, 135, 195));
         jButton1.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -177,7 +202,7 @@ public class LoginPage extends javax.swing.JFrame {
             .addGroup(RightInputLayout.createSequentialGroup()
                 .addGroup(RightInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(RightInputLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
+                        .addContainerGap(34, Short.MAX_VALUE)
                         .addGroup(RightInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
