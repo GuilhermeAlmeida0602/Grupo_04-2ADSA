@@ -107,11 +107,6 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         btnHardware.setBorder(null);
         btnHardware.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         btnHardware.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        btnHardware.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHardwareActionPerformed(evt);
-            }
-        });
 
         btnSO.setBackground(new java.awt.Color(247, 247, 247));
         btnSO.setForeground(new java.awt.Color(255, 102, 102));
@@ -177,36 +172,6 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnHardwareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHardwareActionPerformed
-        // TODO add your handling code here:
-
-
-
-        //Alternativa pra quebra de linha (pode mesclar as tags)
-        /*
-        Pode puxar os campos que estão na init (na variavel txConteudo)
-        e fazer alterações como tamanho, fonte etc...
-<<<<<<< HEAD
-         */
-
-
-
-
-        btnHardware.setForeground(new java.awt.Color(255, 102, 102));
-
-        btnHardware.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardSO.png")); // NOI18N
-
-        btnHardware.setBorder(null);
-
-        btnHardware.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSOActionPerformed(evt);
-            }
-        });
-
-        // Code adding the component to the parent container - not shown here
-    }//GEN-LAST:event_btnHardwareActionPerformed
-
     private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
         // TODO add your handling code here:
 
@@ -222,7 +187,7 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
 
         btnSO.setForeground(new java.awt.Color(255, 102, 102));
 
-        btnSO.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardSO.png")); // NOI18N
+        // btnSO.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardSO.png")); // NOI18N
 
         btnSO.setBorder(null);
 

@@ -5,16 +5,16 @@
  */
 package bandtec.com.br.totemsoluction;
 
-import java.awt.FlowLayout;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.border.Border;
+import com.github.britooo.looca.api.core.Looca;
+import com.github.britooo.looca.api.group.sistema.Sistema;
 
 /**
  *
  * @author M.Araujo
  */
 public class HardwareSo extends javax.swing.JFrame {
+
+    Looca looca = new Looca();
 
     /**
      * Creates new form HardwareSo
@@ -61,6 +61,11 @@ public class HardwareSo extends javax.swing.JFrame {
         btnSair.setText("SAIR");
         btnSair.setBorder(null);
         btnSair.setFocusPainted(false);
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
         btnVoltar.setBackground(new java.awt.Color(35, 135, 195));
         btnVoltar.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
@@ -176,7 +181,6 @@ public class HardwareSo extends javax.swing.JFrame {
         txConteudo.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         txConteudo.setForeground(new java.awt.Color(35, 135, 195));
         txConteudo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        txConteudo.setText("Teste pipipi (Clica no btn do sistema opracional)");
         txConteudo.setToolTipText("");
         txConteudo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         txConteudo.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -233,52 +237,28 @@ public class HardwareSo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        // TODO add your handling code here:
+        // Código do botão Voltar
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnProcessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessadorActionPerformed
-        // TODO add your handling code here:
+        // Código do botão Processador
     }//GEN-LAST:event_btnProcessadorActionPerformed
 
     private void btnHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHDActionPerformed
-        // TODO add your handling code here:
+        // Código do botão HD
     }//GEN-LAST:event_btnHDActionPerformed
 
+    private void btnMemoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemoriaActionPerformed
+        // Código do botão Memoria
+    }//GEN-LAST:event_btnMemoriaActionPerformed
+
     private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
-        // TODO add your handling code here:
-
-        txConteudo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        txConteudo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-
-        //Alternativa pra quebra de linha (pode mesclar as tags)     
-        /*
-        Pode puxar os campos que estão na init (na variavel txConteudo)
-        e fazer alterações como tamanho, fonte etc...
-         */
-        txConteudo.setText("<html><body>PIPIPI:01<br>PIPIPI:02<br>");
-        txConteudo.setText(txConteudo.getText() + "<body>teste</body></html>");
-
-
-
-        btnSO.setForeground(new java.awt.Color(255, 102, 102));
-
-        btnSO.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardSO.png")); // NOI18N
-
-        btnSO.setBorder(null);
-
-        btnSO.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSOActionPerformed(evt);
-            }
-        });
-
-// Code adding the component to the parent container - not shown here
-
+        // Código do botão SO
     }//GEN-LAST:event_btnSOActionPerformed
 
-    private void btnMemoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemoriaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMemoriaActionPerformed
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        // Código do botão Sair
+    }//GEN-LAST:event_btnSairActionPerformed
 
     /**
      * @param args the command line arguments
