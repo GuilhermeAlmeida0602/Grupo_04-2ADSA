@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bandtec.com.br.totemsoluction;
 
 import java.awt.Image;
@@ -10,15 +5,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-/**
- *
- * @author M.Araujo
- */
+//* @author M.Araujo
+ 
 public class LoginPage extends javax.swing.JFrame {
 
-    /**
-     * Creates new form LoginPage
-     */
+    // Creates new form LoginPage
+     
     public LoginPage() {
         initComponents();
     }
@@ -51,7 +43,7 @@ public class LoginPage extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
@@ -63,6 +55,12 @@ public class LoginPage extends javax.swing.JFrame {
         Janela.setBackground(new java.awt.Color(247, 247, 247));
 
         LeftDecoration.setBackground(new java.awt.Color(247, 247, 247));
+
+        lblProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TotemSoluctions.png"))); // NOI18N
+
+        pessoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pessoa.png"))); // NOI18N
+
+        totem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/totem.png"))); // NOI18N
 
         javax.swing.GroupLayout LeftDecorationLayout = new javax.swing.GroupLayout(LeftDecoration);
         LeftDecoration.setLayout(LeftDecorationLayout);
@@ -96,6 +94,8 @@ public class LoginPage extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(90, 215, 255)));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user (1).png"))); // NOI18N
+
         jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(0, 153, 255));
         jTextField1.setBorder(null);
@@ -127,6 +127,8 @@ public class LoginPage extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(90, 215, 255)));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/password.png"))); // NOI18N
+
         jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(0, 153, 255));
         jTextField2.setBorder(null);
@@ -138,22 +140,20 @@ public class LoginPage extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addContainerGap(518, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(60, 60, 60)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(4, 4, 4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTextField2)
+                .addContainerGap())
         );
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/msgBoasVindas.png"))); // NOI18N
 
         jButton1.setBackground(new java.awt.Color(35, 135, 195));
         jButton1.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
@@ -202,7 +202,7 @@ public class LoginPage extends javax.swing.JFrame {
         JanelaLayout.setHorizontalGroup(
             JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JanelaLayout.createSequentialGroup()
-                .addGap(0, 590, Short.MAX_VALUE)
+                .addGap(0, 558, Short.MAX_VALUE)
                 .addComponent(RightInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(JanelaLayout.createSequentialGroup()
@@ -231,6 +231,7 @@ public class LoginPage extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    // Validação do Login
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (jTextField1.getText().equals("admin") && jTextField2.getText().equals("admin")) {
             new ProcessosTelaInicial().setVisible(true);
@@ -287,7 +288,7 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPasswordField jTextField2;
     private javax.swing.JLabel lblProduto;
     private javax.swing.JLabel pessoa;
     private javax.swing.JLabel totem;
