@@ -74,7 +74,7 @@ public class HardwareProcesso extends javax.swing.JFrame {
 
         header.setBackground(new java.awt.Color(247, 247, 247));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\TotemSoluctions.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TotemSoluctions.png"))); // NOI18N
 
         btnSair.setBackground(new java.awt.Color(35, 135, 195));
         btnSair.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
@@ -98,7 +98,7 @@ public class HardwareProcesso extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(247, 247, 247));
 
         btnMemoria.setForeground(new java.awt.Color(255, 102, 102));
-        btnMemoria.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardMemoria.png")); // NOI18N
+        btnMemoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hardMemoria.png"))); // NOI18N
         btnMemoria.setBorder(null);
         btnMemoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,7 +107,7 @@ public class HardwareProcesso extends javax.swing.JFrame {
         });
 
         btnSO.setForeground(new java.awt.Color(255, 102, 102));
-        btnSO.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardSO.png")); // NOI18N
+        btnSO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hardSO.png"))); // NOI18N
         btnSO.setToolTipText("");
         btnSO.setBorder(null);
         btnSO.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -119,7 +119,7 @@ public class HardwareProcesso extends javax.swing.JFrame {
         });
 
         btnHD.setForeground(new java.awt.Color(255, 102, 102));
-        btnHD.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardHD.png")); // NOI18N
+        btnHD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hardHD.png"))); // NOI18N
         btnHD.setBorder(null);
         btnHD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,7 +128,7 @@ public class HardwareProcesso extends javax.swing.JFrame {
         });
 
         btnProcessador.setForeground(new java.awt.Color(255, 102, 102));
-        btnProcessador.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardProcessador.png")); // NOI18N
+        btnProcessador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hardProcessador.png"))); // NOI18N
         btnProcessador.setBorder(null);
         btnProcessador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,7 +237,7 @@ public class HardwareProcesso extends javax.swing.JFrame {
         txConteudo1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txConteudo1.setForeground(new java.awt.Color(35, 135, 195));
         txConteudo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txConteudo1.setText("Informações físicas");
+        txConteudo1.setText("Informações de Processamento");
         txConteudo1.setToolTipText("");
 
         txConteudo2.setBackground(new java.awt.Color(35, 135, 195));

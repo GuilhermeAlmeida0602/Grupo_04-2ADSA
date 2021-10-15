@@ -63,6 +63,8 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
 
         Header.setBackground(new java.awt.Color(247, 247, 247));
 
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TotemSoluctions.png"))); // NOI18N
+
         btnSair.setBackground(new java.awt.Color(35, 135, 195));
         btnSair.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         btnSair.setForeground(new java.awt.Color(255, 255, 255));
@@ -100,6 +102,7 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
 
         btnHardware.setBackground(new java.awt.Color(247, 247, 247));
         btnHardware.setForeground(new java.awt.Color(255, 102, 102));
+        btnHardware.setIcon(new javax.swing.ImageIcon(getClass().getResource("/processHardware.png"))); // NOI18N
         btnHardware.setToolTipText("");
         btnHardware.setBorder(null);
         btnHardware.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -112,6 +115,7 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
 
         btnSO.setBackground(new java.awt.Color(247, 247, 247));
         btnSO.setForeground(new java.awt.Color(255, 102, 102));
+        btnSO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/processApp.png"))); // NOI18N
         btnSO.setToolTipText("");
         btnSO.setBorder(null);
         btnSO.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -140,7 +144,7 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
                 .addComponent(btnHardware)
                 .addGap(26, 26, 26)
                 .addComponent(btnSO)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

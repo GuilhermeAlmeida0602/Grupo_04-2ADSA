@@ -109,7 +109,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\M.Araujo\Desktop\Grupo_04-2ADSA\Java - Software\TotemSolutions - Login\src\main\java\bandtec\com\br\totemsoluction\img\TotemSoluctions.png"/>
+                  <Image iconType="3" name="/TotemSoluctions.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -197,7 +197,7 @@
                       <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\M.Araujo\Desktop\Grupo_04-2ADSA\Java - Software\TotemSolutions - Login\src\main\java\bandtec\com\br\totemsoluction\img\hardMemoria.png"/>
+                      <Image iconType="3" name="/hardMemoria.png"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
@@ -213,7 +213,7 @@
                       <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\M.Araujo\Desktop\Grupo_04-2ADSA\Java - Software\TotemSolutions - Login\src\main\java\bandtec\com\br\totemsoluction\img\hardSO.png"/>
+                      <Image iconType="3" name="/hardSO.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -232,7 +232,7 @@
                       <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\M.Araujo\Desktop\Grupo_04-2ADSA\Java - Software\TotemSolutions - Login\src\main\java\bandtec\com\br\totemsoluction\img\hardHD.png"/>
+                      <Image iconType="3" name="/hardHD.png"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
@@ -248,7 +248,7 @@
                       <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\M.Araujo\Desktop\Grupo_04-2ADSA\Java - Software\TotemSolutions - Login\src\main\java\bandtec\com\br\totemsoluction\img\hardProcessador.png"/>
+                      <Image iconType="3" name="/hardProcessador.png"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
@@ -427,7 +427,7 @@
                       <Color blue="c3" green="87" red="23" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Informa&#xe7;&#xf5;es f&#xed;sicas"/>
+                    <Property name="text" type="java.lang.String" value="Informa&#xe7;&#xf5;es de Processamento"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                 </Component>
