@@ -150,7 +150,7 @@ public class LoginPage extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(60, 60, 60)
                     .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
-                    .addContainerGap()))
+                    .addContainerGap()));
 
         );
         jPanel2Layout.setVerticalGroup(
