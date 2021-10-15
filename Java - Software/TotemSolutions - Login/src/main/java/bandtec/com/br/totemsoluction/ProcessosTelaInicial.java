@@ -115,11 +115,6 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         btnSO.setBorder(null);
         btnSO.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         btnSO.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        btnSO.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSOActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout ContentLayout = new javax.swing.GroupLayout(Content);
         Content.setLayout(ContentLayout);
@@ -172,6 +167,7 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< HEAD
     private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
         // TODO add your handling code here:
 
@@ -200,9 +196,17 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         // Code adding the component to the parent container - not shown here
     }//GEN-LAST:event_btnSOActionPerformed
 
+=======
+>>>>>>> d9679ac6b73c28d53c418d21b285be2515138f1f
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        new LoginPage().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnHardwareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHardwareActionPerformed
+        new HardwareTelaInicial().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnHardwareActionPerformed
 
     /**
      * @param args the command line arguments
