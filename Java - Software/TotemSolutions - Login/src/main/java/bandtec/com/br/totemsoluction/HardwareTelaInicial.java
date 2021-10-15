@@ -5,6 +5,8 @@
  */
 package bandtec.com.br.totemsoluction;
 
+import com.github.britooo.looca.api.core.Looca;
+import com.github.britooo.looca.api.group.sistema.Sistema;
 import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -61,6 +63,11 @@ public class HardwareTelaInicial extends javax.swing.JFrame {
         btnSair.setText("SAIR");
         btnSair.setBorder(null);
         btnSair.setFocusPainted(false);
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
         btnVoltar.setBackground(new java.awt.Color(35, 135, 195));
         btnVoltar.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
@@ -226,48 +233,35 @@ public class HardwareTelaInicial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVoltarActionPerformed
-
-    private void btnProcessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnProcessadorActionPerformed
-
-    private void btnHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnHDActionPerformed
-
     private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
-        
-        
-
-        txConteudo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        txConteudo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-
-        //REDIRECIONAR PARA TELA DE SO
-
-
-
-        btnSO.setForeground(new java.awt.Color(255, 102, 102));
-
-        btnSO.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardSO.png")); // NOI18N
-
-        btnSO.setBorder(null);
-
-        btnSO.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSOActionPerformed(evt);
-            }
-        });
-
-// Code adding the component to the parent container - not shown here
-
+        new HardwareSo().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnSOActionPerformed
 
+    private void btnProcessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessadorActionPerformed
+        new HardwareProcesso().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnProcessadorActionPerformed
+
     private void btnMemoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemoriaActionPerformed
-        // TODO add your handling code here:
+        new HardwareSo().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnMemoriaActionPerformed
+
+    private void btnHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHDActionPerformed
+        new HardwareHD().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnHDActionPerformed
+
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        new ProcessosTelaInicial().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        new LoginPage().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnSairActionPerformed
 
     /**
      * @param args the command line arguments

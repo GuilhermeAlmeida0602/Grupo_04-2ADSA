@@ -5,6 +5,9 @@
  */
 package bandtec.com.br.totemsoluction;
 
+import com.github.britooo.looca.api.core.Looca;
+import com.github.britooo.looca.api.group.sistema.Sistema;
+import com.github.britooo.looca.api.util.Conversor;
 import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -15,6 +18,8 @@ import javax.swing.border.Border;
  * @author M.Araujo
  */
 public class HardwareSo extends javax.swing.JFrame {
+
+    Looca looca = new Looca();
 
     /**
      * Creates new form HardwareSo
@@ -44,6 +49,11 @@ public class HardwareSo extends javax.swing.JFrame {
         btnProcessador = new javax.swing.JButton();
         conteudo = new javax.swing.JPanel();
         txConteudo = new javax.swing.JLabel();
+        txConteudo1 = new javax.swing.JLabel();
+        txConteudo2 = new javax.swing.JLabel();
+        txConteudo3 = new javax.swing.JLabel();
+        txConteudo4 = new javax.swing.JLabel();
+        txConteudo5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
@@ -61,6 +71,11 @@ public class HardwareSo extends javax.swing.JFrame {
         btnSair.setText("SAIR");
         btnSair.setBorder(null);
         btnSair.setFocusPainted(false);
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
         btnVoltar.setBackground(new java.awt.Color(35, 135, 195));
         btnVoltar.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
@@ -79,11 +94,6 @@ public class HardwareSo extends javax.swing.JFrame {
         btnMemoria.setForeground(new java.awt.Color(255, 102, 102));
         btnMemoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hardMemoria.png"))); // NOI18N
         btnMemoria.setBorder(null);
-        btnMemoria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMemoriaActionPerformed(evt);
-            }
-        });
 
         btnSO.setForeground(new java.awt.Color(255, 102, 102));
         btnSO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hardSO.png"))); // NOI18N
@@ -176,11 +186,60 @@ public class HardwareSo extends javax.swing.JFrame {
         txConteudo.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         txConteudo.setForeground(new java.awt.Color(35, 135, 195));
         txConteudo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        txConteudo.setText("Teste pipipi (Clica no btn do sistema opracional)");
+        txConteudo.setText("Sistema operacional:");
         txConteudo.setToolTipText("");
         txConteudo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         txConteudo.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         txConteudo.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+
+        txConteudo1.setBackground(new java.awt.Color(35, 135, 195));
+        txConteudo1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        txConteudo1.setForeground(new java.awt.Color(35, 135, 195));
+        txConteudo1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txConteudo1.setText("Fabricante: ");
+        txConteudo1.setToolTipText("");
+        txConteudo1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        txConteudo1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        txConteudo1.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+
+        txConteudo2.setBackground(new java.awt.Color(35, 135, 195));
+        txConteudo2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        txConteudo2.setForeground(new java.awt.Color(35, 135, 195));
+        txConteudo2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txConteudo2.setText("Arquitetura: ");
+        txConteudo2.setToolTipText("");
+        txConteudo2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        txConteudo2.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        txConteudo2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+
+        txConteudo3.setBackground(new java.awt.Color(35, 135, 195));
+        txConteudo3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        txConteudo3.setForeground(new java.awt.Color(35, 135, 195));
+        txConteudo3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txConteudo3.setText("Inicializado:");
+        txConteudo3.setToolTipText("");
+        txConteudo3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        txConteudo3.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        txConteudo3.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+
+        txConteudo4.setBackground(new java.awt.Color(35, 135, 195));
+        txConteudo4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        txConteudo4.setForeground(new java.awt.Color(35, 135, 195));
+        txConteudo4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txConteudo4.setText("Tempo de atividade: ");
+        txConteudo4.setToolTipText("");
+        txConteudo4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        txConteudo4.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        txConteudo4.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+
+        txConteudo5.setBackground(new java.awt.Color(35, 135, 195));
+        txConteudo5.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        txConteudo5.setForeground(new java.awt.Color(35, 135, 195));
+        txConteudo5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txConteudo5.setToolTipText("");
+        txConteudo5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        txConteudo5.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        txConteudo5.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout conteudoLayout = new javax.swing.GroupLayout(conteudo);
         conteudo.setLayout(conteudoLayout);
@@ -188,15 +247,31 @@ public class HardwareSo extends javax.swing.JFrame {
             conteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(conteudoLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(txConteudo, javax.swing.GroupLayout.PREFERRED_SIZE, 1228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(conteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txConteudo, javax.swing.GroupLayout.PREFERRED_SIZE, 1228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txConteudo1, javax.swing.GroupLayout.PREFERRED_SIZE, 1228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txConteudo2, javax.swing.GroupLayout.PREFERRED_SIZE, 1228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txConteudo3, javax.swing.GroupLayout.PREFERRED_SIZE, 1228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txConteudo4, javax.swing.GroupLayout.PREFERRED_SIZE, 1228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txConteudo5, javax.swing.GroupLayout.PREFERRED_SIZE, 1228, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         conteudoLayout.setVerticalGroup(
             conteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(conteudoLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(txConteudo, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addComponent(txConteudo, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(txConteudo1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(txConteudo2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(txConteudo3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(txConteudo4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(txConteudo5, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -215,7 +290,7 @@ public class HardwareSo extends javax.swing.JFrame {
                 .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(conteudo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(315, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -232,53 +307,35 @@ public class HardwareSo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
+       Sistema sis = looca.getSistema();
+       txConteudo.setText(String.format("Sistema operacional: %s",looca.getSistema().getSistemaOperacional()));
+       txConteudo1.setText(String.format("Fabricante: %s",looca.getSistema().getFabricante()));
+       txConteudo2.setText(String.format("Arquitetura: %d bits",looca.getSistema().getArquitetura()));
+       txConteudo3.setText(String.format("Inicializado: %s",looca.getSistema().getInicializado()));
+       txConteudo4.setText(String.format("Tempo de atividade: %s",looca.getSistema().getTempoDeAtividade()));
+       txConteudo5.setText("Executando como " + (looca.getSistema().getPermissao() ? "root" : "usuário padrão"));
+    }//GEN-LAST:event_btnSOActionPerformed
+
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        // TODO add your handling code here:
+        new ProcessosTelaInicial().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
 
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        new LoginPage().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnSairActionPerformed
+
     private void btnProcessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessadorActionPerformed
-        // TODO add your handling code here:
+        new HardwareProcesso().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnProcessadorActionPerformed
 
     private void btnHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHDActionPerformed
-        // TODO add your handling code here:
+        new HardwareHD().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnHDActionPerformed
-
-    private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
-        // TODO add your handling code here:
-
-        txConteudo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        txConteudo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-
-        //Alternativa pra quebra de linha (pode mesclar as tags)     
-        /*
-        Pode puxar os campos que estão na init (na variavel txConteudo)
-        e fazer alterações como tamanho, fonte etc...
-         */
-        txConteudo.setText("<html><body>PIPIPI:01<br>PIPIPI:02<br>");
-        txConteudo.setText(txConteudo.getText() + "<body>teste</body></html>");
-
-
-
-        btnSO.setForeground(new java.awt.Color(255, 102, 102));
-
-        btnSO.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardSO.png")); // NOI18N
-
-        btnSO.setBorder(null);
-
-        btnSO.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSOActionPerformed(evt);
-            }
-        });
-
-// Code adding the component to the parent container - not shown here
-
-    }//GEN-LAST:event_btnSOActionPerformed
-
-    private void btnMemoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemoriaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMemoriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -330,5 +387,10 @@ public class HardwareSo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel txConteudo;
+    private javax.swing.JLabel txConteudo1;
+    private javax.swing.JLabel txConteudo2;
+    private javax.swing.JLabel txConteudo3;
+    private javax.swing.JLabel txConteudo4;
+    private javax.swing.JLabel txConteudo5;
     // End of variables declaration//GEN-END:variables
 }
