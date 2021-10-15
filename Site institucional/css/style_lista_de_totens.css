@@ -1,42 +1,44 @@
 .table-totens{
-    background: rgba(196, 196, 196, 0.18);
-    border-radius: 20px;
-    margin: 3% 5% auto 5%;
+    /* background: rgba(196, 196, 196, 0.18); */
+    /* border-radius: 20px; */
+    margin: 1% auto 5%;
 }
 
 .table-totens table{
-    width: 100%;
+    width: 70%;
     text-align: center;
-    
+    margin: 2% auto 2%;
 }
 
-.table-totens a{
-    color: white;
+.table-totens td {
+    background-color: #eee;
+    height: 40px;
 }
 
-.table-totens table, th{
-    border:1px solid black;
+.table-totens th {
+    background: rgba(196, 196, 196, 0.18);
+    color: black;
 }
 
 .ferramenta{
     font-size: 24px;
-    margin: 5%;
-    border: 1px solid black;
-    padding: 7%;
+    margin: 4%;
+    padding: 5%;
     border-radius: 5px;
-    background-color: #165c8f;
+    color: white;
+    background-color: #0A3D62;
 }
 
 .alerta{
-    color: goldenrod;
+    color: #FFC312;
 }
 
 .emergencia{
-    color: red;
+    color: #EA2027;
 }
 
 .bom{
-    color: green;
+    color: #009432;
 }
 
 

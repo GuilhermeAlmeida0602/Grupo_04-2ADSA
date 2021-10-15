@@ -13,9 +13,7 @@ function vermelho() {
     document.querySelectorAll(".tabela_tr")[2].style.visibility = 'hidden';
 
     document.querySelectorAll(".tabela_tr .td_id")[0].textContent = "1";
-    document.querySelectorAll(".tabela_tr .td_hora")[0].textContent = "2";
     document.querySelectorAll(".tabela_tr .td_id")[1].textContent = "4";
-    document.querySelectorAll(".tabela_tr .td_hora")[1].textContent = "1";
 }
 
 function amarelo() {
@@ -31,7 +29,6 @@ function amarelo() {
     document.querySelectorAll(".tabela_tr")[2].style.visibility = 'hidden';
 
     document.querySelectorAll(".tabela_tr .td_id")[0].textContent = "10";
-    document.querySelectorAll(".tabela_tr .td_hora")[0].textContent = "3";
 }
 
 function verde() {
@@ -45,9 +42,6 @@ function verde() {
     }
 
     document.querySelectorAll(".tabela_tr .td_id")[0].textContent = "7";
-    document.querySelectorAll(".tabela_tr .td_hora")[0].textContent = "0";
     document.querySelectorAll(".tabela_tr .td_id")[1].textContent = "8";
-    document.querySelectorAll(".tabela_tr .td_hora")[1].textContent = "0";
     document.querySelectorAll(".tabela_tr .td_id")[2].textContent = "15";
-    document.querySelectorAll(".tabela_tr .td_hora")[2].textContent = "0";
 }

@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="css/style_dashboard.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css' rel='stylesheet'>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"> -->
+    <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
 </head>
 
 <body onload="vermelho()">
@@ -19,14 +20,14 @@
         </div>
         <ul class="nav-list">
             <li>
-                <a href="dashboard_visao_geral.html">
+                <a href="dashboard.html">
                     <i class="fas fa-chart-pie"></i>
                     <span class="links_name">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="totens_ListaDeTotens.html">
+                <a href="lista_de_totens.html">
                     <i class="fas fa-desktop"></i>
                     <span class="links_name">Totens</span>
                 </a>
@@ -48,7 +49,7 @@
             </li>
 
             <li class="profile">
-                <a href="#">
+                <a href="login.html">
                     <i class='bx bx-log-out' id="log_out"></i>
                     <span class="links_name">Logout</span>
                 </a>
@@ -63,7 +64,7 @@
         <div class="container_body">
             <form action="" method="post">
                 <section class="sessao_status">
-                    <!-- <p class="p_status">Totens por status</p> -->
+                    <p class="p_status">Selecione o status</p>
                     <a href="#" onclick="vermelho()">
                         <div class="quadrado_informativo vermelho">
                             <div class="cor_status">Emergência</div>
@@ -88,11 +89,10 @@
                         <p class="p_tabela_status">Lista de totens por status</p>
                         <!-- table-striped,  -->
                         <table class="table_totens">
-                            <thead class="text-center bg-dark text-warning">
+                            <thead>
                                 <tr>
                                     <th>Nº do totem</th>
                                     <th>Status</th>
-                                    <th>Horas inoperante</th>
                                     <th>Ação</th>
                                 </tr>
                             </thead>
@@ -101,20 +101,20 @@
                                 <tr class="tabela_tr" th:each="basedados: ${listTabela}">
                                     <td class="td_id" th:text="${basedados.id}">2</td>
                                     <td class="td_status" th:text="${basedados.nome}">OK</td>
-                                    <td class="td_hora" th:text="${basedados.criticidade}">0</td>
-                                    <td th:text="${basedados.hora}"><i class="fas fa-tools ferramenta"></i></a></i></td>
+                                    <td th:text="${basedados.hora}"><a href="visaoDetalhada.html"><i
+                                                class="fas fa-tools ferramenta"></i></a></td>
                                 </tr>
                                 <tr class="tabela_tr" th:each="basedados: ${listTabela}">
                                     <td class="td_id" th:text="${basedados.id}">10</td>
                                     <td class="td_status" th:text="${basedados.nome}">OK</td>
-                                    <td class="td_hora" th:text="${basedados.criticidade}">0</td>
-                                    <td th:text="${basedados.hora}"><i class="fas fa-tools ferramenta"></i></a></i></td>
+                                    <td th:text="${basedados.hora}"><a href="visaoDetalhada.html"><i
+                                                class="fas fa-tools ferramenta"></i></a></td>
                                 </tr>
                                 <tr class="tabela_tr" th:each="basedados: ${listTabela}">
                                     <td class="td_id" th:text="${basedados.id}">5</td>
                                     <td class="td_status" th:text="${basedados.nome}">OK</td>
-                                    <td class="td_hora" th:text="${basedados.criticidade}">0</td>
-                                    <td th:text="${basedados.hora}"><i class="fas fa-tools ferramenta"></i></a></i></td>
+                                    <td th:text="${basedados.hora}"><a href="visaoDetalhada.html"><i
+                                                class="fas fa-tools ferramenta"></i></a></td>
                                 </tr>
 
                             </tbody>

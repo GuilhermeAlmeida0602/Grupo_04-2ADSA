@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/menu_style.css">
+    <link rel="stylesheet" href="css/style_lista_de_totens.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css' rel='stylesheet'>
     <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/style_lista_de_totens.css">
     <title>Lista de Totens</title>
 </head>
 
@@ -17,31 +17,31 @@
 
     <div class="sidebar">
         <div class="logo-details">
-            <div class="logo_name">InfoSystem</div>
+            <div class="logo_name"><a href="index.html" class="nav-list">InfoSystem</a></div>
             <i class='bx bx-menu' id="btn"></i>
         </div>
         <ul class="nav-list">
             <li>
-                <a href="#">
+                <a href="dashboard.html">
                     <i class="fas fa-chart-pie"></i>
                     <span class="links_name">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="#">
+                <a href="lista_de_totens.html">
                     <i class="fas fa-desktop"></i>
                     <span class="links_name">Totens</span>
                 </a>
                 <span class="tooltip">Totens</span>
             </li>
-            <li>
+            <!-- <li>
                 <a href="#">
                     <i class="fas fa-cog"></i>
                     <span class="links_name">Configuração</span>
                 </a>
                 <span class="tooltip">Configuração</span>
-            </li>
+            </li> -->
             <li>
                 <a href="#">
                     <i class="fas fa-headset"></i>
@@ -51,7 +51,7 @@
             </li>
 
             <li class="profile">
-                <a href="#">
+                <a href="login.html">
                     <i class='bx bx-log-out' id="log_out"></i>
                     <span class="links_name">Logout</span>
                 </a>
@@ -61,9 +61,8 @@
     </div>
     <section class="home-section">
         
-        <div class="text">Totens</div>
-        <div class="sub-text">Lista de Totens</div>
-        <div class="user-text">Olá Analista</div>
+        <div class="text">Totens</div><span class="span_visao">Lista de totens</span>
+        <div class="user-session">Olá Analista!</div>
 
         <div class="table-totens">
 
@@ -72,80 +71,73 @@
                 <tr>
                     <th>Nº do Totem</th>
                     <th>Status</th>
-                    <th>Horas Inoperante</th>
                     <th>Ação</th>
                 </tr>
 
                 <tr>
                     <td>1</td>
                     <td class="alerta">Alerta</td>
-                    <td>1</td>
-                    <td><a href=""><i class="fas fa-tools ferramenta"></i></a></i></td>
+                    <td><a href="visaoDetalhada.html"><i
+                        class="fas fa-tools ferramenta"></i></a></td>
                 </tr>
 
                 <tr>
                     <td>2</td>
-                    <td class="emergencia">Emergencia</td>
-                    <td>3</td>
-                    <td><a href=""><i class="fas fa-tools ferramenta"></i></a></i></td>
+                    <td class="emergencia">Emergência</td>
+                    <td><a href="visaoDetalhada.html"><i
+                        class="fas fa-tools ferramenta"></i></a></td>
                 </tr>
 
                 <tr>
                     <td>3</td>
                     <td class="bom">Bom</td>
-                    <td>0</td>
-                    <td><a href=""><i class="fas fa-tools ferramenta"></i></a></i></td>
+                    <td><a href="visaoDetalhada.html"><i
+                        class="fas fa-tools ferramenta"></i></a></td>
                 </tr>
 
                 <tr>
                     <td>4</td>
-                    <td class="emergencia">Emergencia</td>
-                    <td>6</td>
-                    <td><a href=""><i class="fas fa-tools ferramenta"></i></a></i></td>
+                    <td class="emergencia">Emergência</td>
+                    <td><a href="visaoDetalhada.html"><i
+                        class="fas fa-tools ferramenta"></i></a></td>
                 </tr>
 
                 <tr>
                     <td>5</td>
-                    <td class="bom">bom</td>
-                    <td>0</td>
-                    <td><a href=""><i class="fas fa-tools ferramenta"></i></a></i></td>
+                    <td class="bom">Bom</td>
+                    <td><a href="visaoDetalhada.html"><i
+                        class="fas fa-tools ferramenta"></i></a></td>
                 </tr>
 
                 <tr>
                     <td>6</td>
                     <td class="alerta">Alerta</td>
-                    <td>2</td>
-                    <td><a href=""><i class="fas fa-tools ferramenta"></i></a></i></td>
+                    <td><a href="visaoDetalhada.html"><i
+                        class="fas fa-tools ferramenta"></i></a></td>
                 </tr>
 
                 <tr>
                     <td>7</td>
                     <td class="alerta">Alerta</td>
-                    <td>1</td>
-                    <td><a href=""><i class="fas fa-tools ferramenta"></i></a></i></td>
+                    <td><a href="visaoDetalhada.html"><i
+                        class="fas fa-tools ferramenta"></i></a></td>
                 </tr>
 
                 <tr>
                     <td>8</td>
-                    <td class="emergencia">Emergencia</td>
-                    <td>5</td>
-                    <td><a href=""><i class="fas fa-tools ferramenta"></i></a></i></td>
+                    <td class="emergencia">Emergência</td>
+                    <td><a href="visaoDetalhada.html"><i
+                        class="fas fa-tools ferramenta"></i></a></td>
                 </tr>
 
                 <tr>
                     <td>9</td>
                     <td class="alerta">Alerta</td>
-                    <td>2</td>
-                    <td><a href=""><i class="fas fa-tools ferramenta"></i></a></i></td>
+                    <td><a href="visaoDetalhada.html"><i
+                        class="fas fa-tools ferramenta"></i></a></td>
                 </tr>
 
-
-
-
-
-
             </table>
-
 
         </div>
     

@@ -6,6 +6,10 @@
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+.span_visao {
+  color: #0A3D62;
+}
+
 ::-webkit-scrollbar{
   width: 8px;
 

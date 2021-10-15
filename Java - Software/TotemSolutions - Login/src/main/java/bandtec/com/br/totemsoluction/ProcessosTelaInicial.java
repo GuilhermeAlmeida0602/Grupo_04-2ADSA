@@ -20,9 +20,9 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
      * Creates new form ProcessosTelaInicial
      */
     public ProcessosTelaInicial() {
-        
+
         //Isso aqui tira varios bugs do swing
-         try {
+        try {
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(HardwareHD.class.getName()).log(Level.SEVERE, null, ex);
@@ -33,7 +33,7 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(HardwareHD.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         initComponents();
     }
 
@@ -62,8 +62,6 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(247, 247, 247));
 
         Header.setBackground(new java.awt.Color(247, 247, 247));
-
-        logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\TotemSoluctions.png")); // NOI18N
 
         btnSair.setBackground(new java.awt.Color(35, 135, 195));
         btnSair.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
@@ -97,7 +95,6 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
 
         btnHardware.setBackground(new java.awt.Color(247, 247, 247));
         btnHardware.setForeground(new java.awt.Color(255, 102, 102));
-        btnHardware.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\processHardware.png")); // NOI18N
         btnHardware.setToolTipText("");
         btnHardware.setBorder(null);
         btnHardware.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -110,7 +107,6 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
 
         btnSO.setBackground(new java.awt.Color(247, 247, 247));
         btnSO.setForeground(new java.awt.Color(255, 102, 102));
-        btnSO.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\processApp.png")); // NOI18N
         btnSO.setToolTipText("");
         btnSO.setBorder(null);
         btnSO.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -126,11 +122,11 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         ContentLayout.setHorizontalGroup(
             ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContentLayout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSO)
                     .addComponent(btnHardware))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ContentLayout.setVerticalGroup(
             ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,17 +171,11 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
     private void btnHardwareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHardwareActionPerformed
         // TODO add your handling code here:
 
-        txConteudo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        txConteudo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-
         //Alternativa pra quebra de linha (pode mesclar as tags)
         /*
         Pode puxar os campos que estão na init (na variavel txConteudo)
         e fazer alterações como tamanho, fonte etc...
-        */
-        txConteudo.setText("<html><body>PIPIPI:01<br>PIPIPI:02<br>");
-        txConteudo.setText(txConteudo.getText() + "<body>teste</body></html>");
-
+         */
         btnHardware.setForeground(new java.awt.Color(255, 102, 102));
 
         btnHardware.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardSO.png")); // NOI18N
@@ -204,17 +194,11 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
     private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
         // TODO add your handling code here:
 
-        txConteudo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        txConteudo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-
         //Alternativa pra quebra de linha (pode mesclar as tags)
         /*
         Pode puxar os campos que estão na init (na variavel txConteudo)
         e fazer alterações como tamanho, fonte etc...
-        */
-        txConteudo.setText("<html><body>PIPIPI:01<br>PIPIPI:02<br>");
-        txConteudo.setText(txConteudo.getText() + "<body>teste</body></html>");
-
+         */
         btnSO.setForeground(new java.awt.Color(255, 102, 102));
 
         btnSO.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardSO.png")); // NOI18N
@@ -269,9 +253,6 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
     private javax.swing.JPanel Content;
     private javax.swing.JPanel Header;
     private javax.swing.JButton btnHardware;
-    private javax.swing.JButton btnProcessador;
-    private javax.swing.JButton btnProcessador1;
-    private javax.swing.JButton btnProcessador2;
     private javax.swing.JButton btnSO;
     private javax.swing.JButton btnSair;
     private javax.swing.JPanel jPanel1;
