@@ -175,16 +175,13 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
     private void btnHardwareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHardwareActionPerformed
         // TODO add your handling code here:
 
-        txConteudo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        txConteudo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        
 
         //Alternativa pra quebra de linha (pode mesclar as tags)
         /*
         Pode puxar os campos que estão na init (na variavel txConteudo)
         e fazer alterações como tamanho, fonte etc...
         */
-        txConteudo.setText("<html><body>PIPIPI:01<br>PIPIPI:02<br>");
-        txConteudo.setText(txConteudo.getText() + "<body>teste</body></html>");
 
         btnHardware.setForeground(new java.awt.Color(255, 102, 102));
 
@@ -204,16 +201,12 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
     private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
         // TODO add your handling code here:
 
-        txConteudo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        txConteudo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         //Alternativa pra quebra de linha (pode mesclar as tags)
         /*
         Pode puxar os campos que estão na init (na variavel txConteudo)
         e fazer alterações como tamanho, fonte etc...
         */
-        txConteudo.setText("<html><body>PIPIPI:01<br>PIPIPI:02<br>");
-        txConteudo.setText(txConteudo.getText() + "<body>teste</body></html>");
 
         btnSO.setForeground(new java.awt.Color(255, 102, 102));
 
