@@ -160,6 +160,11 @@ public class LoginPage extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Entrar");
         jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout RightInputLayout = new javax.swing.GroupLayout(RightInput);
         RightInput.setLayout(RightInputLayout);
@@ -225,6 +230,13 @@ public class LoginPage extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1309, 653));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (jTextField1.getText().equals("admin") && jTextField2.getText().equals("admin")) {
+            new ProcessosTelaInicial().setVisible(true);
+            this.dispose();  
+        } 
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

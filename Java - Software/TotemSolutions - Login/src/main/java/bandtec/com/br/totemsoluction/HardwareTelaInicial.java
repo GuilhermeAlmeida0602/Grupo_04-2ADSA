@@ -54,8 +54,6 @@ public class HardwareTelaInicial extends javax.swing.JFrame {
 
         header.setBackground(new java.awt.Color(247, 247, 247));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\TotemSoluctions.png")); // NOI18N
-
         btnSair.setBackground(new java.awt.Color(35, 135, 195));
         btnSair.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         btnSair.setForeground(new java.awt.Color(255, 255, 255));
@@ -78,7 +76,7 @@ public class HardwareTelaInicial extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(247, 247, 247));
 
         btnMemoria.setForeground(new java.awt.Color(255, 102, 102));
-        btnMemoria.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardMemoria.png")); // NOI18N
+        btnMemoria.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrador\\Desktop\\GP 4\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardMemoria.png")); // NOI18N
         btnMemoria.setBorder(null);
         btnMemoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,7 +85,7 @@ public class HardwareTelaInicial extends javax.swing.JFrame {
         });
 
         btnSO.setForeground(new java.awt.Color(255, 102, 102));
-        btnSO.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardSO.png")); // NOI18N
+        btnSO.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrador\\Desktop\\GP 4\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardSO.png")); // NOI18N
         btnSO.setBorder(null);
         btnSO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,7 +94,7 @@ public class HardwareTelaInicial extends javax.swing.JFrame {
         });
 
         btnHD.setForeground(new java.awt.Color(255, 102, 102));
-        btnHD.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardHD.png")); // NOI18N
+        btnHD.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrador\\Desktop\\GP 4\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardHD.png")); // NOI18N
         btnHD.setBorder(null);
         btnHD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,7 +103,7 @@ public class HardwareTelaInicial extends javax.swing.JFrame {
         });
 
         btnProcessador.setForeground(new java.awt.Color(255, 102, 102));
-        btnProcessador.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardProcessador.png")); // NOI18N
+        btnProcessador.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrador\\Desktop\\GP 4\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardProcessador.png")); // NOI18N
         btnProcessador.setBorder(null);
         btnProcessador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,20 +116,20 @@ public class HardwareTelaInicial extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSO)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnProcessador)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnMemoria)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnHD)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnProcessador)
                     .addComponent(btnHD)
@@ -240,7 +238,8 @@ public class HardwareTelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHDActionPerformed
 
     private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
-        // TODO add your handling code here:
+        
+        
 
         txConteudo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         txConteudo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);

@@ -58,7 +58,6 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
         setMinimumSize(new java.awt.Dimension(1080, 650));
-        setPreferredSize(new java.awt.Dimension(1302, 564));
 
         jPanel1.setBackground(new java.awt.Color(247, 247, 247));
 
@@ -70,6 +69,11 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         btnSair.setText("SAIR");
         btnSair.setBorder(null);
         btnSair.setFocusPainted(false);
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
         Header.setLayout(HeaderLayout);
@@ -227,6 +231,10 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         // Code adding the component to the parent container - not shown here
     }//GEN-LAST:event_btnSOActionPerformed
 
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnSairActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -271,4 +279,10 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel logo;
     // End of variables declaration//GEN-END:variables
+
+    static class getVisible {
+
+        public getVisible(boolean b) {
+        }
+    }
 }
