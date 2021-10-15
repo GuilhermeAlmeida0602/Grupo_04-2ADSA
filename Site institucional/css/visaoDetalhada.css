@@ -5,129 +5,135 @@
 }
 
 .container_grafico{
-    width: 100%;
+    width: 90%;
     height: 50vh;
-    display: flex;
-    justify-content: space-around;
+    margin: auto;
+    
+
 }
 
 .quadros{
     width: 80%;
-    height: 45vh;
-    margin: 10px 0 0 5px;
+    height: 55vh;
 }
 
 
 .desempenho{
     margin-top: 0%;
-    width: 45%;
+    width:  40%;
+    float: left;
     
 }
 
 .componentes{
-    /* background: rgba(196, 196, 196, 0.5);
-    width: 40%;
-    padding-bottom: 9%;
-    float: left;
-    margin: 15px;
-    margin: 15px;
-    border-radius: 20px;
-    box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.75);
-    text-align: center; */
     border-radius: 20px;
     box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.75);
     text-align: center;
-    width: 35%;
+    width: 42%;
     border-radius: 20px;
     aspect-ratio: 1/1;
     background: rgba(196, 196, 196, 0.5);
     float: left;
     margin: 15px;
-    height: 40%;
-    
-}
+    height: 35%;
 
-.componentes p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     font-weight: bold;
     font-size: 29px;
     line-height: 42px;
-    margin-top: 30%;
+}
 
+.testando123{
+    border-radius: 20px;
+    box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.75);
+    text-align: center;
+    width: 42%;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+    background: red;
+    float: left;
+    margin: 15px;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 29px;
+    line-height: 42px;
 }
 
 a{
     color: black;
 }
 
-.kit{
-    background: #c4c4c4;
-    box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.75);
-    border-radius: 15px;
-    width: 50%;
-    padding-bottom: 3%;
+.kit_ferramentas{
+    width: 80%;
     float: left;
-    margin: 0 0 0 20px;
+    margin: auto;
 }
 
-.kit button{
-    width: 45%;
-    height: 5vh;
-    margin: 45px 0 0 20px;   
-    border-radius: 10px;
-    background: #0a3d62;
-    color: white;
-    line-height: 29px;
-    font-size: 20px;
-    font-weight: bold; 
-    font-style: normal;
+.kit_ferramentas h1{
+    margin-top: 15px;
+    margin-bottom: 15px;
     
 }
 
+.ferramentas{
+    width: 17%;
+    background: rgba(196, 196, 196, 0.5);
+    float: left;
+    margin-left: 10vh;
+    height: 20vh;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0A3D62;
+    color: white;
+    font-size: 90%;
+    font-weight: bold;
+}
+
 .grafico{
-    /* background-color: red; */
     width: 45%;
-    padding-bottom: 9%;
+    margin-top: 30px;
+    float: left;
     
 }
 
 .meu-grafico{
-    /* background-color: red; */
     width: 45vw;
     margin: auto;
-    padding-bottom: 9%;
+    /* padding-bottom: 9%; */
+    /* float: left; */
+
 }
 
 @media only screen and (max-width: 1280px){
     
-    .kit button{
-        font-size: 12px;
-        margin: 40px 0 0 15px;   
-
-    }
-
-    .kit{
-        box-shadow: 15px 9px 4px rgba(10, 61, 98, 0.75);
-        width: 50%;
-        padding-bottom: 1%;
-        float: left;
-        margin: 0 0 0 20px;
+    .container_grafico{
+        width: 90%;
     }
 
     .componentes{
         width: 40%;
-    }
-
-    .componentes p{
-        font-weight: bold;
         font-size: 20px;
         line-height: 42px;
-        margin-top: 25%;
-    
+        
     }
+
+    .ferramentas{
+        margin-left: 30px !important;
+    }
+
 }
 
 @media only screen and (max-width: 1030px){
-    
+
+
     .componentes{
         width: 30%;
     }
@@ -142,12 +148,35 @@ a{
     .desempenho{
         margin-top: 0%;
         width: 60%;
+       
         
     }
 
-    .kit button{
-        font-size: 12px;
-        margin: 40px 0 0 15px;   
+}
 
+@media only screen and (max-width: 1370px) {
+    .desempenho{
+        margin-left: 30px;
+        margin-top: 0%;
+        width:  50%;
+        float: left;
+        /* background-color: red; */
+        
+    }
+
+    .ferramentas{
+        width: 20%;
+        margin-left: 40px;   
+    }
+}
+
+@media only screen and (min-width: 1400px){
+    .desempenho{
+        width: 50%;
+    }
+
+    .ferramentas{
+        margin-left: 60px;
+        height: 17vh;
     }
 }

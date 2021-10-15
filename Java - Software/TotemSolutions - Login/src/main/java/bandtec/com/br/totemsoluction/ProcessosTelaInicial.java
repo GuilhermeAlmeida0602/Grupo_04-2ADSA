@@ -171,11 +171,21 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
     private void btnHardwareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHardwareActionPerformed
         // TODO add your handling code here:
 
+<<<<<<< HEAD
+=======
+        
+
+>>>>>>> 89778b0abd700a82ed70c7486b11eda0b0f3a5d6
         //Alternativa pra quebra de linha (pode mesclar as tags)
         /*
         Pode puxar os campos que estão na init (na variavel txConteudo)
         e fazer alterações como tamanho, fonte etc...
+<<<<<<< HEAD
          */
+=======
+        */
+
+>>>>>>> 89778b0abd700a82ed70c7486b11eda0b0f3a5d6
         btnHardware.setForeground(new java.awt.Color(255, 102, 102));
 
         btnHardware.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardSO.png")); // NOI18N
@@ -194,11 +204,20 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
     private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
         // TODO add your handling code here:
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 89778b0abd700a82ed70c7486b11eda0b0f3a5d6
         //Alternativa pra quebra de linha (pode mesclar as tags)
         /*
         Pode puxar os campos que estão na init (na variavel txConteudo)
         e fazer alterações como tamanho, fonte etc...
+<<<<<<< HEAD
          */
+=======
+        */
+
+>>>>>>> 89778b0abd700a82ed70c7486b11eda0b0f3a5d6
         btnSO.setForeground(new java.awt.Color(255, 102, 102));
 
         btnSO.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardSO.png")); // NOI18N
