@@ -39,21 +39,21 @@ public class App {
         //Retornando a permissão do usuário
         Boolean perm = looca.getSistema().getPermissao();
 
-        System.out.println("Listando as informações do Sistema da Máquina\n");
+//        System.out.println("Listando as informações do Sistema da Máquina\n");
+//
+//        System.out.println(sistema);
 
-        System.out.println(sistema);
+//        System.out.println("\n______________________________________\n");
 
-        System.out.println("\n______________________________________\n");
-
-        System.out.println("Listando as informações dos Processos da Máquina\n");
-
-        ProcessosGroup grupoDeProcessos = looca.getGrupoDeProcessos();
-
-        List<Processo> processos = grupoDeProcessos.getProcessos();
-
-        for (Processo proc : processos) {
-            System.out.println(proc);
-        }
+//        System.out.println("Listando as informações dos Processos da Máquina\n");
+//
+//        ProcessosGroup grupoDeProcessos = looca.getGrupoDeProcessos();
+//
+//        List<Processo> processos = grupoDeProcessos.getProcessos();
+//
+//        for (Processo proc : processos) {
+//            System.out.println(proc);
+//        }
 
         System.out.println("\n______________________________________\n");
 
@@ -65,11 +65,11 @@ public class App {
             System.out.println(disco);
         }
         
-        System.out.println("\n______________________________________\n");
-
-        Processador procUm = new Processador();
-        
-        System.out.println(looca.getProcessador());
+//        System.out.println("\n______________________________________\n");
+//
+//        Processador procUm = new Processador();
+//        
+//        System.out.println(looca.getProcessador());
         
     }
 }
