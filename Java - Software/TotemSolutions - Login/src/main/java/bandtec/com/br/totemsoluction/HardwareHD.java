@@ -31,6 +31,7 @@ public class HardwareHD extends javax.swing.JFrame {
         }
 
         initComponents();
+        ExibeHD();
     }
 
     @SuppressWarnings("unchecked")
@@ -266,7 +267,7 @@ public class HardwareHD extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addComponent(txConteudo1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txConteudo2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txConteudo2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txConteudo3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -277,7 +278,7 @@ public class HardwareHD extends javax.swing.JFrame {
                 .addComponent(txConteudo6, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txConteudo7, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         infoPorcentagem.setBackground(new java.awt.Color(247, 247, 247));
@@ -341,7 +342,7 @@ public class HardwareHD extends javax.swing.JFrame {
         infoPorcentagemLayout.setVerticalGroup(
             infoPorcentagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infoPorcentagemLayout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addContainerGap(63, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(infoPorcentagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -412,7 +413,7 @@ public class HardwareHD extends javax.swing.JFrame {
 
         // Instanciando objeto da classo Conversor
         Conversor conv = new Conversor();
-        
+
         // Informações sobre o DISCO
         DiscosGroup grupoDeDiscos = looca.getGrupoDeDiscos();
 
@@ -440,15 +441,13 @@ public class HardwareHD extends javax.swing.JFrame {
 
             //Integer discoTotal = Integer.valueOf(conv.formatarBytes(volumes.get(0).getTotal()));
             //Integer discoDisp = Integer.valueOf(conv.formatarBytes(volumes.get(0).getDisponivel()));
-
             //Integer result = (discoDisp * 100) / discoTotal;
-
             //pbDisponivel.setValue(result);
             txConteudo9.setText(volumes.get(0).getTipo());
             txConteudo10.setText(volumes.get(0).getPontoDeMontagem());
-            
-            
+
         }
+        
     }//GEN-LAST:event_btnHDActionPerformed
 
     private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
@@ -458,7 +457,8 @@ public class HardwareHD extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSOActionPerformed
 
     private void btnMemoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemoriaActionPerformed
-        // ação do btn MEMÓRIA
+        new HardwareMemoria().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnMemoriaActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
@@ -514,4 +514,44 @@ public class HardwareHD extends javax.swing.JFrame {
     private javax.swing.JLabel txConteudo7;
     private javax.swing.JLabel txConteudo9;
     // End of variables declaration//GEN-END:variables
+
+    public void ExibeHD() {
+
+        Conversor conv = new Conversor();
+
+        // Informações sobre o DISCO
+        DiscosGroup grupoDeDiscos = looca.getGrupoDeDiscos();
+
+        List<Disco> discos = grupoDeDiscos.getDiscos();
+
+        for (Disco disco : discos) {
+
+            txConteudo1.setText("<html> Nome: " + disco.getNome() + "</html>");
+            txConteudo2.setText("<html> Modelo: " + disco.getModelo() + "</html>");
+            txConteudo3.setText("<html> Serial: " + disco.getSerial() + "</html>");
+            txConteudo4.setText("<html> Tamanho: " + Conversor.formatarBytes(disco.getTamanho()) + "</html>");
+            txConteudo5.setText("<html> Quantidade de Leituras: " + conv.formatarBytes(disco.getLeituras()) + "</html>");
+            txConteudo6.setText("<html> Bytes total de Leitura: " + conv.formatarBytes(disco.getBytesDeLeitura()) + "</html>");
+            txConteudo7.setText("<html> Quantidade de Escritas: " + conv.formatarBytes(disco.getEscritas()) + "</html>");
+
+            System.out.println(Conversor.formatarBytes(disco.getTamanho()));
+        }
+
+        // Informações sobre o tipo de disco, 
+        DiscosGroup grupoDeVolumes = looca.getGrupoDeDiscos();
+
+        List<Volume> volumes = grupoDeVolumes.getVolumes();
+
+        for (Volume vol : volumes) {
+
+            //Integer discoTotal = Integer.valueOf(conv.formatarBytes(volumes.get(0).getTotal()));
+            //Integer discoDisp = Integer.valueOf(conv.formatarBytes(volumes.get(0).getDisponivel()));
+            //Integer result = (discoDisp * 100) / discoTotal;
+            //pbDisponivel.setValue(result);
+            txConteudo9.setText(volumes.get(0).getTipo());
+            txConteudo10.setText(volumes.get(0).getPontoDeMontagem());
+
+        }
+
+    }
 }

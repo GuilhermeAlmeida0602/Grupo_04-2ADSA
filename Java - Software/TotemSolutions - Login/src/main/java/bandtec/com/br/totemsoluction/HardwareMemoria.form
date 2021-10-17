@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="extendedState" type="int" value="6"/>
@@ -133,6 +133,9 @@
                 </Property>
                 <Property name="focusPainted" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSairActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnVoltar">
               <Properties>
@@ -336,10 +339,13 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <Component id="pbEmUso" alignment="0" pref="686" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="labelTotal" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="pbDisponivel" alignment="0" pref="686" max="32767" attributes="0"/>
                               <Component id="pbEmUso2" alignment="0" max="32767" attributes="0"/>
-                              <Component id="pbEmUso1" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace pref="253" max="32767" attributes="0"/>
                       </Group>
@@ -355,11 +361,13 @@
                           <EmptySpace pref="16" max="32767" attributes="0"/>
                           <Component id="jLabel3" min="-2" pref="43" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="pbEmUso" min="-2" pref="56" max="-2" attributes="0"/>
+                          <Component id="pbDisponivel" min="-2" pref="56" max="-2" attributes="0"/>
                           <EmptySpace pref="16" max="32767" attributes="0"/>
-                          <Component id="jLabel4" min="-2" pref="43" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                          <Component id="pbEmUso1" min="-2" pref="56" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel4" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
+                              <Component id="labelTotal" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -407,7 +415,7 @@
                     <Property name="text" type="java.lang.String" value="Em uso:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JProgressBar" name="pbEmUso">
+                <Component class="javax.swing.JProgressBar" name="pbDisponivel">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="c4" green="c4" red="c4" type="rgb"/>
@@ -426,29 +434,7 @@
                     <Property name="stringPainted" type="boolean" value="true"/>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="pbEmUso.setValue(50);"/>
-                  </AuxValues>
-                </Component>
-                <Component class="javax.swing.JProgressBar" name="pbEmUso1">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="c4" green="c4" red="c4" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="18" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="c3" green="87" red="23" type="rgb"/>
-                    </Property>
-                    <Property name="value" type="int" value="20"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="null"/>
-                    </Property>
-                    <Property name="focusable" type="boolean" value="false"/>
-                    <Property name="stringPainted" type="boolean" value="true"/>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="pbEmUso.setValue(50);"/>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="pbDisponivel.setValue(50);"/>
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JProgressBar" name="pbEmUso2">
@@ -470,8 +456,10 @@
                     <Property name="stringPainted" type="boolean" value="true"/>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="pbEmUso.setValue(50);"/>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="pbDisponivel.setValue(50);"/>
                   </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labelTotal">
                 </Component>
               </SubComponents>
             </Container>

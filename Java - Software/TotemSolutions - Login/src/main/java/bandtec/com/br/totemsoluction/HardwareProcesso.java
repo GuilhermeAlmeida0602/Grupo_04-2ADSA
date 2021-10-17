@@ -9,7 +9,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 // @author Grupo_04-2ADSA
-public class HardwareProcesso extends javax.swing.JFrame {
+public final class HardwareProcesso extends javax.swing.JFrame {
 
     Looca looca = new Looca();
 
@@ -28,6 +28,7 @@ public class HardwareProcesso extends javax.swing.JFrame {
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(HardwareProcesso.class.getName()).log(Level.SEVERE, null, ex);
         }
+        ExibeProcesso();
     }
 
     @SuppressWarnings("unchecked")
@@ -438,7 +439,8 @@ public class HardwareProcesso extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnMemoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemoriaActionPerformed
-        // ação do btn MEMÓRIA
+        new HardwareMemoria().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnMemoriaActionPerformed
 
     private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
@@ -514,4 +516,21 @@ public class HardwareProcesso extends javax.swing.JFrame {
     private javax.swing.JLabel txConteudo9;
     private javax.swing.JLabel txConteudo99;
     // End of variables declaration//GEN-END:variables
+
+    public void ExibeProcesso() {
+        txConteudo3.setText(String.format("Fabricante: %s", looca.getProcessador().getFabricante()));
+        txConteudo4.setText(String.format("Nome: %s", looca.getProcessador().getNome()));
+        txConteudo5.setText(String.format("Identificador: %s", looca.getProcessador().getIdentificador()));
+        txConteudo6.setText(String.format("Micro Arquitetura: %s", looca.getProcessador().getMicroarquitetura()));
+        txConteudo7.setText(String.format("Frequência: " + looca.getProcessador().getFrequencia()));
+        txConteudo8.setText(String.format("Nº de Pacotes Físicos: %s", looca.getProcessador().getNumeroPacotesFisicos()));
+        txConteudo9.setText(String.format("Nº de CPU Físicos: %s", looca.getProcessador().getNumeroCpusFisicas()));
+        txConteudo10.setText(String.format("Nº de CPU Lógicos: " + looca.getProcessador().getNumeroCpusLogicas()));
+
+        Double uso = looca.getProcessador().getUso();
+        Integer usoProc = uso.intValue();
+
+        pbEmUso.setValue(usoProc);
+    }
+
 }

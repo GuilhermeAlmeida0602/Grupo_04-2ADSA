@@ -5,6 +5,7 @@
  */
 package bandtec.com.br.totemsoluction;
 
+import com.github.britooo.looca.api.group.memoria.Memoria;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -17,7 +18,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 public class HardwareMemoria extends javax.swing.JFrame {
 
     
-    
+    Memoria memoria = new Memoria();
     /**
      * Creates new form HardwareMemoria
      */
@@ -38,6 +39,7 @@ public class HardwareMemoria extends javax.swing.JFrame {
         }
         
         initComponents();
+        ExibeMemoria();
     }
     
     
@@ -67,9 +69,9 @@ public class HardwareMemoria extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        pbEmUso = new javax.swing.JProgressBar();
-        pbEmUso1 = new javax.swing.JProgressBar();
+        pbDisponivel = new javax.swing.JProgressBar();
         pbEmUso2 = new javax.swing.JProgressBar();
+        labelTotal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
@@ -88,6 +90,11 @@ public class HardwareMemoria extends javax.swing.JFrame {
         btnSair.setText("SAIR");
         btnSair.setBorder(null);
         btnSair.setFocusPainted(false);
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
         btnVoltar.setBackground(new java.awt.Color(35, 135, 195));
         btnVoltar.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
@@ -220,21 +227,13 @@ public class HardwareMemoria extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(35, 135, 195));
         jLabel5.setText("Em uso:");
 
-        pbEmUso.setBackground(new java.awt.Color(196, 196, 196));
-        pbEmUso.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        pbEmUso.setForeground(new java.awt.Color(35, 135, 195));
-        pbEmUso.setValue(20);
-        pbEmUso.setBorder(null);
-        pbEmUso.setFocusable(false);
-        pbEmUso.setStringPainted(true);
-
-        pbEmUso1.setBackground(new java.awt.Color(196, 196, 196));
-        pbEmUso1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        pbEmUso1.setForeground(new java.awt.Color(35, 135, 195));
-        pbEmUso1.setValue(20);
-        pbEmUso1.setBorder(null);
-        pbEmUso1.setFocusable(false);
-        pbEmUso1.setStringPainted(true);
+        pbDisponivel.setBackground(new java.awt.Color(196, 196, 196));
+        pbDisponivel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        pbDisponivel.setForeground(new java.awt.Color(35, 135, 195));
+        pbDisponivel.setValue(20);
+        pbDisponivel.setBorder(null);
+        pbDisponivel.setFocusable(false);
+        pbDisponivel.setStringPainted(true);
 
         pbEmUso2.setBackground(new java.awt.Color(196, 196, 196));
         pbEmUso2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -253,10 +252,12 @@ public class HardwareMemoria extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3)
                     .addComponent(jLabel5)
-                    .addComponent(jLabel4)
-                    .addComponent(pbEmUso, javax.swing.GroupLayout.DEFAULT_SIZE, 686, Short.MAX_VALUE)
-                    .addComponent(pbEmUso2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pbEmUso1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(labelTotal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(pbDisponivel, javax.swing.GroupLayout.DEFAULT_SIZE, 686, Short.MAX_VALUE)
+                    .addComponent(pbEmUso2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(253, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -269,16 +270,16 @@ public class HardwareMemoria extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pbEmUso, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pbDisponivel, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(pbEmUso1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(61, 61, 61))
         );
 
-        pbEmUso.setValue(50);
-        pbEmUso.setValue(50);
-        pbEmUso.setValue(50);
+        pbDisponivel.setValue(50);
+        pbDisponivel.setValue(50);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -337,15 +338,19 @@ public class HardwareMemoria extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        // TODO add your handling code here:
+        new ProcessosTelaInicial().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnMemoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemoriaActionPerformed
-        // TODO add your handling code here:
+        pbEmUso2.setValue((int) ((memoria.getEmUso() * 100) / memoria.getTotal()) + 1);
+        pbDisponivel.setValue((int) ((memoria.getDisponivel()*100) / memoria.getTotal()));
+        labelTotal.setText(memoria.getTotal().toString() + " GiBs");
     }//GEN-LAST:event_btnMemoriaActionPerformed
 
     private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
-        // TODO add your handling code here:
+        new HardwareSo().setVisible(true);
+        this.dispose();
 
 
         btnSO.setForeground(new java.awt.Color(255, 102, 102));
@@ -361,12 +366,19 @@ public class HardwareMemoria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSOActionPerformed
 
     private void btnHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHDActionPerformed
-        // TODO add your handling code here:
+        new HardwareHD().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnHDActionPerformed
 
     private void btnProcessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessadorActionPerformed
-        // TODO add your handling code here:
+        new HardwareProcesso().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnProcessadorActionPerformed
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        new LoginPage().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -419,9 +431,15 @@ public class HardwareMemoria extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JProgressBar pbEmUso;
-    private javax.swing.JProgressBar pbEmUso1;
+    private javax.swing.JLabel labelTotal;
+    private javax.swing.JProgressBar pbDisponivel;
     private javax.swing.JProgressBar pbEmUso2;
     private javax.swing.JLabel txConteudo1;
     // End of variables declaration//GEN-END:variables
+
+    public void ExibeMemoria () {
+        pbEmUso2.setValue((int) ((memoria.getEmUso() * 100) / memoria.getTotal()) + 1);
+        pbDisponivel.setValue((int) ((memoria.getDisponivel()*100) / memoria.getTotal()));
+        labelTotal.setText(memoria.getTotal().toString() + " GiBs");
+    }
 }
