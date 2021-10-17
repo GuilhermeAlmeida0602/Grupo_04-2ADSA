@@ -3,6 +3,8 @@ package bandtec.com.br.totemsoluction;
 import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.discos.Disco;
 import com.github.britooo.looca.api.group.discos.DiscosGroup;
+import com.github.britooo.looca.api.group.discos.Volume;
+import com.github.britooo.looca.api.util.Conversor;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -46,16 +48,23 @@ public class HardwareHD extends javax.swing.JFrame {
         btnHD = new javax.swing.JButton();
         btnProcessador = new javax.swing.JButton();
         conteudo = new javax.swing.JPanel();
-        txConteudo = new javax.swing.JLabel();
+        txConteudo1 = new javax.swing.JLabel();
+        txConteudo2 = new javax.swing.JLabel();
+        txConteudo3 = new javax.swing.JLabel();
+        txConteudo4 = new javax.swing.JLabel();
+        txConteudo5 = new javax.swing.JLabel();
+        txConteudo6 = new javax.swing.JLabel();
+        txConteudo7 = new javax.swing.JLabel();
         infoPorcentagem = new javax.swing.JPanel();
-        pbDisponivel = new javax.swing.JProgressBar();
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-        pbEmUso = new javax.swing.JProgressBar();
-        pbTotal = new javax.swing.JProgressBar();
+        pbDisponivel = new javax.swing.JProgressBar();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        txConteudo10 = new javax.swing.JLabel();
+        txConteudo9 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
@@ -186,32 +195,90 @@ public class HardwareHD extends javax.swing.JFrame {
         conteudo.setBackground(new java.awt.Color(247, 247, 247));
         conteudo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(35, 135, 195)));
 
-        txConteudo.setBackground(new java.awt.Color(35, 135, 195));
-        txConteudo.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        txConteudo.setForeground(new java.awt.Color(35, 135, 195));
-        txConteudo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        txConteudo.setText("Informações");
-        txConteudo.setToolTipText("");
-        txConteudo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        txConteudo1.setBackground(new java.awt.Color(35, 135, 195));
+        txConteudo1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txConteudo1.setForeground(new java.awt.Color(35, 135, 195));
+        txConteudo1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txConteudo1.setToolTipText("");
+        txConteudo1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        txConteudo2.setBackground(new java.awt.Color(35, 135, 195));
+        txConteudo2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txConteudo2.setForeground(new java.awt.Color(35, 135, 195));
+        txConteudo2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txConteudo2.setToolTipText("");
+        txConteudo2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        txConteudo3.setBackground(new java.awt.Color(35, 135, 195));
+        txConteudo3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txConteudo3.setForeground(new java.awt.Color(35, 135, 195));
+        txConteudo3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txConteudo3.setToolTipText("");
+        txConteudo3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        txConteudo4.setBackground(new java.awt.Color(35, 135, 195));
+        txConteudo4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txConteudo4.setForeground(new java.awt.Color(35, 135, 195));
+        txConteudo4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txConteudo4.setToolTipText("");
+        txConteudo4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        txConteudo5.setBackground(new java.awt.Color(35, 135, 195));
+        txConteudo5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txConteudo5.setForeground(new java.awt.Color(35, 135, 195));
+        txConteudo5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txConteudo5.setToolTipText("");
+        txConteudo5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        txConteudo6.setBackground(new java.awt.Color(35, 135, 195));
+        txConteudo6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txConteudo6.setForeground(new java.awt.Color(35, 135, 195));
+        txConteudo6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txConteudo6.setToolTipText("");
+        txConteudo6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        txConteudo7.setBackground(new java.awt.Color(35, 135, 195));
+        txConteudo7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txConteudo7.setForeground(new java.awt.Color(35, 135, 195));
+        txConteudo7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txConteudo7.setToolTipText("");
+        txConteudo7.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout conteudoLayout = new javax.swing.GroupLayout(conteudo);
         conteudo.setLayout(conteudoLayout);
         conteudoLayout.setHorizontalGroup(
             conteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(conteudoLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(txConteudo, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addGroup(conteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txConteudo7, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txConteudo6, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txConteudo4, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txConteudo3, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txConteudo2, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txConteudo1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txConteudo5, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         conteudoLayout.setVerticalGroup(
             conteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(conteudoLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(txConteudo, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addComponent(txConteudo1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txConteudo2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txConteudo3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txConteudo4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txConteudo5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txConteudo6, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txConteudo7, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        txConteudo.getAccessibleContext().setAccessibleParent(txConteudo);
 
         infoPorcentagem.setBackground(new java.awt.Color(247, 247, 247));
         infoPorcentagem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(35, 135, 195)));
@@ -219,44 +286,30 @@ public class HardwareHD extends javax.swing.JFrame {
         pbDisponivel.setBackground(new java.awt.Color(196, 196, 196));
         pbDisponivel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         pbDisponivel.setForeground(new java.awt.Color(35, 135, 195));
-        pbDisponivel.setValue(50);
         pbDisponivel.setBorder(null);
-        pbDisponivel.setBorderPainted(false);
         pbDisponivel.setFocusable(false);
         pbDisponivel.setStringPainted(true);
-        pbDisponivel.setValue(20);
-
-        pbEmUso.setBackground(new java.awt.Color(196, 196, 196));
-        pbEmUso.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        pbEmUso.setForeground(new java.awt.Color(35, 135, 195));
-        pbEmUso.setValue(20);
-        pbEmUso.setBorder(null);
-        pbEmUso.setFocusable(false);
-        pbEmUso.setStringPainted(true);
-
-        pbTotal.setBackground(new java.awt.Color(196, 196, 196));
-        pbTotal.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        pbTotal.setForeground(new java.awt.Color(35, 135, 195));
-        pbTotal.setValue(90);
-        pbTotal.setBorder(null);
-        pbTotal.setBorderPainted(false);
-        pbTotal.setFocusable(false);
-        pbTotal.setStringPainted(true);
 
         jLabel2.setBackground(new java.awt.Color(35, 135, 195));
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(35, 135, 195));
-        jLabel2.setText("Disco em uso");
+        jLabel2.setText("TIPO");
 
         jLabel3.setBackground(new java.awt.Color(35, 135, 195));
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(35, 135, 195));
         jLabel3.setText("Disco Disponível");
 
         jLabel4.setBackground(new java.awt.Color(35, 135, 195));
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(35, 135, 195));
-        jLabel4.setText("Disco total");
+        jLabel4.setText("Ponto de Montagem");
+
+        txConteudo10.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txConteudo10.setForeground(new java.awt.Color(35, 135, 195));
+
+        txConteudo9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txConteudo9.setForeground(new java.awt.Color(35, 135, 195));
 
         javax.swing.GroupLayout infoPorcentagemLayout = new javax.swing.GroupLayout(infoPorcentagem);
         infoPorcentagem.setLayout(infoPorcentagemLayout);
@@ -264,45 +317,51 @@ public class HardwareHD extends javax.swing.JFrame {
             infoPorcentagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(infoPorcentagemLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(infoPorcentagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(infoPorcentagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2)
-                        .addComponent(pbDisponivel, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel4)
-                        .addComponent(pbTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(infoPorcentagemLayout.createSequentialGroup()
-                        .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(infoPorcentagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(pbEmUso, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(infoPorcentagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(pbDisponivel, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(filler3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(infoPorcentagemLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infoPorcentagemLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(infoPorcentagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txConteudo10, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel4)
+                    .addComponent(txConteudo9, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(74, 74, 74))
         );
         infoPorcentagemLayout.setVerticalGroup(
             infoPorcentagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infoPorcentagemLayout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+                .addContainerGap(28, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(infoPorcentagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(filler2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(filler3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pbEmUso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
+                    .addComponent(pbDisponivel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pbDisponivel, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
+                .addComponent(txConteudo9, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel4)
-                .addGap(5, 5, 5)
-                .addComponent(pbTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txConteudo10, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
 
-        pbEmUso.setValue(50);
-        pbTotal.setValue(90);
+        pbDisponivel.setValue(0);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -322,8 +381,8 @@ public class HardwareHD extends javax.swing.JFrame {
                 .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(conteudo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(infoPorcentagem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(infoPorcentagem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(conteudo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -341,6 +400,7 @@ public class HardwareHD extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void btnProcessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessadorActionPerformed
         // ação do btn PROCESSSADOR
         new HardwareProcesso().setVisible(true);
@@ -348,29 +408,47 @@ public class HardwareHD extends javax.swing.JFrame {
     }//GEN-LAST:event_btnProcessadorActionPerformed
 
     private void btnHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHDActionPerformed
-        // ação do btn DISCO RÍGIDO 
+        // ação do btn DISCO RÍGIDO... 
 
+        // Instanciando objeto da classo Conversor
+        Conversor conv = new Conversor();
+        
+        // Informações sobre o DISCO
         DiscosGroup grupoDeDiscos = looca.getGrupoDeDiscos();
 
         List<Disco> discos = grupoDeDiscos.getDiscos();
 
         for (Disco disco : discos) {
-            System.out.println(disco);
+
+            txConteudo1.setText("<html> Nome: " + disco.getNome() + "</html>");
+            txConteudo2.setText("<html> Modelo: " + disco.getModelo() + "</html>");
+            txConteudo3.setText("<html> Serial: " + disco.getSerial() + "</html>");
+            txConteudo4.setText("<html> Tamanho: " + Conversor.formatarBytes(disco.getTamanho()) + "</html>");
+            txConteudo5.setText("<html> Quantidade de Leituras: " + conv.formatarBytes(disco.getLeituras()) + "</html>");
+            txConteudo6.setText("<html> Bytes total de Leitura: " + conv.formatarBytes(disco.getBytesDeLeitura()) + "</html>");
+            txConteudo7.setText("<html> Quantidade de Escritas: " + conv.formatarBytes(disco.getEscritas()) + "</html>");
+
+            System.out.println(Conversor.formatarBytes(disco.getTamanho()));
         }
 
-        txConteudo.setText(String.format("Fabricante: %s", looca.getProcessador().getFabricante()));
-//        txConteudo4.setText(String.format("Nome: %s", looca.getProcessador().getNome()));;
-//        txConteudo5.setText(String.format("Identificador: %s", looca.getProcessador().getIdentificador()));
-//        txConteudo6.setText(String.format("Micro Arquitetura: %s", looca.getProcessador().getMicroarquitetura()));
-//        txConteudo7.setText(String.format("Frequência: " + looca.getProcessador().getFrequencia()));
-//        txConteudo8.setText(String.format("Nº de Pacotes Físicos: %s", looca.getProcessador().getNumeroPacotesFisicos()));
-//        txConteudo9.setText(String.format("Nº de CPU Físicos: %s", looca.getProcessador().getNumeroCpusFisicas()));
-//        txConteudo10.setText(String.format("Nº de CPU Lógicos: " + looca.getProcessador().getNumeroCpusLogicas()));
+        // Informações sobre o tipo de disco, 
+        DiscosGroup grupoDeVolumes = looca.getGrupoDeDiscos();
 
-        Double uso = looca.getProcessador().getUso();
-        Integer usoProc = uso.intValue();
+        List<Volume> volumes = grupoDeVolumes.getVolumes();
 
-        pbEmUso.setValue(usoProc);
+        for (Volume vol : volumes) {
+
+            //Integer discoTotal = Integer.valueOf(conv.formatarBytes(volumes.get(0).getTotal()));
+            //Integer discoDisp = Integer.valueOf(conv.formatarBytes(volumes.get(0).getDisponivel()));
+
+            //Integer result = (discoDisp * 100) / discoTotal;
+
+            //pbDisponivel.setValue(result);
+            txConteudo9.setText(volumes.get(0).getTipo());
+            txConteudo10.setText(volumes.get(0).getPontoDeMontagem());
+            
+            
+        }
     }//GEN-LAST:event_btnHDActionPerformed
 
     private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
@@ -424,9 +502,16 @@ public class HardwareHD extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JProgressBar pbDisponivel;
-    private javax.swing.JProgressBar pbEmUso;
-    private javax.swing.JProgressBar pbTotal;
-    private javax.swing.JLabel txConteudo;
+    private javax.swing.JLabel txConteudo1;
+    private javax.swing.JLabel txConteudo10;
+    private javax.swing.JLabel txConteudo2;
+    private javax.swing.JLabel txConteudo3;
+    private javax.swing.JLabel txConteudo4;
+    private javax.swing.JLabel txConteudo5;
+    private javax.swing.JLabel txConteudo6;
+    private javax.swing.JLabel txConteudo7;
+    private javax.swing.JLabel txConteudo9;
     // End of variables declaration//GEN-END:variables
 }
