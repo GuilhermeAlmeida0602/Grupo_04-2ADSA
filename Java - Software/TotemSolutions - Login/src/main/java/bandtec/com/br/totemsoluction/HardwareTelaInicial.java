@@ -225,7 +225,7 @@ public class HardwareTelaInicial extends javax.swing.JFrame {
 
     private void btnMemoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemoriaActionPerformed
         // ação do btn MEMÓRIA
-        new HardwareSo().setVisible(true);
+        new HardwareMemoria().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnMemoriaActionPerformed
 

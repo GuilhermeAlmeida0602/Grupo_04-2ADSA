@@ -113,7 +113,11 @@ public class App {
 //        System.out.println(disp);
         String teste = conv.formatarBytes(volumes.get(0).getTotal());
 
+<<<<<<< HEAD
         //System.out.println(piki);
+=======
+//        System.out.println(piki);
+>>>>>>> 9ba5af38a239aa0d0b4d7375882251112175df2b
 
 //        Integer discoTotal = Integer.valueOf(conv.formatarBytes(volumes.get(0).getTotal()));
 //        Integer discoDisp = Integer.valueOf(conv.formatarBytes(volumes.get(0).getDisponivel()));

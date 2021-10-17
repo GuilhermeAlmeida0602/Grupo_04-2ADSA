@@ -4,11 +4,12 @@ import com.github.britooo.looca.api.core.Looca;
 
 // @author Grupo_04-2ADSA
 public class HardwareSo extends javax.swing.JFrame {
-
+    
     Looca looca = new Looca();
 
     public HardwareSo() {
         initComponents();
+        ExibirInformacoes();
     }
 
     @SuppressWarnings("unchecked")
@@ -321,7 +322,8 @@ public class HardwareSo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHDActionPerformed
 
     private void btnMemoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemoriaActionPerformed
-        // ação do btn MEMÓRIA
+        new HardwareMemoria().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnMemoriaActionPerformed
 
     public static void main(String args[]) {
@@ -369,4 +371,13 @@ public class HardwareSo extends javax.swing.JFrame {
     private javax.swing.JLabel txConteudo4;
     private javax.swing.JLabel txConteudo5;
     // End of variables declaration//GEN-END:variables
+
+    public void ExibirInformacoes () {
+        txConteudo.setText(String.format("Sistema operacional: %s", looca.getSistema().getSistemaOperacional()));
+        txConteudo1.setText(String.format("Fabricante: %s", looca.getSistema().getFabricante()));
+        txConteudo2.setText(String.format("Arquitetura: %d bits", looca.getSistema().getArquitetura()));
+        txConteudo3.setText(String.format("Inicializado: %s", looca.getSistema().getInicializado()));
+        txConteudo4.setText(String.format("Tempo de atividade: %s", looca.getSistema().getTempoDeAtividade()));
+        txConteudo5.setText("Executando como " + (looca.getSistema().getPermissao() ? "root" : "usuário padrão"));
+    }
 }
