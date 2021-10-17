@@ -5,6 +5,12 @@
  */
 package bandtec.com.br.totemsoluction;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JScrollPane;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
 /**
  *
  * @author M.Araujo
@@ -14,8 +20,26 @@ public class ProcessosApp extends javax.swing.JFrame {
     /**
      * Creates new form ProcessosApp
      */
+    
+    
+    
+    
     public ProcessosApp() {
+        
+        try {
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ProcessosApp.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(ProcessosApp.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(ProcessosApp.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(ProcessosApp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         initComponents();
+        teste();
     }
 
     /**
@@ -32,22 +56,21 @@ public class ProcessosApp extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnSair = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        btnMemoria = new javax.swing.JButton();
-        btnSO = new javax.swing.JButton();
-        btnHD = new javax.swing.JButton();
-        btnProcessador = new javax.swing.JButton();
+        nameFunction = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        content = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txConteudo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
         setMinimumSize(new java.awt.Dimension(1080, 650));
-        setPreferredSize(new java.awt.Dimension(1355, 685));
 
         jPanel1.setBackground(new java.awt.Color(247, 247, 247));
 
         header.setBackground(new java.awt.Color(247, 247, 247));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\TotemSoluctions.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TotemSoluctions.png"))); // NOI18N
 
         btnSair.setBackground(new java.awt.Color(35, 135, 195));
         btnSair.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
@@ -68,71 +91,6 @@ public class ProcessosApp extends javax.swing.JFrame {
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(247, 247, 247));
-
-        btnMemoria.setForeground(new java.awt.Color(255, 102, 102));
-        btnMemoria.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardMemoria.png")); // NOI18N
-        btnMemoria.setBorder(null);
-        btnMemoria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMemoriaActionPerformed(evt);
-            }
-        });
-
-        btnSO.setForeground(new java.awt.Color(255, 102, 102));
-        btnSO.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardSO.png")); // NOI18N
-        btnSO.setBorder(null);
-        btnSO.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSOActionPerformed(evt);
-            }
-        });
-
-        btnHD.setForeground(new java.awt.Color(255, 102, 102));
-        btnHD.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardHD.png")); // NOI18N
-        btnHD.setBorder(null);
-        btnHD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHDActionPerformed(evt);
-            }
-        });
-
-        btnProcessador.setForeground(new java.awt.Color(255, 102, 102));
-        btnProcessador.setIcon(new javax.swing.ImageIcon("C:\\Users\\M.Araujo\\Desktop\\Grupo_04-2ADSA\\Java - Software\\TotemSolutions - Login\\src\\main\\java\\bandtec\\com\\br\\totemsoluction\\img\\hardProcessador.png")); // NOI18N
-        btnProcessador.setBorder(null);
-        btnProcessador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProcessadorActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(9, Short.MAX_VALUE)
-                .addComponent(btnSO)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnProcessador)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnMemoria)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnHD)
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnProcessador)
-                    .addComponent(btnHD)
-                    .addComponent(btnSO)
-                    .addComponent(btnMemoria))
-                .addGap(12, 12, 12))
-        );
-
         javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
         header.setLayout(headerLayout);
         headerLayout.setHorizontalGroup(
@@ -140,24 +98,75 @@ public class ProcessosApp extends javax.swing.JFrame {
             .addGroup(headerLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 700, Short.MAX_VALUE)
                 .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerLayout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(12, 12, 12)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11))
+                .addGap(162, 162, 162))
+        );
+
+        nameFunction.setBackground(new java.awt.Color(247, 247, 247));
+        nameFunction.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(35, 135, 195)));
+
+        jLabel2.setBackground(new java.awt.Color(35, 135, 195));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(35, 135, 195));
+        jLabel2.setText("Processos em andamento");
+
+        javax.swing.GroupLayout nameFunctionLayout = new javax.swing.GroupLayout(nameFunction);
+        nameFunction.setLayout(nameFunctionLayout);
+        nameFunctionLayout.setHorizontalGroup(
+            nameFunctionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(nameFunctionLayout.createSequentialGroup()
+                .addContainerGap(458, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addContainerGap(465, Short.MAX_VALUE))
+        );
+        nameFunctionLayout.setVerticalGroup(
+            nameFunctionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(nameFunctionLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel2)
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+
+        content.setBackground(new java.awt.Color(247, 247, 247));
+        content.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(35, 135, 195)));
+
+        jScrollPane1.setBackground(new java.awt.Color(247, 247, 247));
+        jScrollPane1.setForeground(new java.awt.Color(247, 247, 247));
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        txConteudo.setBackground(new java.awt.Color(35, 135, 195));
+        txConteudo.setFont(new java.awt.Font("Segoe UI", 0, 28)); // NOI18N
+        txConteudo.setForeground(new java.awt.Color(35, 135, 195));
+        txConteudo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txConteudo.setText("<html><body>Oi<br></body></html>");
+        txConteudo.setToolTipText("");
+        txConteudo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        txConteudo.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        txConteudo.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jScrollPane1.setViewportView(txConteudo);
+
+        javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
+        content.setLayout(contentLayout);
+        contentLayout.setHorizontalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
+        );
+        contentLayout.setVerticalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -165,12 +174,23 @@ public class ProcessosApp extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(nameFunction, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 388, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nameFunction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -190,40 +210,6 @@ public class ProcessosApp extends javax.swing.JFrame {
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnVoltarActionPerformed
-
-    private void btnMemoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemoriaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMemoriaActionPerformed
-
-    private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
-        // TODO add your handling code here:
-
-
-        //Alternativa pra quebra de linha (pode mesclar as tags)
-        /*
-        Pode puxar os campos que estão na init (na variavel txConteudo)
-        e fazer alterações como tamanho, fonte etc...
-        */
-
-        btnSO.setForeground(new java.awt.Color(255, 102, 102));
-
-        btnSO.setBorder(null);
-
-        btnSO.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSOActionPerformed(evt);
-            }
-        });
-
-    }//GEN-LAST:event_btnSOActionPerformed
-
-    private void btnHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnHDActionPerformed
-
-    private void btnProcessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnProcessadorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -261,15 +247,24 @@ public class ProcessosApp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnHD;
-    private javax.swing.JButton btnMemoria;
-    private javax.swing.JButton btnProcessador;
-    private javax.swing.JButton btnSO;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnVoltar;
+    private javax.swing.JPanel content;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel nameFunction;
+    private javax.swing.JLabel txConteudo;
     // End of variables declaration//GEN-END:variables
+
+    JScrollPane scroll = new JScrollPane(txConteudo);
+
+    public void teste(){
+        txConteudo.setText("<html><body>Boa noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br></body></html>");
+    }
+
 }
+
+
