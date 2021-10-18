@@ -211,38 +211,31 @@ public class HardwareTelaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
-        // ação do btn SISTEMA OPERACIONAL
         new HardwareSo().setVisible(true);
         this.dispose();
-
     }//GEN-LAST:event_btnSOActionPerformed
 
     private void btnProcessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessadorActionPerformed
-        // ação do btn PROCESSADOR
         new HardwareProcesso().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnProcessadorActionPerformed
 
     private void btnMemoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemoriaActionPerformed
-        // ação do btn MEMÓRIA
         new HardwareMemoria().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnMemoriaActionPerformed
 
     private void btnHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHDActionPerformed
-        // ação do btn DISCO RÍGIDO
         new HardwareHD().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnHDActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        // ação do btn VOLTAR
         new ProcessosTelaInicial().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        // ação do btn SAIR
         new LoginPage().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnSairActionPerformed

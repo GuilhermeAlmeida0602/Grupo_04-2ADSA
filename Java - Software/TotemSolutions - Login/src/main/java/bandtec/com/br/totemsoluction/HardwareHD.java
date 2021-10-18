@@ -14,6 +14,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 // @author Grupo_04-2ADSA
 public class HardwareHD extends javax.swing.JFrame {
 
+    Conversor conv = new Conversor();
     Looca looca = new Looca();
 
     public HardwareHD() {
@@ -267,7 +268,7 @@ public class HardwareHD extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addComponent(txConteudo1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txConteudo2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txConteudo2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txConteudo3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -278,7 +279,7 @@ public class HardwareHD extends javax.swing.JFrame {
                 .addComponent(txConteudo6, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txConteudo7, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         infoPorcentagem.setBackground(new java.awt.Color(247, 247, 247));
@@ -319,11 +320,11 @@ public class HardwareHD extends javax.swing.JFrame {
             .addGroup(infoPorcentagemLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(infoPorcentagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(pbDisponivel, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(filler3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(infoPorcentagemLayout.createSequentialGroup()
@@ -342,14 +343,19 @@ public class HardwareHD extends javax.swing.JFrame {
         infoPorcentagemLayout.setVerticalGroup(
             infoPorcentagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infoPorcentagemLayout.createSequentialGroup()
-                .addContainerGap(63, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(infoPorcentagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(filler2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(filler3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pbDisponivel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGroup(infoPorcentagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(infoPorcentagemLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(infoPorcentagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(filler2, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                            .addComponent(filler3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18))
+                    .addGroup(infoPorcentagemLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pbDisponivel, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(jLabel2)
@@ -382,9 +388,9 @@ public class HardwareHD extends javax.swing.JFrame {
                 .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(infoPorcentagem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(conteudo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(conteudo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(infoPorcentagem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -403,55 +409,15 @@ public class HardwareHD extends javax.swing.JFrame {
 
 
     private void btnProcessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessadorActionPerformed
-        // ação do btn PROCESSSADOR
         new HardwareProcesso().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnProcessadorActionPerformed
 
     private void btnHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHDActionPerformed
-        // ação do btn DISCO RÍGIDO... 
-
-        // Instanciando objeto da classo Conversor
-        Conversor conv = new Conversor();
-
-        // Informações sobre o DISCO
-        DiscosGroup grupoDeDiscos = looca.getGrupoDeDiscos();
-
-        List<Disco> discos = grupoDeDiscos.getDiscos();
-
-        for (Disco disco : discos) {
-
-            txConteudo1.setText("<html> Nome: " + disco.getNome() + "</html>");
-            txConteudo2.setText("<html> Modelo: " + disco.getModelo() + "</html>");
-            txConteudo3.setText("<html> Serial: " + disco.getSerial() + "</html>");
-            txConteudo4.setText("<html> Tamanho: " + Conversor.formatarBytes(disco.getTamanho()) + "</html>");
-            txConteudo5.setText("<html> Quantidade de Leituras: " + conv.formatarBytes(disco.getLeituras()) + "</html>");
-            txConteudo6.setText("<html> Bytes total de Leitura: " + conv.formatarBytes(disco.getBytesDeLeitura()) + "</html>");
-            txConteudo7.setText("<html> Quantidade de Escritas: " + conv.formatarBytes(disco.getEscritas()) + "</html>");
-
-            System.out.println(Conversor.formatarBytes(disco.getTamanho()));
-        }
-
-        // Informações sobre o tipo de disco, 
-        DiscosGroup grupoDeVolumes = looca.getGrupoDeDiscos();
-
-        List<Volume> volumes = grupoDeVolumes.getVolumes();
-
-        for (Volume vol : volumes) {
-
-            //Integer discoTotal = Integer.valueOf(conv.formatarBytes(volumes.get(0).getTotal()));
-            //Integer discoDisp = Integer.valueOf(conv.formatarBytes(volumes.get(0).getDisponivel()));
-            //Integer result = (discoDisp * 100) / discoTotal;
-            //pbDisponivel.setValue(result);
-            txConteudo9.setText(volumes.get(0).getTipo());
-            txConteudo10.setText(volumes.get(0).getPontoDeMontagem());
-
-        }
-        
+        ExibeHD();
     }//GEN-LAST:event_btnHDActionPerformed
 
     private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
-        // ação do btn SISTEMA OPERACIONAL
         new HardwareSo().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnSOActionPerformed
@@ -478,9 +444,7 @@ public class HardwareHD extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new HardwareHD().setVisible(true);
-
             }
-
         });
     }
 
@@ -515,9 +479,8 @@ public class HardwareHD extends javax.swing.JFrame {
     private javax.swing.JLabel txConteudo9;
     // End of variables declaration//GEN-END:variables
 
+    // Método para exibir as informações do DISCO
     public void ExibeHD() {
-
-        Conversor conv = new Conversor();
 
         // Informações sobre o DISCO
         DiscosGroup grupoDeDiscos = looca.getGrupoDeDiscos();
@@ -525,7 +488,6 @@ public class HardwareHD extends javax.swing.JFrame {
         List<Disco> discos = grupoDeDiscos.getDiscos();
 
         for (Disco disco : discos) {
-
             txConteudo1.setText("<html> Nome: " + disco.getNome() + "</html>");
             txConteudo2.setText("<html> Modelo: " + disco.getModelo() + "</html>");
             txConteudo3.setText("<html> Serial: " + disco.getSerial() + "</html>");
@@ -533,25 +495,17 @@ public class HardwareHD extends javax.swing.JFrame {
             txConteudo5.setText("<html> Quantidade de Leituras: " + conv.formatarBytes(disco.getLeituras()) + "</html>");
             txConteudo6.setText("<html> Bytes total de Leitura: " + conv.formatarBytes(disco.getBytesDeLeitura()) + "</html>");
             txConteudo7.setText("<html> Quantidade de Escritas: " + conv.formatarBytes(disco.getEscritas()) + "</html>");
-
-            System.out.println(Conversor.formatarBytes(disco.getTamanho()));
         }
 
         // Informações sobre o tipo de disco, 
         DiscosGroup grupoDeVolumes = looca.getGrupoDeDiscos();
-
         List<Volume> volumes = grupoDeVolumes.getVolumes();
 
+        // for avançado para Setar Textos -> JLabel
         for (Volume vol : volumes) {
-
-            //Integer discoTotal = Integer.valueOf(conv.formatarBytes(volumes.get(0).getTotal()));
-            //Integer discoDisp = Integer.valueOf(conv.formatarBytes(volumes.get(0).getDisponivel()));
-            //Integer result = (discoDisp * 100) / discoTotal;
-            //pbDisponivel.setValue(result);
             txConteudo9.setText(volumes.get(0).getTipo());
             txConteudo10.setText(volumes.get(0).getPontoDeMontagem());
-
         }
-
     }
+
 }

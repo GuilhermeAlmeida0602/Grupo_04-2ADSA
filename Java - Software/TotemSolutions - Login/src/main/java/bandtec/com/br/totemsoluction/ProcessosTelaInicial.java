@@ -161,13 +161,11 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        // ação do btn SAIR
         new LoginPage().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnHardwareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHardwareActionPerformed
-        // ação do btn TELA INICIAL
         new HardwareTelaInicial().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnHardwareActionPerformed
@@ -194,5 +192,4 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel logo;
     // End of variables declaration//GEN-END:variables
-
 }

@@ -1,8 +1,6 @@
 package bandtec.com.br.totemsoluction;
 
 import com.github.britooo.looca.api.core.Looca;
-import com.github.britooo.looca.api.group.processador.Processador;
-import java.util.Timer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -28,6 +26,7 @@ public final class HardwareProcesso extends javax.swing.JFrame {
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(HardwareProcesso.class.getName()).log(Level.SEVERE, null, ex);
         }
+
         ExibeProcesso();
     }
 
@@ -433,7 +432,6 @@ public final class HardwareProcesso extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        // ação do btn VOLTAR
         new ProcessosTelaInicial().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
@@ -444,37 +442,20 @@ public final class HardwareProcesso extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMemoriaActionPerformed
 
     private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
-        // ação do btn SISTEMA OPERACIONAL
         new HardwareSo().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnSOActionPerformed
 
     private void btnHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHDActionPerformed
-        // ação do btn DISCO RÍGIDO
         new HardwareHD().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnHDActionPerformed
 
     private void btnProcessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessadorActionPerformed
-        // ação do btn PROCESSSADOR
-
-        txConteudo3.setText(String.format("Fabricante: %s", looca.getProcessador().getFabricante()));
-        txConteudo4.setText(String.format("Nome: %s", looca.getProcessador().getNome()));
-        txConteudo5.setText(String.format("Identificador: %s", looca.getProcessador().getIdentificador()));
-        txConteudo6.setText(String.format("Micro Arquitetura: %s", looca.getProcessador().getMicroarquitetura()));
-        txConteudo7.setText(String.format("Frequência: " + looca.getProcessador().getFrequencia()));
-        txConteudo8.setText(String.format("Nº de Pacotes Físicos: %s", looca.getProcessador().getNumeroPacotesFisicos()));
-        txConteudo9.setText(String.format("Nº de CPU Físicos: %s", looca.getProcessador().getNumeroCpusFisicas()));
-        txConteudo10.setText(String.format("Nº de CPU Lógicos: " + looca.getProcessador().getNumeroCpusLogicas()));
-
-        Double uso = looca.getProcessador().getUso();
-        Integer usoProc = uso.intValue();
-
-        pbEmUso.setValue(usoProc);
+        ExibeProcesso();
     }//GEN-LAST:event_btnProcessadorActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        // ação do btn SAIR
         new LoginPage().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnSairActionPerformed
@@ -517,6 +498,7 @@ public final class HardwareProcesso extends javax.swing.JFrame {
     private javax.swing.JLabel txConteudo99;
     // End of variables declaration//GEN-END:variables
 
+    // Método para exibir as informações do PROCESSADOR
     public void ExibeProcesso() {
         txConteudo3.setText(String.format("Fabricante: %s", looca.getProcessador().getFabricante()));
         txConteudo4.setText(String.format("Nome: %s", looca.getProcessador().getNome()));
