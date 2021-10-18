@@ -260,9 +260,6 @@
                       <Color blue="c3" green="87" red="23" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="&quot;&lt;html&gt;&lt;body&gt;Oi&lt;br&gt;&lt;/body&gt;&lt;/html&gt;&quot;" type="code"/>
-                    </Property>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="verticalAlignment" type="int" value="1"/>
                     <Property name="horizontalTextPosition" type="int" value="2"/>

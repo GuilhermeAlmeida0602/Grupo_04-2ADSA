@@ -103,6 +103,11 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         btnSO.setBorder(null);
         btnSO.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         btnSO.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        btnSO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSOActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ContentLayout = new javax.swing.GroupLayout(Content);
         Content.setLayout(ContentLayout);
@@ -166,6 +171,11 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         new HardwareTelaInicial().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnHardwareActionPerformed
+
+    private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
+        new ProcessosApp().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnSOActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {

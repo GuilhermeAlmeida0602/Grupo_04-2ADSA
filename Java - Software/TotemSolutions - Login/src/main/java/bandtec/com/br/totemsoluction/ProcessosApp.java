@@ -5,6 +5,12 @@
  */
 package bandtec.com.br.totemsoluction;
 
+import com.github.britooo.looca.api.core.Looca;
+import com.github.britooo.looca.api.group.discos.Disco;
+import com.github.britooo.looca.api.group.processos.Processo;
+import com.github.britooo.looca.api.group.processos.ProcessosGroup;
+import com.github.britooo.looca.api.util.Conversor;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JScrollPane;
@@ -17,6 +23,8 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class ProcessosApp extends javax.swing.JFrame {
 
+    
+    Looca looca = new Looca();
     /**
      * Creates new form ProcessosApp
      */
@@ -151,7 +159,6 @@ public class ProcessosApp extends javax.swing.JFrame {
         txConteudo.setFont(new java.awt.Font("Segoe UI", 0, 28)); // NOI18N
         txConteudo.setForeground(new java.awt.Color(35, 135, 195));
         txConteudo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        txConteudo.setText("<html><body>Oi<br></body></html>");
         txConteudo.setToolTipText("");
         txConteudo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         txConteudo.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -262,7 +269,16 @@ public class ProcessosApp extends javax.swing.JFrame {
     JScrollPane scroll = new JScrollPane(txConteudo);
 
     public void teste(){
-        txConteudo.setText("<html><body>Boa noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br></body></html>");
+        ProcessosGroup processosGroup = looca.getGrupoDeProcessos();
+        List<Processo> processos = processosGroup.getProcessos();
+        
+        for (Processo processo : processos) {
+            for (Integer i = 0; i <= 5; i++) {
+               txConteudo.setText(txConteudo.getText() + ("<html> Nome: " + processo.getNome()
+                    + "<br>PID: " + processo.getPid() + "<br><br></html>")); 
+            }  
+        }
+        //txConteudo.setText("<html><body>processosGroup.<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br></body></html>");
     }
 
 }
