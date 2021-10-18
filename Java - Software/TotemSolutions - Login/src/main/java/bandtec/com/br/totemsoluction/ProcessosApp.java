@@ -272,12 +272,18 @@ public class ProcessosApp extends javax.swing.JFrame {
         ProcessosGroup processosGroup = looca.getGrupoDeProcessos();
         List<Processo> processos = processosGroup.getProcessos();
         
+        String txtFinal = "";
+        
         for (Processo processo : processos) {
-            for (Integer i = 0; i <= 5; i++) {
-               txConteudo.setText(txConteudo.getText() + ("<html> Nome: " + processo.getNome()
-                    + "<br>PID: " + processo.getPid() + "<br><br></html>")); 
-            }  
+       
+                txtFinal += "Nome: " + processo.getNome() +
+                        "\nPID: " + processo.getPid() + "\n\n";
+                        
+//               txConteudo.setText(txConteudo.getText() + ("<html> Nome: " + processo.getNome()
+//                    + "<br>PID: " + processo.getPid() + "<br><br></html>")); 
+            
         }
+        txConteudo.setText(txtFinal);
         //txConteudo.setText("<html><body>processosGroup.<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br></body></html>");
     }
 
