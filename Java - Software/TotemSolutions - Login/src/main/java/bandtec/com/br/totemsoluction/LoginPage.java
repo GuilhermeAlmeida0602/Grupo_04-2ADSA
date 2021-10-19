@@ -5,10 +5,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 // @author Grupo_04-2ADSA
-public class LoginPage extends javax.swing.JFrame {
+public class LoginPage
+        extends javax.swing.JFrame {
 
     public LoginPage() {
         initComponents();
+        //setIcon();
     }
 
     JFrame frame;
@@ -252,4 +254,8 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JLabel pessoa;
     private javax.swing.JLabel totem;
     // End of variables declaration//GEN-END:variables
+
+//    private void setIcon() {
+//        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("")));
+//    }
 }
