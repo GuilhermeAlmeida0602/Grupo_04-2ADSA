@@ -45,8 +45,8 @@ public class ProcessosApp extends javax.swing.JFrame {
         nameFunction = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         content = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txConteudo = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txConteudo = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
@@ -64,6 +64,11 @@ public class ProcessosApp extends javax.swing.JFrame {
         btnSair.setText("SAIR");
         btnSair.setBorder(null);
         btnSair.setFocusPainted(false);
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
         btnVoltar.setBackground(new java.awt.Color(35, 135, 195));
         btnVoltar.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
@@ -129,29 +134,22 @@ public class ProcessosApp extends javax.swing.JFrame {
         content.setBackground(new java.awt.Color(247, 247, 247));
         content.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(35, 135, 195)));
 
-        jScrollPane1.setBackground(new java.awt.Color(247, 247, 247));
-        jScrollPane1.setForeground(new java.awt.Color(247, 247, 247));
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-
-        txConteudo.setBackground(new java.awt.Color(35, 135, 195));
-        txConteudo.setFont(new java.awt.Font("Segoe UI", 0, 28)); // NOI18N
+        txConteudo.setBackground(new java.awt.Color(247, 247, 247));
+        txConteudo.setColumns(20);
+        txConteudo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txConteudo.setForeground(new java.awt.Color(35, 135, 195));
-        txConteudo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        txConteudo.setToolTipText("");
-        txConteudo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        txConteudo.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        txConteudo.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jScrollPane1.setViewportView(txConteudo);
+        txConteudo.setRows(5);
+        jScrollPane2.setViewportView(txConteudo);
 
         javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
         content.setLayout(contentLayout);
         contentLayout.setHorizontalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane2)
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -193,8 +191,16 @@ public class ProcessosApp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        // TODO add your handling code here:
+        // ação do btn VOLTAR
+        new ProcessosTelaInicial().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        // ação do btn SAIR 
+        new LoginPage().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -239,14 +245,16 @@ public class ProcessosApp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel nameFunction;
-    private javax.swing.JLabel txConteudo;
+    private javax.swing.JTextArea txConteudo;
     // End of variables declaration//GEN-END:variables
 
     JScrollPane scroll = new JScrollPane(txConteudo);
 
     public void teste() {
+        txConteudo.setLineWrap(true);
+
         ProcessosGroup processosGroup = looca.getGrupoDeProcessos();
         List<Processo> processos = processosGroup.getProcessos();
 
@@ -254,11 +262,8 @@ public class ProcessosApp extends javax.swing.JFrame {
 
         for (Processo processo : processos) {
 
-            txtFinal += "Nome: " + processo.getNome()
-                    + "\nPID: " + processo.getPid() + "\n\n";
-
-//               txConteudo.setText(txConteudo.getText() + ("<html> Nome: " + processo.getNome()
-//                    + "<br>PID: " + processo.getPid() + "<br><br></html>")); 
+            //txtFinal += "Nome: " + processo.getNome() + "\nPID: " + processo.getPid() + "\n\n";
+            txtFinal += "Nome: " + processo.getNome() + "\nPID: " + processo.getPid() + "\n\n";
         }
         txConteudo.setText(txtFinal);
         //txConteudo.setText("<html><body>processosGroup.<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br></body></html>");
