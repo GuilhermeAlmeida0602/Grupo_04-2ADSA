@@ -211,15 +211,15 @@
 
 <script>
 
-    
+
     function teste() {
         var ctx = document.getElementById('myChart');
-        
-        
+
+
         var meuGrafico = new Chart(ctx, {
-            
+
             type: 'bar',
-            
+
             data: {
                 labels: ["seg", "ter", "qua", "qui", "sex", "sab"],
                 datasets: [
@@ -227,73 +227,55 @@
                         label: "",
                         data: [6000, 2000, 5000, 4000, 11000, 9000, 1000],
                         borderWidth: 5,
-                        
+
                         borderColor: '#0A3D62',
-                        
+
                     },
-                    
-                    
+
+
                 ]
             },
-            
+
             options: {
-                
+
                 // title: {
-                    //     display: true,
-                    //     fontSize: 20,
-                    //     text: "",
-                    //     position: 'top',
-                    // },
-                    scales: {
-                        xAxes: [{
-                            gridLines: {
-                                drawOnChartArea: false
-                            }
-                        }],
-                        yAxes: [{
-                            gridLines: {
-                                drawOnChartArea: false
-                            }
-                        }]
+                //     display: true,
+                //     fontSize: 20,
+                //     text: "",
+                //     position: 'top',
+                // },
+                scales: {
+                    xAxes: [{
+                        gridLines: {
+                            drawOnChartArea: false
+                        }
+                    }],
+                    yAxes: [{
+                        gridLines: {
+                            drawOnChartArea: false
+                        }
+                    }]
+                },
+                legend: {
+                    display: true,
+                    reverse: true,
+                    position: 'bottom'
+                },
+                layout: {
+                    padding: {
+                        left: 50,
+                        top: 50
                     },
-                    legend: {
-                        display: true,
-                        reverse: true,
-                        position: 'bottom'
-                    },
-                    layout: {
-                        padding: {
-                            left: 50,
-                            top: 50
-                        },
-                        
-                    },
-                    
-                    gridLines: {
-                        display: false
-                    },
-                }
-            })
-        }
-        
-        function seleto() {
-                        
-            // let el = document.getElementById('comp');
-            
-            // el.classList.remove('componentes');
-            
-            // el.classList.toggle('testando123');
-            
-            // document.comp.style.color = yellow;
-            
-            // comp.style.backgroundColor = `red`;
-            
-            // let compBtn = document.querySelector(".componentes");
-            
-        // compBtn.addEventListener("click", () => {
-        //     compBtn.style.background = red;
-        // })   
+
+                },
+
+                gridLines: {
+                    display: false
+                },
+            }
+        })
     }
+
 
     let sidebar = document.querySelector(".sidebar");
     let closeBtn = document.querySelector("#btn");
