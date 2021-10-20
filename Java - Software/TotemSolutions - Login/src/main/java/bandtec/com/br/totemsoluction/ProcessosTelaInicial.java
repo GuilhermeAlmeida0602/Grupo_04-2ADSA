@@ -1,5 +1,7 @@
 package bandtec.com.br.totemsoluction;
 
+import bandtec.com.br.totemsoluction.persistence.MaquinaDao;
+import com.github.britooo.looca.api.core.Looca;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -8,6 +10,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 // @author Grupo_04-2ADSA
 public class ProcessosTelaInicial extends javax.swing.JFrame {
 
+    Looca looca = new Looca();
     public ProcessosTelaInicial() {
 
         // Isso aqui tira varios bugs do swing
@@ -21,6 +24,21 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
             Logger.getLogger(HardwareHD.class.getName()).log(Level.SEVERE, null, ex);
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(HardwareHD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        MaquinaDao maqDao = new MaquinaDao();
+        try {
+            Boolean verificacaoMaquina = maqDao.bucarMaquina(looca);
+            if (verificacaoMaquina == false) {
+                System.out.println("Realizar registro do totem no banco");
+                maqDao.insertInfoMaquina(looca);
+            }else{
+                System.out.println("Totem já registrado no banco");
+            }
+            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Deu ruim no banco");
         }
 
         initComponents();

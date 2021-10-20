@@ -266,11 +266,8 @@
   /* max-height: 100vh; */
   top: 0;
   left: 78px;
-<<<<<<< HEAD
   width: calc(100% - 78px);
-=======
   width: calc(100% - 80px);
->>>>>>> d183a8f58f4831a33cd1c355c730e800d3a69f03
   transition: all 0.5s ease;
   z-index: 2;
 }

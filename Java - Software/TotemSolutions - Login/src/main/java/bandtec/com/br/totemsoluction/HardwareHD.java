@@ -505,8 +505,8 @@ public class HardwareHD extends javax.swing.JFrame {
             txConteudo9.setText(volumes.get(0).getTipo());
             txConteudo10.setText(volumes.get(0).getPontoDeMontagem());
 
-            Long disp = volumes.get(1).getDisponivel();
-            Long total = volumes.get(1).getTotal();
+            Long disp = volumes.get(0).getDisponivel();
+            Long total = volumes.get(0).getTotal();
 
             var teste = (disp * 100) / total;
             int valor = (int) teste;
