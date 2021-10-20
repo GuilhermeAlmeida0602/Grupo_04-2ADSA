@@ -58,15 +58,15 @@ CREATE TABLE Usuario (
   insert into Usuario values (null, 'Armando', 'Fontes', 'armando.fontes@chickenfood.com.br', 
   'tortaLaranja123', '11997353581', '1128379572', 1);
   
-  select * from empresa;
-  select * from usuario;
+  ##select * from empresa;
+  ##select * from usuario;
   select * from maquina;
   
   select *  from usuario inner join empresa on idEmpresa = (fkempresa);
   
-  describe maquina;
+##  describe maquina;
   
-  select uuid from maquina where uuid='e4f03440-fe49-4a1a-815f-8eb447596398';
+##select uuid from maquina where uuid='e4f03440-fe49-4a1a-815f-8eb447596398';
  
-select fkEmpresa, login, senha from usuario where login='armando.fontes@chickenfood.com.br' and senha='tortaLaranja123';
+##select fkEmpresa, login, senha from usuario where login='armando.fontes@chickenfood.com.br' and senha='tortaLaranja123';
   

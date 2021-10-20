@@ -23,7 +23,7 @@ public class Dao {
     public void open() throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
         con = DriverManager.getConnection("jdbc:mysql://localhost:3306/infosystems",
-                "root", "@Fan3farra");
+                "root", "Ghz123!ghz");
     }
 
     public void close() throws Exception {
