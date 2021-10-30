@@ -49,7 +49,7 @@ public class ProcessosApp extends javax.swing.JFrame {
         txConteudo = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setExtendedState(6);
+        setMaximumSize(new java.awt.Dimension(1080, 650));
         setMinimumSize(new java.awt.Dimension(1080, 650));
 
         jPanel1.setBackground(new java.awt.Color(247, 247, 247));
