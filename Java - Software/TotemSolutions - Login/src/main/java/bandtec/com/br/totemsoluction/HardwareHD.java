@@ -413,7 +413,37 @@ public class HardwareHD extends javax.swing.JFrame {
     }//GEN-LAST:event_btnProcessadorActionPerformed
 
     private void btnHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHDActionPerformed
-        ExibeHD();
+        DiscosGroup grupoDeDiscos = looca.getGrupoDeDiscos();
+
+        List<Disco> discos = grupoDeDiscos.getDiscos();
+
+        for (Disco disco : discos) {
+            txConteudo1.setText("<html> Nome: " + disco.getNome() + "</html>");
+            txConteudo2.setText("<html> Modelo: " + disco.getModelo() + "</html>");
+            txConteudo3.setText("<html> Serial: " + disco.getSerial() + "</html>");
+            txConteudo4.setText("<html> Tamanho: " + Conversor.formatarBytes(disco.getTamanho()) + "</html>");
+            txConteudo5.setText("<html> Quantidade de Leituras: " + conv.formatarBytes(disco.getLeituras()) + "</html>");
+            txConteudo6.setText("<html> Bytes total de Leitura: " + conv.formatarBytes(disco.getBytesDeLeitura()) + "</html>");
+            txConteudo7.setText("<html> Quantidade de Escritas: " + conv.formatarBytes(disco.getEscritas()) + "</html>");
+        }
+
+        // Informações sobre o tipo de disco, 
+        DiscosGroup grupoDeVolumes = looca.getGrupoDeDiscos();
+        List<Volume> volumes = grupoDeVolumes.getVolumes();
+
+        // for avançado para Setar Textos -> JLabel
+        for (Volume vol : volumes) {
+            txConteudo9.setText(volumes.get(0).getTipo());
+            txConteudo10.setText(volumes.get(0).getPontoDeMontagem());
+
+            Long disp = volumes.get(1).getDisponivel();
+            Long total = volumes.get(1).getTotal();
+
+            var teste = (disp * 100) / total;
+            int valor = (int) teste;
+
+            pbDisponivel.setValue(valor);
+        }
     }//GEN-LAST:event_btnHDActionPerformed
 
     private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
@@ -505,8 +535,8 @@ public class HardwareHD extends javax.swing.JFrame {
             txConteudo9.setText(volumes.get(0).getTipo());
             txConteudo10.setText(volumes.get(0).getPontoDeMontagem());
 
-            Long disp = volumes.get(1).getDisponivel();
-            Long total = volumes.get(1).getTotal();
+            Long disp = volumes.get(0).getDisponivel();
+            Long total = volumes.get(0).getTotal();
 
             var teste = (disp * 100) / total;
             int valor = (int) teste;
