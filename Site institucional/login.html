@@ -38,28 +38,27 @@
             <div class="quadro_cinza">
 
                 <!-- <form action=""> -->
-                    <div class="div_negrito">Acesso</div>
+                <div class="div_negrito">Acesso</div>
 
-                    <div class="div_centralizando">
-                        <!-- <label class="label_negrito">Login</label>
-                        <input type="text" class="input_login" name="login" id="input_login"> -->
+                <div class="div_centralizando">
 
-                        <div class="input_box">
-                            <input type="text" class="input_user" name="login" id="login" autocomplete="off"
-                                required>
-                            <label for="nome" class="label_input">Login</label>
-                        </div>
-
-                        <div class="input_box">
-                            <input type="password" class="input_user" name="senha" id="senha" autocomplete="off"
-                                required>
-                            <label for="nome" class="label_input">Senha</label>
-                        </div>
-
-                        <!-- <label class="label_negrito">Senha</label>
-                        <input type="password" class="input_login" name="senha" id="input_senha"> -->
-                        <button class="input_button" onclick="autentificar()">Acessar</button>
+                    <div class="input_box">
+                        <input type="text" class="input_user" name="login" id="input_user" autocomplete="off" required
+                            minlength="3" maxlength="16">
+                        <label for="nome" class="label_input">Login</label>
                     </div>
+
+                    <div class="input_box">
+                        <input type="password" class="input_user" name="senha" id="input_senha" autocomplete="off"
+                            required minlength="8" maxlength="16">
+                        <label for="nome" class="label_input">Senha</label>
+                        <br>
+                        <span id="retornoSenha"></span>
+
+                    </div>
+
+                    <button class="input_button" onclick="autentificar()">Acessar</button>
+                </div>
                 <!-- </form> -->
 
                 <div class="div_suporte"><a href="#suporte">Precisa de ajuda?</a></div>
@@ -70,18 +69,19 @@
 </body>
 <script>
 
-    function autentificar(){
+    function autentificar() {
 
-        var login = input_login.value;
+        var login = input_user.value;
         var senha = input_senha.value;
-        
-        if(login == "adm" && senha == "adm123"){
+
+        if (login == "adm" && senha == "adm123") {
             window.location.href = "tela_inicial_adm.html"
-        }else if (login == "analista" && senha == "analista123"){
+        } else if (login == "analista" && senha == "analista123") {
             window.location.href = "dashboard.html";
-        }else{
-            alert("Login ou senha inválidos! Tente novamente");
+        } else {
+            retornoSenha.innerHTML = "Login ou senha inválido"
         }
     }
 </script>
+
 </html>
