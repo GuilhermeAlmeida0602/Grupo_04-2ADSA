@@ -1,15 +1,18 @@
 package bandtec.com.br.totemsoluction;
 
+import bandtec.com.br.totemsoluction.slack.Slack;
 import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.discos.Disco;
 import com.github.britooo.looca.api.group.discos.DiscosGroup;
 import com.github.britooo.looca.api.group.discos.Volume;
 import com.github.britooo.looca.api.util.Conversor;
+import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import org.json.JSONObject;
 
 // @author Grupo_04-2ADSA
 public class HardwareHD extends javax.swing.JFrame {
@@ -82,7 +85,6 @@ public class HardwareHD extends javax.swing.JFrame {
         btnSair.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         btnSair.setForeground(new java.awt.Color(255, 255, 255));
         btnSair.setText("SAIR");
-        btnSair.setBorder(null);
         btnSair.setFocusPainted(false);
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +96,6 @@ public class HardwareHD extends javax.swing.JFrame {
         btnVoltar.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         btnVoltar.setForeground(new java.awt.Color(255, 255, 255));
         btnVoltar.setText("VOLTAR");
-        btnVoltar.setBorder(null);
         btnVoltar.setDefaultCapable(false);
         btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,7 +107,6 @@ public class HardwareHD extends javax.swing.JFrame {
 
         btnMemoria.setForeground(new java.awt.Color(255, 102, 102));
         btnMemoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hardMemoria.png"))); // NOI18N
-        btnMemoria.setBorder(null);
         btnMemoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMemoriaActionPerformed(evt);
@@ -115,7 +115,6 @@ public class HardwareHD extends javax.swing.JFrame {
 
         btnSO.setForeground(new java.awt.Color(255, 102, 102));
         btnSO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hardSO.png"))); // NOI18N
-        btnSO.setBorder(null);
         btnSO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSOActionPerformed(evt);
@@ -124,7 +123,6 @@ public class HardwareHD extends javax.swing.JFrame {
 
         btnHD.setForeground(new java.awt.Color(255, 102, 102));
         btnHD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hardHD.png"))); // NOI18N
-        btnHD.setBorder(null);
         btnHD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHDActionPerformed(evt);
@@ -133,7 +131,6 @@ public class HardwareHD extends javax.swing.JFrame {
 
         btnProcessador.setForeground(new java.awt.Color(255, 102, 102));
         btnProcessador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hardProcessador.png"))); // NOI18N
-        btnProcessador.setBorder(null);
         btnProcessador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProcessadorActionPerformed(evt);
@@ -464,6 +461,17 @@ public class HardwareHD extends javax.swing.JFrame {
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // ação do btn VOLTAR
+        try {
+            // Avisando para o usuario que a máquina está sendo monitorada
+            JSONObject msgBoasVindas = new JSONObject();
+            msgBoasVindas.put("text", "Encerrando o serviço de monitoramento.\nAté breve!");
+            Slack.sendMessage(msgBoasVindas);
+            new ProcessosTelaInicial().setVisible(true);
+            this.dispose();
+
+        } catch (IOException | InterruptedException ex) {
+            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
         new LoginPage().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnSairActionPerformed

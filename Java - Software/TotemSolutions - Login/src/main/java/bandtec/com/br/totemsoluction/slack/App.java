@@ -1,4 +1,4 @@
-package slack;
+package bandtec.com.br.totemsoluction.slack;
 
 // @author Grupo_04-2ADSA
 import java.io.IOException;
@@ -8,10 +8,10 @@ public class App {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        JSONObject json = new JSONObject();
+        JSONObject msgTeste = new JSONObject();
 
-        json.put("text", "Deu certo");
+        msgTeste.put("text", "Estado crítico!");
 
-        Slack.sendMessage(json);
+        Slack.sendMessage(msgTeste);
     }
 }

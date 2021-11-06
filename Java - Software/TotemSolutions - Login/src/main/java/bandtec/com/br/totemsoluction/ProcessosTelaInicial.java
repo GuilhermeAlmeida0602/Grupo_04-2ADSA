@@ -1,16 +1,20 @@
 package bandtec.com.br.totemsoluction;
 
 import bandtec.com.br.totemsoluction.persistence.MaquinaDao;
+import bandtec.com.br.totemsoluction.slack.Slack;
 import com.github.britooo.looca.api.core.Looca;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import org.json.JSONObject;
 
 // @author Grupo_04-2ADSA
 public class ProcessosTelaInicial extends javax.swing.JFrame {
 
     Looca looca = new Looca();
+
     public ProcessosTelaInicial() {
 
         // Isso aqui tira varios bugs do swing
@@ -25,17 +29,17 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(HardwareHD.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         MaquinaDao maqDao = new MaquinaDao();
         try {
             Boolean verificacaoMaquina = maqDao.bucarMaquina(looca);
             if (verificacaoMaquina == false) {
                 System.out.println("Realizar registro do totem no banco");
                 maqDao.insertInfoMaquina(looca);
-            }else{
+            } else {
                 System.out.println("Totem já registrado no banco");
             }
-            
+
         } catch (Exception ex) {
             ex.printStackTrace();
             System.out.println("Deu ruim no banco");
@@ -179,6 +183,17 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        try {
+            // Avisando para o usuario que a máquina está sendo monitorada
+            JSONObject msgBoasVindas = new JSONObject();
+            msgBoasVindas.put("text", "Encerrando o serviço de monitoramento.\nAté breve!");
+            Slack.sendMessage(msgBoasVindas);
+            new ProcessosTelaInicial().setVisible(true);
+            this.dispose();
+
+        } catch (IOException | InterruptedException ex) {
+            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
         new LoginPage().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnSairActionPerformed

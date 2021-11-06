@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bandtec.com.br.totemsoluction.persistence;
 
 import com.github.britooo.looca.api.core.Looca;
@@ -11,10 +6,7 @@ import com.github.britooo.looca.api.group.discos.Volume;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- *
- * @author vitor
- */
+// @author vitor
 public class MaquinaDao extends Dao {
 
     public Boolean bucarMaquina(Looca looca) throws Exception {
@@ -22,21 +14,22 @@ public class MaquinaDao extends Dao {
         List<Volume> volumes = grupoDeVolumes.getVolumes();
 
         open();
-        /*Abertura da conexão com banco de dados*/
+        // Abertura da conexão com banco de dados
         System.out.println("Iniciando verificação no banco...");
         String uuid = "";
         stmt = con.prepareStatement("select uuid from maquina where uuid= ?;");
         stmt.setString(1, String.valueOf(volumes.get(0).getUUID()));
         rs = stmt.executeQuery();
-        /*Execução da instrução no banco - parte importante*/
+        // Execução da instrução no banco - parte importante
         while (rs.next()) {
             uuid = rs.getString(1);
         }
         close();
-        /*Fechamento da conexão com banco de dados*/
+
+        // Fechamento da conexão com banco de dados
         System.out.println("Finalizando verificação no banco... \nResultado: ");
 
-        /*Verificação*/
+        // Verificação
         System.out.println("Totem registrado? " + uuid.equals(
                 String.valueOf(volumes.get(0).getUUID())));
         if (uuid.equals(String.valueOf(volumes.get(0).getUUID()))) {
@@ -46,7 +39,7 @@ public class MaquinaDao extends Dao {
         }
     }
 
-    /*Insert na tabela Máquina */
+    // Insert na tabela Máquina
     public void insertInfoMaquina(Looca looca) throws Exception {
 
         DiscosGroup grupoDeVolumes = looca.getGrupoDeDiscos();

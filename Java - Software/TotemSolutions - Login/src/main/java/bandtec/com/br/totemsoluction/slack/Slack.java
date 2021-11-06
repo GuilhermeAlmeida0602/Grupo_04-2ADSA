@@ -1,4 +1,4 @@
-package slack;
+package bandtec.com.br.totemsoluction.slack;
 
 // @author Grupo_04-2ADSA
 import java.io.IOException;
@@ -11,7 +11,7 @@ import org.json.JSONObject;
 public class Slack {
 
     private static final HttpClient client = HttpClient.newHttpClient();
-    private static final String URL = "https://hooks.slack.com/services/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";
+    private static final String URL = "https://hooks.slack.com/services/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";
 
     public static void sendMessage(JSONObject content) throws IOException, InterruptedException {
 

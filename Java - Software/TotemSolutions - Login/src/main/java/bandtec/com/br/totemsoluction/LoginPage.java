@@ -1,8 +1,13 @@
 package bandtec.com.br.totemsoluction;
 
+import bandtec.com.br.totemsoluction.slack.Slack;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import org.json.JSONObject;
 
 // @author Grupo_04-2ADSA
 public class LoginPage
@@ -224,8 +229,18 @@ public class LoginPage
     // Validação do Login
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (jTextField1.getText().equals("admin") && jTextField2.getText().equals("admin")) {
-            new ProcessosTelaInicial().setVisible(true);
-            this.dispose();
+
+            try {
+                // Avisando para o usuario que a máquina está sendo monitorada
+                JSONObject msgBoasVindas = new JSONObject();
+                msgBoasVindas.put("text", "Seja bem-vindo(a) :slightly_smiling_face:\nFique tranquilo, suas máquinas agora estão sendo monitoradas.");
+                Slack.sendMessage(msgBoasVindas);
+                new ProcessosTelaInicial().setVisible(true);
+                this.dispose();
+                
+            } catch (IOException | InterruptedException ex) {
+                Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
