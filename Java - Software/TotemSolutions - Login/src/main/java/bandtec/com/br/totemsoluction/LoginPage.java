@@ -1,21 +1,30 @@
 package bandtec.com.br.totemsoluction;
 
-import bandtec.com.br.totemsoluction.slack.Slack;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import bandtec.com.br.totemsoluction.persistence.UsuarioDao;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import org.json.JSONObject;
+import javax.swing.JOptionPane;
 
 // @author Grupo_04-2ADSA
 public class LoginPage
         extends javax.swing.JFrame {
 
+    private String login;
+    private String senha;
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
     public LoginPage() {
         initComponents();
-        //setIcon();
+        setIcon();
     }
 
     JFrame frame;
@@ -160,6 +169,11 @@ public class LoginPage
                 jButton1ActionPerformed(evt);
             }
         });
+        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton1KeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout RightInputLayout = new javax.swing.GroupLayout(RightInput);
         RightInput.setLayout(RightInputLayout);
@@ -228,21 +242,12 @@ public class LoginPage
 
     // Validação do Login
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (jTextField1.getText().equals("admin") && jTextField2.getText().equals("admin")) {
-
-            try {
-                // Avisando para o usuario que a máquina está sendo monitorada
-                JSONObject msgBoasVindas = new JSONObject();
-                msgBoasVindas.put("text", "Seja bem-vindo(a) :slightly_smiling_face:\nFique tranquilo, suas máquinas agora estão sendo monitoradas.");
-                Slack.sendMessage(msgBoasVindas);
-                new ProcessosTelaInicial().setVisible(true);
-                this.dispose();
-                
-            } catch (IOException | InterruptedException ex) {
-                Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+        login();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+        login();
+    }//GEN-LAST:event_jButton1KeyPressed
 
     public static void main(String args[]) {
 
@@ -271,7 +276,20 @@ public class LoginPage
     private javax.swing.JLabel totem;
     // End of variables declaration//GEN-END:variables
 
-//    private void setIcon() {
-//        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("")));
-//    }
+    public void login() {
+        
+        login = jTextField1.getText();
+        senha = jTextField2.getText();
+
+        try {
+        UsuarioDao usuario = new UsuarioDao();
+            usuario.loginUsuario(this);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Login e/ou senha inválidos!", "Erro!", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IS.png")));
+    }
 }

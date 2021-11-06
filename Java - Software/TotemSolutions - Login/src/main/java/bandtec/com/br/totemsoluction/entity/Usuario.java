@@ -1,9 +1,6 @@
 package bandtec.com.br.totemsoluction.entity;
 
-/**
- *
- * @author vitor
- */
+// @author vitor
 public class Usuario {
 
     private Integer idUsuario;

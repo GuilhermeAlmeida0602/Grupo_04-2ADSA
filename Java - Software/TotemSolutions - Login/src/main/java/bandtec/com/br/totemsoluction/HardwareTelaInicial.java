@@ -1,16 +1,21 @@
 package bandtec.com.br.totemsoluction;
 
 // @author Grupo_04-2ADSA
+import bandtec.com.br.totemsoluction.slack.MensagensSlack;
 import bandtec.com.br.totemsoluction.slack.Slack;
+import java.awt.Toolkit;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.json.JSONObject;
 
 public class HardwareTelaInicial extends javax.swing.JFrame {
+    
+    MensagensSlack slack = new MensagensSlack();
 
     public HardwareTelaInicial() {
         initComponents();
+        setIcon();
     }
 
     @SuppressWarnings("unchecked")
@@ -244,17 +249,12 @@ public class HardwareTelaInicial extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         try {
             // Avisando para o usuario que a máquina está sendo monitorada
-            JSONObject msgBoasVindas = new JSONObject();
-            msgBoasVindas.put("text", "Encerrando o serviço de monitoramento.\nAté breve!");
-            Slack.sendMessage(msgBoasVindas);
+            slack.stopService();
             new ProcessosTelaInicial().setVisible(true);
-            this.dispose();
 
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
         }
-        new LoginPage().setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_btnSairActionPerformed
 
     public static void main(String args[]) {
@@ -264,6 +264,10 @@ public class HardwareTelaInicial extends javax.swing.JFrame {
                 new HardwareTelaInicial().setVisible(true);
             }
         });
+    }
+
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IS.png")));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

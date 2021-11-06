@@ -1,9 +1,11 @@
 package bandtec.com.br.totemsoluction;
 
+import bandtec.com.br.totemsoluction.slack.MensagensSlack;
 import bandtec.com.br.totemsoluction.slack.Slack;
 import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.processos.Processo;
 import com.github.britooo.looca.api.group.processos.ProcessosGroup;
+import java.awt.Toolkit;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
@@ -17,6 +19,7 @@ import org.json.JSONObject;
 public class ProcessosApp extends javax.swing.JFrame {
 
     Looca looca = new Looca();
+    MensagensSlack slack = new MensagensSlack();
 
     public ProcessosApp() {
 
@@ -34,6 +37,7 @@ public class ProcessosApp extends javax.swing.JFrame {
 
         initComponents();
         teste();
+        setIcon();
     }
 
     @SuppressWarnings("unchecked")
@@ -200,20 +204,14 @@ public class ProcessosApp extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        // ação do btn SAIR 
         try {
             // Avisando para o usuario que a máquina está sendo monitorada
-            JSONObject msgBoasVindas = new JSONObject();
-            msgBoasVindas.put("text", "Encerrando o serviço de monitoramento.\nAté breve!");
-            Slack.sendMessage(msgBoasVindas);
+            slack.stopService();
             new ProcessosTelaInicial().setVisible(true);
-            this.dispose();
 
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
         }
-        new LoginPage().setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_btnSairActionPerformed
 
     /**
@@ -281,6 +279,10 @@ public class ProcessosApp extends javax.swing.JFrame {
         }
         txConteudo.setText(txtFinal);
         //txConteudo.setText("<html><body>processosGroup.<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br>noite<br></body></html>");
+    }
+    
+        private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IS.png")));
     }
 
 }

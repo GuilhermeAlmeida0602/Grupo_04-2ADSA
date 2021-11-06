@@ -1,6 +1,6 @@
 create database InfoSystems;
 
-##drop database InfoSystems;
+## drop database InfoSystems;
 use InfoSystems;
 
 CREATE TABLE Empresa (
@@ -17,7 +17,6 @@ CREATE TABLE Empresa (
   CEP CHAR(8) NOT NULL,
   nomeResponsavel VARCHAR(45) NOT NULL,
   telResponsavel VARCHAR(11) NOT NULL);
-
 
 CREATE TABLE Usuario (
   idUsuario INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -38,7 +37,7 @@ CREATE TABLE Usuario (
   nomeCPU VARCHAR(60) NOT NULL,
   identificadorCPU VARCHAR(60) NOT NULL,
   microArquiteturaCPU VARCHAR(60) NOT NULL,
-  frequenciaCPU INT,
+  frequenciaCPU FLOAT,
   pacotesFisicosCPU INT NOT NULL,  
   cpuFisicosCPU INT NOT NULL,
   cpuLogicosCPU INT NOT NULL,
@@ -55,11 +54,13 @@ CREATE TABLE Usuario (
 	'food123', 'Rua Sumaré', 638, null, 'Jardim São Francisco(Zona Sul)', 'SP', '04918300', 
     'Renato Oliveira', '1135936259');
     
-  insert into Usuario values (null, 'Armando', 'Fontes', 'armando.fontes@chickenfood.com.br', 
-  'tortaLaranja123', '11997353581', '1128379572', 1);
+  insert into Usuario values (null, 'Guilherme', 'Almeida', 'gui.almeida@chickenfood.com.br', 
+  'Guigui11097', '11997353581', '1128379572', 1);
   
-  ##select * from empresa;
-  ##select * from usuario;
+  select login from usuario where login = "gui.almeida@chickenfood.com.br";
+  
+  select * from empresa;
+  select * from usuario;
   select * from maquina;
   
   select *  from usuario inner join empresa on idEmpresa = (fkempresa);

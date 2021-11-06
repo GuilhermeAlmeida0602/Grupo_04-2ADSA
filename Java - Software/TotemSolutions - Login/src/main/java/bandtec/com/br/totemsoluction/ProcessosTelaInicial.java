@@ -1,19 +1,20 @@
 package bandtec.com.br.totemsoluction;
 
 import bandtec.com.br.totemsoluction.persistence.MaquinaDao;
-import bandtec.com.br.totemsoluction.slack.Slack;
+import bandtec.com.br.totemsoluction.slack.MensagensSlack;
 import com.github.britooo.looca.api.core.Looca;
+import java.awt.Toolkit;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import org.json.JSONObject;
 
 // @author Grupo_04-2ADSA
 public class ProcessosTelaInicial extends javax.swing.JFrame {
 
     Looca looca = new Looca();
+    MensagensSlack slack = new MensagensSlack();
 
     public ProcessosTelaInicial() {
 
@@ -46,6 +47,7 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         }
 
         initComponents();
+        setIcon();
     }
 
     @SuppressWarnings("unchecked")
@@ -185,17 +187,12 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         try {
             // Avisando para o usuario que a máquina está sendo monitorada
-            JSONObject msgBoasVindas = new JSONObject();
-            msgBoasVindas.put("text", "Encerrando o serviço de monitoramento.\nAté breve!");
-            Slack.sendMessage(msgBoasVindas);
+            slack.stopService();
             new ProcessosTelaInicial().setVisible(true);
-            this.dispose();
 
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
         }
-        new LoginPage().setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnHardwareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHardwareActionPerformed
@@ -214,6 +211,10 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
                 new ProcessosTelaInicial().setVisible(true);
             }
         });
+    }
+
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IS.png")));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
