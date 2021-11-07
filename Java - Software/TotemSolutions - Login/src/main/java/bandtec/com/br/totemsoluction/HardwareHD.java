@@ -1,7 +1,6 @@
 package bandtec.com.br.totemsoluction;
 
 import bandtec.com.br.totemsoluction.slack.MensagensSlack;
-import bandtec.com.br.totemsoluction.slack.Slack;
 import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.discos.Disco;
 import com.github.britooo.looca.api.group.discos.DiscosGroup;
@@ -14,7 +13,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import org.json.JSONObject;
 
 // @author Grupo_04-2ADSA
 public class HardwareHD extends javax.swing.JFrame {
