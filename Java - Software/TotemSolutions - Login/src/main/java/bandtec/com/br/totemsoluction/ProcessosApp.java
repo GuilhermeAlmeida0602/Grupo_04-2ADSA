@@ -274,7 +274,6 @@ public class ProcessosApp extends javax.swing.JFrame {
 
         for (Processo processo : processos) {
 
-            //txtFinal += "Nome: " + processo.getNome() + "\nPID: " + processo.getPid() + "\n\n";
             txtFinal += "Nome: " + processo.getNome() + "\nPID: " + processo.getPid() + "\n\n";
         }
         txConteudo.setText(txtFinal);

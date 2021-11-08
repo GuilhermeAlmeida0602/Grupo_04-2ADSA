@@ -92,15 +92,14 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
 
     public void timerInsert(Integer fkMaquina, Integer fkDisco) {
 
-        int delay = 1000;   // delay de 1 seg.
-        int interval = 10000;  // intervalo de 10 seg.
+        int delay = 10000;   // delay de 1 seg.
+        int interval = 20000;  // intervalo de 10 seg.
         java.util.Timer timer = new java.util.Timer();
 
         timer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
 
                 try {
-
                     for (int i = 0; i < 10; i++) {
 
                         System.out.println(i + "  -  Segundo(s)");
@@ -116,6 +115,7 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
                             deixe comentando até ajustar o timer para não encher o banco */
 //                            ProcessosMaquinaDao proMaqDao = new ProcessosMaquinaDao();
 //                            proMaqDao.insertProcessosMaquina(looca, fkMaquina);
+
                         } catch (Exception ex) {
                             ex.printStackTrace();
                         }
@@ -125,7 +125,7 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
                         List<Maquina> maquina = maqDao.ativaInovacao(fkMaquina);
 
                         //  Inovação - Reiniciar máquina
-                        if (maquina.get(0).getReiniciar() == 1) { // reiniciar
+                        if (maquina.get(0).getReiniciar() == 1) {
                             try {
                                 JOptionPane.showMessageDialog(null, "Totem sendo reiniciado!");
                                 maqDao.updateReiniciar(fkMaquina); // Update - atualiza campo "reiniciar" para 0
@@ -147,13 +147,13 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
                         }
 
                     }
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
+                } catch (Exception ex) {    // try
+                    ex.printStackTrace();   // try
+                }                                       // try
 
             }
-
         }, delay, interval);
+
     }
 
     @SuppressWarnings("unchecked")

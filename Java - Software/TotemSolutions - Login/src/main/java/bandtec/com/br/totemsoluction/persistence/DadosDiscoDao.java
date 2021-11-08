@@ -1,4 +1,3 @@
-
 package bandtec.com.br.totemsoluction.persistence;
 
 import com.github.britooo.looca.api.core.Looca;
@@ -9,12 +8,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-/**
- *
- * @author vitor
- */
-public class DadosDiscoDao extends Dao{
-    
+// @author vitor
+public class DadosDiscoDao extends Dao {
+
     public void insertDadosDisco(Looca looca, Integer fkDisco) throws Exception {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         DiscosGroup grupo = looca.getGrupoDeDiscos();
