@@ -1,9 +1,21 @@
 package bandtec.com.br.totemsoluction;
 
+import bandtec.com.br.totemsoluction.entity.Maquina;
+import bandtec.com.br.totemsoluction.entity.Usuario;
+import bandtec.com.br.totemsoluction.persistence.DadosDiscoDao;
+import bandtec.com.br.totemsoluction.persistence.DadosMaquinaDao;
+import bandtec.com.br.totemsoluction.persistence.DiscoDao;
 import bandtec.com.br.totemsoluction.persistence.MaquinaDao;
+import bandtec.com.br.totemsoluction.persistence.ProcessosMaquinaDao;
+import bandtec.com.br.totemsoluction.slack.MensagensSlack;
 import com.github.britooo.looca.api.core.Looca;
+import java.awt.Toolkit;
+import java.io.IOException;
+import java.util.List;
+import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -11,7 +23,27 @@ import javax.swing.UnsupportedLookAndFeelException;
 public class ProcessosTelaInicial extends javax.swing.JFrame {
 
     Looca looca = new Looca();
+    MensagensSlack slack = new MensagensSlack();
+    Integer fkMaquina = null;
+    Integer fkDisco = null;
+
     public ProcessosTelaInicial() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(HardwareHD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(HardwareHD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(HardwareHD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(HardwareHD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        initComponents();
+    }
+
+    //Sobrecarga do método ProcessosTelaInicial
+    public ProcessosTelaInicial(Usuario usuario) {
 
         // Isso aqui tira varios bugs do swing
         try {
@@ -25,23 +57,103 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(HardwareHD.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         MaquinaDao maqDao = new MaquinaDao();
+        DiscoDao discDao = new DiscoDao();
+        Integer fkEmpresa = usuario.getFkEmpresa();
         try {
+
             Boolean verificacaoMaquina = maqDao.bucarMaquina(looca);
             if (verificacaoMaquina == false) {
                 System.out.println("Realizar registro do totem no banco");
-                maqDao.insertInfoMaquina(looca);
-            }else{
+                maqDao.insertInfoMaquina(looca, fkEmpresa); // Insert - dados estáticos na tabela Máquina
+
+                fkMaquina = maqDao.buscaDados(); // Select - buscando o "idMaquina" para realizar outras buscas
+
+                discDao.insertInfoDisco(looca, fkMaquina); // Insert - dados estáticos na tabela Disco
+
+                fkDisco = discDao.buscaId(looca, fkMaquina); // Select - buscando o "idDisco" para realizar os inserts na tabela "DadosDisco"
+
+            } else {
                 System.out.println("Totem já registrado no banco");
+                fkMaquina = maqDao.buscaDados();
+                fkDisco = discDao.buscaId(looca, fkMaquina);
             }
-            
+
+            setIcon();
+            timerInsert(fkMaquina, fkDisco);
         } catch (Exception ex) {
             ex.printStackTrace();
             System.out.println("Deu ruim no banco");
         }
 
         initComponents();
+    }
+
+    public void timerInsert(Integer fkMaquina, Integer fkDisco) {
+
+        int delay = 10000;   // delay de 1 seg.
+        int interval = 20000;  // intervalo de 10 seg.
+        java.util.Timer timer = new java.util.Timer();
+
+        timer.scheduleAtFixedRate(new TimerTask() {
+            public void run() {
+
+                try {
+                    for (int i = 0; i < 10; i++) {
+
+                        System.out.println(i + "  -  Segundo(s)");
+
+                        try {
+                            DadosDiscoDao dddDao = new DadosDiscoDao();
+                            dddDao.insertDadosDisco(looca, fkDisco);
+
+                            DadosMaquinaDao dadosMaqDao = new DadosMaquinaDao();
+                            dadosMaqDao.insertDadosMaquina(looca, fkMaquina);
+
+                            /*Insert - Essa parte faz os inserts da tabela "processosMaquina", 
+                            deixe comentando até ajustar o timer para não encher o banco */
+//                            ProcessosMaquinaDao proMaqDao = new ProcessosMaquinaDao();
+//                            proMaqDao.insertProcessosMaquina(looca, fkMaquina);
+
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
+                        }
+
+                        MaquinaDao maqDao = new MaquinaDao();
+                        // Verificando no banco se precisa reiniciar ou limpar o cache
+                        List<Maquina> maquina = maqDao.ativaInovacao(fkMaquina);
+
+                        //  Inovação - Reiniciar máquina
+                        if (maquina.get(0).getReiniciar() == 1) {
+                            try {
+                                JOptionPane.showMessageDialog(null, "Totem sendo reiniciado!");
+                                maqDao.updateReiniciar(fkMaquina); // Update - atualiza campo "reiniciar" para 0
+                                Runtime.getRuntime().exec("shutdown /r"); // Coamando para reiniciar a máquina
+                            } catch (IOException ex) {
+                                Logger.getLogger(ProcessosTelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+
+                        //  Inovação - Limpeza de cache
+                        if (maquina.get(0).getLimpezaDeCache() == 1) {
+                            try {
+                                maqDao.updateReiniciar(fkMaquina); // Update - atualiza campo "limpezaDeCache" para 0
+                                JOptionPane.showMessageDialog(null, "Limpeza de cache completa");
+                                Runtime.getRuntime().exec("ipconfig /flushdns"); // Comando que irá limpar o cache
+                            } catch (IOException ex) {
+                                Logger.getLogger(ProcessosTelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+
+                    }
+                } catch (Exception ex) {    // try
+                    ex.printStackTrace();   // try
+                }                                       // try
+
+            }
+        }, delay, interval);
+
     }
 
     @SuppressWarnings("unchecked")
@@ -180,8 +292,16 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        new LoginPage().setVisible(true);
-        this.dispose();
+        try {
+            // Avisando para o usuario que a máquina está sendo monitorada
+            slack.stopService();
+//            new ProcessosTelaInicial().setVisible(true);
+            new LoginPage().setVisible(true);
+            this.dispose();
+
+        } catch (IOException | InterruptedException ex) {
+            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnHardwareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHardwareActionPerformed
@@ -200,6 +320,10 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
                 new ProcessosTelaInicial().setVisible(true);
             }
         });
+    }
+
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IS.png")));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

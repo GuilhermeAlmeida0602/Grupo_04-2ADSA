@@ -1,16 +1,31 @@
 package bandtec.com.br.totemsoluction;
 
+import bandtec.com.br.totemsoluction.entity.Usuario;
+import bandtec.com.br.totemsoluction.persistence.UsuarioDao;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 // @author Grupo_04-2ADSA
 public class LoginPage
         extends javax.swing.JFrame {
 
+//    private String login;
+//    private String senha;
+//
+//    public String getLogin() {
+//        return login;
+//    }
+//
+//    public String getSenha() {
+//        return senha;
+//    }
+
     public LoginPage() {
         initComponents();
-        //setIcon();
+        setIcon();
     }
 
     JFrame frame;
@@ -107,7 +122,7 @@ public class LoginPage
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(4, 4, 4)
@@ -154,6 +169,11 @@ public class LoginPage
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton1KeyPressed(evt);
             }
         });
 
@@ -224,11 +244,33 @@ public class LoginPage
 
     // Validação do Login
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (jTextField1.getText().equals("admin") && jTextField2.getText().equals("admin")) {
-            new ProcessosTelaInicial().setVisible(true);
-            this.dispose();
+        
+        String login = jTextField1.getText();
+        String senha = jTextField2.getText();
+        UsuarioDao usuarioDao = new UsuarioDao();
+        Usuario usuario = new Usuario(login, senha);
+
+        try {
+            Usuario autentificacao = usuarioDao.autentificacaoDeUsuario(usuario);
+
+            if (autentificacao != null) {
+                ProcessosTelaInicial pti = new ProcessosTelaInicial(autentificacao);
+                this.dispose();
+                pti.setVisible(true);
+            } else {
+                System.out.println("Login e/ou senha inválidos");
+                JOptionPane.showMessageDialog(null, "Login e/ou senha inválidos!", "Erro!", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
+
+//        login();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+//        login();
+    }//GEN-LAST:event_jButton1KeyPressed
 
     public static void main(String args[]) {
 
@@ -257,7 +299,20 @@ public class LoginPage
     private javax.swing.JLabel totem;
     // End of variables declaration//GEN-END:variables
 
-//    private void setIcon() {
-//        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("")));
+//    public void login() {
+//
+//        login = jTextField1.getText();
+//        senha = jTextField2.getText();
+//
+//        try {
+//            UsuarioDao usuario = new UsuarioDao();
+//            usuario.loginUsuario(this);
+//        } catch (Exception ex) {
+//            JOptionPane.showMessageDialog(null, "Login e/ou senha inválidos!", "Erro!", JOptionPane.ERROR_MESSAGE);
+//        }
 //    }
+
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IS.png")));
+    }
 }

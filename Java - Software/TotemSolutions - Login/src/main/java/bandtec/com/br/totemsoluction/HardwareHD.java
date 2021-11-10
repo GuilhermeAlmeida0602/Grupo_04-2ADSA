@@ -1,10 +1,13 @@
 package bandtec.com.br.totemsoluction;
 
+import bandtec.com.br.totemsoluction.slack.MensagensSlack;
 import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.discos.Disco;
 import com.github.britooo.looca.api.group.discos.DiscosGroup;
 import com.github.britooo.looca.api.group.discos.Volume;
 import com.github.britooo.looca.api.util.Conversor;
+import java.awt.Toolkit;
+import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,6 +19,7 @@ public class HardwareHD extends javax.swing.JFrame {
 
     Conversor conv = new Conversor();
     Looca looca = new Looca();
+    MensagensSlack slack = new MensagensSlack();
 
     public HardwareHD() {
 
@@ -33,6 +37,7 @@ public class HardwareHD extends javax.swing.JFrame {
 
         initComponents();
         ExibeHD();
+        setIcon();
     }
 
     @SuppressWarnings("unchecked")
@@ -82,7 +87,6 @@ public class HardwareHD extends javax.swing.JFrame {
         btnSair.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         btnSair.setForeground(new java.awt.Color(255, 255, 255));
         btnSair.setText("SAIR");
-        btnSair.setBorder(null);
         btnSair.setFocusPainted(false);
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +98,6 @@ public class HardwareHD extends javax.swing.JFrame {
         btnVoltar.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         btnVoltar.setForeground(new java.awt.Color(255, 255, 255));
         btnVoltar.setText("VOLTAR");
-        btnVoltar.setBorder(null);
         btnVoltar.setDefaultCapable(false);
         btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,7 +109,6 @@ public class HardwareHD extends javax.swing.JFrame {
 
         btnMemoria.setForeground(new java.awt.Color(255, 102, 102));
         btnMemoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hardMemoria.png"))); // NOI18N
-        btnMemoria.setBorder(null);
         btnMemoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMemoriaActionPerformed(evt);
@@ -115,7 +117,6 @@ public class HardwareHD extends javax.swing.JFrame {
 
         btnSO.setForeground(new java.awt.Color(255, 102, 102));
         btnSO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hardSO.png"))); // NOI18N
-        btnSO.setBorder(null);
         btnSO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSOActionPerformed(evt);
@@ -124,7 +125,6 @@ public class HardwareHD extends javax.swing.JFrame {
 
         btnHD.setForeground(new java.awt.Color(255, 102, 102));
         btnHD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hardHD.png"))); // NOI18N
-        btnHD.setBorder(null);
         btnHD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHDActionPerformed(evt);
@@ -133,7 +133,6 @@ public class HardwareHD extends javax.swing.JFrame {
 
         btnProcessador.setForeground(new java.awt.Color(255, 102, 102));
         btnProcessador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hardProcessador.png"))); // NOI18N
-        btnProcessador.setBorder(null);
         btnProcessador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProcessadorActionPerformed(evt);
@@ -413,7 +412,37 @@ public class HardwareHD extends javax.swing.JFrame {
     }//GEN-LAST:event_btnProcessadorActionPerformed
 
     private void btnHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHDActionPerformed
-        ExibeHD();
+        DiscosGroup grupoDeDiscos = looca.getGrupoDeDiscos();
+
+        List<Disco> discos = grupoDeDiscos.getDiscos();
+
+        for (Disco disco : discos) {
+            txConteudo1.setText("<html> Nome: " + disco.getNome() + "</html>");
+            txConteudo2.setText("<html> Modelo: " + disco.getModelo() + "</html>");
+            txConteudo3.setText("<html> Serial: " + disco.getSerial() + "</html>");
+            txConteudo4.setText("<html> Tamanho: " + Conversor.formatarBytes(disco.getTamanho()) + "</html>");
+            txConteudo5.setText("<html> Quantidade de Leituras: " + conv.formatarBytes(disco.getLeituras()) + "</html>");
+            txConteudo6.setText("<html> Bytes total de Leitura: " + conv.formatarBytes(disco.getBytesDeLeitura()) + "</html>");
+            txConteudo7.setText("<html> Quantidade de Escritas: " + conv.formatarBytes(disco.getEscritas()) + "</html>");
+        }
+
+        // Informações sobre o tipo de disco, 
+        DiscosGroup grupoDeVolumes = looca.getGrupoDeDiscos();
+        List<Volume> volumes = grupoDeVolumes.getVolumes();
+
+        // for avançado para Setar Textos -> JLabel
+        for (Volume vol : volumes) {
+            txConteudo9.setText(volumes.get(0).getTipo());
+            txConteudo10.setText(volumes.get(0).getPontoDeMontagem());
+
+            Long disp = volumes.get(1).getDisponivel();
+            Long total = volumes.get(1).getTotal();
+
+            var teste = (disp * 100) / total;
+            int valor = (int) teste;
+
+            pbDisponivel.setValue(valor);
+        }
     }//GEN-LAST:event_btnHDActionPerformed
 
     private void btnSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSOActionPerformed
@@ -433,9 +462,15 @@ public class HardwareHD extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        // ação do btn VOLTAR
-        new LoginPage().setVisible(true);
-        this.dispose();
+        try {
+
+            // Avisando para o usuario que a máquina está sendo monitorada
+            slack.stopService();
+            new ProcessosTelaInicial().setVisible(true);
+
+        } catch (IOException | InterruptedException ex) {
+            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnSairActionPerformed
 
     public static void main(String args[]) {
@@ -513,6 +548,10 @@ public class HardwareHD extends javax.swing.JFrame {
 
             pbDisponivel.setValue(valor);
         }
+    }
+
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IS.png")));
     }
 
 }

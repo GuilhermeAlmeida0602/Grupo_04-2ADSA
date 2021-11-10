@@ -1,11 +1,16 @@
 package bandtec.com.br.totemsoluction;
 
+import bandtec.com.br.totemsoluction.slack.MensagensSlack;
+import bandtec.com.br.totemsoluction.slack.Slack;
 import com.github.britooo.looca.api.group.memoria.Memoria;
 import com.github.britooo.looca.api.util.Conversor;
+import java.awt.Toolkit;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import org.json.JSONObject;
 
 // @author Grupo_04-2ADSA
 public class HardwareMemoria extends javax.swing.JFrame {
@@ -13,6 +18,7 @@ public class HardwareMemoria extends javax.swing.JFrame {
     // Instanciando objeto da classe Conversor e Memoria
     Conversor conv = new Conversor();
     Memoria memoria = new Memoria();
+    MensagensSlack slack = new MensagensSlack();
 
     public HardwareMemoria() {
         try {
@@ -29,6 +35,7 @@ public class HardwareMemoria extends javax.swing.JFrame {
 
         initComponents();
         ExibeMemoria();
+        setIcon();
     }
 
     @SuppressWarnings("unchecked")
@@ -346,8 +353,15 @@ public class HardwareMemoria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnProcessadorActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        new LoginPage().setVisible(true);
-        this.dispose();
+        try {
+
+            // Avisando para o usuario que a máquina está sendo monitorada
+            slack.stopService();
+            new ProcessosTelaInicial().setVisible(true);
+
+        } catch (IOException | InterruptedException ex) {
+            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnSairActionPerformed
 
     public static void main(String args[]) {
@@ -386,5 +400,9 @@ public class HardwareMemoria extends javax.swing.JFrame {
         pbEmUso2.setValue((int) ((memoria.getEmUso() * 100) / memoria.getTotal()) + 1);
         pbDisponivel.setValue((int) ((memoria.getDisponivel() * 100) / memoria.getTotal()));
         labelTotal.setText(conv.formatarBytes(memoria.getTotal()));
+    }
+
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IS.png")));
     }
 }

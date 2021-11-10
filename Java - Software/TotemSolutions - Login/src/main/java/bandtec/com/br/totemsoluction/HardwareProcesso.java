@@ -1,15 +1,21 @@
 package bandtec.com.br.totemsoluction;
 
+import bandtec.com.br.totemsoluction.slack.MensagensSlack;
+import bandtec.com.br.totemsoluction.slack.Slack;
 import com.github.britooo.looca.api.core.Looca;
+import java.awt.Toolkit;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import org.json.JSONObject;
 
 // @author Grupo_04-2ADSA
 public final class HardwareProcesso extends javax.swing.JFrame {
 
     Looca looca = new Looca();
+    MensagensSlack slack = new MensagensSlack();
 
     public HardwareProcesso() {
 
@@ -28,6 +34,7 @@ public final class HardwareProcesso extends javax.swing.JFrame {
         }
 
         ExibeProcesso();
+        setIcon();
     }
 
     @SuppressWarnings("unchecked")
@@ -456,8 +463,15 @@ public final class HardwareProcesso extends javax.swing.JFrame {
     }//GEN-LAST:event_btnProcessadorActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        new LoginPage().setVisible(true);
-        this.dispose();
+        try {
+
+            // Avisando para o usuario que a máquina está sendo monitorada
+            slack.stopService();
+            new ProcessosTelaInicial().setVisible(true);
+
+        } catch (IOException | InterruptedException ex) {
+            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnSairActionPerformed
 
     public static void main(String args[]) {
@@ -515,4 +529,7 @@ public final class HardwareProcesso extends javax.swing.JFrame {
         pbEmUso.setValue(usoProc);
     }
 
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IS.png")));
+    }
 }

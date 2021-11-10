@@ -1,15 +1,24 @@
 package bandtec.com.br.totemsoluction;
 
+import bandtec.com.br.totemsoluction.slack.MensagensSlack;
+import bandtec.com.br.totemsoluction.slack.Slack;
 import com.github.britooo.looca.api.core.Looca;
+import java.awt.Toolkit;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.json.JSONObject;
 
 // @author Grupo_04-2ADSA
 public class HardwareSo extends javax.swing.JFrame {
 
     Looca looca = new Looca();
+    MensagensSlack slack = new MensagensSlack();
 
     public HardwareSo() {
         initComponents();
         ExibirInformacoes();
+        setIcon();
     }
 
     @SuppressWarnings("unchecked")
@@ -297,9 +306,14 @@ public class HardwareSo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        // ação do btn SAIR 
-        new LoginPage().setVisible(true);
-        this.dispose();
+        try {
+            // Avisando para o usuario que a máquina está sendo monitorada
+            slack.stopService();
+            new ProcessosTelaInicial().setVisible(true);
+
+        } catch (IOException | InterruptedException ex) {
+            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnProcessadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessadorActionPerformed
@@ -373,5 +387,9 @@ public class HardwareSo extends javax.swing.JFrame {
         txConteudo3.setText(String.format("Inicializado: %s", looca.getSistema().getInicializado()));
         txConteudo4.setText(String.format("Tempo de atividade: %s", looca.getSistema().getTempoDeAtividade()));
         txConteudo5.setText("Executando como " + (looca.getSistema().getPermissao() ? "root" : "usuário padrão"));
+    }
+
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IS.png")));
     }
 }
