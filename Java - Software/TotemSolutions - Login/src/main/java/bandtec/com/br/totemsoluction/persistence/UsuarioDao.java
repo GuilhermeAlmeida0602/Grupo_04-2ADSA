@@ -37,7 +37,7 @@ public class UsuarioDao extends Dao {
         }
         close();
         // Fechamento da conexão com banco de dados
-        
+
         try {
             // Avisando para o usuario que a máquina está sendo monitorada
             slack.startService();
@@ -45,9 +45,9 @@ public class UsuarioDao extends Dao {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return u;
-   
+
     }
 
 //    public void loginUsuario(LoginPage usuario) throws Exception {

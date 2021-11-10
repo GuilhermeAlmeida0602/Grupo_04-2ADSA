@@ -6,7 +6,7 @@ import bandtec.com.br.totemsoluction.persistence.DadosDiscoDao;
 import bandtec.com.br.totemsoluction.persistence.DadosMaquinaDao;
 import bandtec.com.br.totemsoluction.persistence.DiscoDao;
 import bandtec.com.br.totemsoluction.persistence.MaquinaDao;
-import bandtec.com.br.totemsoluction.persistence.ProcessosMaquinaDao;
+import bandtec.com.br.totemsoluction.persistence.StatusMaquinaDao;
 import bandtec.com.br.totemsoluction.slack.MensagensSlack;
 import com.github.britooo.looca.api.core.Looca;
 import java.awt.Toolkit;
@@ -60,6 +60,7 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
 
         MaquinaDao maqDao = new MaquinaDao();
         DiscoDao discDao = new DiscoDao();
+        StatusMaquinaDao smDao = new StatusMaquinaDao();
         Integer fkEmpresa = usuario.getFkEmpresa();
         try {
 
@@ -73,6 +74,8 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
                 discDao.insertInfoDisco(looca, fkMaquina); // Insert - dados estáticos na tabela Disco
 
                 fkDisco = discDao.buscaId(looca, fkMaquina); // Select - buscando o "idDisco" para realizar os inserts na tabela "DadosDisco"
+                
+                smDao.insertStatusMaquina(fkMaquina, "Ok");
 
             } else {
                 System.out.println("Totem já registrado no banco");

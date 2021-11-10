@@ -12,17 +12,6 @@ import javax.swing.JOptionPane;
 public class LoginPage
         extends javax.swing.JFrame {
 
-//    private String login;
-//    private String senha;
-//
-//    public String getLogin() {
-//        return login;
-//    }
-//
-//    public String getSenha() {
-//        return senha;
-//    }
-
     public LoginPage() {
         initComponents();
         setIcon();
