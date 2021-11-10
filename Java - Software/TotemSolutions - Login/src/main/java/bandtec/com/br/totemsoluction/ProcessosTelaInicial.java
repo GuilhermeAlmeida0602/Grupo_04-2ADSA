@@ -57,8 +57,9 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         btnSO = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setExtendedState(6);
+        setMaximumSize(new java.awt.Dimension(1080, 650));
         setMinimumSize(new java.awt.Dimension(1080, 650));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(247, 247, 247));
 
