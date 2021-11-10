@@ -44,6 +44,7 @@ public class LoginPage
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(1080, 650));
         setMinimumSize(new java.awt.Dimension(1080, 650));
+        setResizable(false);
 
         Janela.setBackground(new java.awt.Color(247, 247, 247));
 

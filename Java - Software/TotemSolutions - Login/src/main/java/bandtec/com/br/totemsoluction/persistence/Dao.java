@@ -15,6 +15,18 @@ public class Dao {
     PreparedStatement stmt;
     ResultSet rs;
 
+<<<<<<< HEAD
+=======
+    public void open() throws Exception {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/infosystems",
+<<<<<<< HEAD
+                "root", "@Fan3farra");
+=======
+                "root", "11097");
+>>>>>>> d7e4e29f74125573b1af65c9f4783c8b8ad2ccb5
+    }
+>>>>>>> 0dd560d818c988801026cf6fa2632e418980c803
 //    public void open() throws Exception {
 //        Class.forName("com.mysql.cj.jdbc.Driver");
 //        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/infosystems",
