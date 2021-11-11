@@ -74,8 +74,8 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
                 discDao.insertInfoDisco(looca, fkMaquina); // Insert - dados estáticos na tabela Disco
 
                 fkDisco = discDao.buscaId(looca, fkMaquina); // Select - buscando o "idDisco" para realizar os inserts na tabela "DadosDisco"
-                
-                smDao.insertStatusMaquina(fkMaquina, "Ok");
+
+                smDao.insertStatusMaquina(fkMaquina, "Ok"); // Insert - inserindo máquina na tabela status
 
             } else {
                 System.out.println("Totem já registrado no banco");
@@ -118,7 +118,6 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
                             deixe comentando até ajustar o timer para não encher o banco */
 //                            ProcessosMaquinaDao proMaqDao = new ProcessosMaquinaDao();
 //                            proMaqDao.insertProcessosMaquina(looca, fkMaquina);
-
                         } catch (Exception ex) {
                             ex.printStackTrace();
                         }
@@ -149,10 +148,28 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
                             }
                         }
 
+                        Integer usoCPU = looca.getProcessador().getUso().intValue();
+                        StatusMaquinaDao smDao = new StatusMaquinaDao();
+                        String status;
+
+                        try {
+                            if (usoCPU <= 60) {
+                                status = "Ok";
+                            } else if (usoCPU <= 75) {
+                                status = "Alerta";
+                            } else {
+                                status = "Emergência";
+                            }
+
+                            smDao.updateReiniciar(fkMaquina, status);
+                            // Update - atualização do status da máquina na tabela
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
+                        }
                     }
-                } catch (Exception ex) {    // try
-                    ex.printStackTrace();   // try
-                }                                       // try
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
 
             }
         }, delay, interval);

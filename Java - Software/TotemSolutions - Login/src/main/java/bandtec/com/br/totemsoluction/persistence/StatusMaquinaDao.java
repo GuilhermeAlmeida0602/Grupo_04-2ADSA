@@ -16,16 +16,16 @@ public class StatusMaquinaDao extends Dao {
         open();
         try {
             System.out.println("Realizando registro de totem no banco...");
-            stmt = con.prepareStatement("insert into Maquina (fkMaquina, "
+            stmt = con.prepareStatement("insert into StatusMaquina (fkMaquina, "
                     + "statusMaq, dataStatus) values (?,?,?);");
             stmt.setInt(1, fkMaquina);
             stmt.setString(2, status);
-            stmt.setString(16, dtf.format(LocalDateTime.now()));
+            stmt.setString(3, dtf.format(LocalDateTime.now()));
             stmt.executeUpdate();
             stmt.close();
             System.out.println("Registro realizado com sucesso!");
         } catch (SQLException ex) {
-            System.out.println("Ocorreu um problema no registro - Máquina");
+            System.out.println("Ocorreu um problema no registro - Status Máquina");
             ex.printStackTrace();
         } finally {
             close();

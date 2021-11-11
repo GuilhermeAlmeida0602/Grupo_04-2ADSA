@@ -15,28 +15,17 @@ public class Dao {
     PreparedStatement stmt;
     ResultSet rs;
 
-<<<<<<< HEAD
-=======
+
     public void open() throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
         con = DriverManager.getConnection("jdbc:mysql://localhost:3306/infosystems",
-<<<<<<< HEAD
-                "root", "@Fan3farra");
-=======
-                "root", "11097");
->>>>>>> d7e4e29f74125573b1af65c9f4783c8b8ad2ccb5
+                "root", "senha");
     }
->>>>>>> 0dd560d818c988801026cf6fa2632e418980c803
-//    public void open() throws Exception {
-//        Class.forName("com.mysql.cj.jdbc.Driver");
-//        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/infosystems",
-//                "root", "@Fan3farra");
-//    }
     
-    public void open() throws Exception {
-        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        con = DriverManager.getConnection("jdbc:sqlserver://infosystems-server.database.windows.net:1433;database=infoSystems;user=infosystems-bd@infosystems-server;password={};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
-    }
+//    public void open() throws Exception {
+//        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//        con = DriverManager.getConnection("jdbc:sqlserver://infosystems-server.database.windows.net:1433;database=infoSystems;user=infosystems-bd@infosystems-server;password={};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
+//    }
 
     public void close() throws Exception {
         con.close();
