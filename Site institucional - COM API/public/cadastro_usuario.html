@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style_cad_usuario.css">
+    <link rel="stylesheet" href="css/menu_style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon" />
+    <title>Cadastro Usuário</title>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name"><a href="index.html" class="nav-list">InfoSystem</a></div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="cadastro_usuario.html">
+                    <i class="fas fa-user"></i>
+                    <span class="links_name">Criar usuário</span>
+                </a>
+                <span class="tooltip">Criar usuário</span>
+            </li>
+            <li>
+                <a href="usuarios_cadastrados.html">
+                    <i class="fas fa-users"></i>
+                    <span class="links_name">Cadastros</span>
+                </a>
+                <span class="tooltip">Cadastros</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-headset"></i>
+                    <span class="links_name">Suporte</span>
+                </a>
+                <span class="tooltip">Suporte</span>
+            </li>
+
+            <li class="profile">
+                <a href="#">
+                    <i class='bx bx-log-out' id="log_out"></i>
+                    <span class="links_name">Logout</span>
+                </a>
+                <span class="tooltip">Logout</span>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="text">Cadastrar usuário</div>
+        <div class="user-session">Olá adm!</div>
+
+        <div class="container">
+
+            <div class="container_complementar">
+
+                <div class="quadro_cinza">
+
+                    <p class="p_dados">Dados do usuário</p>
+                    <!-- <form action=""> -->
+
+                    <div class="div_centralizando">
+                        <div class="input_box">
+                            <input type="text" class="input_user" name="primeiro_nome" autocomplete="off" required>
+                            <label for="nome" class="label_input">Primeiro nome</label>
+                        </div>
+                        <div class="input_box">
+                            <input type="text" class="input_user" name="ultimo_nome" autocomplete="off" required>
+                            <label for="nome" class="label_input">Último nome</label>
+                        </div>
+
+                        <div class="input_box">
+                            <input type="number" class="input_user" name="tel_celular" autocomplete="off" required>
+                            <label for="nome" class="label_input">Telefone celular</label>
+                        </div>
+
+                        <div class="input_box">
+                            <input type="number" class="input_user" name="tel_fixo" autocomplete="off" required>
+                            <label for="nome" class="label_input">Telefone fixo</label>
+                        </div>
+
+                        <div class="input_box">
+                            <input type="email" class="input_user" name="email" autocomplete="off" required>
+                            <label for="nome" class="label_input">Email</label>
+                        </div>
+
+                        <div class="input_box">
+                            <input type="password" class="input_user" name="senha" autocomplete="off" required>
+                            <label for="nome" class="label_input">Senha</label>
+                        </div>
+
+                        <div class="input_box">
+                            <input type="password" class="input_user" name="senha_confirmacao" autocomplete="off"
+                                required>
+                            <label for="nome" class="label_input">Confirme a senha</label>
+                        </div>
+
+                        <div class="input_box">
+                            <input type="hidden" class="input_user" name="idEmpresa"
+                                placeholder="Nº de cadastro da empresa" autocomplete="off" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="input_button" onclick="cadastrar()">Finalizar Cadastro</button>
+                </div>
+                <br>
+                <!-- </form> -->
+
+            </div>
+        </div>
+
+        </div>
+    </section>
+</body>
+
+<script src="JavaScript/js_menu.js"></script>
+
+</html>

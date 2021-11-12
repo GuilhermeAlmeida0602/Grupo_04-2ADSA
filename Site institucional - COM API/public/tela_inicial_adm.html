@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style_tela_inicial_adm.css">
+    <link rel="stylesheet" href="css/menu_style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+    <link rel="shortcut icon" href="Imagens/IS.png" type="image/x-icon">
+    <title>Menu Administrador</title>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name"><a href="index.html" class="nav-list">InfoSystem</a></div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="cadastro_usuario.html">
+                    <i class="fas fa-user"></i>
+                    <span class="links_name">Criar usuário</span>
+                </a>
+                <span class="tooltip">Criar usuário</span>
+            </li>
+            <li>
+                <a href="usuarios_cadastrados.html">
+                    <i class="fas fa-users"></i>
+                    <span class="links_name">Cadastros</span>
+                </a>
+                <span class="tooltip">Cadastros</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-headset"></i>
+                    <span class="links_name">Suporte</span>
+                </a>
+                <span class="tooltip">Suporte</span>
+            </li>
+
+            <li class="profile">
+                <a href="#">
+                    <i class='bx bx-log-out' id="log_out"></i>
+                    <span class="links_name">Logout</span>
+                </a>
+                <span class="tooltip">Logout</span>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="text">Seja bem-vindo!</div>
+        <div class="user-session">Olá adm!</div>
+        
+        <div class="posicaoImg">
+            <img class="imgADM" src="Imagens/menuAdm.png" alt="">
+        </div>
+
+    </section>
+    <script src="JavaScript/js_menu.js"></script>
+    <!-- <script>
+
+        // function cadastrar() {
+    
+        //     window.location.href = "menuAdm.html"
+    
+        // }
+
+    </script> -->
+</body>
+</html>

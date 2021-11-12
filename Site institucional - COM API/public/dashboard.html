@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/menu_style.css">
+    <link rel="stylesheet" href="css/style_dashboard.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+
+<body onload="vermelho()">
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name"><a href="index.html" class="nav-list">InfoSystem</a></div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="dashboard.html">
+                    <i class="fas fa-chart-pie"></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="lista_de_totens.html">
+                    <i class="fas fa-desktop"></i>
+                    <span class="links_name">Totens</span>
+                </a>
+                <span class="tooltip">Totens</span>
+            </li>
+            <!-- <li>
+                <a href="#">
+                    <i class="fas fa-cog"></i>
+                    <span class="links_name">Configuração</span>
+                </a>
+                <span class="tooltip">Configuração</span>
+            </li> -->
+            <li>
+                <a href="#">
+                    <i class="fas fa-headset"></i>
+                    <span class="links_name">Suporte</span>
+                </a>
+                <span class="tooltip">Suporte</span>
+            </li>
+
+            <li class="profile">
+                <a href="login.html">
+                    <i class='bx bx-log-out' id="log_out"></i>
+                    <span class="links_name">Logout</span>
+                </a>
+                <span class="tooltip">Logout</span>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="text">Dashboard </div><span class="span_visao">Visão geral</span>
+        <div class="user-session">Olá Analista!</div>
+
+        <div class="container_body">
+            <form action="" method="post">
+                <section class="sessao_status">
+                    <p class="p_status">Selecione o status</p>
+                    <a href="#" onclick="vermelho()">
+                        <div class="quadrado_informativo vermelho">
+                            <div class="cor_status">Emergência</div>
+                            <div class="indicadores_grafico">2 toten(s)</div>
+                        </div>
+                    </a>
+                    <a href="#" onclick="amarelo()">
+                        <div class="quadrado_informativo amarelo">
+                            <div class="cor_status">Alerta</div>
+                            <div class="indicadores_grafico">1 toten(s)</div>
+                        </div>
+                    </a>
+                    <a href="#" onclick="verde()">
+                        <div class="quadrado_informativo verde">
+                            <div class="cor_status">Ok</div>
+                            <div class="indicadores_grafico">3 toten(s)</div>
+                        </div>
+                    </a>
+
+                    <section class="sessao_tabela">
+
+                        <p class="p_tabela_status">Lista de totens por status</p>
+                        <!-- table-striped,  -->
+                        <table class="table_totens">
+                            <thead>
+                                <tr>
+                                    <th>Nº do totem</th>
+                                    <th>Status</th>
+                                    <th>Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+
+                                <tr class="tabela_tr" th:each="basedados: ${listTabela}">
+                                    <td class="td_id" th:text="${basedados.id}">2</td>
+                                    <td class="td_status" th:text="${basedados.nome}">OK</td>
+                                    <td th:text="${basedados.hora}"><a href="visaoDetalhada.html"><i
+                                                class="fas fa-tools ferramenta"></i></a></td>
+                                </tr>
+                                <tr class="tabela_tr" th:each="basedados: ${listTabela}">
+                                    <td class="td_id" th:text="${basedados.id}">10</td>
+                                    <td class="td_status" th:text="${basedados.nome}">OK</td>
+                                    <td th:text="${basedados.hora}"><a href="visaoDetalhada.html"><i
+                                                class="fas fa-tools ferramenta"></i></a></td>
+                                </tr>
+                                <tr class="tabela_tr" th:each="basedados: ${listTabela}">
+                                    <td class="td_id" th:text="${basedados.id}">5</td>
+                                    <td class="td_status" th:text="${basedados.nome}">OK</td>
+                                    <td th:text="${basedados.hora}"><a href="visaoDetalhada.html"><i
+                                                class="fas fa-tools ferramenta"></i></a></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+            </form>
+            <section class="sessao_grafico">
+                <div class="quadrado_grafico">
+                    <p class="p_grafico">Situação atual dos totens</p>
+                    <!-- Grafico -->
+                    <div class="div_grafico">
+                        <canvas id="myChart"></canvas>
+                        <div class="info_totens">
+                            Total de totens: 6
+                            <br>
+                            Totens em status de emergência: 2<br>
+                            Totens em status de alerta: 1<br>
+                            Totens em status ok: 3<br>
+                        </div>
+                    </div>
+                    <!-- Grafico -->
+
+                </div>
+            </section>
+
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="JavaScript/js_menu.js"></script>
+    <script src="JavaScript/js_grafico_dashboard.js"></script>
+    <script>
+        var idBody = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(idBody, {
+            type: 'doughnut',
+            data: {
+                labels: ['Emergência', 'Alerta', 'Ok'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [2, 1, 3],
+                    backgroundColor: [
+                        'rgba(231, 76, 60, 0.9)',
+                        'rgba(241, 196, 15, 0.9)',
+                        'rgba(39, 174, 96, 0.9)'
+                    ]
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom',
+                        labels: {
+                            color: 'black',
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
