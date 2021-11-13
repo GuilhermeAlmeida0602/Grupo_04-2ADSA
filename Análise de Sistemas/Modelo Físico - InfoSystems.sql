@@ -90,8 +90,9 @@ CREATE TABLE Usuario (
   pid INT NOT NULL,
   usoCPU INT NOT NULL,
   usoMemoria FLOAT NOT NULL,
+  encerrarProcessos BIT NOT NULL,
   dataProcesso DATETIME NOT NULL);
-  
+    
   CREATE TABLE StatusMaquina (
   fkMaquina INT PRIMARY KEY NOT NULL UNIQUE,
   statusMaq VARCHAR(45) NOT NULL,
@@ -135,6 +136,8 @@ ALTER TABLE processosMaquina ADD FOREIGN KEY (fkMaquina)
   select * from processosMaquina;
   select * from statusmaquina;
   
+--  select processo from processosMaquina where encerrarProcessos = 1 and fkMaquina = 1;
+  
 ##  select *  from usuario inner join empresa on idEmpresa = (fkempresa);
   
 ## select uuid from maquina where uuid='e4f03440-fe49-4a1a-815f-8eb447596398';
@@ -146,5 +149,9 @@ ALTER TABLE processosMaquina ADD FOREIGN KEY (fkMaquina)
 ## select idDisco from Disco where montagem = ? and fkMaquina = ?;
 
 -- update Maquina set reiniciar=1 where idMaquina=1;
+
+-- TRUNCATE TABLE processosMaquina;
+
+-- update processosMaquina set encerrarprocessos=1 where fkMaquina=1 and idprocessoMaquina=38;
   
   
