@@ -13,7 +13,7 @@
     <title>Lista de Totens</title>
 </head>
 
-<body>
+<body onload="obterMaquinas()">
 
     <div class="sidebar">
         <div class="logo-details">
@@ -74,67 +74,14 @@
                     <th>Ação</th>
                 </tr>
 
-                <tr>
-                    <td>1</td>
-                    <td class="alerta">Alerta</td>
-                    <td><a href="visaoDetalhada.html"><i
-                        class="fas fa-tools ferramenta"></i></a></td>
-                </tr>
-
-                <tr>
-                    <td>2</td>
-                    <td class="emergencia">Emergência</td>
-                    <td><a href="visaoDetalhada.html"><i
-                        class="fas fa-tools ferramenta"></i></a></td>
-                </tr>
-
-                <tr>
-                    <td>3</td>
-                    <td class="bom">Bom</td>
-                    <td><a href="visaoDetalhada.html"><i
-                        class="fas fa-tools ferramenta"></i></a></td>
-                </tr>
-
-                <tr>
-                    <td>4</td>
-                    <td class="emergencia">Emergência</td>
-                    <td><a href="visaoDetalhada.html"><i
-                        class="fas fa-tools ferramenta"></i></a></td>
-                </tr>
-
-                <tr>
-                    <td>5</td>
-                    <td class="bom">Bom</td>
-                    <td><a href="visaoDetalhada.html"><i
-                        class="fas fa-tools ferramenta"></i></a></td>
-                </tr>
-
-                <tr>
-                    <td>6</td>
-                    <td class="alerta">Alerta</td>
-                    <td><a href="visaoDetalhada.html"><i
-                        class="fas fa-tools ferramenta"></i></a></td>
-                </tr>
-
-                <tr>
-                    <td>7</td>
-                    <td class="alerta">Alerta</td>
-                    <td><a href="visaoDetalhada.html"><i
-                        class="fas fa-tools ferramenta"></i></a></td>
-                </tr>
-
-                <tr>
-                    <td>8</td>
-                    <td class="emergencia">Emergência</td>
-                    <td><a href="visaoDetalhada.html"><i
-                        class="fas fa-tools ferramenta"></i></a></td>
-                </tr>
-
-                <tr>
-                    <td>9</td>
-                    <td class="alerta">Alerta</td>
-                    <td><a href="visaoDetalhada.html"><i
-                        class="fas fa-tools ferramenta"></i></a></td>
+                <tr id="num_selec">
+                    <td id="fk_maquina"></td>
+                    <td id="status_Maq" class="alerta"></td>
+                    <td>
+                        <a href="visaoDetalhada.html">
+                            <i class="fas fa-tools ferramenta"></i>
+                        </a>
+                    </td>
                 </tr>
 
             </table>
@@ -143,10 +90,16 @@
     
     </section>
 
+</body>
+
+</html>
+
     <script>
         let sidebar = document.querySelector(".sidebar");
         let closeBtn = document.querySelector("#btn");
         let searchBtn = document.querySelector(".bx-search");
+
+        var maquinas;
 
         closeBtn.addEventListener("click", () => {
             sidebar.classList.toggle("open");
@@ -166,8 +119,56 @@
                 closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
             }
         }
+
+        obterMaquinas();
+
+        function obterMaquinas() {
+        
+            console.log("teste");
+
+        fetch(`/statusMaquina`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        // alert(JSON.stringify(resposta))
+                        var maquinas_encontradas = resposta;
+                        maquinas = maquinas_encontradas;
+                        carregar_maquinas()
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+
+    function carregar_maquinas() {
+      
+      for (let i = 0; i < maquinas.length; i++) {
+          let encontrados = maquinas[i]
+          num_selec.innerHTML = `<td id="fk_maquina">${encontrados[i].fkMaquina}</td>
+                                 <td id="status_Maq" class="alerta">${encontrados[i].statusMaq}</td>
+                                 <td>
+                                    <a href="visaoDetalhada.html">
+                                        <i class="fas fa-tools ferramenta"></i>
+                                    </a>
+                                </td>`;
+          
+          /* <td id="status_Maq" class="alerta">Alerta</td>
+             <td>
+
+             <a href="visaoDetalhada.html">
+                <i class="fas fa-tools ferramenta"></i>
+             </a>
+             </td> */
+
+     
+          
+      }
+
+  }
+
     </script>
-
-</body>
-
-</html>

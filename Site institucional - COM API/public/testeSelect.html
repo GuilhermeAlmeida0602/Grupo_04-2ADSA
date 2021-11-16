@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando</title>
+</head>
+<body>
+    
+    <h1>Aqui estão os totens</h1>
+
+    <div style="border: solid red 5px;" id="div_maquinas" class="div_maquina"></div>
+    <button onclick="carregar_maquinas()">teste</button>
+</body>
+</html>
+
+<script>
+
+    var maquinas;
+
+    obterMaquinas();
+
+    function carregar_maquinas() {
+      
+        for (let i = 0; i < maquinas.length; i++) {
+            let encontrados = maquinas[i]
+
+            div_maquinas.innerHTML = `Resultado: ${encontrados[0].statusMaq}`
+        }
+
+    }
+
+    function obterMaquinas() {
+        
+        fetch(`/statusMaquina`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        // alert(JSON.stringify(resposta))
+                        var maquinas_encontradas = resposta;
+                        maquinas = maquinas_encontradas;
+                        carregar_maquinas()
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+</script>
