@@ -23,8 +23,8 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        telEmpresa: {
-            field: 'telEmpresa',
+        telResponsavel: {
+            field: 'telResponsavel',
             type: DataTypes.CHAR,
             allowNull: false
         },

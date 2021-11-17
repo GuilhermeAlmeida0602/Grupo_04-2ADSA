@@ -38,7 +38,7 @@
                 <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
 
                     <!-- Primeira etapa do cadastro da empresa -->
-                    <div id=" invisivel_etapa1">
+                    <div id="invisivel_etapa1">
 
                         <p class="p_dados">Informações da empresa</p>
 
@@ -66,15 +66,15 @@
 
                             <!-- Telefone da Empresa-->
                             <div class="input_box">
-                                <input type="number" class="input_user" id="celular" name="telEmpresa"
+                                <input type="number" class="input_user" id="telResponsavel" name="telResponsavel"
                                     autocomplete="off" required>
-                                <label for="telefone" class="label_input">celular</label>
+                                <label for="telefone" class="label_input">Telefone do responsável</label>
                             </div>
 
                             <!-- Email da empresa -->
                             <div class="input_box">
                                 <input type="email" class="input_user" name="emailEmpresa" autocomplete="off" required>
-                                <label for="email" class="label_input">Email da empresa</label>
+                                <label for="email" class="label_input">E-mail da empresa</label>
                             </div>
 
                             <!-- Senha -->
@@ -152,7 +152,7 @@
                         </div>
                         <button type="submit" class="input_button" onclick="etapa2Cadastro()">Etapa anterior</button>
                         <button type="submit" class="input_button" onclick="cadastrar()">Finalizar Cadastro</button>
-                        <input type="submit" id="btn_entrar" value="Cadastrar" class="input_button">
+                        <!-- <input type="submit" id="btn_entrar" value="Cadastrar" class="input_button"> -->
                     </div>
                 </form>
             </div>
@@ -202,9 +202,9 @@
     function etapa1Cadastro() {
         var etapa1validada = false;
 
-        if (nomeEmpresa.value <= 0 || nomeEmpresa.value <= 0 || nomeEmpresa.value <= 0 || responsavel.value <= 0) {
+        if (nomeEmpresa.value <= 0 || responsavel.value <= 0) {
             alert("Nome da empresa inválido!");
-        } else if ((celular.value).length < 8 || (celular.value).length > 10) {
+        } else if (telResponsavel.value.length != 11) {
             alert("Nome do celular inválido!");
         }
 
@@ -231,14 +231,16 @@
         } */
 
         if (validarCNPJ(cnpj.value)) {
-
+            etapa1validada = true;
         } else {
             alert("Digite um CNPJ válido");
         }
 
         if (etapa1validada) {
-            document.getElementById("invisivel_etapa1").style.display = 'none';
-            document.getElementById("invisivel_etapa2").style.display = 'block';
+            // document.getElementById("invisivel_etapa1").style.display = 'none';
+            // document.getElementById("invisivel_etapa2").style.display = 'block';
+            invisivel_etapa1.style.display = 'none';
+            invisivel_etapa2.style.display = 'block';
         } else {
             alert("Preencha todas as informações corretamente!");
         }
@@ -305,11 +307,10 @@
                 pos = 9;
         }
         resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-        if (resultado != digitos.charAt(1))
+        if (resultado != digitos.charAt(1)) {
             return false;
-
+        }
         return true;
-
     }
 
     // Método responsável por apagar a primeira parte do cadastro e liberar a segunda parte

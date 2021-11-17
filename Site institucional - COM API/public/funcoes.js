@@ -1,5 +1,6 @@
 let login_usuario;
 let nome_usuario;
+// let id_Empresa; // Esse id será util para o cadastro dos usuarios
 
 function redirecionar_login() {
     window.location.href = 'login.html';

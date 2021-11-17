@@ -12,7 +12,7 @@ router.post('/autenticar', function(req, res, next) {
 	var emailEmpresa = req.body.emailEmpresa;
 	var senhaEmpresa = req.body.senhaEmpresa;	
 	
-	let instrucaoSql = `select * from empresa where email='${emailEmpresa}' and senha='${senhaEmpresa}'`;
+	let instrucaoSql = `select * from Empresa where emailEmpresa='${emailEmpresa}' and senhaEmpresa='${senhaEmpresa}'`;
 	console.log(instrucaoSql);
 
 	sequelize.query(instrucaoSql, {
@@ -43,7 +43,7 @@ router.post('/cadastrar', function(req, res, next) {
 	Empresa.create({
 		nomeEmpresa : req.body.nomeEmpresa,
 		cnpj : req.body.cnpj,
-		nomeResposavel : req.body.nomeResposavel,
+		nomeResponsavel : req.body.nomeResponsavel,
 		telResponsavel : req.body.telResponsavel,
 		emailEmpresa : req.body.emailEmpresa,
 		senhaEmpresa : req.body.senhaEmpresa,
