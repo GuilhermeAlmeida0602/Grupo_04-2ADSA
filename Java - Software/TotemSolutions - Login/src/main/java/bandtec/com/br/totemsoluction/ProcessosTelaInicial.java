@@ -6,6 +6,7 @@ import bandtec.com.br.totemsoluction.persistence.DadosDiscoDao;
 import bandtec.com.br.totemsoluction.persistence.DadosMaquinaDao;
 import bandtec.com.br.totemsoluction.persistence.DiscoDao;
 import bandtec.com.br.totemsoluction.persistence.MaquinaDao;
+import bandtec.com.br.totemsoluction.persistence.ProcessosMaquinaDao;
 import bandtec.com.br.totemsoluction.persistence.StatusMaquinaDao;
 import bandtec.com.br.totemsoluction.slack.MensagensSlack;
 import com.github.britooo.looca.api.core.Looca;
@@ -95,8 +96,8 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
 
     public void timerInsert(Integer fkMaquina, Integer fkDisco) {
 
-        int delay = 10000;   // delay de 1 seg.
-        int interval = 20000;  // intervalo de 10 seg.
+        int delay = 10000;   // delay de 10 seg.
+        int interval = 20000;  // intervalo de 20 seg.
         java.util.Timer timer = new java.util.Timer();
 
         timer.scheduleAtFixedRate(new TimerTask() {
@@ -114,10 +115,12 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
                             DadosMaquinaDao dadosMaqDao = new DadosMaquinaDao();
                             dadosMaqDao.insertDadosMaquina(looca, fkMaquina);
 
+                            ProcessosMaquinaDao proMaqDao = new ProcessosMaquinaDao();
+                            proMaqDao.limparProcessos(fkMaquina);
+                            
                             /*Insert - Essa parte faz os inserts da tabela "processosMaquina", 
-                            deixe comentando até ajustar o timer para não encher o banco */
-//                            ProcessosMaquinaDao proMaqDao = new ProcessosMaquinaDao();
-//                            proMaqDao.insertProcessosMaquina(looca, fkMaquina);
+                            deixe comentando até ajustar o timer para não encher o banco */                           
+                            proMaqDao.insertProcessosMaquina(looca, fkMaquina);
                         } catch (Exception ex) {
                             ex.printStackTrace();
                         }
@@ -126,12 +129,29 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
                         // Verificando no banco se precisa reiniciar ou limpar o cache
                         List<Maquina> maquina = maqDao.ativaInovacao(fkMaquina);
 
+                        ProcessosMaquinaDao proMaqDao = new ProcessosMaquinaDao();
+                        List<String> listaProcessos = proMaqDao.encerraProcessos(fkMaquina);
+                        
+                        // Encerrar Processos
+                        if (listaProcessos.size() >= 1) {
+                            for (int j = 0; j < listaProcessos.size(); j++) {
+                                try {
+                                    String proc = listaProcessos.get(j).toString();
+                                    Runtime.getRuntime().exec("tskill " + proc); // Comando que irá finalizar os processos desejados
+                                    proMaqDao.deletarProcessos(fkMaquina, proc);
+                                    JOptionPane.showMessageDialog(null, "Processo " + proc + " encerrado com sucesso");
+                                } catch (IOException ex) {
+                                    Logger.getLogger(ProcessosTelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+                                }
+                            }
+                        }
+
                         //  Inovação - Reiniciar máquina
                         if (maquina.get(0).getReiniciar() == 1) {
                             try {
                                 JOptionPane.showMessageDialog(null, "Totem sendo reiniciado!");
                                 maqDao.updateReiniciar(fkMaquina); // Update - atualiza campo "reiniciar" para 0
-                                Runtime.getRuntime().exec("shutdown /r"); // Coamando para reiniciar a máquina
+                                Runtime.getRuntime().exec(""); // Coamando para reiniciar a máquina
                             } catch (IOException ex) {
                                 Logger.getLogger(ProcessosTelaInicial.class.getName()).log(Level.SEVERE, null, ex);
                             }
@@ -141,8 +161,8 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
                         if (maquina.get(0).getLimpezaDeCache() == 1) {
                             try {
                                 maqDao.updateReiniciar(fkMaquina); // Update - atualiza campo "limpezaDeCache" para 0
-                                JOptionPane.showMessageDialog(null, "Limpeza de cache completa");
                                 Runtime.getRuntime().exec("ipconfig /flushdns"); // Comando que irá limpar o cache
+                                JOptionPane.showMessageDialog(null, "Limpeza de cache completa");
                             } catch (IOException ex) {
                                 Logger.getLogger(ProcessosTelaInicial.class.getName()).log(Level.SEVERE, null, ex);
                             }

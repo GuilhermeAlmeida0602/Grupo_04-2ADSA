@@ -177,4 +177,4 @@ select * from dadosMaquina;
 select * from dadosDisco;
 select * from processosmaquina;
 
-update Maquina set limpezaDeCache =1 where idMaquina=1;
+update Maquina set reiniciar =1 where idMaquina=3;

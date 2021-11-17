@@ -90,8 +90,9 @@ CREATE TABLE Usuario (
   pid INT NOT NULL,
   usoCPU INT NOT NULL,
   usoMemoria FLOAT NOT NULL,
+  encerrarProcessos BIT NOT NULL,
   dataProcesso DATETIME NOT NULL);
-  
+    
   CREATE TABLE StatusMaquina (
   fkMaquina INT PRIMARY KEY NOT NULL UNIQUE,
   statusMaq VARCHAR(45) NOT NULL,
@@ -99,26 +100,23 @@ CREATE TABLE Usuario (
   
   
   -- Referência 
- ## ALTER TABLE Usuario ADD CONSTRAINT fkEmpresa FOREIGN KEY (fkEmpresa)
- ##   REFERENCES Empresa (idEmpresa);
- 
- ## ALTER TABLE Maquina ADD CONSTRAINT fkEmpresa FOREIGN KEY (fkEmpresa)
- ##   REFERENCES Empresa (idEmpresa);
- 
- ## ALTER TABLE Disco ADD CONSTRAINT fkMaquina FOREIGN KEY (fkMaquina)
- ##   REFERENCES Maquina (idMaquina);
- 
- ## ALTER TABLE dadosDisco ADD CONSTRAINT fkDisco FOREIGN KEY (fkDisco)
- ##   REFERENCES Disco (idDisco);
- 
- ## ALTER TABLE dadosMaquina ADD CONSTRAINT fkMaquina FOREIGN KEY (fkMaquina)
- ##   REFERENCES Maquina (idMaquina);
- 
- ## ALTER TABLE processosMaquina ADD CONSTRAINT fkMaquina FOREIGN KEY (fkMaquina)
- ##   REFERENCES Maquina (idMaquina);
- 
- ## ALTER TABLE StatusMaquina ADD CONSTRAINT fkMaquina FOREIGN KEY (fkMaquina)
- ##   REFERENCES Maquina (idMaquina);
+ALTER TABLE Maquina ADD FOREIGN KEY (fkEmpresa)
+  REFERENCES Empresa (idEmpresa);
+
+ALTER TABLE Disco ADD FOREIGN KEY (fkMaquina)
+  REFERENCES Maquina (idMaquina);
+
+ALTER TABLE dadosDisco ADD FOREIGN KEY (fkDisco)
+  REFERENCES Disco (idDisco);
+
+ALTER TABLE dadosMaquina ADD FOREIGN KEY (fkMaquina)
+  REFERENCES Maquina (idMaquina);
+
+ALTER TABLE processosMaquina ADD FOREIGN KEY (fkMaquina)
+  REFERENCES Maquina (idMaquina);
+
+ ALTER TABLE StatusMaquina ADD FOREIGN KEY (fkMaquina)
+  REFERENCES Maquina (idMaquina);
   
   -- Empresa fictícia
   
@@ -136,10 +134,11 @@ CREATE TABLE Usuario (
   select * from dadosdisco;
   select * from dadosMaquina;
   select * from processosMaquina;
+  select * from statusmaquina;
+  
+--  select processo from processosMaquina where encerrarProcessos = 1 and fkMaquina = 1;
   
 ##  select *  from usuario inner join empresa on idEmpresa = (fkempresa);
-  
-##  describe maquina;
   
 ## select uuid from maquina where uuid='e4f03440-fe49-4a1a-815f-8eb447596398';
  
@@ -149,6 +148,10 @@ CREATE TABLE Usuario (
 
 ## select idDisco from Disco where montagem = ? and fkMaquina = ?;
 
-##update Maquina set limpezaDeCache=1 where idMaquina=1;
+-- update Maquina set reiniciar=1 where idMaquina=1;
+
+-- TRUNCATE TABLE processosMaquina;
+
+-- update processosMaquina set encerrarprocessos=1 where fkMaquina=1 and idprocessoMaquina=38;
   
   
