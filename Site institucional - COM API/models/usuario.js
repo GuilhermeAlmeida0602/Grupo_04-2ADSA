@@ -1,85 +1,55 @@
 'use strict';
 
 module.exports = (sequelize, DataTypes) => {
-    let Empresa = sequelize.define('Empresa', {
-        idEmpresa: {
-            field: 'idEmpresa',
+    let Usuario = sequelize.define('Usuario', {
+        idUsuario: {
+            field: 'idUsuario',
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        nomeEmpresa: {
-            field: 'nomeEmpresa',
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        cnpj: {
-            field: 'cnpj',
-            type: DataTypes.CHAR,
-            allowNull: false
-        },
-        nomeResponsavel: {
-            field: 'nomeResponsavel',
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        telResponsavel: {
-            field: 'telResponsavel',
-            type: DataTypes.CHAR,
-            allowNull: false
-        },
-        emailEmpresa: {
-            field: 'emailEmpresa',
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        senhaEmpresa: {
-            field: 'senhaEmpresa',
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        cepEmpresa: {
-            field: 'cepEmpresa',
-            type: DataTypes.CHAR,
-            allowNull: false
-        },
-        logradouroEmpresa: {
-            field: 'logradouroEmpresa',
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        numeroEmpresa: {
-            field: 'numeroEmpresa',
+        fkEmpresa: {
+            field: 'fkEmpresa',
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        complementoEmpresa: {
-            field: 'complementoEmpresa',
+        priNome: {
+            field: 'priNome',
             type: DataTypes.STRING,
             allowNull: false
         },
-        bairroEmpresa: {
-            field: 'bairroEmpresa',
+        ultNome: {
+            field: 'ultNome',
             type: DataTypes.STRING,
             allowNull: false
         },
-        cidadeEmpresa: {
-            field: 'cidadeEmpresa',
+        telCelUsuario: {
+            field: 'telCelUsuario',
+            type: DataTypes.CHAR,
+            allowNull: false
+        },
+        telFixUsuario: {
+            field: 'telFixUsuario',
+            type: DataTypes.CHAR,
+            allowNull: false
+        },
+        emailUsuario: {
+            field: 'emailUsuario',
             type: DataTypes.STRING,
             allowNull: false
         },
-        ufEmpresa: {
-            field: 'ufEmpresa',
+        senhaUsuario: {
+            field: 'senhaUsuario',
             type: DataTypes.CHAR,
             allowNull: false
         },
     },
         {
-            tableName: 'Empresa',
+            tableName: 'Usuario',
             freezeTableName: true,
             underscored: true,
             timestamps: false,
         });
 
-    return Empresa;
+    return Usuario;
 };

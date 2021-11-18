@@ -100,8 +100,11 @@ li .login{
     padding-bottom: 6%;
     margin: auto;
     background-color: #C4C4C4;
+    /* background-color: red; */
     box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.8);
     border-radius: 10px;
+    padding-top: 20px;
+    text-align: center;
 }
 
 .div_negrito{

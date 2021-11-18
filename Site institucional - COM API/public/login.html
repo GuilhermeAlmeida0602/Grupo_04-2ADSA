@@ -37,29 +37,67 @@
         <div class="lado_direito">
             <div class="quadro_cinza">
 
-                <!-- <form action=""> -->
-                <div class="div_negrito">Acesso</div>
+                <!-- <div style="text-align: center"> -->
+                    <span id="ipt_radioE">
+                        <input type="radio" name="drone" value="radioEA" onclick="radioE()">
+                        <label for="louie">Empresa</label>
+                    </span>
 
-                <div class="div_centralizando">
+                    <span id="ipt_radioU">
+                        <input type="radio" name="drone" value="radioUO" onclick="radioU()">
+                        <label for="louie">Usuário</label>
+                    </span>
+                <!-- </div> -->
 
-                    <div class="input_box">
-                        <input type="text" class="input_user" name="login" id="input_user" autocomplete="off" required
-                            minlength="3" maxlength="16">
-                        <label for="nome" class="label_input">Login</label>
+                <form id="form_loginE" method="post" onsubmit="return entrarE()">
+                    <div class="div_negrito">Acesso como empresa</div>
+
+                    <div class="div_centralizando">
+
+                        <div class="input_box">
+                            <input type="text" class="input_user" name="emailEmpresa" id="input_user" autocomplete="off"
+                                required minlength="8" maxlength="45">
+                            <label for="nome" class="label_input">Email</label>
+                        </div>
+
+                        <div class="input_box">
+                            <input type="password" class="input_user" name="senhaEmpresa" id="input_senha"
+                                autocomplete="off" required minlength="8" maxlength="45">
+                            <label for="nome" class="label_input">Senha</label>
+                            <br>
+                            <span id="retornoSenha"></span>
+                        </div>
+
+                        <!-- <button class="input_button" onclick="autentificar()">Acessar</button> -->
+                        <!-- <button class="input_button" onclick="autentificar()" id="btn_entrar">Acessar</button> -->
+                        <button class="input_button" id="btn_entrar" class="btn-green">Acessar</button>
                     </div>
+                </form>
 
-                    <div class="input_box">
-                        <input type="password" class="input_user" name="senha" id="input_senha" autocomplete="off"
-                            required minlength="8" maxlength="16">
-                        <label for="nome" class="label_input">Senha</label>
-                        <br>
-                        <span id="retornoSenha"></span>
+                <form id="form_loginU" method="post" onsubmit="return entrarU()" style="display: none;">
+                    <div class="div_negrito">Acesso como usuário</div>
 
+                    <div class="div_centralizando">
+
+                        <div class="input_box">
+                            <input type="text" class="input_user" name="emailUsuario" id="input_user" autocomplete="off"
+                                required minlength="8" maxlength="45">
+                            <label for="nome" class="label_input">Email</label>
+                        </div>
+
+                        <div class="input_box">
+                            <input type="password" class="input_user" name="senhaUsuario" id="input_senha"
+                                autocomplete="off" required minlength="8" maxlength="45">
+                            <label for="nome" class="label_input">Senha</label>
+                            <br>
+                            <span id="retornoSenha"></span>
+                        </div>
+
+                        <!-- <button class="input_button" onclick="autentificar()">Acessar</button> -->
+                        <!-- <button class="input_button" onclick="autentificar()" id="btn_entrar">Acessar</button> -->
+                        <button class="input_button" id="btn_entrar" class="btn-green">Acessar</button>
                     </div>
-
-                    <button class="input_button" onclick="autentificar()">Acessar</button>
-                </div>
-                <!-- </form> -->
+                </form>
 
                 <div class="div_suporte"><a href="#suporte">Precisa de ajuda?</a></div>
             </div>
@@ -69,19 +107,95 @@
 </body>
 <script>
 
-    function autentificar() {
+    // método para realizar o cadastro como empresa
+    function entrarE() {
+        // aguardar();
+        var formulario = new URLSearchParams(new FormData(form_loginE));
+        fetch("/usuarios/autenticarE", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
 
-        var login = input_user.value;
-        var senha = input_senha.value;
+            if (resposta.ok) {
 
-        if (login == "adm" && senha == "adm123") {
-            window.location.href = "tela_inicial_adm.html"
-        } else if (login == "analista" && senha == "analista123") {
-            window.location.href = "dashboard.html";
-        } else {
-            retornoSenha.innerHTML = "Login ou senha inválido"
-        }
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+
+                    window.location.href = 'tela_inicial_adm.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizar_aguardar(texto);
+                });
+            }
+
+        });
+
+        return false;
     }
+
+
+    // método para realizar o cadastro como usuário
+    function entrarU() {
+        // aguardar();
+        var formulario = new URLSearchParams(new FormData(form_loginU));
+        fetch("/usuarios/autenticarU", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+
+                    window.location.href = 'lista_de_totens.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizar_aguardar(texto);
+                });
+            }
+
+        });
+
+        return false;
+    }
+
+    function radioE() {
+        // alert('Realizando o login como uma Empresa');
+        // ipt_radioU.style.display = 'none';
+        // form_loginU.style.display = 'none';
+        // ipt_radioE.style.display = 'block';
+        form_loginE.style.display = 'block';
+        // ipt_radioU.style.display = 'none';
+        form_loginU.style.display = 'none';
+    }
+
+    function radioU () {
+        // alert('Realizando o login como um Usuário');
+        // ipt_radioE.style.display = 'none';
+        // form_loginE.style.display = 'none';
+        // ipt_radioU.style.display = 'block';
+        form_loginU.style.display = 'block';
+        // ipt_radioE.style.display = 'none';
+        form_loginE.style.display = 'none';
+    }
+
 </script>
 
 </html>

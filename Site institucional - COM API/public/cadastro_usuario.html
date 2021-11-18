@@ -66,61 +66,104 @@
                 <div class="quadro_cinza">
 
                     <p class="p_dados">Dados do usuário</p>
-                    <!-- <form action=""> -->
 
-                    <div class="div_centralizando">
-                        <div class="input_box">
-                            <input type="text" class="input_user" name="primeiro_nome" autocomplete="off" required>
-                            <label for="nome" class="label_input">Primeiro nome</label>
-                        </div>
-                        <div class="input_box">
-                            <input type="text" class="input_user" name="ultimo_nome" autocomplete="off" required>
-                            <label for="nome" class="label_input">Último nome</label>
-                        </div>
+                    <form id="form_cadastroU" method="post" onsubmit="return cadastrar()">
 
-                        <div class="input_box">
-                            <input type="number" class="input_user" name="tel_celular" autocomplete="off" required>
-                            <label for="nome" class="label_input">Telefone celular</label>
-                        </div>
+                        <div class="div_centralizando">
 
-                        <div class="input_box">
-                            <input type="number" class="input_user" name="tel_fixo" autocomplete="off" required>
-                            <label for="nome" class="label_input">Telefone fixo</label>
-                        </div>
+                            <!-- Primeiro nome -->
+                            <div class="input_box">
+                                <input type="text" class="input_user" name="priNome" autocomplete="off" required>
+                                <label for="nome" class="label_input">Primeiro nome</label>
+                            </div>
 
-                        <div class="input_box">
-                            <input type="email" class="input_user" name="email" autocomplete="off" required>
-                            <label for="nome" class="label_input">Email</label>
-                        </div>
+                            <!-- Último nome -->
+                            <div class="input_box">
+                                <input type="text" class="input_user" name="ultNome" autocomplete="off" required>
+                                <label for="nome" class="label_input">Ultimo nome</label>
+                            </div>
 
-                        <div class="input_box">
-                            <input type="password" class="input_user" name="senha" autocomplete="off" required>
-                            <label for="nome" class="label_input">Senha</label>
-                        </div>
+                            <!-- Telefone celular -->
+                            <div class="input_box">
+                                <input type="number" class="input_user" name="telCelUsuario" autocomplete="off"
+                                    required>
+                                <label for="nome" class="label_input">Telefone celular</label>
+                            </div>
 
-                        <div class="input_box">
-                            <input type="password" class="input_user" name="senha_confirmacao" autocomplete="off"
-                                required>
-                            <label for="nome" class="label_input">Confirme a senha</label>
-                        </div>
+                            <!-- Telefone fixo -->
+                            <div class="input_box">
+                                <input type="number" class="input_user" name="telFixUsuario" autocomplete="off"
+                                    required>
+                                <label for="nome" class="label_input">Telefone fixo</label>
+                            </div>
 
-                        <div class="input_box">
-                            <input type="hidden" class="input_user" name="idEmpresa"
-                                placeholder="Nº de cadastro da empresa" autocomplete="off" required>
+                            <!-- Email -->
+                            <div class="input_box">
+                                <input type="email" class="input_user" name="emailUsuario" autocomplete="off" required>
+                                <label for="nome" class="label_input">Email</label>
+                            </div>
+
+                            <!-- Senha -->
+                            <div class="input_box">
+                                <input type="password" class="input_user" name="senhaUsuario" autocomplete="off"
+                                    required>
+                                <label for="nome" class="label_input">Senha</label>
+                            </div>
+
+                            <!-- Confirmação de Senha -->
+                            <div class="input_box">
+                                <input type="password" class="input_user" name="senha_confirmacao" autocomplete="off"
+                                    required>
+                                <label for="nome" class="label_input">Confirme a senha</label>
+                            </div>
+
+                            <div class="input_box">
+                                <input type="hidden" class="input_user" name="idEmpresa"
+                                    placeholder="Nº de cadastro da empresa" autocomplete="off" required>
+                            </div>
                         </div>
-                    </div>
-                    <button type="submit" class="input_button" onclick="cadastrar()">Finalizar Cadastro</button>
+                        <!-- veio do grupo -->
+                        <!-- <button type="submit" class="input_button" onclick="cadastrar()">Finalizar Cadastro</button> -->
+                        <!-- veio da fernanda -->
+                        <input type="submit" id="btn_entrar" value="Finalizar cadastrar" class="input_button">
                 </div>
                 <br>
-                <!-- </form> -->
-
+                </form>
             </div>
         </div>
-
         </div>
     </section>
 </body>
 
-<script src="JavaScript/js_menu.js"></script>
+<script>
+
+    function cadastrar() {
+
+        var formulario = new URLSearchParams(new FormData(form_cadastroU));
+        fetch("/usuarios/cadastrarU", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+
+            if (response.ok) {
+
+                window.location.href = 'tela_inicial_adm.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    // div_erro.innerHTML = resposta;
+                });
+            }
+        });
+
+        return false;
+
+    }
+
+</script>
+
+
 
 </html>

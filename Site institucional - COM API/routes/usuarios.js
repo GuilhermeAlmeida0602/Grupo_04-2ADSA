@@ -1,12 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var sequelize = require('../models').sequelize;
-var Empresa = require('../models').Empresa;
+var Empresa = require('../models').Empresa; // Variável necessária para cadastro das empresas
+var Usuario = require('../models').Usuario; // Variável necessária para cadastro dos usuários
 
 let sessoes = [];
 
-/* Recuperar usuário por email e senha */
-router.post('/autenticar', function(req, res, next) {
+/* Recuperar usuário por email e senha */ // PARA LOGIN COMO EMPRESA
+router.post('/autenticarE', function(req, res, next) {
 	console.log('Recuperando usuário por email e senha');
 
 	var emailEmpresa = req.body.emailEmpresa;
@@ -36,8 +37,39 @@ router.post('/autenticar', function(req, res, next) {
   	});
 });
 
-/* Cadastrar usuário */
-router.post('/cadastrar', function(req, res, next) {
+/* Recuperar usuário por email e senha */ // PARA LOGIN COMO USUARIO
+router.post('/autenticarU', function(req, res, next) {
+	console.log('Recuperando usuário por email e senha');
+
+	var emailUsuario = req.body.emailUsuario;
+	var senhaUsuario = req.body.senhaUsuario;	
+	
+	let instrucaoSql = `select * from Usuario where emailUsuario='${emailUsuario}' and senhaUsuario='${senhaUsuario}'`;
+	console.log(instrucaoSql);
+
+	sequelize.query(instrucaoSql, {
+		model: Usuario
+	}).then(resultado => {
+		console.log(`Encontrados: ${resultado.length}`);
+
+		if (resultado.length == 1) {
+			sessoes.push(resultado[0].dataValues.emailUsuario); // adicionando no vetor 'sessoes' que o login foi executado OK
+			console.log('sessoes: ',sessoes);
+			res.json(resultado[0]);
+		} else if (resultado.length == 0) { // se retornar como 0, significa que o email e senha está vazio
+			res.status(403).send('email e/ou senha inválido(s)');
+		} else { // esse aqui verifica se existe mais de um usuario com o mesmo email e senha
+			res.status(403).send('Mais de um usuário com o mesmo email e senha!');
+		}
+
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message); // a mensagem é voltada automaticamente do java, como se fosse no JAVA
+  	});
+});
+
+/* Cadastrar uma EMPRESA */
+router.post('/cadastrarE', function(req, res, next) {
 	console.log('Criando uma empresa');
 	
 	Empresa.create({
@@ -54,6 +86,27 @@ router.post('/cadastrar', function(req, res, next) {
 		bairroEmpresa : req.body.bairroEmpresa,
 		cidadeEmpresa : req.body.cidadeEmpresa,
 		ufEmpresa : req.body.ufEmpresa
+	}).then(resultado => {
+		console.log(`Registro criado: ${resultado}`)
+        res.send(resultado);
+    }).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+  	});
+});
+
+/* Cadastrar um USUARIO */
+router.post('/cadastrarU', function(req, res, next) {
+	console.log('Criando uma usuário');
+	
+	Usuario.create({
+		priNome : req.body.priNome,
+		ultNome : req.body.ultNome,
+		telCelUsuario : req.body.telCelUsuario,
+		telFixUsuario : req.body.telFixUsuario,
+		emailUsuario : req.body.emailUsuario,
+		senhaEmpresa : req.body.senhaEmpresa,
+		senhaUsuario : req.body.senhaUsuario
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)
         res.send(resultado);

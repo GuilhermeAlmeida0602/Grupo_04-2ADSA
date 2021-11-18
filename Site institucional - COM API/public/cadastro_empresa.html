@@ -35,7 +35,7 @@
 
             <div class="quadro_cinza">
 
-                <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                <form id="form_cadastroE" method="post" onsubmit="return cadastrar()">
 
                     <!-- Primeira etapa do cadastro da empresa -->
                     <div id="invisivel_etapa1">
@@ -151,8 +151,8 @@
                             </div>
                         </div>
                         <button type="submit" class="input_button" onclick="etapa2Cadastro()">Etapa anterior</button>
-                        <button type="submit" class="input_button" onclick="cadastrar()">Finalizar Cadastro</button>
-                        <!-- <input type="submit" id="btn_entrar" value="Cadastrar" class="input_button"> -->
+                        <!-- <button type="submit" class="input_button" onclick="cadastrar()">Finalizar Cadastro</button> -->
+                        <input type="submit" id="btn_entrar" value="Cadastrar" class="input_button">
                     </div>
                 </form>
             </div>
@@ -165,13 +165,8 @@
 
     function cadastrar() {
 
-        // window.location.href = "login.html"
-        // Comentei porque precisa primeiro de realizar o cadastro
-
-        // aguardar(); 
-        // Comentei esse método porque é desnecessário por enquanto
-        var formulario = new URLSearchParams(new FormData(form_cadastro));
-        fetch("/usuarios/cadastrar", {
+        var formulario = new URLSearchParams(new FormData(form_cadastroE));
+        fetch("/usuarios/cadastrarE", {
             method: "POST",
             body: formulario
         }).then(function (response) {
@@ -180,15 +175,15 @@
 
                 window.location.href = 'login.html';
 
+                sessionStorage.fkempresa_usuario_meuapp = json.fkEmpresa;
+                fkempresa_usuario = sessionStorage.fkempresa_usuario_meuapp;
+
             } else {
 
                 console.log('Erro de cadastro!');
                 response.text().then(function (resposta) {
                     div_erro.innerHTML = resposta;
                 });
-
-                // finalizar_aguardar();
-                // comentei esse método porque é desnecessário por enqunto
             }
         });
 
