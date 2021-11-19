@@ -10,17 +10,18 @@ import java.time.format.DateTimeFormatter;
  */
 public class StatusMaquinaDao extends Dao {
 
-    public void insertStatusMaquina(Integer fkMaquina, String status) throws Exception {
+    public void insertStatusMaquina(Integer fkMaquina, Integer fkEmpresa, String status) throws Exception {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 
         open();
         try {
             System.out.println("Realizando registro de totem no banco...");
             stmt = con.prepareStatement("insert into StatusMaquina (fkMaquina, "
-                    + "statusMaq, dataStatus) values (?,?,?);");
+                    + "fkEmpresa, statusMaq, dataStatus) values (?,?,?,?);");
             stmt.setInt(1, fkMaquina);
-            stmt.setString(2, status);
-            stmt.setString(3, dtf.format(LocalDateTime.now()));
+            stmt.setInt(2, fkEmpresa);
+            stmt.setString(3, status);
+            stmt.setString(4, dtf.format(LocalDateTime.now()));
             stmt.executeUpdate();
             stmt.close();
             System.out.println("Registro realizado com sucesso!");
