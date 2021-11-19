@@ -1,5 +1,5 @@
 create database InfoSystems;
-##drop database InfoSystems;
+#drop database InfoSystems;
 use InfoSystems;
 
 -- Tabelas de dados estáticos
@@ -7,28 +7,29 @@ use InfoSystems;
 CREATE TABLE Empresa (
   idEmpresa INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   nomeEmpresa VARCHAR(45) NOT NULL,
-  CNPJ CHAR(14) NOT NULL,
-  email VARCHAR(45) NOT NULL,
-  senha VARCHAR(45) NOT NULL,
-  logradouro VARCHAR(45) NOT NULL,
-  numero INT NOT NULL,
-  complemento VARCHAR(15),
-  bairro VARCHAR(60) NOT NULL,
-  UF CHAR(2) NOT NULL,
-  CEP CHAR(8) NOT NULL,
+  cnpj CHAR(14) NOT NULL,
   nomeResponsavel VARCHAR(45) NOT NULL,
-  telResponsavel VARCHAR(11) NOT NULL
+  telResponsavel VARCHAR(11) NOT NULL,
+  emailEmpresa VARCHAR(70) NOT NULL,
+  senhaEmpresa VARCHAR(70) NOT NULL,
+  cepEmpresa CHAR(8) NOT NULL,
+  logradouroEmpresa VARCHAR(45) NOT NULL,
+  numeroEmpresa INT NOT NULL,
+  complementoEmpresa VARCHAR(15),
+  bairroEmpresa VARCHAR(60) NOT NULL,
+  cidadeEmpresa VARCHAR(60) NOT NULL,
+  ufEmpresa CHAR(2) NOT NULL
   );
   
 CREATE TABLE Usuario (
   idUsuario INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   fkEmpresa INT NOT NULL,
-  nomeUsuario VARCHAR(45) NOT NULL,
-  sobrenomeUsuario VARCHAR(45) NOT NULL,
-  login VARCHAR(35) NOT NULL UNIQUE,
-  senha VARCHAR(35) NOT NULL,
-  telefoneCelular CHAR(11) NOT NULL,
-  telefoneFixo CHAR(10) NOT NULL,
+  priNome VARCHAR(70) NOT NULL,
+  ultNome VARCHAR(70) NOT NULL,
+  telCelUsuario CHAR(11) NOT NULL,
+  telFixUsuario CHAR(10) NOT NULL,
+  emailUsuario VARCHAR(50) NOT NULL UNIQUE,
+  senhaUsuario VARCHAR(50) NOT NULL,
   foreign key (fkEmpresa) references Empresa(idEmpresa)
   ) AUTO_INCREMENT = 40;
   
