@@ -22,8 +22,8 @@ public class UsuarioDao extends Dao {
         open();
 
         System.out.println("Iniciando autentificação no banco...");
-        stmt = con.prepareStatement("select fkEmpresa, login, senha from "
-                + "usuario where login=? and senha= ?;");
+        stmt = con.prepareStatement("select fkEmpresa, emailUsuario, senhaUsuario from "
+                + "Usuario where emailUsuario=? and senhaUsuario= ?;");
         stmt.setString(1, usuario.getLogin());
         stmt.setString(2, usuario.getSenha());
         rs = stmt.executeQuery();
@@ -39,7 +39,7 @@ public class UsuarioDao extends Dao {
         // Fechamento da conexão com banco de dados
 
         try {
-            // Avisando para o usuario que a máquina está sendo monitorada
+            // Avisando para o usuario que a máquina está sendo monitoradoka
             slack.startService();
 
         } catch (IOException | InterruptedException ex) {
