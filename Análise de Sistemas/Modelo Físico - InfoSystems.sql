@@ -1,5 +1,4 @@
 create database InfoSystems;
-
 ##drop database InfoSystems;
 use InfoSystems;
 
@@ -18,9 +17,9 @@ CREATE TABLE Empresa (
   UF CHAR(2) NOT NULL,
   CEP CHAR(8) NOT NULL,
   nomeResponsavel VARCHAR(45) NOT NULL,
-  telResponsavel VARCHAR(11) NOT NULL);
-
-
+  telResponsavel VARCHAR(11) NOT NULL
+  );
+  
 CREATE TABLE Usuario (
   idUsuario INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   fkEmpresa INT NOT NULL,
@@ -29,9 +28,11 @@ CREATE TABLE Usuario (
   login VARCHAR(35) NOT NULL UNIQUE,
   senha VARCHAR(35) NOT NULL,
   telefoneCelular CHAR(11) NOT NULL,
-  telefoneFixo CHAR(10) NOT NULL) AUTO_INCREMENT = 40;
+  telefoneFixo CHAR(10) NOT NULL,
+  foreign key (fkEmpresa) references Empresa(idEmpresa)
+  ) AUTO_INCREMENT = 40;
   
-  CREATE TABLE Maquina (
+CREATE TABLE Maquina (
   idMaquina INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   fkEmpresa INT NOT NULL,
   hostname VARCHAR(70) NOT NULL,
@@ -48,9 +49,11 @@ CREATE TABLE Usuario (
   ip VARCHAR(35) NOT NULL,
   reiniciar BIT NOT NULL,
   limpezaDeCache BIT NOT NULL,
-  dataDeRegistro DATETIME);
+  dataDeRegistro DATETIME,
+  foreign key (fkEmpresa) references Empresa(idEmpresa)
+  );
   
-  CREATE TABLE Disco (
+CREATE TABLE Disco (
   idDisco INT PRIMARY KEY AUTO_INCREMENT NOT NULL ,
   fkMaquina INT NOT NULL,
   nome VARCHAR(45) NOT NULL,
@@ -61,17 +64,21 @@ CREATE TABLE Usuario (
   qtdEscritas VARCHAR(15) NOT NULL,
   tipo VARCHAR(45) NOT NULL,
   montagem VARCHAR(45) NOT NULL,
-  dataDeRegistro DATETIME NOT NULL);
+  dataDeRegistro DATETIME NOT NULL,
+  foreign key (fkMaquina) references Empresa(idEmpresa)
+  );
   
   -- Tabelas de dados dinâmicos
   
-  CREATE TABLE dadosDisco (
+CREATE TABLE dadosDisco (
   idDadosDisco INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   fkDisco INT NOT NULL,
   discoDisponivelHD INT NOT NULL,
-  dataRegistroDados DATETIME NOT NULL);
+  dataRegistroDados DATETIME NOT NULL,
+  foreign key (fkDisco) references Disco(idDisco)
+  );
   
-  CREATE TABLE dadosMaquina (
+CREATE TABLE dadosMaquina (
   idDadosMaquina INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   fkMaquina INT NOT NULL,
   inicializadoSO VARCHAR(30) NOT NULL,
@@ -81,9 +88,11 @@ CREATE TABLE Usuario (
   emUsoMEM INT NOT NULL,
   disponivelMEM INT NOT NULL,
   totalMEM VARCHAR(10) NOT NULL,
-  dataRegistro DATETIME NOT NULL);
+  dataRegistro DATETIME NOT NULL,
+  foreign key (fkMaquina) references Maquina(idMaquina)
+  );
   
-  CREATE TABLE processosMaquina (
+CREATE TABLE processosMaquina (
   idprocessoMaquina INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   fkMaquina INT NOT NULL,
   processo VARCHAR(100) NOT NULL,
@@ -91,32 +100,16 @@ CREATE TABLE Usuario (
   usoCPU INT NOT NULL,
   usoMemoria FLOAT NOT NULL,
   encerrarProcessos BIT NOT NULL,
-  dataProcesso DATETIME NOT NULL);
+  dataProcesso DATETIME NOT NULL,
+  foreign key (fkMaquina) references Maquina(idMaquina)
+  );
     
-  CREATE TABLE StatusMaquina (
+CREATE TABLE StatusMaquina (
   fkMaquina INT PRIMARY KEY NOT NULL UNIQUE,
   statusMaq VARCHAR(45) NOT NULL,
-  dataStatus DATETIME NOT NULL);
-  
-  
-  -- Referência 
-ALTER TABLE Maquina ADD FOREIGN KEY (fkEmpresa)
-  REFERENCES Empresa (idEmpresa);
-
-ALTER TABLE Disco ADD FOREIGN KEY (fkMaquina)
-  REFERENCES Maquina (idMaquina);
-
-ALTER TABLE dadosDisco ADD FOREIGN KEY (fkDisco)
-  REFERENCES Disco (idDisco);
-
-ALTER TABLE dadosMaquina ADD FOREIGN KEY (fkMaquina)
-  REFERENCES Maquina (idMaquina);
-
-ALTER TABLE processosMaquina ADD FOREIGN KEY (fkMaquina)
-  REFERENCES Maquina (idMaquina);
-
- ALTER TABLE StatusMaquina ADD FOREIGN KEY (fkMaquina)
-  REFERENCES Maquina (idMaquina);
+  dataStatus DATETIME NOT NULL,
+  foreign key (fkMaquina) references Maquina(idMaquina)
+  );
   
   -- Empresa fictícia
   
@@ -127,14 +120,14 @@ ALTER TABLE processosMaquina ADD FOREIGN KEY (fkMaquina)
   insert into Usuario values (null, 1,'Armando', 'Fontes', 'armando.fontes@chickenfood.com.br', 
   'tortaLaranja123', '11997353581', '1128379572');
   
-  ##select * from empresa;
-  ##select * from usuario;
-  select * from maquina;
-  select * from disco;
-  select * from dadosdisco;
-  select * from dadosMaquina;
-  select * from processosMaquina;
-  select * from statusmaquina;
+	select * from empresa;
+	select * from usuario;
+	select * from maquina;
+	select * from disco;
+	select * from dadosdisco;
+	select * from dadosMaquina;
+	select * from processosMaquina;
+	select * from statusmaquina;
   
 --  select processo from processosMaquina where encerrarProcessos = 1 and fkMaquina = 1;
   
