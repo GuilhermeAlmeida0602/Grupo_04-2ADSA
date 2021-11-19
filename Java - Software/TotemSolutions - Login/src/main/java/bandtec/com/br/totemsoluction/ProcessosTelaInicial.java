@@ -76,7 +76,7 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
 
                 fkDisco = discDao.buscaId(looca, fkMaquina); // Select - buscando o "idDisco" para realizar os inserts na tabela "DadosDisco"
 
-                smDao.insertStatusMaquina(fkMaquina, "Ok"); // Insert - inserindo máquina na tabela status
+                smDao.insertStatusMaquina(fkMaquina, fkEmpresa, "Ok"); // Insert - inserindo máquina na tabela status
 
             } else {
                 System.out.println("Totem já registrado no banco");

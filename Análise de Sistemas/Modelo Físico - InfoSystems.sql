@@ -106,9 +106,11 @@ CREATE TABLE processosMaquina (
   );
     
 CREATE TABLE StatusMaquina (
-  fkMaquina INT PRIMARY KEY NOT NULL UNIQUE,
+  fkMaquina INT NOT NULL UNIQUE,
+  fkEmpresa INT NOT NULL UNIQUE,
   statusMaq VARCHAR(45) NOT NULL,
   dataStatus DATETIME NOT NULL,
+  PRIMARY KEY(fkMaquina, fkEmpresa),
   foreign key (fkMaquina) references Maquina(idMaquina)
   );
   
@@ -121,8 +123,8 @@ CREATE TABLE StatusMaquina (
   insert into Usuario values (null, 1,'Armando', 'Fontes', 'armando.fontes@chickenfood.com.br', 
   'tortaLaranja123', '11997353581', '1128379572');
   
-	select * from empresa;
-	select * from usuario;
+	##select * from empresa;
+	##select * from usuario;
 	select * from maquina;
 	select * from disco;
 	select * from dadosdisco;
@@ -148,4 +150,7 @@ CREATE TABLE StatusMaquina (
 
 -- update processosMaquina set encerrarprocessos=1 where fkMaquina=1 and idprocessoMaquina=38;
   
+ ## select * from Usuario where login='armando.fontes@chickenfood.com.br' and senha='tortaLaranja123';
+ 
+ ##select * from statusmaquina where fkEmpresa = 1;
   
