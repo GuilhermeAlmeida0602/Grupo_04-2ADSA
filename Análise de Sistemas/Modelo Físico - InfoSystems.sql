@@ -120,8 +120,12 @@ CREATE TABLE StatusMaquina (
 	'food123', 'Rua Sumaré', 638, null, 'Jardim São Francisco(Zona Sul)', 'SP', '04918300', 
     'Renato Oliveira', '1135936259');
     
-  insert into Usuario values (null, 1,'Armando', 'Fontes', 'armando.fontes@chickenfood.com.br', 
-  'tortaLaranja123', '11997353581', '1128379572');
+insert into Empresa values (null, "SETIS", "46838302000134", "Guilherme Fonseca", "11980992290", "gui@setis.com", "guisetis123", "03801010", "Professor Jose de Sousa", "118", "B", "Parque Boturussu", "São Paulo" , "SP");
+    
+  #insert into Usuario values (null, 1,'Armando', 'Fontes', 'armando.fontes@chickenfood.com.br', 
+  #'tortaLaranja123', '11997353581', '1128379572');
+  
+  insert into Usuario values (null, 1, "Guilherme", "Fonseca", "11980992222", "1125454541", "guifonseca@setis.com", "guifonseca123");
   
 	##select * from empresa;
 	##select * from usuario;
@@ -133,12 +137,14 @@ CREATE TABLE StatusMaquina (
 	select * from statusmaquina;
   
 --  select processo from processosMaquina where encerrarProcessos = 1 and fkMaquina = 1;
+
+
   
 ##  select *  from usuario inner join empresa on idEmpresa = (fkempresa);
   
 ## select uuid from maquina where uuid='e4f03440-fe49-4a1a-815f-8eb447596398';
  
-## select fkEmpresa, login, senha from usuario where login='armando.fontes@chickenfood.com.br' and senha='tortaLaranja123';
+ select fkEmpresa, emailUsuario, senhaUsuario from usuario where emailUsuario='guifonseca@setis.com' and senhaUsuario='guifonseca123';
 
 ## select idMaquina from Maquina where hostname = ?;
 
