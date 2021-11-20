@@ -60,7 +60,7 @@
         </ul>
     </div>
     <section class="home-section">
-        
+
         <div class="text">Totens</div><span class="span_visao">Lista de totens</span>
         <div class="user-session">Olá Analista!</div>
 
@@ -87,46 +87,46 @@
             </table>
 
         </div>
-    
+
     </section>
 
 </body>
 
 </html>
 
-    <script>
-        let sidebar = document.querySelector(".sidebar");
-        let closeBtn = document.querySelector("#btn");
-        let searchBtn = document.querySelector(".bx-search");
+<script>
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+    let searchBtn = document.querySelector(".bx-search");
 
-        var maquinas;
+    var maquinas;
 
-        closeBtn.addEventListener("click", () => {
-            sidebar.classList.toggle("open");
-            menuBtnChange();//calling the function(optional)
-        });
+    closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange();//calling the function(optional)
+    });
 
-        searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
-            sidebar.classList.toggle("open");
-            menuBtnChange(); //calling the function(optional)
-        });
+    searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+        sidebar.classList.toggle("open");
+        menuBtnChange(); //calling the function(optional)
+    });
 
-        // following are the code to change sidebar button(optional)
-        function menuBtnChange() {
-            if (sidebar.classList.contains("open")) {
-                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
-            } else {
-                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
-            }
+    // following are the code to change sidebar button(optional)
+    function menuBtnChange() {
+        if (sidebar.classList.contains("open")) {
+            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+        } else {
+            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
         }
+    }
 
-        obterMaquinas();
+    obterMaquinas();
 
-        function obterMaquinas() {
-        
-            console.log("teste");
+    function obterMaquinas() {
 
-        fetch(`/statusMaquina`)
+        console.log("teste");
+
+        fetch(`./statusMaquina`)
             .then(resposta => {
                 if (resposta.ok) {
                     resposta.json().then(function (resposta) {
@@ -146,29 +146,39 @@
     }
 
     function carregar_maquinas() {
-      
-      for (let i = 0; i < maquinas.length; i++) {
-          let encontrados = maquinas[i]
-          num_selec.innerHTML = `<td id="fk_maquina">${encontrados[i].fkMaquina}</td>
-                                 <td id="status_Maq" class="alerta">${encontrados[i].statusMaq}</td>
+
+        for (let i = 0; i < maquinas.length; i++) {
+            let encontrados = maquinas[i]
+
+            var colorStatus;
+
+            var situacaoMaq = encontrados[i].statusMaq;
+
+            if (situacaoMaq == "Ok") {
+                colorStatus = "green";
+            } else if (situacaoMaq == "Alerta") {
+                colorStatus = "orange";
+            } else {
+                colorStatus = "red";
+            }
+
+            num_selec.innerHTML = `<td id="fk_maquina">${encontrados[i].fkMaquina}</td>
+                                 <td id="status_Maq" style = "color:${colorStatus}" class="alerta">${encontrados[i].statusMaq}</td>
                                  <td>
                                     <a href="visaoDetalhada.html">
                                         <i class="fas fa-tools ferramenta"></i>
                                     </a>
                                 </td>`;
-          
-          /* <td id="status_Maq" class="alerta">Alerta</td>
-             <td>
 
-             <a href="visaoDetalhada.html">
-                <i class="fas fa-tools ferramenta"></i>
-             </a>
-             </td> */
+            /* <td id="status_Maq" class="alerta">Alerta</td>
+               <td>
+  
+               <a href="visaoDetalhada.html">
+                  <i class="fas fa-tools ferramenta"></i>
+               </a>
+               </td> */
 
-     
-          
-      }
+        }
+    }
 
-  }
-
-    </script>
+</script>

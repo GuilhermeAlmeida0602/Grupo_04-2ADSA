@@ -18,8 +18,8 @@ public class Dao {
 
     public void open() throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco1",
-                "root", "urubu100");
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/InfoSystems",
+                "root", "root");
     }
     
 //    public void open() throws Exception {

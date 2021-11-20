@@ -64,27 +64,29 @@
         <div class="container_body">
             <form action="" method="post">
                 <section class="sessao_status">
-                    <p class="p_status">Selecione o status</p>
-                    <a href="#" onclick="vermelho()">
-                        <div class="quadrado_informativo vermelho">
-                            <div class="cor_status">Emergência</div>
-                            <div class="indicadores_grafico">2 toten(s)</div>
-                        </div>
-                    </a>
-                    <a href="#" onclick="amarelo()">
-                        <div class="quadrado_informativo amarelo">
-                            <div class="cor_status">Alerta</div>
-                            <div class="indicadores_grafico">1 toten(s)</div>
-                        </div>
-                    </a>
-                    <a href="#" onclick="verde()">
-                        <div class="quadrado_informativo verde">
-                            <div class="cor_status">Ok</div>
-                            <div class="indicadores_grafico">3 toten(s)</div>
-                        </div>
-                    </a>
+                    <div id="cardStatus">
+                        <p class="p_status">Selecione o status</p>
+                        <a href="#" onclick="vermelho()">
+                            <div class="quadrado_informativo vermelho">
+                                <div class="cor_status">Emergência</div>
+                                <div class="indicadores_grafico" id="indic_grafico">0 toten(s)</div>
+                            </div>
+                        </a>
+                        <a href="#" onclick="amarelo()">
+                            <div class="quadrado_informativo amarelo">
+                                <div class="cor_status">Alerta</div>
+                                <div class="indicadores_grafico" id="indic_grafico">0 toten(s)</div>
+                            </div>
+                        </a>
+                        <a href="#" onclick="verde()">
+                            <div class="quadrado_informativo verde">
+                                <div class="cor_status">Ok</div>
+                                <div class="indicadores_grafico" id="indic_grafico">0 toten(s)</div>
+                            </div>
+                        </a>
+                    </div>
 
-                    <section class="sessao_tabela">
+                    <section class="sessao_tabela" id="sessao_tabela">
 
                         <p class="p_tabela_status">Lista de totens por status</p>
                         <!-- table-striped,  -->
@@ -99,41 +101,30 @@
                             <tbody class="text-center">
 
                                 <tr class="tabela_tr" th:each="basedados: ${listTabela}">
-                                    <td class="td_id" th:text="${basedados.id}">2</td>
-                                    <td class="td_status" th:text="${basedados.nome}">OK</td>
+                                    <td class="td_id" th:text="${basedados.id}">#</td>
+                                    <td class="td_status" th:text="${basedados.nome}">#</td>
                                     <td th:text="${basedados.hora}"><a href="visaoDetalhada.html"><i
                                                 class="fas fa-tools ferramenta"></i></a></td>
                                 </tr>
-                                <tr class="tabela_tr" th:each="basedados: ${listTabela}">
-                                    <td class="td_id" th:text="${basedados.id}">10</td>
-                                    <td class="td_status" th:text="${basedados.nome}">OK</td>
-                                    <td th:text="${basedados.hora}"><a href="visaoDetalhada.html"><i
-                                                class="fas fa-tools ferramenta"></i></a></td>
-                                </tr>
-                                <tr class="tabela_tr" th:each="basedados: ${listTabela}">
-                                    <td class="td_id" th:text="${basedados.id}">5</td>
-                                    <td class="td_status" th:text="${basedados.nome}">OK</td>
-                                    <td th:text="${basedados.hora}"><a href="visaoDetalhada.html"><i
-                                                class="fas fa-tools ferramenta"></i></a></td>
-                                </tr>
+                                
 
                             </tbody>
                         </table>
                     </section>
                 </section>
             </form>
-            <section class="sessao_grafico">
+            <section class="sessao_grafico" id="sessao_grafico">
                 <div class="quadrado_grafico">
                     <p class="p_grafico">Situação atual dos totens</p>
                     <!-- Grafico -->
                     <div class="div_grafico">
                         <canvas id="myChart"></canvas>
                         <div class="info_totens">
-                            Total de totens: 6
+                            Total de totens: 0
                             <br>
-                            Totens em status de emergência: 2<br>
-                            Totens em status de alerta: 1<br>
-                            Totens em status ok: 3<br>
+                            Totens em status de emergência: 0<br>
+                            Totens em status de alerta: 0<br>
+                            Totens em status ok: 0<br>
                         </div>
                     </div>
                     <!-- Grafico -->
@@ -143,38 +134,40 @@
 
         </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="JavaScript/js_menu.js"></script>
-    <script src="JavaScript/js_grafico_dashboard.js"></script>
-    <script>
-        var idBody = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(idBody, {
-            type: 'doughnut',
-            data: {
-                labels: ['Emergência', 'Alerta', 'Ok'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [2, 1, 3],
-                    backgroundColor: [
-                        'rgba(231, 76, 60, 0.9)',
-                        'rgba(241, 196, 15, 0.9)',
-                        'rgba(39, 174, 96, 0.9)'
-                    ]
-                }]
-            },
-            options: {
-                plugins: {
-                    legend: {
-                        display: true,
-                        position: 'bottom',
-                        labels: {
-                            color: 'black',
-                        }
-                    }
-                }
-            }
-        });
-    </script>
 </body>
 
 </html>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="JavaScript/js_menu.js"></script>
+<script src="JavaScript/js_grafico_dashboard.js"></script>
+<script>
+
+    /*var idBody = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(idBody, {
+        type: 'doughnut',
+        data: {
+            labels: ['Emergência', 'Alerta', 'Ok'],
+            datasets: [{
+                label: '# of Votes',
+                data: [0, 0, 0],
+                backgroundColor: [
+                    'rgba(231, 76, 60, 0.9)',
+                    'rgba(241, 196, 15, 0.9)',
+                    'rgba(39, 174, 96, 0.9)'
+                ]
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom',
+                    labels: {
+                        color: 'black',
+                    }
+                }
+            }
+        }
+    });*/
+</script>
