@@ -24,7 +24,7 @@ public class MaquinaDao extends Dao {
         /*Abertura da conexão com banco de dados*/
         System.out.println("Iniciando verificação no banco...");
         String hostname = "";
-        stmt = con.prepareStatement("select hostname from maquina where hostname= ?;");
+        stmt = con.prepareStatement("select hostname from Maquina where hostname= ?;");
         stmt.setString(1, infoMaquina.getHostName());
         rs = stmt.executeQuery();
         /*Execução da instrução no banco - parte importante*/
