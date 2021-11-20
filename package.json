@@ -3,7 +3,7 @@
     "version": "1.0.1",
     "private": true,
     "scripts": {
-      "start": "node ./Site institucional - COM API/bin/www",
-      "postinstall": "cd Site institucional - COM API && npm install"
+      "start": "node ./Site-institucional/bin/www",
+      "postinstall": "cd Site-institucional && npm install"
     }
   }
