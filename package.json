@@ -1,0 +1,9 @@
+{
+    "name": "pi-ads-2020-2",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+      "start": "node ./Site institucional - COM API/bin/www",
+      "postinstall": "cd Site institucional - COM API && npm install"
+    }
+  }
