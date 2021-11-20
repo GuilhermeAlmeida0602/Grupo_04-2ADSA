@@ -136,11 +136,12 @@
 </body>
 
 <script>
-
+    
+    
     function cadastrar() {
 
         var formulario = new URLSearchParams(new FormData(form_cadastroU));
-        fetch("/usuarios/cadastrarU", {
+        fetch(`/usuarios/cadastrarU/${idEmpresa}`, {
             method: "POST",
             body: formulario
         }).then(function (response) {
@@ -153,7 +154,7 @@
 
                 console.log('Erro de cadastro!');
                 response.text().then(function (resposta) {
-                    // div_erro.innerHTML = resposta;
+
                 });
             }
         });

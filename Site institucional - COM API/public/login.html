@@ -107,9 +107,9 @@
 </body>
 <script>
 
-    // método para realizar o cadastro como empresa
+    // método para realizar o login como empresa
     function entrarE() {
-        // aguardar();
+        
         var formulario = new URLSearchParams(new FormData(form_loginE));
         fetch("/usuarios/autenticarE", {
             method: "POST",
@@ -120,10 +120,12 @@
 
                 resposta.json().then(json => {
 
-                    sessionStorage.login_usuario_meuapp = json.login;
-                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    sessionStorage.login_usuario_meuapp = json.emailEmpresa;
+                    sessionStorage.nome_usuario_meuapp = json.nomeResponsavel;
+                    sessionStorage.id_empresa_meuapp = json.idEmpresa;
 
                     window.location.href = 'tela_inicial_adm.html';
+
                 });
 
             } else {
@@ -142,7 +144,7 @@
     }
 
 
-    // método para realizar o cadastro como usuário
+    // método para realizar o login como usuário
     function entrarU() {
         // aguardar();
         var formulario = new URLSearchParams(new FormData(form_loginU));
@@ -177,22 +179,12 @@
     }
 
     function radioE() {
-        // alert('Realizando o login como uma Empresa');
-        // ipt_radioU.style.display = 'none';
-        // form_loginU.style.display = 'none';
-        // ipt_radioE.style.display = 'block';
         form_loginE.style.display = 'block';
-        // ipt_radioU.style.display = 'none';
         form_loginU.style.display = 'none';
     }
 
     function radioU () {
-        // alert('Realizando o login como um Usuário');
-        // ipt_radioE.style.display = 'none';
-        // form_loginE.style.display = 'none';
-        // ipt_radioU.style.display = 'block';
         form_loginU.style.display = 'block';
-        // ipt_radioE.style.display = 'none';
         form_loginE.style.display = 'none';
     }
 

@@ -96,10 +96,14 @@ router.post('/cadastrarE', function(req, res, next) {
 });
 
 /* Cadastrar um USUARIO */
-router.post('/cadastrarU', function(req, res, next) {
+router.post('/cadastrarU/:idEmpresa', function(req, res, next) {
 	console.log('Criando uma usuário');
 	
+	let id = req.params.idEmpresa
+	// const idEmpresa = req.params.idEmpresa
+
 	Usuario.create({
+		fkEmpresa : id,
 		priNome : req.body.priNome,
 		ultNome : req.body.ultNome,
 		telCelUsuario : req.body.telCelUsuario,
