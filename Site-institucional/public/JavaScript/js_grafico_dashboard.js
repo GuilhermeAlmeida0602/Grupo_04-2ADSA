@@ -1,84 +1,99 @@
-src="https://cdn.jsdelivr.net/npm/chart.js";
-src="JavaScript/js_menu.js";
-src="JavaScript/js_grafico_dashboard.js";
+src = "https://cdn.jsdelivr.net/npm/chart.js";
+src = "JavaScript/js_menu.js";
+src = "JavaScript/js_grafico_dashboard.js";
 
 var maquinas;
 obterMaquinas();
 
+var qntdOk = 0;
+var qntdAlerta = 0;
+var qntdEmergencia = 0;
+var colorStatus;
+
+
 function vermelho() {
-    var qntdAlerta = 0;
+
+    var qntdEmergencia = 0;
+
     for (let i = 0; i < maquinas.length; i++) {
         let encontrados = maquinas[i];
 
-    var situacaoMaq = encontrados[i].statusMaq;
-    
-     if (situacaoMaq == "Emergência") {
-        qntdEmergencia++;
+        var situacaoMaq = encontrados[i].statusMaq;
+
+
+        if (situacaoMaq == "Emergência") {
+            qntdEmergencia++;
+        }
+
+        for (var n_vezes = 0; n_vezes < qntdEmergencia; n_vezes++) {
+
+            document.querySelectorAll(".tabela_tr .td_status")[n_vezes].textContent = "Emergência";
+            var status = document.querySelectorAll(".tabela_tr .td_status")[n_vezes];
+            status.style.color = '#EA2027';
+            document.querySelectorAll(".tabela_tr")[n_vezes].style.visibility = 'visible';
+            document.querySelectorAll(".tabela_tr .td_id")[n_vezes].textContent = encontrados[i].fkMaquina;
+        }
     }
 
-        
-    }
 
 
-    for (var n_vezes = 0; n_vezes < qntdEmergencia; n_vezes++) {
 
-        document.querySelectorAll(".tabela_tr .td_status")[n_vezes].textContent = "Emergência";
-        var status = document.querySelectorAll(".tabela_tr .td_status")[n_vezes];
-        status.style.color = '#EA2027';
-        document.querySelectorAll(".tabela_tr")[n_vezes].style.visibility = 'visible';
-    }
-
-    // document.querySelectorAll(".tabela_tr")[1].style.visibility = 'visible';
-    document.querySelectorAll(".tabela_tr")[2].style.visibility = 'hidden';
-
-    document.querySelectorAll(".tabela_tr .td_id")[0].textContent = "11";
-    document.querySelectorAll(".tabela_tr .td_id")[1].textContent = "4";
 }
 
 function amarelo() {
 
+    var qntdAlerta = 0;
 
-    for (var n_vezes = 0; n_vezes < 1; n_vezes++) {
 
-        document.querySelectorAll(".tabela_tr .td_status")[n_vezes].textContent = "Alerta";
-        var status = document.querySelectorAll(".tabela_tr .td_status")[n_vezes];
-        status.style.color = '#FFC312';
+
+    for (let i = 0; i < maquinas.length; i++) {
+        let encontrados = maquinas[i];
+
+        var situacaoMaq = encontrados[i].statusMaq;
+
+        if (situacaoMaq == "Alerta") {
+            qntdAlerta++;
+        }
+
+        for (var n_vezes = 0; n_vezes < qntdAlerta; n_vezes++) {
+
+            document.querySelectorAll(".tabela_tr .td_status")[n_vezes].textContent = "Alerta";
+            var status = document.querySelectorAll(".tabela_tr .td_status")[n_vezes];
+            status.style.color = '#FFC312';
+            document.querySelectorAll(".tabela_tr")[n_vezes].style.visibility = 'visible';
+            document.querySelectorAll(".tabela_tr .td_id")[n_vezes].textContent = encontrados[i].fkMaquina;
+        }
     }
 
-    document.querySelectorAll(".tabela_tr")[1].style.visibility = 'hidden';
-    document.querySelectorAll(".tabela_tr")[2].style.visibility = 'hidden';
 
-    document.querySelectorAll(".tabela_tr .td_id")[0].textContent = "10";
 }
 
 function verde() {
-
     var qntdOk = 0;
 
     for (let i = 0; i < maquinas.length; i++) {
         let encontrados = maquinas[i];
 
-    var situacaoMaq = encontrados[i].statusMaq;
-    
-     if (situacaoMaq == "Ok") {
-        qntdOk++;
+        var situacaoMaq = encontrados[i].statusMaq;
+
+        if (situacaoMaq == "Ok") {
+            qntdOk++;
+        }
+
+        for (var n_vezes = 0; n_vezes < qntdOk; n_vezes++) {
+
+            if (situacaoMaq == "Ok") {
+                document.querySelectorAll(".tabela_tr .td_status")[n_vezes].textContent = "Ok";
+                var status = document.querySelectorAll(".tabela_tr .td_status")[n_vezes];
+                status.style.color = '#009432';
+                document.querySelectorAll(".tabela_tr")[n_vezes].style.visibility = 'visible';
+                document.querySelectorAll(".tabela_tr .td_id")[n_vezes].textContent = encontrados[i].fkMaquina;
+            }
+
+        }
+
     }
 
-        
-    }
-
-
-    for (var n_vezes = 0; n_vezes <= qntdOk; n_vezes++) {
-
-        document.querySelectorAll(".tabela_tr .td_status")[n_vezes].textContent = "Ok";
-        var status = document.querySelectorAll(".tabela_tr .td_status")[n_vezes];
-        status.style.color = '#009432';
-        document.querySelectorAll(".tabela_tr")[n_vezes].style.visibility = 'visible';
-    }
-
-    document.querySelectorAll(".tabela_tr .td_id")[0].textContent = "7";
-    document.querySelectorAll(".tabela_tr .td_id")[1].textContent = "8";
-    document.querySelectorAll(".tabela_tr .td_id")[2].textContent = "15";
 }
 
 function obterMaquinas() {
@@ -107,20 +122,12 @@ function obterMaquinas() {
         });
 }
 
-function carregar_maquinas() {
-
-    var qntdOk = 0;
-    var qntdAlerta = 0;
-    var qntdEmergencia = 0;
+function contarStatus() {
 
     for (let i = 0; i < maquinas.length; i++) {
         let encontrados = maquinas[i];
 
         var situacaoMaq = encontrados[i].statusMaq;
-
-
-
-        var colorStatus;
 
         if (situacaoMaq == "Ok") {
             colorStatus = "green";
@@ -133,6 +140,15 @@ function carregar_maquinas() {
             qntdEmergencia++;
         }
 
+    }
+
+}
+
+function carregar_maquinas() {
+
+    contarStatus();
+
+ 
         cardStatus.innerHTML =
             `<p class="p_status">Selecione o status</p>
             <a href="#" onclick="vermelho()">
@@ -172,38 +188,37 @@ function carregar_maquinas() {
                 
             </div>`
 
-            var idBody = document.getElementById('myChartt').getContext('2d');
-            var myChartt = new Chart(idBody, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Emergência', 'Alerta', 'Ok'],
-                    datasets: [{
-                        label: '# of Votes',
-                        data: [qntdEmergencia, qntdAlerta, qntdOk],
-                        backgroundColor: [
-                            'rgba(231, 76, 60, 0.9)',
-                            'rgba(241, 196, 15, 0.9)',
-                            'rgba(39, 174, 96, 0.9)'
-                        ]
-                    }]
-                },
-                options: {
-                    plugins: {
-                        legend: {
-                            display: true,
-                            position: 'bottom',
-                            labels: {
-                                color: 'black',
-                            }
+        var idBody = document.getElementById('myChartt').getContext('2d');
+        var myChartt = new Chart(idBody, {
+            type: 'doughnut',
+            data: {
+                labels: ['Emergência', 'Alerta', 'Ok'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [qntdEmergencia, qntdAlerta, qntdOk],
+                    backgroundColor: [
+                        'rgba(231, 76, 60, 0.9)',
+                        'rgba(241, 196, 15, 0.9)',
+                        'rgba(39, 174, 96, 0.9)'
+                    ]
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom',
+                        labels: {
+                            color: 'black',
                         }
                     }
                 }
-            });
+            }
+        });
 
         //Zerando variavel para não acumular sem precisar
         qntdOk = 0
 
 
 
-    }
 }

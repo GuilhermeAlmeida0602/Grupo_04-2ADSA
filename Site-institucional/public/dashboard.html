@@ -101,12 +101,13 @@
                             <tbody class="text-center">
 
                                 <tr class="tabela_tr" th:each="basedados: ${listTabela}">
-                                    <td class="td_id" th:text="${basedados.id}">#</td>
-                                    <td class="td_status" th:text="${basedados.nome}">#</td>
+                                    <td id="fk_totem" class="td_id" th:text="${basedados.id}"> </td>
+                                    <td id="status_totem" class="td_status" th:text="${basedados.nome}"> </td>
                                     <td th:text="${basedados.hora}"><a href="visaoDetalhada.html"><i
                                                 class="fas fa-tools ferramenta"></i></a></td>
                                 </tr>
-                                
+                               
+
 
                             </tbody>
                         </table>
@@ -142,7 +143,6 @@
 <script src="JavaScript/js_menu.js"></script>
 <script src="JavaScript/js_grafico_dashboard.js"></script>
 <script>
-
     /*var idBody = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(idBody, {
         type: 'doughnut',
