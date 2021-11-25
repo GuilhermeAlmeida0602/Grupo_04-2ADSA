@@ -1,5 +1,5 @@
 create database InfoSystems;
-#drop database InfoSystems;
+##drop database InfoSystems;
 use InfoSystems;
 
 -- Tabelas de dados estáticos
@@ -83,7 +83,7 @@ CREATE TABLE dadosMaquina (
   idDadosMaquina INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   fkMaquina INT NOT NULL,
   inicializadoSO VARCHAR(30) NOT NULL,
-  tempoDeAtividadeSO INT NOT NULL,
+  tempoDeAtividadeSO VARCHAR(25) NOT NULL,
   usuarioSO VARCHAR(30) NOT NULL,
   emUsoCPU INT NOT NULL,
   emUsoMEM INT NOT NULL,
@@ -116,25 +116,28 @@ CREATE TABLE StatusMaquina (
   
   -- Empresa fictícia
   
-  insert into Empresa values (null, 'ChickenFood', '14961289000110', 'contato@chickenfood.com.br',
-	'food123', 'Rua Sumaré', 638, null, 'Jardim São Francisco(Zona Sul)', 'SP', '04918300', 
-    'Renato Oliveira', '1135936259');
+  --  insert into Empresa values (null, 'ChickenFood', '14961289000110', 'contato@chickenfood.com.br',
+	-- 'food123', 'Rua Sumaré', 638, null, 'Jardim São Francisco(Zona Sul)', 'SP', '04918300', 
+    -- 'Renato Oliveira', '1135936259');
     
-insert into Empresa values (null, "SETIS", "46838302000134", "Guilherme Fonseca", "11980992290", "gui@setis.com", "guisetis123", "03801010", "Professor Jose de Sousa", "118", "B", "Parque Boturussu", "São Paulo" , "SP");
+ insert into Empresa values (null, "SETIS", "46838302000134", "Guilherme Fonseca", "11980992290", "gui@setis.com", "guisetis123", "03801010", "Professor Jose de Sousa", "118", "B", "Parque Boturussu", "São Paulo" , "SP");
     
   #insert into Usuario values (null, 1,'Armando', 'Fontes', 'armando.fontes@chickenfood.com.br', 
   #'tortaLaranja123', '11997353581', '1128379572');
   
-  insert into Usuario values (null, 1, "Guilherme", "Fonseca", "11980992222", "1125454541", "guifonseca@setis.com", "guifonseca123");
+    insert into Usuario values (1, 1, "Guilherme", "Fonseca", "11980992222", "1125454541", "guifonseca@setis.com", "guifonseca123");
   
-	##select * from empresa;
-	##select * from usuario;
+	select * from empresa;
+	select * from usuario;
 	select * from maquina;
 	select * from disco;
 	select * from dadosdisco;
 	select * from dadosMaquina;
-	select * from processosMaquina;
-	select * from statusmaquina;
+    
+    #desc dadosMaquina;
+    
+	##select * from processosMaquina;
+	##select * from statusmaquina;
   
 --  select processo from processosMaquina where encerrarProcessos = 1 and fkMaquina = 1;
 
@@ -160,3 +163,40 @@ insert into Empresa values (null, "SETIS", "46838302000134", "Guilherme Fonseca"
  
  ##select * from statusmaquina where fkEmpresa = 1;
   
+##SELECT emUsoCPU FROM dadosMaquina WHERE fkMaquina = 1 ORDER BY idDadosMaquina DESC LIMIT 1; ## Card CPU
+##SELECT emUsoMEM FROM dadosMaquina WHERE fkMaquina = 1 ORDER BY idDadosMaquina DESC LIMIT 1; ## Card RAM
+
+SELECT discoDisponivelHD FROM dadosdisco ORDER BY idDadosDisco DESC LIMIT 1; ## Card Disco Precisa de inner join
+
+SELECT * FROM processosMaquina WHERE usoCPU > 1 ORDER BY usoCPU DESC LIMIT 6; ## Card Processos - 
+
+SELECT * FROM processosMaquina WHERE usoMemoria > 1 ORDER BY usoCPU DESC LIMIT 6;
+
+SELECT * FROM processosMaquina WHERE usoMemoria >= 0.9 and usoCPU > 1 ORDER BY usoCPU DESC LIMIT 6;
+
+SELECT * FROM processosMaquina WHERE usoMemoria >= 0.7 and usoCPU > 1 and fkMaquina = 1 ORDER BY usoCPU DESC LIMIT 6;
+
+SELECT count(usoCPU and usoMemoria) FROM processosMaquina WHERE usoMemoria >= 0.9 and usoCPU > 1 ORDER BY usoCPU DESC LIMIT 6;
+
+SELECT count(usoCPU) FROM processosMaquina WHERE usoCPU > 10;
+
+select * from dadosDisco inner join disco on fkDisco = (idDisco);
+
+select idDisco from disco where fkMaquina = 1 ORDER BY idDisco LIMIT 1;
+
+SELECT discoDisponivelHD FROM dadosdisco where fkDisco = 1 ORDER BY idDadosDisco DESC LIMIT 1 ;
+
+SELECT * FROM processosMaquina WHERE usoMemoria >= 0.0 and usoCPU > 0 and fkMaquina = 1 ORDER BY usoCPU DESC LIMIT 6;
+
+
+SELECT emUsoCPU FROM dadosMaquina WHERE fkMaquina = 1 ORDER BY idDadosMaquina DESC LIMIT 7;
+
+SELECT * FROM processosMaquina WHERE usoMemoria >= 0.1 and usoCPU >= 0 and fkMaquina = 1 ORDER BY usoCPU DESC LIMIT 6;
+
+
+select m.idMaquina, m.hostname, m.sistemaOperacionalSO, m.nomeCPU, m.dataDeRegistro, d.nome, d.tamanho, dm.totalMEM, dm.inicializadoSO
+ from Maquina as m INNER JOIN Disco as d ON d.fkMaquina = (m.idMaquina) INNER JOIN DadosMaquina AS dm ON dm.fkMaquina = (m.idMaquina) WHERE 
+ m.idMaquina = 1 LIMIT 1;
+
+
+

@@ -97,14 +97,14 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
     public void timerInsert(Integer fkMaquina, Integer fkDisco) {
 
         int delay = 10000;   // delay de 10 seg.
-        int interval = 20000;  // intervalo de 20 seg.
+        int interval = 60000;  // intervalo de 1 min.
         java.util.Timer timer = new java.util.Timer();
 
         timer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
 
                 try {
-                    for (int i = 0; i < 10; i++) {
+                    for (int i = 0; i < 1; i++) {
 
                         System.out.println(i + "  -  Segundo(s)");
 

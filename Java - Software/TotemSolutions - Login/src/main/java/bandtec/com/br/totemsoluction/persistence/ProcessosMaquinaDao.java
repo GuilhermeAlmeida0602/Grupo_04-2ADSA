@@ -28,7 +28,7 @@ public class ProcessosMaquinaDao extends Dao {
             open();
             try {
                 System.out.println("Realizando registro de totem no banco...");
-                stmt = con.prepareStatement("insert into processosMaquina (fkMaquina, "
+                stmt = con.prepareStatement("insert into ProcessosMaquina (fkMaquina, "
                         + "processo, pid, usoCPU, usoMemoria, encerrarProcessos, dataProcesso) values (?,?,?,?,?,?,?);");
                 stmt.setInt(1, fkMaquina);
                 stmt.setString(2, processos.get(i).getNome());

@@ -7,17 +7,18 @@ CREATE TABLE Empresa
 (
   idEmpresa INT PRIMARY KEY IDENTITY(500, 1),
   nomeEmpresa VARCHAR(45) NOT NULL,
-  CNPJ CHAR(14) NOT NULL UNIQUE,
-  email VARCHAR(45) NOT NULL,
-  senha VARCHAR(45) NOT NULL,
-  logradouro VARCHAR(45) NOT NULL,
-  numero INT NOT NULL,
-  complemento VARCHAR(15),
-  bairro VARCHAR(60) NOT NULL,
-  UF CHAR(2) NOT NULL,
-  CEP CHAR(8) NOT NULL,
+  cnpj CHAR(14) NOT NULL,
   nomeResponsavel VARCHAR(45) NOT NULL,
-  telResponsavel VARCHAR(11) NOT NULL
+  telResponsavel VARCHAR(11) NOT NULL,
+  emailEmpresa VARCHAR(70) NOT NULL,
+  senhaEmpresa VARCHAR(70) NOT NULL,
+  cepEmpresa CHAR(8) NOT NULL,
+  logradouroEmpresa VARCHAR(45) NOT NULL,
+  numeroEmpresa INT NOT NULL,
+  complementoEmpresa VARCHAR(15),
+  bairroEmpresa VARCHAR(60) NOT NULL,
+  cidadeEmpresa VARCHAR(60) NOT NULL,
+  ufEmpresa CHAR(2) NOT NULL
 );
 
 
@@ -25,12 +26,12 @@ CREATE TABLE Usuario
 (
   idUsuario INT PRIMARY KEY NOT NULL IDENTITY(101, 1),
   fkEmpresa INT NOT NULL,
-  nomeUsuario VARCHAR(45) NOT NULL,
-  sobrenomeUsuario VARCHAR(45) NOT NULL,
-  [login] VARCHAR(35) NOT NULL,
-  senha VARCHAR(35) NOT NULL,
-  telefoneCelular CHAR(11) NOT NULL,
-  telefoneFixo CHAR(10) NOT NULL
+  priNome VARCHAR(70) NOT NULL,
+  ultNome VARCHAR(70) NOT NULL,
+  telCelUsuario CHAR(11) NOT NULL,
+  telFixUsuario CHAR(10) NOT NULL,
+  emailUsuario VARCHAR(50) NOT NULL UNIQUE,
+  senhaUsuario VARCHAR(50) NOT NULL,
 );
 
 CREATE TABLE Maquina
@@ -71,7 +72,7 @@ CREATE TABLE Disco
 
 -- Tabelas de dados dinâmicos
 
-CREATE TABLE dadosDisco
+CREATE TABLE DadosDisco
 (
   idDadosDisco INT PRIMARY KEY IDENTITY NOT NULL,
   fkDisco INT NOT NULL,
@@ -79,12 +80,12 @@ CREATE TABLE dadosDisco
   dataRegistroDados DATETIME NOT NULL
 );
 
-CREATE TABLE dadosMaquina
+CREATE TABLE DadosMaquina
 (
   idDadosMaquina INT PRIMARY KEY IDENTITY NOT NULL,
   fkMaquina INT NOT NULL,
   inicializadoSO VARCHAR(30) NOT NULL,
-  tempoDeAtividadeSO INT NOT NULL,
+  tempoDeAtividadeSO VARCHAR(25) NOT NULL,
   usuarioSO VARCHAR(30) NOT NULL,
   emUsoCPU INT NOT NULL,
   emUsoMEM INT NOT NULL,
@@ -93,7 +94,7 @@ CREATE TABLE dadosMaquina
   dataRegistro DATETIME NOT NULL
 );
 
-CREATE TABLE processosMaquina
+CREATE TABLE ProcessosMaquina
 (
   idprocessoMaquina INT PRIMARY KEY IDENTITY NOT NULL,
   fkMaquina INT NOT NULL,
@@ -101,26 +102,31 @@ CREATE TABLE processosMaquina
   pid INT NOT NULL,
   usoCPU INT NOT NULL,
   usoMemoria FLOAT NOT NULL,
+  encerrarProcessos BIT NOT NULL,
   dataProcesso DATETIME NOT NULL
 );
 
--- CREATE TABLE StatusMaquina
--- (
---   fkMaquina INT PRIMARY KEY NOT NULL UNIQUE,
---   statusMaq VARCHAR(45) NOT NULL,
---   dataStatus DATETIME NOT NULL
--- );
+CREATE TABLE StatusMaquina
+(
+  fkMaquina INT NOT NULL UNIQUE,
+  fkEmpresa INT NOT NULL UNIQUE,
+  statusMaq VARCHAR(45) NOT NULL,
+  dataStatus DATETIME NOT NULL,
+  PRIMARY KEY(fkMaquina, fkEmpresa),
+);
 
 -- drop table StatusMaquina;
--- drop table processosMaquina;
--- drop table dadosMaquina;
--- drop table dadosDisco;
--- drop table disco; 
--- drop table maquina;
--- drop table Usuario;
--- drop table empresa;
+-- drop table ProcessosMaquina;
+-- drop table DadosMaquina;
+-- drop table DadosDisco;
+-- drop table Disco; 
+-- drop table Maquina;
+drop table Usuario;
+drop table Empresa;
 
 -- Referência 
+
+
 
 ALTER TABLE Maquina ADD FOREIGN KEY (fkEmpresa)
   REFERENCES Empresa (idEmpresa);
@@ -128,53 +134,58 @@ ALTER TABLE Maquina ADD FOREIGN KEY (fkEmpresa)
 ALTER TABLE Disco ADD FOREIGN KEY (fkMaquina)
   REFERENCES Maquina (idMaquina);
 
-ALTER TABLE dadosDisco ADD FOREIGN KEY (fkDisco)
+ALTER TABLE DadosDisco ADD FOREIGN KEY (fkDisco)
   REFERENCES Disco (idDisco);
 
-ALTER TABLE dadosMaquina ADD FOREIGN KEY (fkMaquina)
+ALTER TABLE DadosMaquina ADD FOREIGN KEY (fkMaquina)
   REFERENCES Maquina (idMaquina);
 
-ALTER TABLE processosMaquina ADD FOREIGN KEY (fkMaquina)
+ALTER TABLE ProcessosMaquina ADD FOREIGN KEY (fkMaquina)
   REFERENCES Maquina (idMaquina);
 
--- ALTER TABLE StatusMaquina ADD FOREIGN KEY (fkMaquina)
---   REFERENCES Maquina (idMaquina);
+ALTER TABLE StatusMaquina ADD FOREIGN KEY (fkMaquina)
+  REFERENCES Maquina (idMaquina);
+
+ALTER TABLE StatusMaquina ADD FOREIGN KEY (fkEmpresa)
+  REFERENCES Empresa (idEmpresa);
 
 -- Empresa fictícia
 
-insert into Empresa
-  (nomeEmpresa, cnpj, email, senha, logradouro, numero,
-  bairro, uf, cep, nomeResponsavel, telResponsavel)
-values
-  ('ChickenFood',
-    '14961289000110', 'contato@chickenfood.com.br', 'food123', 'Rua Sumaré', 638,
-    'Jardim São Francisco(Zona Sul)', 'SP', '04918300', 'Renato Oliveira', '1135936259');
+-- insert into Empresa
+--   (nomeEmpresa, cnpj, email, senha, logradouro, numero,
+--   bairro, uf, cep, nomeResponsavel, telResponsavel)
+-- values
+--   ('ChickenFood',
+--     '14961289000110', 'contato@chickenfood.com.br', 'food123', 'Rua Sumaré', 638,
+--     'Jardim São Francisco(Zona Sul)', 'SP', '04918300', 'Renato Oliveira', '1135936259');
 
-insert into Usuario
-  (fkEmpresa, nomeUsuario, sobrenomeUsuario, [login], senha,
-  telefoneCelular, telefoneFixo)
-values
-  (1, 'Armando', 'Fontes',
-    'armando.fontes@chickenfood.com.br', 'tortaLaranja123', '11997353581', '1128379572');
+-- insert into Usuario
+--   (fkEmpresa, nomeUsuario, sobrenomeUsuario, [login], senha,
+--   telefoneCelular, telefoneFixo)
+-- values
+--   (1, 'Armando', 'Fontes',
+--     'armando.fontes@chickenfood.com.br', 'tortaLaranja123', '11997353581', '1128379572');
 
 --  insert into Maquina (fkEmpresa, sistemaOperacionalSO, arquiteturaSO, fabricanteCPU, nomeCPU,
 --  identificadorCPU, microArquiteturaCPU, frequenciaCPU, pacotesFisicosCPU, cpuFisicosCPU, cpuLogicosCPU, 
 --  uuid) values (?,?,?,?,?,?,?,?,?,?,?,?);
 
+insert into Empresa 
+(nomeEmpresa, cnpj, nomeResponsavel, telResponsavel, emailEmpresa, senhaEmpresa, cepEmpresa, logradouroEmpresa, numeroEmpresa, complementoEmpresa, bairroEmpresa, cidadeEmpresa, ufEmpresa)
+ values ('SETIS', '46838302000134', 'Guilherme Fonseca', '11980992290', 'gui@setis.com', 'guisetis123', '03801010', 'Professor Jose de Sousa', '118', 'B', 'Parque Boturussu', 'São Paulo' , 'SP');
 
--- Selects 
--- select *
--- from Empresa;
--- select *
--- from Usuario;
-select *
-from Maquina;
+insert into Usuario (fkEmpresa, priNome, ultNome, telCelUsuario, telFixUsuario, emailUsuario, senhaUsuario)
+ values (500, 'Guilherme', 'Fonseca', '11980992222', '1125454541', 'guifonseca@setis.com', 'guifonseca123');
 
-select *
-from disco;
-
-select * from dadosMaquina;
-select * from dadosDisco;
-select * from processosmaquina;
 
 update Maquina set reiniciar =1 where idMaquina=3;
+
+select * from ProcessosMaquina;
+select * from DadosMaquina;
+select * from DadosDisco;
+select * from Disco; 
+select * from Maquina;
+select * from Usuario;
+select * from Empresa;
+
+select fkEmpresa, emailUsuario, senhaUsuario from Usuario where emailUsuario='guifonseca@setis.com' and senhaUsuario= 'guifonseca123';
