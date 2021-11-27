@@ -68,21 +68,17 @@
 
             <table>
 
-                <tr>
-                    <th>Nº do Totem</th>
-                    <th>Status</th>
-                    <th>Ação</th>
-                </tr>
-
-                <tr id="num_selec">
-                    <td id="fk_maquina"></td>
-                    <td id="status_Maq" class="alerta"></td>
-                    <td>
-                        <a href="visaoDetalhada.html">
-                            <i class="fas fa-tools ferramenta"></i>
-                        </a>
-                    </td>
-                </tr>
+                <table id="num_selec">
+                    <tr>
+                        <td id="fk_maquina"></td>
+                        <td id="status_Maq" class="alerta"></td>
+                        <td>
+                            <a href="visaoDetalhada.html">
+                                <i class="fas fa-tools ferramenta"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
 
             </table>
 
@@ -103,7 +99,7 @@
 
     closeBtn.addEventListener("click", () => {
         sidebar.classList.toggle("open");
-        menuBtnChange();//calling the function(optional)
+        menuBtnChange(); //calling the function(optional)
     });
 
     searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
@@ -114,9 +110,9 @@
     // following are the code to change sidebar button(optional)
     function menuBtnChange() {
         if (sidebar.classList.contains("open")) {
-            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
         } else {
-            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
+            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
         }
     }
 
@@ -146,13 +142,24 @@
     }
 
     function carregar_maquinas() {
+        let infoMaq = maquinas[1];
 
-        for (let i = 0; i < maquinas.length; i++) {
-            let encontrados = maquinas[i]
+        
+        //30 em 30
+        setTimeout(() => obterMaquinas(), 10000);
+        
+        num_selec.innerHTML = `<tr>
+                    <th>Nº do Totem</th>
+                    <th>Status</th>
+                    <th>Ação</th>
+                </tr>`;
+
+        for (let i = 0; i < infoMaq.length; i++) {
+            
 
             var colorStatus;
 
-            var situacaoMaq = encontrados[i].statusMaq;
+            var situacaoMaq = infoMaq[i].statusMaq;
 
             if (situacaoMaq == "Ok") {
                 colorStatus = "green";
@@ -162,8 +169,8 @@
                 colorStatus = "red";
             }
 
-            num_selec.innerHTML = `<td id="fk_maquina">${encontrados[i].fkMaquina}</td>
-                                 <td id="status_Maq" style = "color:${colorStatus}" class="alerta">${encontrados[i].statusMaq}</td>
+            num_selec.innerHTML += `<td id="fk_maquina">${infoMaq[i].fkMaquina}</td>
+                                 <td id="status_Maq" style = "color:${colorStatus}" class="alerta">${infoMaq[i].statusMaq}</td>
                                  <td>
                                     <a href="visaoDetalhada.html">
                                         <i class="fas fa-tools ferramenta"></i>
@@ -180,5 +187,4 @@
 
         }
     }
-
 </script>

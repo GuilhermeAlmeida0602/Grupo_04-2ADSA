@@ -12,7 +12,7 @@
     <title>Dashboard</title>
 </head>
 
-<body onload="vermelho()">
+<body onload="obterMaquinas()">
     <div class="sidebar">
         <div class="logo-details">
             <div class="logo_name"><a href="index.html" class="nav-list">InfoSystem</a></div>
@@ -98,18 +98,13 @@
                                     <th>Ação</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-center">
+                            <tbody id="lista_totens" class="text-center">
 
-                                <tr class="tabela_tr" th:each="basedados: ${listTabela}">
-                                    <td id="fk_totem" class="td_id" th:text="${basedados.id}"> </td>
-                                    <td id="status_totem" class="td_status" th:text="${basedados.nome}"> </td>
-                                    <td th:text="${basedados.hora}"><a href="visaoDetalhada.html"><i
-                                                class="fas fa-tools ferramenta"></i></a></td>
-                                </tr>
                                
 
-
                             </tbody>
+
+
                         </table>
                     </section>
                 </section>
@@ -142,32 +137,3 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="JavaScript/js_menu.js"></script>
 <script src="JavaScript/js_grafico_dashboard.js"></script>
-<script>
-    /*var idBody = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(idBody, {
-        type: 'doughnut',
-        data: {
-            labels: ['Emergência', 'Alerta', 'Ok'],
-            datasets: [{
-                label: '# of Votes',
-                data: [0, 0, 0],
-                backgroundColor: [
-                    'rgba(231, 76, 60, 0.9)',
-                    'rgba(241, 196, 15, 0.9)',
-                    'rgba(39, 174, 96, 0.9)'
-                ]
-            }]
-        },
-        options: {
-            plugins: {
-                legend: {
-                    display: true,
-                    position: 'bottom',
-                    labels: {
-                        color: 'black',
-                    }
-                }
-            }
-        }
-    });*/
-</script>

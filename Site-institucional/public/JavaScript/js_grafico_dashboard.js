@@ -2,38 +2,48 @@ src = "https://cdn.jsdelivr.net/npm/chart.js";
 src = "JavaScript/js_menu.js";
 src = "JavaScript/js_grafico_dashboard.js";
 
-var maquinas;
-obterMaquinas();
 
+
+var maquinas;
 var qntdOk = 0;
 var qntdAlerta = 0;
 var qntdEmergencia = 0;
 var colorStatus;
 
 
+
+
 function vermelho() {
 
     var qntdEmergencia = 0;
-
-    for (let i = 0; i < maquinas.length; i++) {
-        let encontrados = maquinas[i];
-
-        var situacaoMaq = encontrados[i].statusMaq;
+    lista_totens.innerHTML = ""
+    let infoMaq = maquinas[1];
 
 
+    for (let i = 0; i < infoMaq.length; i++) {
+
+        var situacaoMaq = infoMaq[i].statusMaq;
+        
         if (situacaoMaq == "Emergência") {
+
+            lista_totens.innerHTML +=
+            `
+                <tr class="tabela_tr">
+                    <td id="fk_totem" class="td_id">${infoMaq[i].fkMaquina}</td>
+                    <td id="status_totem" class="td_status" style="color:red;">${infoMaq[i].statusMaq}</td>
+                    <td>
+                        <a href="visaoDetalhada.html">
+                        <i class="fas fa-tools ferramenta"></i>
+                        </a>
+                    </td>
+                </tr>
+            `
             qntdEmergencia++;
         }
 
-        for (var n_vezes = 0; n_vezes < qntdEmergencia; n_vezes++) {
-
-            document.querySelectorAll(".tabela_tr .td_status")[n_vezes].textContent = "Emergência";
-            var status = document.querySelectorAll(".tabela_tr .td_status")[n_vezes];
-            status.style.color = '#EA2027';
-            document.querySelectorAll(".tabela_tr")[n_vezes].style.visibility = 'visible';
-            document.querySelectorAll(".tabela_tr .td_id")[n_vezes].textContent = encontrados[i].fkMaquina;
-        }
     }
+
+
 
 
 
@@ -43,26 +53,33 @@ function vermelho() {
 function amarelo() {
 
     var qntdAlerta = 0;
+    lista_totens.innerHTML = ""
+    let infoMaq = maquinas[1];
 
 
+    for (let i = 0; i < infoMaq.length; i++) {
 
-    for (let i = 0; i < maquinas.length; i++) {
-        let encontrados = maquinas[i];
-
-        var situacaoMaq = encontrados[i].statusMaq;
+        var situacaoMaq = infoMaq[i].statusMaq;
 
         if (situacaoMaq == "Alerta") {
+
+            lista_totens.innerHTML +=
+            `
+                <tr class="tabela_tr">
+                    <td id="fk_totem" class="td_id">${infoMaq[i].fkMaquina}</td>
+                    <td id="status_totem" class="td_status" style="color:orange;">${infoMaq[i].statusMaq}</td>
+                    <td>
+                        <a href="visaoDetalhada.html">
+                        <i class="fas fa-tools ferramenta"></i>
+                        </a>
+                    </td>
+                </tr>
+            `
+            
             qntdAlerta++;
         }
 
-        for (var n_vezes = 0; n_vezes < qntdAlerta; n_vezes++) {
-
-            document.querySelectorAll(".tabela_tr .td_status")[n_vezes].textContent = "Alerta";
-            var status = document.querySelectorAll(".tabela_tr .td_status")[n_vezes];
-            status.style.color = '#FFC312';
-            document.querySelectorAll(".tabela_tr")[n_vezes].style.visibility = 'visible';
-            document.querySelectorAll(".tabela_tr .td_id")[n_vezes].textContent = encontrados[i].fkMaquina;
-        }
+        
     }
 
 
@@ -70,27 +87,33 @@ function amarelo() {
 
 function verde() {
     var qntdOk = 0;
+    lista_totens.innerHTML = ""
+    let infoMaq = maquinas[1];
 
-    for (let i = 0; i < maquinas.length; i++) {
-        let encontrados = maquinas[i];
 
-        var situacaoMaq = encontrados[i].statusMaq;
+    for (let i = 0; i < infoMaq.length; i++) {
+
+        var situacaoMaq = infoMaq[i].statusMaq;
 
         if (situacaoMaq == "Ok") {
+            
+            lista_totens.innerHTML +=
+            `
+                <tr class="tabela_tr">
+                    <td id="fk_totem" class="td_id">${infoMaq[i].fkMaquina}</td>
+                    <td id="status_totem" class="td_status" style="color:green;">${infoMaq[i].statusMaq}</td>
+                    <td>
+                        <a href="visaoDetalhada.html">
+                        <i class="fas fa-tools ferramenta"></i>
+                        </a>
+                    </td>
+                </tr>
+            `
+            
             qntdOk++;
         }
 
-        for (var n_vezes = 0; n_vezes < qntdOk; n_vezes++) {
-
-            if (situacaoMaq == "Ok") {
-                document.querySelectorAll(".tabela_tr .td_status")[n_vezes].textContent = "Ok";
-                var status = document.querySelectorAll(".tabela_tr .td_status")[n_vezes];
-                status.style.color = '#009432';
-                document.querySelectorAll(".tabela_tr")[n_vezes].style.visibility = 'visible';
-                document.querySelectorAll(".tabela_tr .td_id")[n_vezes].textContent = encontrados[i].fkMaquina;
-            }
-
-        }
+       
 
     }
 
@@ -123,11 +146,15 @@ function obterMaquinas() {
 }
 
 function contarStatus() {
+    let infoMaq = maquinas[1];
 
-    for (let i = 0; i < maquinas.length; i++) {
-        let encontrados = maquinas[i];
+    qntdOk = 0;
+    qntdAlerta = 0;
+    qntdEmergencia = 0;
 
-        var situacaoMaq = encontrados[i].statusMaq;
+    for (let i = 0; i < infoMaq.length; i++) {
+
+        var situacaoMaq = infoMaq[i].statusMaq;
 
         if (situacaoMaq == "Ok") {
             colorStatus = "green";
@@ -138,6 +165,7 @@ function contarStatus() {
         } else {
             colorStatus = "red";
             qntdEmergencia++;
+
         }
 
     }
@@ -145,12 +173,15 @@ function contarStatus() {
 }
 
 function carregar_maquinas() {
+    let infoMaq = maquinas[1];
 
     contarStatus();
 
- 
-        cardStatus.innerHTML =
-            `<p class="p_status">Selecione o status</p>
+    setTimeout(() => obterMaquinas(), 30000);
+    
+
+    cardStatus.innerHTML =
+        `<p class="p_status">Selecione o status</p>
             <a href="#" onclick="vermelho()">
                 <div class="quadrado_informativo vermelho">
                     <div class="cor_status">Emergência</div>
@@ -171,8 +202,8 @@ function carregar_maquinas() {
                 </div>
             </a>`;
 
-        sessao_grafico.innerHTML =
-            `<div class="quadrado_grafico">
+    sessao_grafico.innerHTML =
+        `<div class="quadrado_grafico">
                 <p class="p_grafico">Situação atual dos totens</p>
                 <!-- Grafico -->
                 <div class="div_grafico">
@@ -188,37 +219,36 @@ function carregar_maquinas() {
                 
             </div>`
 
-        var idBody = document.getElementById('myChartt').getContext('2d');
-        var myChartt = new Chart(idBody, {
-            type: 'doughnut',
-            data: {
-                labels: ['Emergência', 'Alerta', 'Ok'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [qntdEmergencia, qntdAlerta, qntdOk],
-                    backgroundColor: [
-                        'rgba(231, 76, 60, 0.9)',
-                        'rgba(241, 196, 15, 0.9)',
-                        'rgba(39, 174, 96, 0.9)'
-                    ]
-                }]
-            },
-            options: {
-                plugins: {
-                    legend: {
-                        display: true,
-                        position: 'bottom',
-                        labels: {
-                            color: 'black',
-                        }
+    var idBody = document.getElementById('myChartt').getContext('2d');
+    var myChartt = new Chart(idBody, {
+        type: 'doughnut',
+        data: {
+            labels: ['Emergência', 'Alerta', 'Ok'],
+            datasets: [{
+                label: '# of Votes',
+                data: [qntdEmergencia, qntdAlerta, qntdOk],
+                backgroundColor: [
+                    'rgba(231, 76, 60, 0.9)',
+                    'rgba(241, 196, 15, 0.9)',
+                    'rgba(39, 174, 96, 0.9)'
+                ]
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom',
+                    labels: {
+                        color: 'black',
                     }
                 }
             }
-        });
+        }
+    });
 
-        //Zerando variavel para não acumular sem precisar
-        qntdOk = 0
+    //Zerando variavel para não acumular sem precisar
+    qntdOk = 0
 
-
-
+    vermelho()
 }
