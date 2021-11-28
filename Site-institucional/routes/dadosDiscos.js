@@ -13,7 +13,7 @@ router.get('/idDisco/:fkMaquina', function (req, res, next) {
 
     console.log("Verificando status do card CPU");
 
-    let instrucaoSql = `SELECT idDisco FROM disco WHERE fkMaquina = ${fkMaquina} ORDER BY idDisco LIMIT 1;`;
+    let instrucaoSql = `SELECT TOP 1 idDisco FROM disco WHERE fkMaquina = ${fkMaquina} ORDER BY idDisco;`;
 
     sequelize.query(instrucaoSql, {
         model: Disco
@@ -30,14 +30,15 @@ router.get('/idDisco/:fkMaquina', function (req, res, next) {
 
 });
 
-router.get('/statusDisco/:fkDisco', function (req, res, next) {
+router.get('/statusDisco/:fkDisco/:fkMaquina', function (req, res, next) {
 
     //Para pegar uma máquina em especifico
     let fkDisco = req.params.fkDisco;
+    let fkMaquina = req.params.fkMaquina;
 
     console.log("Verificando status do card CPU");
 
-    let instrucaoSql = `SELECT discoDisponivelHD FROM dadosdisco where fkDisco = ${fkDisco} ORDER BY idDadosDisco DESC LIMIT 1 ;`;
+    let instrucaoSql = `SELECT TOP 1 discoDisponivelHD FROM dadosdisco where fkDisco = ${fkDisco} ORDER BY idDadosDisco DESC;`;
 
     sequelize.query(instrucaoSql, {
         model: dadosDisco,

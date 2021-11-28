@@ -519,7 +519,7 @@
 
     var fkDisco = sessionStorage.id_disco_meuapp;
 
-    fetch(`/dadosDiscos/statusDisco/${fkDisco}`)
+    fetch(`/dadosDiscos/statusDisco/${fkDisco}/${fkMaquina}`)
         .then(resposta => {
             if (resposta.ok) {
                 resposta.json().then(function (resposta) {
@@ -707,7 +707,6 @@
                         classeProcesso = document.getElementsByClassName('selectProc')
 
                         for (let i = 0; i < resposta.length; i++) {
-                            // document.getElementsByClassName('selectProc')[i]
                             table_processos.innerHTML += `
                                         <tr>
                                             <td>${resposta[i].idprocessoMaquina}</td>

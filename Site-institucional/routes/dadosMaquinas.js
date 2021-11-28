@@ -12,7 +12,7 @@ router.get('/statusCpu/:fkMaquina', function (req, res, next) {
 
 	console.log("Verificando status do card CPU");
 
-	let instrucaoSql = `SELECT emUsoCPU, dataRegistro FROM dadosMaquina WHERE fkMaquina = ${fkMaquina} ORDER BY idDadosMaquina DESC LIMIT 7;`;
+	let instrucaoSql = `SELECT TOP 7 emUsoCPU, dataRegistro FROM dadosMaquina WHERE fkMaquina = ${fkMaquina} ORDER BY idDadosMaquina DESC;`;
 
 	sequelize.query(instrucaoSql, {
 		model: dadosMaquina,
@@ -35,7 +35,7 @@ router.get('/statusRam/:fkMaquina', function (req, res, next) {
 
 	console.log("Verificando status do card CPU");
 
-	let instrucaoSql = `SELECT emUsoMEM, dataRegistro FROM dadosMaquina WHERE fkMaquina = ${fkMaquina} ORDER BY idDadosMaquina DESC LIMIT 7;`;
+	let instrucaoSql = `SELECT TOP 7 emUsoMEM, dataRegistro FROM dadosMaquina WHERE fkMaquina = ${fkMaquina} ORDER BY idDadosMaquina DESC;`;
 
 	sequelize.query(instrucaoSql, {
 		model: dadosMaquina,

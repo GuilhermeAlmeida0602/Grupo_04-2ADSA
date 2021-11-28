@@ -28,7 +28,7 @@ public class DadosMaquinaDao extends Dao {
 
             stmt.setInt(1, fkMaquina);
             stmt.setString(2, String.format("%s", looca.getSistema().getInicializado()));
-            stmt.setInt(3, Integer.valueOf(String.format("%s", looca.getSistema().getTempoDeAtividade()))); 
+            stmt.setString(3, Conversor.formatarSegundosDecorridos(looca.getSistema().getTempoDeAtividade())); 
             stmt.setString(4, (looca.getSistema().getPermissao() ? "root" : "usuário padrão"));
             stmt.setInt(5, looca.getProcessador().getUso().intValue());
             stmt.setInt(6, (int) ((memoria.getEmUso() * 100) / memoria.getTotal()) + 1);
