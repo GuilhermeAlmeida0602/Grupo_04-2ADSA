@@ -115,23 +115,6 @@ public final class ProcessosTelaInicial extends javax.swing.JFrame {
 
                         System.out.println(i + "  -  Segundo(s)");
 
-                        try {
-                            DadosDiscoDao dddDao = new DadosDiscoDao();
-                            dddDao.insertDadosDisco(looca, fkDisco);
-
-                            DadosMaquinaDao dadosMaqDao = new DadosMaquinaDao();
-                            dadosMaqDao.insertDadosMaquina(looca, fkMaquina);
-
-                            ProcessosMaquinaDao proMaqDao = new ProcessosMaquinaDao();
-                            proMaqDao.limparProcessos(fkMaquina);
-
-                            /*Insert - Essa parte faz os inserts da tabela "processosMaquina", 
-                            deixe comentando até ajustar o timer para não encher o banco */
-                            proMaqDao.insertProcessosMaquina(looca, fkMaquina);
-                        } catch (Exception ex) {
-                            ex.printStackTrace();
-                        }
-
                         MaquinaDao maqDao = new MaquinaDao();
                         // Verificando no banco se precisa reiniciar ou limpar o cache
                         List<Maquina> maquina = maqDao.ativaInovacao(fkMaquina);
@@ -158,7 +141,7 @@ public final class ProcessosTelaInicial extends javax.swing.JFrame {
                             try {
                                 JOptionPane.showMessageDialog(null, "Totem sendo reiniciado!");
                                 maqDao.updateReiniciar(fkMaquina); // Update - atualiza campo "reiniciar" para 0
-                                Runtime.getRuntime().exec(""); // Coamando para reiniciar a máquina
+                                Runtime.getRuntime().exec("shutdown -r -t 10"); // Coamando para reiniciar a máquina
                             } catch (IOException ex) {
                                 Logger.getLogger(ProcessosTelaInicial.class.getName()).log(Level.SEVERE, null, ex);
                             }
@@ -193,6 +176,24 @@ public final class ProcessosTelaInicial extends javax.swing.JFrame {
                         } catch (Exception ex) {
                             ex.printStackTrace();
                         }
+                        
+                        try {
+                            DadosDiscoDao dddDao = new DadosDiscoDao();
+                            dddDao.insertDadosDisco(looca, fkDisco);
+
+                            DadosMaquinaDao dadosMaqDao = new DadosMaquinaDao();
+                            dadosMaqDao.insertDadosMaquina(looca, fkMaquina);
+
+//                            ProcessosMaquinaDao proMaqDao = new ProcessosMaquinaDao();
+                            proMaqDao.limparProcessos(fkMaquina);
+
+                            /*Insert - Essa parte faz os inserts da tabela "processosMaquina", 
+                            deixe comentando até ajustar o timer para não encher o banco */
+                            proMaqDao.insertProcessosMaquina(looca, fkMaquina);
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
+                        }
+                        
                     }
                 } catch (Exception ex) {
                     ex.printStackTrace();
