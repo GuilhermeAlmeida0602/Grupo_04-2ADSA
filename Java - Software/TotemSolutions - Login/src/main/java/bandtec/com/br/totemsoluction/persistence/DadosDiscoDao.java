@@ -20,7 +20,7 @@ public class DadosDiscoDao extends Dao {
         open();
         try {
             System.out.println("Realizando registro do disco no banco...");
-            stmt = con.prepareStatement("insert into dadosDisco (fkDisco, "
+            stmt = con.prepareStatement("insert into DadosDisco (fkDisco, "
                     + "discoDisponivelHD, dataRegistroDados) values (?,?,?);");
 
             stmt.setInt(1, fkDisco);

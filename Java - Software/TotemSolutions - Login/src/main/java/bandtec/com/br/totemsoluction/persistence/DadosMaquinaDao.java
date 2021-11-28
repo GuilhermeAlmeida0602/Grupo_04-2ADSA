@@ -21,7 +21,7 @@ public class DadosMaquinaDao extends Dao {
         open();
         try {
             System.out.println("Realizando registro de totem no banco...");
-            stmt = con.prepareStatement("insert into dadosMaquina (fkMaquina, "
+            stmt = con.prepareStatement("insert into DadosMaquina (fkMaquina, "
                     + "inicializadoSO, tempoDeAtividadeSO, usuarioSO, emUsoCPU, "
                     + "emUsoMEM, disponivelMEM, totalMEM, dataRegistro) "
                     + "values (?,?,?,?,?,?,?,?,?);");
