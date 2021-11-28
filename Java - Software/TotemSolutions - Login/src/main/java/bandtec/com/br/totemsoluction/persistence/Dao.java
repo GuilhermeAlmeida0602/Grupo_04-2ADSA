@@ -15,16 +15,24 @@ public class Dao {
     PreparedStatement stmt;
     ResultSet rs;
 
-
+    // Método para acessar o banco local (MySql)
     public void open() throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
         con = DriverManager.getConnection("jdbc:mysql://localhost:3306/InfoSystems",
-                "root", "@Fan3farra");
+                "root", "root");
     }
     
+    // Método para acessar o banco remoto (Azure)
 //    public void open() throws Exception {
 //        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//        con = DriverManager.getConnection("jdbc:sqlserver://infosystems-server.database.windows.net:1433;database=infoSystems;user=infosystems-bd@infosystems-server;password={};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
+//        con = DriverManager.getConnection("jdbc:sqlserver://infosystems-server.database.windows.net:1433;"
+//                + "database=infoSystems;"
+//                + "user=infosystems-bd@infosystems-server;"
+//                + "password={};"
+//                + "encrypt=true;"
+//                + "trustServerCertificate=false;"
+//                + "hostNameInCertificate=*.database.windows.net;"
+//                + "loginTimeout=30;");
 //    }
 
     public void close() throws Exception {

@@ -21,14 +21,14 @@ public class DadosMaquinaDao extends Dao {
         open();
         try {
             System.out.println("Realizando registro de totem no banco...");
-            stmt = con.prepareStatement("insert into DadosMaquina (fkMaquina, "
+            stmt = con.prepareStatement("insert into dadosMaquina (fkMaquina, "
                     + "inicializadoSO, tempoDeAtividadeSO, usuarioSO, emUsoCPU, "
                     + "emUsoMEM, disponivelMEM, totalMEM, dataRegistro) "
                     + "values (?,?,?,?,?,?,?,?,?);");
 
             stmt.setInt(1, fkMaquina);
             stmt.setString(2, String.format("%s", looca.getSistema().getInicializado()));
-            stmt.setString(3, Conversor.formatarSegundosDecorridos(looca.getSistema().getTempoDeAtividade())); 
+            stmt.setInt(3, Integer.valueOf(String.format("%s", looca.getSistema().getTempoDeAtividade()))); 
             stmt.setString(4, (looca.getSistema().getPermissao() ? "root" : "usuário padrão"));
             stmt.setInt(5, looca.getProcessador().getUso().intValue());
             stmt.setInt(6, (int) ((memoria.getEmUso() * 100) / memoria.getTotal()) + 1);

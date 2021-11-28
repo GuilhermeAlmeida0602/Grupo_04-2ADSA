@@ -10,6 +10,9 @@ import bandtec.com.br.totemsoluction.persistence.ProcessosMaquinaDao;
 import bandtec.com.br.totemsoluction.persistence.StatusMaquinaDao;
 import bandtec.com.br.totemsoluction.slack.MensagensSlack;
 import com.github.britooo.looca.api.core.Looca;
+import com.github.britooo.looca.api.group.memoria.Memoria;
+import com.github.britooo.looca.api.group.processador.Processador;
+import com.github.britooo.looca.api.util.Conversor;
 import java.awt.Toolkit;
 import java.io.IOException;
 import java.util.List;
@@ -19,12 +22,14 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import log.Log;
 
 // @author Grupo_04-2ADSA
-public class ProcessosTelaInicial extends javax.swing.JFrame {
+public final class ProcessosTelaInicial extends javax.swing.JFrame {
 
     Looca looca = new Looca();
     MensagensSlack slack = new MensagensSlack();
+    Conversor conv = new Conversor();
     Integer fkMaquina = null;
     Integer fkDisco = null;
 
@@ -41,6 +46,7 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
             Logger.getLogger(HardwareHD.class.getName()).log(Level.SEVERE, null, ex);
         }
         initComponents();
+        imprimirLog();
     }
 
     //Sobrecarga do método ProcessosTelaInicial
@@ -92,19 +98,20 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         }
 
         initComponents();
+        imprimirLog();
     }
 
     public void timerInsert(Integer fkMaquina, Integer fkDisco) {
 
         int delay = 10000;   // delay de 10 seg.
-        int interval = 60000;  // intervalo de 1 min.
+        int interval = 20000;  // intervalo de 20 seg.
         java.util.Timer timer = new java.util.Timer();
 
         timer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
 
                 try {
-                    for (int i = 0; i < 1; i++) {
+                    for (int i = 0; i < 10; i++) {
 
                         System.out.println(i + "  -  Segundo(s)");
 
@@ -117,9 +124,9 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
 
                             ProcessosMaquinaDao proMaqDao = new ProcessosMaquinaDao();
                             proMaqDao.limparProcessos(fkMaquina);
-                            
+
                             /*Insert - Essa parte faz os inserts da tabela "processosMaquina", 
-                            deixe comentando até ajustar o timer para não encher o banco */                           
+                            deixe comentando até ajustar o timer para não encher o banco */
                             proMaqDao.insertProcessosMaquina(looca, fkMaquina);
                         } catch (Exception ex) {
                             ex.printStackTrace();
@@ -131,7 +138,7 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
 
                         ProcessosMaquinaDao proMaqDao = new ProcessosMaquinaDao();
                         List<String> listaProcessos = proMaqDao.encerraProcessos(fkMaquina);
-                        
+
                         // Encerrar Processos
                         if (listaProcessos.size() >= 1) {
                             for (int j = 0; j < listaProcessos.size(); j++) {
@@ -209,7 +216,7 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
         btnSO = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1080, 650));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMinimumSize(new java.awt.Dimension(1080, 650));
         setResizable(false);
 
@@ -330,6 +337,29 @@ public class ProcessosTelaInicial extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    public void imprimirLog() {
+
+        Log log = new Log();
+        int delay = 10000; // delay para começar a executar (10 segundos)
+        int interval = 60000; // delay para executar o run()    (60 segundos)
+        // int interval = 30000; // delay para executar o run()    (30 segundos)
+
+        java.util.Timer timer = new java.util.Timer();
+
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                try {
+                    System.out.println("\nCriando log...");
+                    log.criarLog();
+                } catch (IOException ex) {
+                    Logger.getLogger(ProcessosTelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }, delay, interval);
+    }
+
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         try {

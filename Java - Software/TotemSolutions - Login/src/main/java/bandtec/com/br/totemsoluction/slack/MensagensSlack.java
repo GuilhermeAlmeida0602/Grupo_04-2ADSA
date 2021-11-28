@@ -19,4 +19,16 @@ public class MensagensSlack {
         msgAdeus.put("text", "Encerrando o serviço de monitoramento.\nAté breve!");
         Slack.sendMessage(msgAdeus);
     }
+
+    public void alerta(String componente) throws IOException, InterruptedException {
+        // Avisando para o usuario que HD da máquina está com problema!
+        JSONObject msgAdeus = new JSONObject();
+        msgAdeus.put("text",
+                "Ola!\n"
+                + "Suas máquinas estão com alto nível de " + componente
+                + "\nEntre em nosso site, e gerencie-as com o nosso kit de ferramentas!"
+                + "Recomendamos que uma medida seja tomada o mais rápido possível para evitar problemas.");
+        Slack.sendMessage(msgAdeus);
+    }
+
 }

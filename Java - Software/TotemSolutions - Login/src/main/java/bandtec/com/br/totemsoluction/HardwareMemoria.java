@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import log.Log;
 import org.json.JSONObject;
 
 // @author Grupo_04-2ADSA
@@ -397,9 +398,27 @@ public class HardwareMemoria extends javax.swing.JFrame {
 
     // Método para exibir as informações da MEMÓRIA
     public void ExibeMemoria() {
-        pbEmUso2.setValue((int) ((memoria.getEmUso() * 100) / memoria.getTotal()) + 1);
-        pbDisponivel.setValue((int) ((memoria.getDisponivel() * 100) / memoria.getTotal()));
-        labelTotal.setText(conv.formatarBytes(memoria.getTotal()));
+
+        Integer emUso = (int) ((memoria.getEmUso() * 100) / memoria.getTotal()) + 1;
+        Integer dispon = (int) ((memoria.getDisponivel() * 100) / memoria.getTotal());
+        String total = conv.formatarBytes(memoria.getTotal());
+
+        pbEmUso2.setValue(emUso);
+        pbDisponivel.setValue(dispon);
+        labelTotal.setText(total);
+
+        if (dispon < 10) {
+            Log log = new Log();
+            try {
+                log.criarLog();
+                slack.alerta("memória ram");
+            } catch (IOException ex) {
+                Logger.getLogger(HardwareHD.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(HardwareMemoria.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
     }
 
     private void setIcon() {

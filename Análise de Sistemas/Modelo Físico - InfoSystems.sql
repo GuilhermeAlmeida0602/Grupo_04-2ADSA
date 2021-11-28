@@ -1,5 +1,5 @@
 create database InfoSystems;
-##drop database InfoSystems;
+# drop database InfoSystems;
 use InfoSystems;
 
 -- Tabelas de dados estáticos
@@ -66,7 +66,8 @@ CREATE TABLE Disco (
   tipo VARCHAR(45) NOT NULL,
   montagem VARCHAR(45) NOT NULL,
   dataDeRegistro DATETIME NOT NULL,
-  foreign key (fkMaquina) references Empresa(idEmpresa)
+  -- foreign key (fkMaquina) references Empresa(idEmpresa)
+  foreign key (fkMaquina) references Maquina(idMaquina)
   );
   
   -- Tabelas de dados dinâmicos
@@ -106,8 +107,10 @@ CREATE TABLE processosMaquina (
   );
     
 CREATE TABLE StatusMaquina (
-  fkMaquina INT NOT NULL UNIQUE,
-  fkEmpresa INT NOT NULL UNIQUE,
+  fkMaquina INT NOT NULL,
+  fkEmpresa INT NOT NULL,
+  # fkMaquina INT NOT NULL UNIQUE,
+  # fkEmpresa INT NOT NULL UNIQUE,
   statusMaq VARCHAR(45) NOT NULL,
   dataStatus DATETIME NOT NULL,
   PRIMARY KEY(fkMaquina, fkEmpresa),
@@ -115,17 +118,11 @@ CREATE TABLE StatusMaquina (
   );
   
   -- Empresa fictícia
-  
-  --  insert into Empresa values (null, 'ChickenFood', '14961289000110', 'contato@chickenfood.com.br',
-	-- 'food123', 'Rua Sumaré', 638, null, 'Jardim São Francisco(Zona Sul)', 'SP', '04918300', 
-    -- 'Renato Oliveira', '1135936259');
     
- insert into Empresa values (null, "SETIS", "46838302000134", "Guilherme Fonseca", "11980992290", "gui@setis.com", "guisetis123", "03801010", "Professor Jose de Sousa", "118", "B", "Parque Boturussu", "São Paulo" , "SP");
-    
-  #insert into Usuario values (null, 1,'Armando', 'Fontes', 'armando.fontes@chickenfood.com.br', 
-  #'tortaLaranja123', '11997353581', '1128379572');
+	insert into Empresa values (null, "SETIS", "46838302000134", "Guilherme Fonseca", "11980992290", "gui@setis.com", "guisetis123", "03801010", "Professor Jose de Sousa", "118", "B", "Parque Boturussu", "São Paulo" , "SP");
   
-    insert into Usuario values (1, 1, "Guilherme", "Fonseca", "11980992222", "1125454541", "guifonseca@setis.com", "guifonseca123");
+  -- Usuario fictício
+	insert into Usuario values (1, 1, "Guilherme", "Fonseca", "11980992222", "1125454541", "guifonseca@setis.com", "guifonseca123");
   
 	select * from empresa;
 	select * from usuario;
@@ -133,9 +130,8 @@ CREATE TABLE StatusMaquina (
 	select * from disco;
 	select * from dadosdisco;
 	select * from dadosMaquina;
-        #desc dadosMaquina;
-	##select * from processosMaquina;
-	##select * from statusmaquina;
+	select * from processosMaquina;
+	select * from statusmaquina;
 
 --  select processo from processosMaquina where encerrarProcessos = 1 and fkMaquina = 1;
 
@@ -174,9 +170,9 @@ insert into statusmaquina values(6,6,'Emergência',now());
   insert into statusmaquina values(4,4,'Emergência',now());
   insert into statusmaquina values(5,5,'Emergência',now());
   
-  select*from maquina;
+  select * from maquina;
   
-  select*from statusmaquina;
+  select * from statusmaquina;
   
   desc statusmaquina;
   
