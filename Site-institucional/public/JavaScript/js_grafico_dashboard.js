@@ -9,9 +9,7 @@ var qntdOk = 0;
 var qntdAlerta = 0;
 var qntdEmergencia = 0;
 var colorStatus;
-
-
-
+var fkEmpresa = sessionStorage.fk_empresa_meuapp;
 
 function vermelho() {
 
@@ -31,8 +29,8 @@ function vermelho() {
                 <tr class="tabela_tr">
                     <td id="fk_totem" class="td_id">${infoMaq[i].fkMaquina}</td>
                     <td id="status_totem" class="td_status" style="color:red;">${infoMaq[i].statusMaq}</td>
-                    <td>
-                        <a href="visaoDetalhada.html">
+                    <td onclick="idTotem(${infoMaq[i].fkMaquina})">
+                        <a href="visao_detalhada.html">
                         <i class="fas fa-tools ferramenta"></i>
                         </a>
                     </td>
@@ -40,14 +38,7 @@ function vermelho() {
             `
             qntdEmergencia++;
         }
-
     }
-
-
-
-
-
-
 }
 
 function amarelo() {
@@ -68,8 +59,8 @@ function amarelo() {
                 <tr class="tabela_tr">
                     <td id="fk_totem" class="td_id">${infoMaq[i].fkMaquina}</td>
                     <td id="status_totem" class="td_status" style="color:orange;">${infoMaq[i].statusMaq}</td>
-                    <td>
-                        <a href="visaoDetalhada.html">
+                    <td  onclick="idTotem(${infoMaq[i].fkMaquina})">
+                        <a href="visao_detalhada.html">
                         <i class="fas fa-tools ferramenta"></i>
                         </a>
                     </td>
@@ -78,11 +69,8 @@ function amarelo() {
             
             qntdAlerta++;
         }
-
-        
+ 
     }
-
-
 }
 
 function verde() {
@@ -102,26 +90,21 @@ function verde() {
                 <tr class="tabela_tr">
                     <td id="fk_totem" class="td_id">${infoMaq[i].fkMaquina}</td>
                     <td id="status_totem" class="td_status" style="color:green;">${infoMaq[i].statusMaq}</td>
-                    <td>
-                        <a href="visaoDetalhada.html">
+                    <td onclick="idTotem(${infoMaq[i].fkMaquina})">
+                        <a href="visao_detalhada.html">
                         <i class="fas fa-tools ferramenta"></i>
                         </a>
                     </td>
                 </tr>
             `
-            
             qntdOk++;
         }
-
-       
-
     }
-
 }
 
 function obterMaquinas() {
 
-    fetch(`./statusMaquina`)
+    fetch(`/statusMaquina/${fkEmpresa}`)
         .then(resposta => {
             if (resposta.ok) {
                 resposta.json().then(function (resposta) {
@@ -167,9 +150,7 @@ function contarStatus() {
             qntdEmergencia++;
 
         }
-
     }
-
 }
 
 function carregar_maquinas() {
@@ -251,4 +232,10 @@ function carregar_maquinas() {
     qntdOk = 0
 
     vermelho()
+
+
+}
+
+function idTotem(fkMaquina){
+    sessionStorage.fk_maquina_meuapp = fkMaquina;
 }

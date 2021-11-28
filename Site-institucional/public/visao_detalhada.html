@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <link rel="stylesheet" href="css/menu_style.css">
+    <link rel="stylesheet" href="css/style_visao_detalhada.css">
+    <title>Visão detalhada</title>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name">InfoSystem</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="dashboard.html">
+                    <i class="fas fa-chart-pie"></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="lista_de_totens.html">
+                    <i class="fas fa-desktop"></i>
+                    <span class="links_name">Totens</span>
+                </a>
+                <span class="tooltip">Totens</span>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fas fa-headset"></i>
+                    <span class="links_name">Suporte</span>
+                </a>
+                <span class="tooltip">Suporte</span>
+            </li>
+
+            <li class="profile">
+                <a href="login.html">
+                    <i class='bx bx-log-out' id="log_out"></i>
+                    <span class="links_name">Logout</span>
+                </a>
+                <span class="tooltip">Logout</span>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+
+        <div class="text">Totem <div id="numeroTotem"></div>
+        </div><span class="span_visao">Visão detalhada</span>
+        <div class="user-session">Olá <div id="nomeAnalista">Analista</div>!</div>
+
+        <div class="container_body">
+            <form action="" method="post">
+                <section class="sessao_botoes">
+                    <!-- <p class="p_botoes">Desempenho</p> -->
+                    <div class="quadrado_informativo">
+                        <div class="cor_status">CPU</div>
+                        <div class="parametro_porcentagem">
+                            <div id="porcentagemCPU">80</div>%
+                        </div>
+                    </div>
+                    <div class="quadrado_informativo">
+                        <div class="cor_status">RAM</div>
+                        <div class="parametro_porcentagem">
+                            <div id="porcentagemRAM">60</div>%
+                        </div>
+                    </div>
+                    <div class="quadrado_informativo">
+                        <div class="cor_status">Disco</div>
+                        <div class="parametro_porcentagem">
+                            <div id="porcentagemDisco">75</div>%
+                        </div>
+                    </div>
+                    <div class="quadrado_informativo">
+                        <div class="cor_status">Processos</div>
+                        <div class="parametro_porcentagem">
+                            <div id="porcentagemProcessosMaquina">5</div>: alto consumo
+                        </div>
+                    </div>
+                </section>
+            </form>
+            <div class="container_graficos">
+                <div class="lado_esquerdo">
+                    <section class="sessao_grafico_cpu">
+                        <p class="grafico_referente">CPU</p>
+                        <div class="div_grafico_line">
+                            <canvas id="myChart_CPU"></canvas>
+                            <p class="grafico_referente" id="myChart_CPU1"></p>
+                        </div>
+
+                    </section>
+                    <section class="sessao_grafico_ram">
+                        <p class="grafico_referente">RAM</p>
+                        <div class="div_grafico_line">
+                            <canvas id="myChart_RAM"></canvas>
+                            <p class="grafico_referente" id="myChart_RAM1"></p>
+                        </div>
+
+                    </section>
+                    <section class="sessao_grafico_processos">
+                        <p class="grafico_referente">Processos</p>
+                        <div class="div_grafico_line">
+                            <canvas id="myChart_Processos"></canvas>
+                            <p class="grafico_referente" id="myChart_Processos1"></p>
+                        </div>
+                        <div class="botoesProcessos">
+                            <p class="botaoCPU" onclick="processosChart(0)">Consumo de CPU</p>
+                            <p class="botaoRAM" onclick="processosChart(1)">Consumo de RAM</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="lado_direito">
+                    <section class="sessao_grafico_disco">
+                        <p class="grafico_referente">Disco</p>
+                        <div class="div_grafico_line">
+                            <canvas id="myChart_Disco"></canvas>
+                        </div>
+                    </section>
+
+                    <section class="sessao_kit">
+
+                        <p class="p_kit_ferramentas">Kit de feramentas</p>
+
+                        <a href="#abrirModalReiniciar">
+                            <div class="kit_de_ferramentas">
+                                <p class="kit_descricao">
+                                    <i class="fas fa-exclamation-triangle triangulo_left"></i>
+                                    Reiniciar
+                                    <i class="fas fa-exclamation-triangle triangulo_right"></i>
+                                </p>
+                            </div>
+                        </a>
+
+                        <a href="#abrirModalLimparCache">
+                            <div class="kit_de_ferramentas">
+
+                                <p class="kit_descricao">
+                                    <i class="fas fa-exclamation-triangle triangulo_left"></i>
+                                    Limpeza de cache
+                                    <i class="fas fa-exclamation-triangle triangulo_right"></i>
+                                </p>
+                            </div>
+                        </a>
+
+                        <a href="#abrirModalProcessos" onclick="selectProcesso()">
+                            <div class="kit_de_ferramentas">
+                                <p class="kit_descricao">
+                                    <i class="fas fa-exclamation-triangle triangulo_left"></i>
+                                    Encerrar processos
+                                    <i class="fas fa-exclamation-triangle triangulo_right"></i>
+                                </p>
+                            </div>
+                        </a>
+
+                        <a href="#abrirModalInfoTotem" onclick="infoTotem()">
+                            <div class="kit_de_ferramentas">
+                                <p class="kit_descricao">Informações do Totem</p>
+                            </div>
+                        </a>
+                        <a href="#" onclick="">
+                            <div class="kit_de_ferramentas">
+                                <p class="kit_descricao">Emissão de relatório</p>
+                            </div>
+                        </a>
+
+                        <div id="abrirModalReiniciar" class="modal">
+                            <div class="mensagem_modal">
+                                <h3>Encerrar Totem</h3>
+                                <hr>
+                                <p class="aviso_mensagem">Tem certeza que deseja reiniciar esse totem?</p>
+                                <a href="#nao" title="nao" class="nao">Não</a>
+                                <a href="#emProcessamento" title="sim" class="sim" onclick="reiniciarTotem()">Sim</a>
+                            </div>
+                        </div>
+
+                        <div id="abrirModalLimparCache" class="modal">
+                            <div class="mensagem_modal">
+                                <h3>Limpeza de cache</h3>
+                                <hr>
+                                <p class="aviso_mensagem">Tem certeza que deseja limpar o cache desse totem?</p>
+                                <a href="#nao" title="nao" class="nao">Não</a>
+                                <a href="#emProcessamento" title="sim" class="sim" onclick="limparCache()">Sim</a>
+                            </div>
+                        </div>
+
+                        <div id="abrirModalProcessos" class="modalProcessos">
+                            <div class="mensagem_modal_processo">
+                                <a href="#nao"><i class="fas fa-times"></i></a>
+                                <h3 class="h2_processos">Lista de processos </h3>
+                                <!-- <p class="p_encerrarProcesso">escolha o processo que deseja encerrar</p> -->
+                                <hr>
+
+                                <div id="divProcesso">
+                                    <table id="table_processos" class="table_processos">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Processo</th>
+                                            <th>Pid</th>
+                                            <th>CPU (%)</th>
+                                            <th>RAM (KB)</th>
+                                            <th>Ação</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="abrirModalEncerrarProcessos" class="modal">
+                            <div class="mensagem_modal">
+                                <h3>Encerrar processos</h3>
+                                <hr>
+                                <p class="aviso_mensagem">Tem certeza que deseja encerrar esse processo do totem?</p>
+                                <a href="#nao" title="nao" class="nao">Não</a>
+                                <a href="#emProcessamento" title="sim" class="sim" onclick="encerrarProcesso()">Sim</a>
+                            </div>
+                        </div>
+
+                        <div id="emProcessamento" class="emProcessamento">
+                            <div class="modal_emProcessamento">
+                                <a href="#nao"><i class="fas fa-times"></i></a>
+                                <i class="far fa-check-circle"></i>
+                                <p class="aviso_mensagem">Processo em andamento. Aguarde a atualização no sistema</p>
+                            </div>
+                        </div>
+
+                        <div id="abrirModalInfoTotem" class="modal">
+                            <div class="mensagem_modal_info">
+                                <a href="#nao"><i class="fas fa-times"></i></a>
+                                <h3 class="h2_processos">Informações do Totem </h3>
+                                <hr>
+                                <table class="info_table">
+                                    <tr>
+                                        <th>Número do totem</th>
+                                        <td id="info1"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Hostname</th>
+                                        <td id="info2"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Sistema Operacional</th>
+                                        <td id="info3"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Nome do Disco</th>
+                                        <td id="info4"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Nome do Processador</th>
+                                        <td id="info5"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Espaço do Disco</th>
+                                        <td id="info6"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Memória RAM</th>
+                                        <td id="info7"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Inicialização do Totem</th>
+                                        <td id="info8"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Tempo de atividade</th>
+                                        <td id="info9"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Data de registro</th>
+                                        <td id="info10"></td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+
+</html>
+<script src="JavaScript/js_menu.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="JavaScript/js_grafico_dashboard.js"></script>
+<!-- <script src="JavaScript/js_cards_visao_detalhada.js"></script> -->
+<script>
+
+    var fkMaquina = sessionStorage.fk_maquina_meuapp
+    var nomeUsuario = sessionStorage.nome_usuario_meuapp;
+    nomeAnalista.innerHTML = `${nomeUsuario}`;
+    numeroTotem.innerHTML = `${fkMaquina}`;
+    window.onload = processosChart(0);
+    atualizarGraficoCPU()
+    atualizarGraficoRAM()
+    count = 0;
+    count1 = 0;
+    count2 = 0;
+
+    function atualizarGraficoCPU() {
+        fetch(`/dadosMaquinas/statusCpu/${fkMaquina}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        // alert(`Resposta: ${new Date(resposta[0].dataRegistro).toLocaleTimeString()}`)
+
+                        porcentagemCPU.innerHTML = `${resposta[0].emUsoCPU}`;
+
+                        if (resposta[0].emUsoCPU <= 60) {
+                            document.querySelectorAll('.quadrado_informativo')[0].classList.add("ok");
+                        } else if (resposta[0].emUsoCPU <= 75) {
+                            document.querySelectorAll('.quadrado_informativo')[0].classList.add("alerta");
+                        } else if (resposta[0].emUsoCPU > 75) {
+                            document.querySelectorAll('.quadrado_informativo')[0].classList.add("emergencia");
+                        }
+
+                        dataGrafico = []
+                        dataRegistros = []
+
+
+                        if (resposta.length >= 1) {
+                            for (var i = (resposta.length - 1); i >= 0; i--) {
+
+                                dataGrafico.push(resposta[i].emUsoCPU);
+                                dataRegistros.push(new Date(resposta[i].dataRegistro).toLocaleTimeString())
+
+
+                                if (count1 >= 1) {
+                                    myChart_CPU.destroy();
+                                }
+                                count1++;
+
+                                const cpu = document.getElementById('myChart_CPU').getContext('2d');
+                                myChart_CPU = new Chart(cpu, {
+                                    type: 'line',
+                                    data: {
+                                        labels: dataRegistros,
+                                        datasets: [{
+                                            label: 'CPU em uso',
+                                            backgroundColor: 'rgb(153, 102, 255)',
+                                            borderColor: 'rgba(153, 102, 255, 0.2)',
+                                            data: dataGrafico,
+                                        }]
+                                    },
+                                    options: {
+                                        plugins: {
+                                            title: {
+                                                display: true,
+                                                text: 'Consumo em percentual de CPU do totem atual',
+                                                position: 'top',
+                                                padding: {
+                                                    top: 10,
+                                                    bottom: 20
+                                                },
+                                                font: {
+                                                    size: 13,
+                                                    fontFamily: "'Noto Sans JP', sans-serif"
+                                                }
+                                            },
+                                            legend: {
+                                                position: 'bottom',
+                                                display: true,
+                                            },
+                                        },
+                                        legend: {
+                                            labels: {
+                                                font: {
+                                                    size: 14,
+                                                    position: 'bottom'
+                                                }
+                                            }
+                                        }
+                                    }
+                                });
+                            }
+
+                            setTimeout(() => atualizarGraficoCPU(), 60000);
+
+                        } else {
+                            document.getElementById('myChart_CPU1').textContent = `Consumo de CPU não ativo no momento, 
+                            abra o TotemSolutions na máquina que será monitorada.`
+                        }
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+
+    function atualizarGraficoRAM() {
+        fetch(`/dadosMaquinas/statusRam/${fkMaquina}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        // console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        // alert(`Resposta: ${resposta[0].dataRegistro}`)
+
+                        porcentagemRAM.innerHTML = `${resposta[0].emUsoMEM}`;
+
+                        if (resposta[0].emUsoMEM <= 60) {
+                            document.querySelectorAll('.quadrado_informativo')[1].classList.add("ok");
+                        } else if (resposta[0].emUsoMEM <= 75) {
+                            document.querySelectorAll('.quadrado_informativo')[1].classList.add("alerta");
+                        } else if (resposta[0].emUsoMEM > 75) {
+                            document.querySelectorAll('.quadrado_informativo')[1].classList.add("emergencia");
+                        }
+
+                        dataGrafico = []
+                        dataRegistros = []
+
+
+                        if (resposta.length >= 1) {
+                            for (var i = (resposta.length - 1); i >= 0; i--) {
+
+                                dataGrafico.push(resposta[i].emUsoMEM);
+                                dataRegistros.push(new Date(resposta[i].dataRegistro).toLocaleTimeString())
+
+                                if (count2 >= 1) {
+                                    myChart_RAM.destroy();
+                                }
+                                count2++;
+
+                                const ram = document.getElementById('myChart_RAM').getContext('2d');
+                                myChart_RAM = new Chart(ram, {
+                                    type: 'line',
+                                    data: {
+                                        labels: dataRegistros,
+                                        datasets: [{
+                                            label: 'Memória RAM em uso',
+                                            backgroundColor: 'rgb(75, 192, 192)',
+                                            borderColor: 'rgba(75, 192, 192, 0.2)',
+                                            data: dataGrafico,
+                                        }]
+                                    },
+                                    options: {
+                                        plugins: {
+                                            title: {
+                                                display: true,
+                                                text: 'Consumo em percentual de Memória RAM do totem atual',
+                                                position: 'top',
+                                                padding: {
+                                                    top: 10,
+                                                    bottom: 20
+                                                },
+                                                font: {
+                                                    size: 13,
+                                                    fontFamily: "'Noto Sans JP', sans-serif"
+                                                }
+                                            },
+                                            legend: {
+                                                position: 'bottom',
+                                                display: true,
+                                            },
+                                        },
+                                        legend: {
+                                            labels: {
+                                                font: {
+                                                    size: 14,
+                                                    position: 'bottom'
+                                                }
+                                            }
+                                        }
+                                    }
+                                });
+                                setTimeout(() => atualizarGraficoRAM(), 60000);
+                            }
+                        } else {
+                            document.getElementById('myChart_RAM1').textContent = `Consumo de CPU não ativo no momento, 
+                            abra o TotemSolutions na máquina que será monitorada.`
+                        }
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+
+    fetch(`/dadosDiscos/idDisco/${fkMaquina}`)
+        .then(resposta => {
+            if (resposta.ok) {
+                resposta.json().then(json => {
+                    sessionStorage.id_disco_meuapp = json.idDisco;
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+        });
+
+    var fkDisco = sessionStorage.id_disco_meuapp;
+
+    fetch(`/dadosDiscos/statusDisco/${fkDisco}`)
+        .then(resposta => {
+            if (resposta.ok) {
+                resposta.json().then(function (resposta) {
+                    // console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                    // alert(`Resposta: ${resposta[0].emUsoMEM}`)
+
+                    if (resposta[0].discoDisponivelHD <= 60) {
+                        document.querySelectorAll('.quadrado_informativo')[2].classList.add("ok");
+                    } else if (resposta[0].discoDisponivelHD <= 75) {
+                        document.querySelectorAll('.quadrado_informativo')[2].classList.add("alerta");
+                    } else if (resposta[0].discoDisponivelHD > 75) {
+                        document.querySelectorAll('.quadrado_informativo')[2].classList.add("emergencia");
+                    }
+
+                    discoDisponivel = resposta[0].discoDisponivelHD;
+                    discoEmUso = 100 - discoDisponivel;
+
+                    porcentagemDisco.innerHTML = `${discoEmUso}`;
+
+                    const disco = document.getElementById('myChart_Disco').getContext('2d');
+
+                    const myChart_Disco = new Chart(disco, {
+                        type: 'pie',
+                        data: {
+                            labels: ['Disponível', 'Em uso'],
+                            datasets: [{
+                                label: '# of Votes',
+                                data: [discoDisponivel, discoEmUso],
+                                backgroundColor: [
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgb(54, 162, 235)',
+                                    'rgb(255, 159, 64)'
+                                ],
+                            }]
+                        },
+                        options: {
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Percentual de espaço do Disco',
+                                    position: 'top',
+                                    padding: {
+                                        top: 10,
+                                        bottom: 20
+                                    },
+                                    font: {
+                                        size: 13,
+                                        fontFamily: "'Noto Sans JP', sans-serif"
+                                    }
+                                },
+                                legend: {
+                                    position: 'bottom',
+                                    display: true,
+                                },
+                            },
+                        }
+                    });
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+        });
+
+
+    function processosChart(valor) {
+        fetch(`/processosMaquinas/statusProcessosMaquina/${fkMaquina}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+
+                        porcentagemProcessosMaquina.innerHTML = `${resposta.length}`;
+
+                        if (resposta.length < 2) {
+                            document.querySelectorAll('.quadrado_informativo')[3].classList.add("ok");
+                        } else if (resposta.length <= 4) {
+                            document.querySelectorAll('.quadrado_informativo')[3].classList.add("alerta");
+                        } else if (resposta.length > 4) {
+                            document.querySelectorAll('.quadrado_informativo')[3].classList.add("emergencia");
+                        }
+
+                        processosGrafico = []
+                        processoDataGraficoC = []
+                        processoDataGraficoR = []
+
+                        if (resposta.length >= 1) {
+                            for (var i = 0; i < resposta.length; i++) {
+
+                                processosGrafico.push(resposta[i].processo)
+                                processoDataGraficoC.push(resposta[i].usoCPU)
+                                processoDataGraficoR.push(resposta[i].usoMemoria)
+                            }
+
+                            dataProcesso = [processoDataGraficoC, processoDataGraficoR]
+
+                            labelsProcesso = ['Maior consumo de CPU', 'Maior consumo de RAM']
+
+                            if (count >= 1) {
+                                myChart_Processos.destroy();
+                            }
+                            count++;
+
+                            const processos = document.getElementById('myChart_Processos').getContext('2d');
+
+                            myChart_Processos = new Chart(processos, {
+                                type: 'bar',
+                                data: {
+                                    labels: processosGrafico,
+                                    datasets: [{
+                                        axis: 'y',
+                                        label: labelsProcesso[valor],
+                                        data: dataProcesso[valor],
+                                        fill: false,
+                                        backgroundColor: [
+                                            'rgba(255, 99, 132, 0.2)',
+                                            'rgba(255, 159, 64, 0.2)',
+                                            'rgba(255, 205, 86, 0.2)',
+                                            'rgba(75, 192, 192, 0.2)',
+                                            'rgba(54, 162, 235, 0.2)',
+                                            'rgba(153, 102, 255, 0.2)'
+                                        ],
+                                        borderColor: [
+                                            'rgb(255, 99, 132)',
+                                            'rgb(255, 159, 64)',
+                                            'rgb(255, 205, 86)',
+                                            'rgb(75, 192, 192)',
+                                            'rgb(54, 162, 235)',
+                                            'rgb(153, 102, 255)'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    indexAxis: 'y',
+                                    plugins: {
+                                        title: {
+                                            display: true,
+                                            text: 'Nível de consumo de CPU e Memória RAM dos processos ativos',
+                                            position: 'top',
+                                            padding: {
+                                                top: 10,
+                                                bottom: 20
+                                            },
+                                            font: {
+                                                size: 13,
+                                                fontFamily: "'Noto Sans JP', sans-serif"
+                                            }
+
+                                        },
+                                        legend: {
+                                            position: 'bottom',
+                                            display: true,
+                                        },
+                                    }
+                                }
+                            });
+                            setTimeout(() => processosChart(valor), 60000);
+                        } else {
+                            document.getElementById('myChart_Processos1').textContent = `Sem processos ativos no momento, 
+                            abra o TotemSolutions na máquina que será monitorada`;
+                        }
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+
+    function selectProcesso() {
+        fetch(`/processosMaquinas/selectProcessos/${fkMaquina}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+
+                        classeProcesso = document.getElementsByClassName('selectProc')
+
+                        for (let i = 0; i < resposta.length; i++) {
+                            // document.getElementsByClassName('selectProc')[i]
+                            table_processos.innerHTML += `
+                                        <tr>
+                                            <td>${resposta[i].idprocessoMaquina}</td>
+                                            <td>${resposta[i].processo}</td>
+                                            <td>${resposta[i].pid}</td>
+                                            <td>${resposta[i].usoCPU}</td>
+                                            <td>${resposta[i].usoMemoria}</td>
+                                            <td><a href="#abrirModalEncerrarProcessos" onclick="idProcessosMaquina(${resposta[i].idprocessoMaquina})">
+                                                <i class="fas fa-times-circle"></i>
+                                                </a>
+                                            </td>
+                                            </tr>
+                                        `;
+                        }
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+
+    function idProcessosMaquina(id) {
+        sessionStorage.id_processos_maquina_meuapp = id;
+    }
+
+    function encerrarProcesso() {
+
+        var idProcessosMaquina = sessionStorage.id_processos_maquina_meuapp
+
+        fetch(`/processosMaquinas/encerrarProcesso/${fkMaquina}/${idProcessosMaquina}`, {
+            method: "PUT"
+        })
+    }
+
+    function reiniciarTotem() {
+        fetch(`/maquinas/reiniciar/${fkMaquina}`, {
+            method: "PUT"
+        })
+    }
+
+    function limparCache() {
+        fetch(`/maquinas/limparCache/${fkMaquina}`, {
+            method: "PUT"
+        })
+    }
+
+    function infoTotem() {
+        fetch(`/maquinas/infoMaquina/${fkMaquina}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+
+                        // alert(`${resposta.m.hostname}`)
+
+                        info1.innerHTML = `${resposta[0].idMaquina}`;
+                        info2.innerHTML = `${resposta[0].hostname}`;
+                        info3.innerHTML = `${resposta[0].sistemaOperacionalSO}`;
+                        info4.innerHTML = `${resposta[0].nome}`;
+                        info5.innerHTML = `${resposta[0].nomeCPU}`;
+                        info6.innerHTML = `${resposta[0].tamanho}`;
+                        info7.innerHTML = `${resposta[0].totalMEM}`;
+                        info8.innerHTML = `${new Date(resposta[0].inicializadoSO).toLocaleString()}`;
+                        info9.innerHTML = `${resposta[0].tempoDeAtividadeSO}`;
+                        info10.innerHTML = `${new Date(resposta[0].dataDeRegistro).toLocaleString()}`;
+
+                        var data = new Date().setDate
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+
+
+
+    // document.querySelectorAll('.quadrado_informativo')[0].style.backgroundColor = '#0A3D62';
+
+
+    // function infoComponente(valor) {
+
+    //     var qtd = document.querySelectorAll('.quadrado_informativo').length;
+    //     for (let i = 0; i < qtd; i++) {
+    //         document.querySelectorAll('.quadrado_informativo')[i].style.backgroundColor = 'rgba(196, 196, 196, 0.9)';
+    //     }
+
+    //     document.querySelectorAll('.quadrado_informativo')[valor].style.backgroundColor = '#0A3D62';
+    //     document.querySelectorAll('.quadrado_informativo')[valor].style.transition = 'background 0.4s 0s linear';
+    // }
+
+
+
+
+</script>

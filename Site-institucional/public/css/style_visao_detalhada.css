@@ -1,0 +1,500 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+#numeroTotem{
+    display: inline;
+}
+
+.container_body {
+    width: 90%;
+    margin: auto;
+}
+
+.sessao_botoes {
+    margin: 30px auto 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.p_botoes {
+    /* width: 85%; */
+    margin: 15px auto 0;
+    text-align: left;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.quadrado_informativo {
+    width: 18%;
+    background: rgba(196, 196, 196, 0.9);
+    margin: 20px 20px;
+    display: inline-block;
+    text-align: center;
+    padding-bottom: 1%;
+    /* box-shadow: 12px 14px 4px rgba(10, 61, 98, 0.25); */
+    border-radius: 12px;
+}
+
+.cor_status {
+    margin: 20px 20px 10px 20px;
+    font-size: 19px;
+    font-weight: bold;
+    color: white;
+}
+
+.parametro_porcentagem{
+    font-weight: normal;
+}
+
+.indicadores_grafico {
+    font-weight: 700;
+}
+
+.container_graficos{
+    margin: auto;
+    width: 83%;
+}
+
+.lado_esquerdo{
+    width: 65%;
+    margin: auto;
+    float: left;
+}
+
+.lado_direito{
+    width: 35%;
+    margin: auto;
+    float: right;
+}
+
+.sessao_grafico_cpu{
+    margin: auto;
+    width: 92%;
+    background-color: rgba(10, 61, 98, 0.10);
+    border-radius: 10px;
+    padding-bottom: 1%;
+}
+
+.div_grafico_line{
+    width: 82%;
+    margin: auto;
+}
+
+#myChart_CPU{
+    /* margin: 20px auto; */
+}
+
+.sessao_grafico_ram{
+    margin: 30px auto;
+    width: 92%;
+    background-color: rgba(10, 61, 98, 0.10);
+    border-radius: 10px;
+    padding-bottom: 1%;
+}
+
+.sessao_grafico_processos{
+    margin: 30px auto;
+    width: 92%;
+    background-color: rgba(10, 61, 98, 0.10);
+    border-radius: 10px;
+    padding-bottom: 1%;
+}
+
+.sessao_grafico_disco{
+    margin: auto;
+    width: 92%;
+    background-color: rgba(10, 61, 98, 0.10);
+    border-radius: 10px;
+    padding-bottom: 1%;
+}
+
+/* .sessao_grafico {
+    float: right;
+    margin: 30px auto;
+    width: 30%;
+    text-align: center;
+}
+
+.quadrado_grafico {
+    width: 90%;
+    padding-bottom: 3%;
+    background: rgba(196, 196, 196, 0.18);
+    border-radius: 11px;
+    margin: 55px 0 20px;
+}
+
+.p_grafico {
+    padding: 20px 0 20px;
+    font-weight: 700;
+}
+
+.div_grafico {
+    width: 85%;
+    margin: auto;
+} */
+
+
+.sessao_kit {
+    width: 88%;
+    margin: auto;
+}
+
+.p_kit_ferramentas {
+    text-align: left;
+    margin: 40px 0 20px;
+    font-weight: 700;
+}
+
+.kit_de_ferramentas {
+    width: 95%;
+    background: #0A3D62;
+    margin: 20px auto 20px;
+    display: inline-block;
+    text-align: center;
+    padding-bottom: 1%;
+    border-radius: 10px;
+    display: block;
+}
+
+.kit_descricao {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    vertical-align: middle;
+}
+
+.ferramenta {
+    font-size: 24px;
+    margin: 5%;
+    padding: 7%;
+    border-radius: 5px;
+    color: white;
+    background-color: #0A3D62;
+}
+
+.aviso_reiniciar {
+    position: absolute;
+    background: #C4C4C4;
+    border-radius: 10px;
+    width: 400px;
+    height: 195px;
+    top: 200px;
+    left: 450px;
+    margin: auto;
+}
+
+.aviso {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 29px;
+    text-align: center;
+    margin-top: 7%;
+}
+
+.caixa_dialogo {
+    width: 50%;
+    margin: 7% auto;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mensagem_modal{
+    width: 27%;
+    height: 170px;
+    padding-bottom: 1%;
+    position: relative;
+    margin: 10% auto;
+    padding: 15px 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.aviso_mensagem{
+    padding: 4%;
+}
+
+.sim {
+    float: left;
+    width: 45%;
+    margin: auto;
+    background-color: #008000;
+    text-align: center;
+    border-radius: 5px;
+    line-height: 29px;
+    font-weight: bold;
+    color: white;
+}
+
+.nao {
+    float: right;
+    width: 45%;
+    height: 30px;
+    margin: auto;
+    background-color: #BB1717;
+    text-align: center;
+    border-radius: 5px;
+    line-height: 29px;
+    font-weight: bold;
+    color: white;
+}
+
+.emProcessamento{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.emProcessamento:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal_emProcessamento{
+    width: 27%;
+    height: 210px;
+    padding-bottom: 1%;
+    position: relative;
+    margin: 10% auto;
+    padding: 15px 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.far{
+    color: #008000;
+    font-size: 50px;
+    margin: 7% auto;
+}
+
+.fas{
+    float: right;
+}
+
+.emergencia {
+    background-color: #EA2027;
+}
+
+.alerta {
+    background-color: #FFC312;
+}
+
+.ok {
+    background-color: #009432;
+}
+
+#porcentagemCPU, #porcentagemRAM, #porcentagemDisco, #porcentagemProcessosMaquina{
+    display: inline;
+}
+
+.grafico_referente{
+    padding: 5px 0 5px 0px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.botoesProcessos{
+    width: 90%;
+    margin: 20px auto 20px;
+    text-align: center;
+}
+
+.botaoCPU, .botaoRAM{
+    display: inline;
+    padding: 5px 7px;
+    background-color: #0A3D62;
+    border-radius: 7px;
+    font-weight: bold;
+    color: white;
+    margin: 7px 5px;
+    font-size: 13.5px;
+    cursor: pointer;
+}
+
+.modalProcessos{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+
+.modalProcessos:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mensagem_modal_processo{
+    width: 50%;
+    height: 450px;
+    padding-bottom: 1%;
+    position: relative;
+    margin: 10% auto;
+    padding: 15px 20px;
+    background: #fff;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+
+.h2_processos{
+    display: inline;
+}
+
+.p_encerrarProcesso{
+    text-align: center;
+    padding: 2% 0 1% 0;
+    display: inline;
+}
+
+hr{
+    margin-top: 3px;
+}
+
+.table_processos{
+    margin: 1% auto 5%;
+    overflow: scroll;
+    width: 90%;
+}
+
+.table_processos table {
+    width: 95%;
+    text-align: center;
+    margin: 2% auto 2%;
+}
+
+.table_processos td {
+    background-color: #eee;
+    height: 40px;
+    padding: 5px;
+}
+
+.table_processos th {
+    /* background: rgba(196, 196, 196, 0.18); */
+    background-color: #0A3D62;
+    color: white;
+    padding: 1%;
+}
+
+.fa-times-circle{
+    /* text-align: center; */
+    color:#EA2027;
+    font-size: 20px;
+    float: initial;
+    cursor: pointer;
+}
+
+.mensagem_modal_info{
+    width: 67%;
+    height: 530px;
+    padding-bottom: 1%;
+    position: relative;
+    margin: 10% auto;
+    padding: 15px 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.info_table{
+    margin: 2% auto 6%;
+    width: 95%;
+    padding-bottom: 5%;
+}
+
+.info_tables table {
+    width: 95%;
+    /* text-align: center; */
+    margin: 2% auto 2%;
+}
+
+.info_table td {
+    /* background-color: #eee; */
+    background: rgba(196, 196, 196, 0.18);
+    height: 40px;
+    padding: 5px;
+}
+
+.info_table th {
+    background-color: #0A3D62;
+    color: white;
+    padding: 1%;
+    text-align: left;
+    width: 45%;
+}
+
+.triangulo_left{
+    float: left;
+}
+
+.triangulo_right{
+    float: right;
+}
+
+.triangulo_right, .triangulo_left{
+    color:#fed330;
+    display: inline;
+    align-items: center;
+    font-size: 22px;
+    vertical-align: middle;
+}
+
+/* .information_left{
+    float: left;
+}
+
+.information_right{
+    float: right;
+}
+
+.information_right, .information_left{
+    color:#c7ecee;
+    display: inline;
+    align-items: center;
+    font-size: 22px;
+    vertical-align: middle;
+} */

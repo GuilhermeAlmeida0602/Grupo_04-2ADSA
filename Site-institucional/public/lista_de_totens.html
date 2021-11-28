@@ -62,7 +62,7 @@
     <section class="home-section">
 
         <div class="text">Totens</div><span class="span_visao">Lista de totens</span>
-        <div class="user-session">Olá Analista!</div>
+        <div class="user-session">Olá <div id="nomeAnalista">Analista</div>!</div>
 
         <div class="table-totens">
 
@@ -89,32 +89,13 @@
 </body>
 
 </html>
-
+<script src="JavaScript/js_menu.js"></script>
 <script>
-    let sidebar = document.querySelector(".sidebar");
-    let closeBtn = document.querySelector("#btn");
-    let searchBtn = document.querySelector(".bx-search");
 
     var maquinas;
-
-    closeBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("open");
-        menuBtnChange(); //calling the function(optional)
-    });
-
-    searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
-        sidebar.classList.toggle("open");
-        menuBtnChange(); //calling the function(optional)
-    });
-
-    // following are the code to change sidebar button(optional)
-    function menuBtnChange() {
-        if (sidebar.classList.contains("open")) {
-            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
-        } else {
-            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
-        }
-    }
+    var fkEmpresa = sessionStorage.fk_empresa_meuapp;
+    var nomeUsuario = sessionStorage.nome_usuario_meuapp;
+    nomeAnalista.innerHTML = `${nomeUsuario}`;
 
     obterMaquinas();
 
@@ -122,12 +103,12 @@
 
         console.log("teste");
 
-        fetch(`./statusMaquina`)
+        fetch(`/statusMaquina/${fkEmpresa}`)
             .then(resposta => {
                 if (resposta.ok) {
                     resposta.json().then(function (resposta) {
                         console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                        // alert(JSON.stringify(resposta))
+
                         var maquinas_encontradas = resposta;
                         maquinas = maquinas_encontradas;
                         carregar_maquinas()
@@ -144,10 +125,9 @@
     function carregar_maquinas() {
         let infoMaq = maquinas[1];
 
-        
         //30 em 30
         setTimeout(() => obterMaquinas(), 10000);
-        
+
         num_selec.innerHTML = `<tr>
                     <th>Nº do Totem</th>
                     <th>Status</th>
@@ -155,7 +135,7 @@
                 </tr>`;
 
         for (let i = 0; i < infoMaq.length; i++) {
-            
+
 
             var colorStatus;
 
@@ -172,19 +152,16 @@
             num_selec.innerHTML += `<td id="fk_maquina">${infoMaq[i].fkMaquina}</td>
                                  <td id="status_Maq" style = "color:${colorStatus}" class="alerta">${infoMaq[i].statusMaq}</td>
                                  <td>
-                                    <a href="visaoDetalhada.html">
-                                        <i class="fas fa-tools ferramenta"></i>
-                                    </a>
+                                    <div onclick="visaoDetalhada(${infoMaq[i].fkMaquina})">
+                                        <a href="visao_detalhada.html">
+                                            <i class="fas fa-tools ferramenta"></i>
+                                        </a>
+                                    </div>
                                 </td>`;
-
-            /* <td id="status_Maq" class="alerta">Alerta</td>
-               <td>
-  
-               <a href="visaoDetalhada.html">
-                  <i class="fas fa-tools ferramenta"></i>
-               </a>
-               </td> */
-
         }
+    }
+
+    function visaoDetalhada(fkMaquina) {
+        sessionStorage.fk_maquina_meuapp = fkMaquina;
     }
 </script>
