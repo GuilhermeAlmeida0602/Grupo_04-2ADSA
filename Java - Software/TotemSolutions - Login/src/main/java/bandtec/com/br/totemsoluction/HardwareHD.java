@@ -13,6 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import log.Log;
 
 // @author Grupo_04-2ADSA
 public class HardwareHD extends javax.swing.JFrame {
@@ -547,6 +548,19 @@ public class HardwareHD extends javax.swing.JFrame {
             int valor = (int) teste;
 
             pbDisponivel.setValue(valor);
+
+            if (valor > 85) {
+                Log log = new Log();
+                try {
+                    log.criarLog();
+                    slack.alerta("HD");
+                } catch (IOException ex) {
+                    Logger.getLogger(HardwareHD.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(HardwareHD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
         }
     }
 

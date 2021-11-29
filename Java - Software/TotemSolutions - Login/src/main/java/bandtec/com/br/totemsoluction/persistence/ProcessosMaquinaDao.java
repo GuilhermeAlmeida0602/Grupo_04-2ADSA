@@ -24,22 +24,23 @@ public class ProcessosMaquinaDao extends Dao {
         List<Processo> processos = processosGroup.getProcessos();
         Conversor conv = new Conversor();
 
+        System.out.println("Iniciando insert dos processos no banco");
         for (Integer i = 0; i < processos.size(); i++) {
             open();
             try {
-                System.out.println("Realizando registro de totem no banco...");
+                // System.out.println("Realizando registro de totem no banco...");
                 stmt = con.prepareStatement("insert into ProcessosMaquina (fkMaquina, "
                         + "processo, pid, usoCPU, usoMemoria, encerrarProcessos, dataProcesso) values (?,?,?,?,?,?,?);");
                 stmt.setInt(1, fkMaquina);
                 stmt.setString(2, processos.get(i).getNome());
                 stmt.setInt(3, processos.get(i).getPid());
                 stmt.setInt(4, processos.get(i).getUsoCpu().intValue());
-                stmt.setDouble(5, processos.get(i).getUsoMemoria());
+                stmt.setDouble(5, processos.get(i).getUsoMemoria() * 2);
                 stmt.setInt(6, 0);
                 stmt.setString(7, dtf.format(LocalDateTime.now()));
                 stmt.executeUpdate();
                 stmt.close();
-                System.out.println("Registro realizado com sucesso!");
+                //System.out.println("Registro realizado com sucesso!");
             } catch (SQLException ex) {
                 System.out.println("Ocorreu um problema no registro - Dados Máquina");
                 ex.printStackTrace();
@@ -47,6 +48,7 @@ public class ProcessosMaquinaDao extends Dao {
                 close();
             }
         }
+        System.out.println("finalizando insert de processos no banco");
     }
 
     public List<String> encerraProcessos(Integer fkMaquina) throws Exception {
@@ -54,7 +56,7 @@ public class ProcessosMaquinaDao extends Dao {
         List<String> listaProcessos = new ArrayList<>();
         try {
             /*Abertura da conexão com banco de dados*/
-            stmt = con.prepareStatement("select processo from processosMaquina "
+            stmt = con.prepareStatement("select processo from ProcessosMaquina "
                     + "where encerrarProcessos = 1 and fkMaquina = ?;");
             stmt.setInt(1, fkMaquina);
             rs = stmt.executeQuery();
@@ -76,7 +78,7 @@ public class ProcessosMaquinaDao extends Dao {
         open();
         try {
             /*Abertura da conexão com banco de dados*/
-            stmt = con.prepareStatement("delete from processosMaquina "
+            stmt = con.prepareStatement("delete from ProcessosMaquina "
                     + "where fkMaquina=?;");
             stmt.setInt(1, fkMaquina);
             stmt.executeUpdate();
@@ -91,7 +93,7 @@ public class ProcessosMaquinaDao extends Dao {
         open();
         try {
             /*Abertura da conexão com banco de dados*/
-            stmt = con.prepareStatement("delete from processosMaquina "
+            stmt = con.prepareStatement("delete from ProcessosMaquina "
                     + "where processo = ? and fkMaquina =?;");
             stmt.setString(1, processo);
             stmt.setInt(2, fkMaquina);

@@ -126,9 +126,8 @@ public class MaquinaDao extends Dao {
         try {
             open();
             stmt = con.prepareStatement(
-                    "update Maquina set reiniciar=? where idMaquina=?");
-            stmt.setLong(1, 0);
-            stmt.setInt(2, fkMaquina);
+                    "update Maquina set reiniciar=0 where idMaquina=?");
+            stmt.setInt(1, fkMaquina);
             stmt.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -141,9 +140,8 @@ public class MaquinaDao extends Dao {
         try {
             open();
             stmt = con.prepareStatement(
-                    "update Maquina set limpezaDeCache=? where idMaquina=?");
-            stmt.setLong(1, 0);
-            stmt.setInt(2, fkMaquina);
+                    "update Maquina set limpezaDeCache=0 where idMaquina=?");
+            stmt.setInt(1, fkMaquina);
             stmt.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();

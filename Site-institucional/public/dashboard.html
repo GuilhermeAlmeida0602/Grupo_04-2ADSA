@@ -12,7 +12,7 @@
     <title>Dashboard</title>
 </head>
 
-<body onload="vermelho()">
+<body onload="obterMaquinas()">
     <div class="sidebar">
         <div class="logo-details">
             <div class="logo_name"><a href="index.html" class="nav-list">InfoSystem</a></div>
@@ -33,13 +33,6 @@
                 </a>
                 <span class="tooltip">Totens</span>
             </li>
-            <!-- <li>
-                <a href="#">
-                    <i class="fas fa-cog"></i>
-                    <span class="links_name">Configuração</span>
-                </a>
-                <span class="tooltip">Configuração</span>
-            </li> -->
             <li>
                 <a href="#">
                     <i class="fas fa-headset"></i>
@@ -48,8 +41,8 @@
                 <span class="tooltip">Suporte</span>
             </li>
 
-            <li class="profile">
-                <a href="login.html">
+            <li class="profile" >
+                <a onclick="logoff()">
                     <i class='bx bx-log-out' id="log_out"></i>
                     <span class="links_name">Logout</span>
                 </a>
@@ -89,7 +82,7 @@
                     <section class="sessao_tabela" id="sessao_tabela">
 
                         <p class="p_tabela_status">Lista de totens por status</p>
-                        <!-- table-striped,  -->
+
                         <table class="table_totens">
                             <thead>
                                 <tr>
@@ -98,16 +91,7 @@
                                     <th>Ação</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-center">
-
-                                <tr class="tabela_tr" th:each="basedados: ${listTabela}">
-                                    <td id="fk_totem" class="td_id" th:text="${basedados.id}"> </td>
-                                    <td id="status_totem" class="td_status" th:text="${basedados.nome}"> </td>
-                                    <td th:text="${basedados.hora}"><a href="visaoDetalhada.html"><i
-                                                class="fas fa-tools ferramenta"></i></a></td>
-                                </tr>
-                               
-
+                            <tbody id="lista_totens" class="text-center">
 
                             </tbody>
                         </table>
@@ -129,7 +113,6 @@
                         </div>
                     </div>
                     <!-- Grafico -->
-
                 </div>
             </section>
 
@@ -142,32 +125,4 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="JavaScript/js_menu.js"></script>
 <script src="JavaScript/js_grafico_dashboard.js"></script>
-<script>
-    /*var idBody = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(idBody, {
-        type: 'doughnut',
-        data: {
-            labels: ['Emergência', 'Alerta', 'Ok'],
-            datasets: [{
-                label: '# of Votes',
-                data: [0, 0, 0],
-                backgroundColor: [
-                    'rgba(231, 76, 60, 0.9)',
-                    'rgba(241, 196, 15, 0.9)',
-                    'rgba(39, 174, 96, 0.9)'
-                ]
-            }]
-        },
-        options: {
-            plugins: {
-                legend: {
-                    display: true,
-                    position: 'bottom',
-                    labels: {
-                        color: 'black',
-                    }
-                }
-            }
-        }
-    });*/
-</script>
+<script type="text/javascript" src="funcoes.js"></script>

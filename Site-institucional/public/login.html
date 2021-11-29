@@ -37,17 +37,17 @@
         <div class="lado_direito">
             <div class="quadro_cinza">
 
-                <!-- <div style="text-align: center"> -->
+                <div class="radioLogin">
                     <span id="ipt_radioE">
-                        <input type="radio" name="drone" value="radioEA" onclick="radioE()">
+                        <input type="radio" name="drone" value="radioEA" onclick="radioE()" checked>
                         <label for="louie">Empresa</label>
                     </span>
 
                     <span id="ipt_radioU">
                         <input type="radio" name="drone" value="radioUO" onclick="radioU()">
-                        <label for="louie">Usuário</label>
+                        <label for="louie">Analista</label>
                     </span>
-                <!-- </div> -->
+                </div>
 
                 <form id="form_loginE" method="post" onsubmit="return entrarE()">
                     <div class="div_negrito">Acesso como empresa</div>
@@ -68,14 +68,12 @@
                             <span id="retornoSenha"></span>
                         </div>
 
-                        <!-- <button class="input_button" onclick="autentificar()">Acessar</button> -->
-                        <!-- <button class="input_button" onclick="autentificar()" id="btn_entrar">Acessar</button> -->
                         <button class="input_button" id="btn_entrar" class="btn-green">Acessar</button>
                     </div>
                 </form>
 
                 <form id="form_loginU" method="post" onsubmit="return entrarU()" style="display: none;">
-                    <div class="div_negrito">Acesso como usuário</div>
+                    <div class="div_negrito">Acesso como analista</div>
 
                     <div class="div_centralizando">
 
@@ -93,8 +91,6 @@
                             <span id="retornoSenha"></span>
                         </div>
 
-                        <!-- <button class="input_button" onclick="autentificar()">Acessar</button> -->
-                        <!-- <button class="input_button" onclick="autentificar()" id="btn_entrar">Acessar</button> -->
                         <button class="input_button" id="btn_entrar" class="btn-green">Acessar</button>
                     </div>
                 </form>
@@ -109,7 +105,7 @@
 
     // método para realizar o login como empresa
     function entrarE() {
-        
+
         var formulario = new URLSearchParams(new FormData(form_loginE));
         fetch("/usuarios/autenticarE", {
             method: "POST",
@@ -134,7 +130,7 @@
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    // finalizar_aguardar(texto);
+                    alert('Login e/ou senha inválidos');
                 });
             }
 
@@ -146,7 +142,7 @@
 
     // método para realizar o login como usuário
     function entrarU() {
-        // aguardar();
+        
         var formulario = new URLSearchParams(new FormData(form_loginU));
         fetch("/usuarios/autenticarU", {
             method: "POST",
@@ -157,10 +153,11 @@
 
                 resposta.json().then(json => {
 
-                    sessionStorage.login_usuario_meuapp = json.login;
-                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    sessionStorage.login_usuario_meuapp = json.emailUsuario;
+                    sessionStorage.nome_usuario_meuapp = json.priNome;
+                    sessionStorage.fk_empresa_meuapp = json.fkEmpresa;
 
-                    window.location.href = 'lista_de_totens.html';
+                    window.location.href = 'dashboard.html';
                 });
 
             } else {
@@ -169,7 +166,7 @@
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    // finalizar_aguardar(texto);
+                    alert('Login e/ou senha inválidos');
                 });
             }
 
@@ -183,7 +180,7 @@
         form_loginU.style.display = 'none';
     }
 
-    function radioU () {
+    function radioU() {
         form_loginU.style.display = 'block';
         form_loginE.style.display = 'none';
     }

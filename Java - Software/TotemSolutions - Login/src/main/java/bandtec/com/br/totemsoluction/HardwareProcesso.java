@@ -9,19 +9,20 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import log.Log;
 import org.json.JSONObject;
 
 // @author Grupo_04-2ADSA
 public final class HardwareProcesso extends javax.swing.JFrame {
-
+    
     Looca looca = new Looca();
     MensagensSlack slack = new MensagensSlack();
-
+    
     public HardwareProcesso() {
-
+        
         try {
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-
+            
             initComponents();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(HardwareProcesso.class.getName()).log(Level.SEVERE, null, ex);
@@ -32,11 +33,11 @@ public final class HardwareProcesso extends javax.swing.JFrame {
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(HardwareProcesso.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
         ExibeProcesso();
         setIcon();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -468,14 +469,14 @@ public final class HardwareProcesso extends javax.swing.JFrame {
             // Avisando para o usuario que a máquina está sendo monitorada
             slack.stopService();
             new ProcessosTelaInicial().setVisible(true);
-
+            
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnSairActionPerformed
-
+    
     public static void main(String args[]) {
-
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new HardwareProcesso().setVisible(true);
@@ -522,13 +523,25 @@ public final class HardwareProcesso extends javax.swing.JFrame {
         txConteudo8.setText(String.format("Nº de Pacotes Físicos: %s", looca.getProcessador().getNumeroPacotesFisicos()));
         txConteudo9.setText(String.format("Nº de CPU Físicos: %s", looca.getProcessador().getNumeroCpusFisicas()));
         txConteudo10.setText(String.format("Nº de CPU Lógicos: " + looca.getProcessador().getNumeroCpusLogicas()));
-
+        
         Double uso = looca.getProcessador().getUso();
         Integer usoProc = uso.intValue();
-
+        
         pbEmUso.setValue(usoProc);
+        
+        if (usoProc > 90) {
+            Log log = new Log();
+            try {
+                log.criarLog();
+                slack.alerta("processador");
+            } catch (IOException ex) {
+                Logger.getLogger(HardwareHD.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(HardwareProcesso.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
-
+    
     private void setIcon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IS.png")));
     }
