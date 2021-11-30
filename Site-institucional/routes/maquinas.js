@@ -36,10 +36,19 @@ router.get('/infoMaquina/:fkMaquina', function (req, res, next) {
 
 	console.log("Verificando status do card CPU");
 
-	let instrucaoSql = `SELECT TOP 1 m.idMaquina, m.hostname, m.sistemaOperacionalSO, m.nomeCPU, m.dataDeRegistro, d.nome, d.tamanho, dm.totalMEM, dm.inicializadoSO, 
-	dm.tempoDeAtividadeSO FROM Maquina as m INNER JOIN Disco AS d ON d.fkMaquina = (m.idMaquina) INNER JOIN DadosMaquina AS dm ON dm.fkMaquina = (m.idMaquina) WHERE 
-	 m.idMaquina = ${fkMaquina} AND d.idDisco=(SELECT min(idDisco) FROM Disco WHERE fkMaquina = ${fkMaquina}) 
-	 AND dm.idDadosMaquina=(SELECT max(idDadosMaquina) FROM DadosMaquina WHERE fkMaquina = ${fkMaquina});`;
+	let instrucaoSql = ``;
+
+	if (env == "production") {
+		instrucaoSql = `SELECT TOP 1 m.idMaquina, m.hostname, m.sistemaOperacionalSO, m.nomeCPU, m.dataDeRegistro, d.nome, d.tamanho, dm.totalMEM, dm.inicializadoSO, 
+		dm.tempoDeAtividadeSO FROM Maquina as m INNER JOIN Disco AS d ON d.fkMaquina = (m.idMaquina) INNER JOIN DadosMaquina AS dm ON dm.fkMaquina = (m.idMaquina) WHERE 
+		 m.idMaquina = ${fkMaquina} AND d.idDisco=(SELECT min(idDisco) FROM Disco WHERE fkMaquina = ${fkMaquina}) 
+		 AND dm.idDadosMaquina=(SELECT max(idDadosMaquina) FROM DadosMaquina WHERE fkMaquina = ${fkMaquina});`;
+	} else {
+		instrucaoSql = `SELECT m.idMaquina, m.hostname, m.sistemaOperacionalSO, m.nomeCPU, m.dataDeRegistro, d.nome, d.tamanho, dm.totalMEM, dm.inicializadoSO, 
+		dm.tempoDeAtividadeSO FROM Maquina as m INNER JOIN Disco AS d ON d.fkMaquina = (m.idMaquina) INNER JOIN DadosMaquina AS dm ON dm.fkMaquina = (m.idMaquina) WHERE 
+		 m.idMaquina = ${fkMaquina} AND d.idDisco=(SELECT min(idDisco) FROM Disco WHERE fkMaquina = ${fkMaquina}) 
+		 AND dm.idDadosMaquina=(SELECT max(idDadosMaquina) FROM DadosMaquina WHERE fkMaquina = ${fkMaquina}) LIMIT 1;`;
+	}
 
 	sequelize.query(instrucaoSql, {
 		model: (Maquina, dadosMaquina, Disco),

@@ -23,7 +23,7 @@ public class Dao {
 //    }
     
     // Método para acessar o banco remoto (Azure) - falta a senha
-    public void open() throws Exception {;
+    public void open() throws Exception {
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         con = DriverManager.getConnection("jdbc:sqlserver://infosystems-server.database.windows.net:1433;"
                 + "database=infoSystems;"
