@@ -28,7 +28,7 @@ public class Dao {
         con = DriverManager.getConnection("jdbc:sqlserver://infosystems-server.database.windows.net:1433;"
                 + "database=infoSystems;"
                 + "user=infosystems-bd@infosystems-server;"
-                + "password=;"
+                + "password=#Gfgrupo4;"
                 + "encrypt=true;"
                 + "trustServerCertificate=false;"
                 + "hostNameInCertificate=*.database.windows.net;"
