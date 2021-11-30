@@ -1,5 +1,5 @@
 # Ignorando o diretório com os arquivos do Clean-Build
-/Java - Software/TotemSolutions - Login/target/
+# /Java - Software/TotemSolutions - Login/target/
 
 # Ignorando a classe que contém a URL da Hooks do nosso Slack.
 /Java-Software/TotemSolutions-Login/src/main/java/bandtec/com/br/totemsoluction/slack/Slack.java
