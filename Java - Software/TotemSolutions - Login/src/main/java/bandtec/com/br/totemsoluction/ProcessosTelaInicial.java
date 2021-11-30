@@ -47,6 +47,13 @@ public final class ProcessosTelaInicial extends javax.swing.JFrame {
         }
         initComponents();
         imprimirLog();
+        try {
+            slack.startService();
+        } catch (IOException ex) {
+            Logger.getLogger(ProcessosTelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(ProcessosTelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     //Sobrecarga do método ProcessosTelaInicial
