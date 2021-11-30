@@ -12,7 +12,8 @@ router.get('/:fkEmpresa', function (req, res, next) {
 
 	console.log("Recuperando o status das máquinas");
 
-	let instrucaoSql = `select * from statusmaquina where fkEmpresa = ${fkEmpresa};`;
+	let instrucaoSql = `select sm.fkMaquina, sm.statusMaq, sm.dataStatus from maquina as m inner 
+	join statusmaquina as sm on sm.fkMaquina = (idMaquina) where m.fkEmpresa = ${fkEmpresa};`;
 
 	sequelize.query(instrucaoSql, {
 		model: statusMaquina,

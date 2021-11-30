@@ -12,8 +12,13 @@ router.get('/statusProcessosMaquina/:fkMaquina', function (req, res, next) {
 
     console.log("Verificando status do card CPU");
 
-    let instrucaoSql = `SELECT TOP 6 * FROM processosMaquina WHERE usoMemoria >= 0.4 and usoCPU >= 5 and fkMaquina = ${fkMaquina} ORDER BY usoCPU DESC;`;
-    // let instrucaoSql = `SELECT * FROM processosMaquina WHERE usoMemoria >= 0.4 and usoCPU >= 5 and fkMaquina = ${fkMaquina} ORDER BY usoCPU DESC LIMIT 6;`;
+    let instrucaoSql = ``;
+
+    if(env == "production"){
+        instrucaoSql = `SELECT TOP 6 * FROM processosMaquina WHERE usoMemoria >= 0.4 and usoCPU >= 5 and fkMaquina = ${fkMaquina} ORDER BY usoCPU DESC;`;
+    }else{
+        instrucaoSql = `SELECT * FROM processosMaquina WHERE usoMemoria >= 0.4 and usoCPU >= 5 and fkMaquina = ${fkMaquina} ORDER BY usoCPU DESC LIMIT 6;`;
+    }
 
     sequelize.query(instrucaoSql, {
         model: processosMaquina,

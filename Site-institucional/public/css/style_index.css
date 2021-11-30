@@ -485,734 +485,40 @@ footer{
 
 /* Responsividade @media */
 
-/* @media screen and (min-width: 300px) and (max-width: 500px){
-   
-    .img_principal{
-        height: 60vh;
-    }
+@media screen and (min-width: 300px) and (max-width: 500px){
 
-    .img_principal img{
-        width: 95.5vw;
-        height: 50%;
+    .container_menu{
+        width: 80%;
+        margin: auto;
     }
-
-    nav{
-        height: 10vh;
-    }
-
-    nav li {
-        text-transform: uppercase;
-        float: left;
-        margin-left: 0; 
-        margin-right: 0;
     
-    }
-
-    ul {
-        padding-top: 10px;
-    }
-
     .font_logo{
-        font-size: 22px;
-        
-    }
-
-    .login{
-        font-size: 14px;;
+        font-weight: 900;
+        font-size: 27px;
+        color: #0A3D62;
+        text-decoration: none;
     }
 
     .none{
         display: none;
     }
-
-    #sobre{
-        height: 70vh;
-    }
-
-    .sobre_nos p{
-        width: 80%;
-        padding-left: 0%;
-        text-align: justify;
-        margin: auto;
-    }
-
-    .equipe{
-        height: 130vh;
-    }
-
-    .integrante{
-        padding: 5vh 0 4vh 5vh;
-        width: 30vw;
-        height: 30vh;
-        text-align: center;
-        float: left;
-    }
-    
-    .integrante_2{
-        padding: 5vh 0 4vh 5vh;
-        width: 30vw;
-        height: 30vh;
-        text-align: center;
-        float: left !important;
-    }
-
-    .foto img{
-        width: 100%;
-    }
-    
-    .icons img{
-        padding-left: 10px;
-        width: 7vw;
-    }
-
-    #servicos img{
-        width: 80%;
-        padding-bottom: 10%;
-    }
-
-    #servicos{
-        text-align: center;
-        height: 100vh;
-        margin: auto;
-        display: inline-block;
-        width: 100%;
-    }
-
-    .texto_direita{
-        width: 80vw;
-        float: none !important;
-        text-align: justify;
-        display: block;
-        padding: 0;
-        padding-bottom: 50%;
-
-    }
-
-    #beneficios{
-        height: 115vh;
-        text-align: center;
-    }
-
-    #beneficios p{
-        width: 80%;
-        padding-left: 0%;
-        float: none;
-    }
-
-    #beneficios img{
-        width: 15vw;
-        padding: 0%;
-        padding-right: 5%;
-        margin-left: 0%;
-    }
-
-    #contato{
-        height: 180vh;
-    }
-
-    #contato p{
-        width: 80%;
-        padding-bottom: 10%;
-    }
-
-    .telefone{
-        width: 85%;
-        height: 40vh;
-        margin: auto;
-        padding: 2% 1%;
-        float: none;
-        border-radius: 30px;
-
-    }
-
-    .infos{
-        width: 85%;
-        height: 7vh;
-        margin: 7% auto 0 auto;
-        border-radius: 10px;
-        font-size: 15px;
-    }
-
-    .infos img{
-        width: 8vw;
-        height: 5vh;
-        margin: 10px 10px 0 20px;
-    }
-
-    .mensagem{
-        margin: 15% auto;
-        width: 85%;
-        height: 80vh !important;
-        float: none;
-        font-size: 15px;
-    
-    }
-
-
-
-}
-
-@media screen and (min-width: 501px) and (max-width: 599px){
-
-    .img_principal{
-        height: 80vh;
-    }
-
-    .img_principal img{
-        width: 95.5vw;
-        height: 70%;
-    }
-
-    nav{
-        height: 10vh;
-    }
-
-    .none{
-        display: none;
-    }
-
-    #sobre{
-        height: 50vh;
-        text-align: center;
-    }  
-
-    .sobre_nos p{
-        padding-left: 0%;
-        text-align: justify;
-    }
-
-    .equipe{
-        height: 90vh;
-    }
-
-    .integrante{
-        height: 30vh;
-        
-    }
-
-    .integrante_2{
-        float: left !important;
-        height: 30vh;
-    }
-
-    .foto img{
-        width: 70%;
-    }
-
-    .icons img{
-        padding-left: 10px;
-        width: 4vw;
-    }
-
-    #servicos{
-        text-align: center;
-        height: 100vh;
-        margin: auto;
-        display: inline-block;
-        width: 100%;
-    }
-
-    #servicos h1{
-        padding-top: 30px;
-    }
-
-    #servicos img{
-        width: 80%;
-        padding-bottom: 10%;
-    }
-
-    .texto_direita{
-        width: 80vw;
-        float: none !important;
-        text-align: justify;
-        display: block;
-        padding: 0;
-        padding-bottom: 50%;
-
-    }
-
-    #beneficios{
-        height: 100vh;
-        text-align: center;
-    }
-
-    #beneficios p{
-        width: 80%;
-        padding-left: 0%;
-        float: none;
-    }
-
-    #beneficios img{
-        width: 15vw;
-        padding: 0%;
-        padding-right: 5%;
-        margin-left: 15%;
-        vertical-align: middle;
-    }
-
-    #contato{
-        height: 230vh;
-    }
-
-    #contato p{
-        padding-bottom: 10%;
-    }
-    
-
-    .telefone{
-        width: 85%;
-        height: 65vh;
-        margin: auto;
-        padding: 2% 1%;
-        float: none;
-    }
-
-    .infos{
-        width: 90% !important;
-        height: 15vh;
-        margin: 7% auto 0 auto;
-        border-radius: 30px;
-    }
-
-    .infos img{
-        margin: 10px 10px 0 30px;
-    }
-
-    .mensagem{
-        margin: 15% auto;
-        width: 85%;
-        height: 90vh !important;
-        float: none;
-    
-    }
-
-}
-
-@media screen and (min-width: 600px) and (max-width: 799px){
-
-    .img_principal img{
-        width: 95.5vw;
-        height: 100%;
-    }
-
-    .container_equipe{
-        width: 70%;
-        margin: auto;
-    
-    }
-
-    nav{
-        height: 8vh;
-    }
-
-    .none{
-        display: none;
-    }
-
-
-    .font_logo{
-        font-size: 40px;
-
-    }
-
-    nav li {
-        margin-left: 0px;
-        margin-right: 7px;
-    }
-
-    #servicos{
-        height: 80vh;
-    }
-
-    .sobre_nos p{
-        width: 80%;
-        padding: 0;
-        text-align: justify;
-    }
-
-    .integrante{
-        padding: 5vh 0 0 5vh;
-        width: 25vw;
-        height: 30vh;
-        text-align: center;
-        float: left;
-        
-    }
-
-    .integrante_2{
-        padding: 5vh 0 0 5vh;
-        height: 30vh;
-        float: left !important;
-    }
-
-    .foto img{
-        width: 70%;
-    }
-
-    .icons img{
-        width: 4vw;
-    }
-
-    #beneficios{
-        height: 100vh;
-        margin: auto;
-        display: inline-block;
-        width: 100%;
-        text-align: center;
-    }
-
-    #beneficios p{
-        width: 80%;
-        padding:0;
-        padding-top: 3%;
-        float: none;
-    }
-
-    #beneficios img{
-        width: 13vw;
-        padding: 0%;
-        margin-left: 25%;
-        padding-right: 30px;
-        padding-top: 30px;
-        vertical-align: middle;
-    }
-
-    #contato{
-        height: 250vh;
-    }
-
-    #contato p{
-        width: 80%;
-        padding-bottom: 10%;
-    }
-
-    .telefone{
-        width: 75%;
-        height: 65vh;
-        margin: auto;
-        padding: 2% 1%;
-        float: none;
-    }
-
-    .infos{
-        width: 90%;
-        height: 15vh;
-        margin: 5% auto 0 auto;
-        border-radius: 30px;
-    }
-
-    .mensagem{
-        margin: 15% auto;
-        width: 85%;
-        height: 90vh !important;
-        float: none;
-    
-    }
-
-
-}
-
-@media screen and (min-width: 800px) and (max-width: 1024px){
-    
-    .img_principal{
-        height: 80vh;
-    }
-
-    .img_principal img{
-        width: 95.5vw;
-        height: 70%;
-    }
-
-    .container_equipe{
-        width: 90%;
-        margin: auto;
-    
-    }
-
-    .equipe{
-        background-color: #60A3BC;
-        height: 90vh;
-        margin: auto;
-        display: inline-block;
-        width: 100%;
-    }
-
-    nav{
-        height: 8vh;
-        margin: auto 0 auto 20px;
-        display: inline-block;
-        width: 90%;
-    }
-
-    ul{
-        padding: 0px;
-        padding-top: 20px;
-        margin-right: -50px;
-        list-style: none;
-        float: right;
-    
-    } 
-
-    .font_logo{
-        font-size: 20px;
-        font-weight: 900;
-        color: #0A3D62;
-        text-decoration: none;
-        margin: 0%;
-
-    }
-
-    .sobre_nos p{
-        width: 80%;
-        padding: 0;
-        text-align: justify;
-    }
-
-    .integrante{
-        padding: 5vh 0 0 5vh;
-        width: 25vw;
-        height: 30vh;
-        text-align: center;
-        float: left;
-        
-    }
-    
-    .integrante_2{
-        padding: 5vh 0 0 5vh;
-        width: 25vw;
-        height: 30vh;
-        text-align: center;
-        float: left !important;
-    }
-    
-    .foto img{
-        width: 60%;
-    }
-
-    .icons img{
-        width: 3vw;
-    }
-
-    #beneficios{
-        height: 100vh;
-    }
-
-    #beneficios p{
-        width: 80%;
-        padding:0;
-        padding-top: 3%;
-        float: none;
-    }
-
-    #beneficios img{
-        width: 13vw;
-        margin: auto 0 0 25%;
-        padding: 0%;
-        padding-right: 30px;
-        padding-top: 30px;
-    }
-
-    #contato p{
-        width: 80%;
-        padding-bottom: 0%;
-    }
-
-    .telefone{
-        width: 40%;
-        margin-right: 0%;
-        margin-left: 3%;
-    }
-
-    .infos{
-        width: 90%;
-        height: 15vh;
-        margin: 10% auto 0 auto;
-    }
-
-    .infos img{
-        height: 30%;
-        margin: 10px 5px 0 30px;
-    }
-
-    .mensagem{
-        width: 47%;
-        height: 90vh !important;
-        margin-right: 0;
-    }
-
-}
-
-@media screen and (min-width: 1025px) and (max-width: 1279px){
-
-    .img_principal img{
-        width: 95%;
-        height: 100%;
-    }
-
-    .font_logo{
-        font-size: 40px;
-        font-weight: 900;
-        color: #0A3D62;
-        text-decoration: none;
-        margin: 0%;
-
-    }
-
-    nav{
-        height: 10vh;
-    }
-
-    .sobre_nos p{
-        width: 80%;
-        padding: 0;
-        text-align: justify;
-    }
-
-    .equipe{
-        background-color: #60A3BC;
-        height: 110vh;
-        margin: auto;
-        display: inline-block;
-        width: 100%;
-    }
-
-    #equipe{
-        text-align: center;
-    }
-
-    .container_equipe{
-        width: 90%;
-        margin: auto;
-    
-    }
-
-    .integrante{
-        padding: 5vh 0 0 5vh;
-        width: 25vw;
-        height: 40vh;
-        text-align: center;
-        float: left;
-        
-    }
-    
-    .integrante_2{
-        padding: 5vh 0 0 5vh;
-        width: 25vw;
-        height: 40vh;
-        text-align: center;
-        float: left !important;
-    }
-
-    .foto img{
-        width: 50%;
-    }
-
-    .icons img{
-        width: 2vw;
-    }
-
-    #beneficios p{
-        width: 45%;
-        float: left;
-    }
-
-
-    #beneficios img{
-        width: 7vw;
-        margin-right: 20px;
-        padding-top: 10px;
-        padding-left: 70px;
-        vertical-align: middle;
-    }
-
-    .infos{
-        width: 90%;
-        margin: 35px auto;
-    }
-
-    .mensagem{
-        height: 90vh;
-    }
-
-}
-
-@media screen and (min-width: 1280px) and (max-width: 1366px){
-
-    .img_principal img{
-        width: 94vw;
-        height: 100%;
-    }
-
-    nav{
-        height: 10vh;
-    }
-
-    .sobre_nos p{
-        width: 80%;
-        padding: 0;
-    }
-
-    .foto img{
-        width: 50%;
-    }
-
-    .icons img{
-        width: 3vw;
-    }
-
-    #beneficios img{
-        width: 5.7vw;
-        margin-right: 20px;
-        padding-top: 20px;
-        padding-left: 60px;
-        vertical-align: middle;
-    }
-
-    #beneficios p{
-        text-align: justify;
-        float: left;
-        width: 50%;
-    }
-  
-    .mensagem{
-        height: 100vh;
-    }
-
-}
-
-@media screen and (min-width: 1367px){  
-
-    .font_logo{
-        font-weight: 900;
-        font-size: 40px;
-        color: #0A3D62;
-        text-decoration: none;
-    }
     
     nav{
+        background-color: white;
         height: 10vh;
         transition: all .5s;
+        text-align: center;
     }
     
     ul{
-        padding: 20px;
-        list-style: none;
-        float: right;
-    
+        padding: 0;
+        float: none;
     }
     
     nav li {
-        margin-left: 15px;
-        margin-right: 10px;
-        text-transform: uppercase;
-        float: left;
-    
-    }
-    
-    nav img{
-        width: 5vw;
-        height: 100%;
-        margin: 0%;
+        float: none;
+        text-align: center;
+        padding-top: 6%;
     }
     
     a{
@@ -1228,92 +534,96 @@ footer{
     .login{
         border-radius: 10px;
         background-color: #0A3D62;
-        padding: 1vw;
+        padding: 4%;
         font-weight: 700;
         color: white;
-        width: 100%;
     }
     
-    .linha{
-        background-color: black;
-        height: 2px;
-    }
-    
-    .slider img{
+    .titulo-home{
+        font-size: 32px;
         width: 100%;
+        float: none;
+        margin-top: 90px;
+        text-align: center;
     }
-    
-    .imagem_principal{
-        width: 100%;
+    .titulo-home h1{
+        padding: 0 auto 4%;
+        font-size: 20px;
     }
 
-    .img_principal img{
-        width: 94vw;
-        height: 100%;
+    .primeira-img{
+        width: 50%;
+        margin-top: 3%;
+        float: none;
+        margin-bottom: 4%;
+        display: none;
     }
     
     .container_somos{
         width: 80%;
         margin: auto;
         align-items: center;
-    
     }
     
     #sobre{
-        height: 31vh;
+        padding-bottom: 3%;
         text-align: center;
         display: inline-block;
         width: 100%;
+        color: white;
+        background-color: #3C6382;
     }
     
     .sobre_nos h1{
-        padding: 20px;
+        padding: 20px 0 20px 0;
     }
     
     .sobre_nos p{
-        width: 80%;
         text-align: justify;
     }
     
     .container_equipe{
-        width: 85%;
+        width: 80%;
         margin: auto;
     
     }
     
     .equipe{
-        background-color: #60A3BC;
-        height: 113vh;
+        padding-bottom: 5%;
         margin: auto;
         display: inline-block;
         width: 100%;
+        background: rgba(196, 196, 196, 0.7);
     }
     
     .equipe h1{
         text-align: center;
-        padding-top: 35px;
+        padding-top: 25px;
     }
     
     .integrante{
-        padding: 10vh 0 0 5vh;
-        width: 25vw;
-        height: 40vh;
+        padding: 1vh 0 2vh 0;
+        width: 70%;
         text-align: center;
-        float: left;
-        
+        display: block;
+        margin: auto;
     }
     
-    .integrante_2{
-        padding: 9vh 0 0 5vh;
-        width: 25vw;
-        height: 40vh;
+    .centralizar-grupo{
+        width: 100%;
+        margin: auto;
+    }
+    
+    /* .integrante_2{
+        padding: 8vh 15vh 0 25vh;
+        width: 25%;
         text-align: center;
         display:block;
         float: left;
-    }
+    } */
     
     .nome{
-        padding: 15px;
+        padding: 15px 0 5px 0;
         text-align: center;
         font-size: 1em;
     
@@ -1321,24 +631,35 @@ footer{
     
     .foto img{
         border-radius: 50%;
-        width: 40%;
+        width: 60%;
         padding: 3%;
-        background-color: #C4C4C4;
+        background-color: #3C6382;
     }
     
     .icons img{
         padding-left: 10px;
-        width: 2vw;
+        width: 5vw;
+    }
+    
+    .icons i{
+        font-size: 30px;
+        margin-right: 4%;
+    }
+    
+    .fa-github{
+        color: black;
     }
     
     .containe_servicos{
         width: 80%;
         margin: auto;
+    
     }
     
     #servicos{
+        background-color: white;
         text-align: center;
-        height: 60vh;
+        padding-bottom: 1%;
         margin: auto;
         display: inline-block;
         width: 100%;
@@ -1349,56 +670,59 @@ footer{
     }
     
     #servicos img{
-        width: 32%;
+        width: 72%;
+        display: block;
+        margin: auto;
     }
     
     .texto_direita{
-        width: 40vw;
-        float: right;
-        padding-top: 65px;
+        width: 100%;
+        text-align: center;
+        float: none;
+        padding-top: 30px;
         text-align: justify;
-        vertical-align: center;
-        display: flex;
+        /* vertical-align: center; */
+        display: block;
     }
     
     .container_beneficios{
         width: 80%;
         margin: auto;
     }
+
+    .container_beneficios table tr td{
+        display: block;
+    }
     
     #beneficios{
-        background-color: #3C6382;
-        height: 60vh;
+        padding-bottom: 3%;
         margin: auto;
         display: inline-block;
         width: 100%;
         text-align: center;
+        color: white;
+        background-color: #3C6382;
     }
     
     #beneficios h1{
         text-align: center;
-        padding: 2.5% 0 6% 0;
-        color: white;
+        padding: 2.5% 0 4% 0;
     }
     
     .class_beneficio{
-        padding-top: 20px;
-    }
-    
-    #beneficios p{
-        width: 35vw;
-        color: white;
+        padding: 20px 0 23px 0;
         text-align: justify;
-        float: left;
-        width: 50%;
     }
     
     #beneficios img{
-        width: 5.5vw;
-        padding: 10px 20px 10px 0;
-        padding-left: 70px;
+        width: 18%;
+        margin-right: 2%;
         vertical-align: middle;
     }
+    
+    /* .monitores{
+        float: left;
+    } */
     
     .container_contato{
         width: 85%;
@@ -1406,19 +730,11 @@ footer{
     }
     
     #contato{
-        height: 125vh;
         margin: auto;
         display: inline-block;
         width: 100%;
-    }
-    
-    #contato h1{
-        padding: 40px;
-        text-align: center;
-    }
-    
-    #contato p{
-        text-align: center;
+        background-color: #0A3D62;
+        padding-bottom: 3%;
     }
     
     .container_tele{
@@ -1465,7 +781,7 @@ footer{
     .mensagem{
         background-color: rgba(128, 128, 128, 0.356);
         width: 33vw;
-        height: 85vh;
+        height: 115vh;
         border-radius: 15px;
         box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.9);
     
@@ -1473,8 +789,8 @@ footer{
     }
     
     .fomulario{
-        padding: 30px 0 0 0px;
-        width: 70%;
+        padding:40px 0 0 0px;
+        width: 80%;
     }
     
     .fomulario h2{
@@ -1484,6 +800,7 @@ footer{
     
     .input_box{
         position: relative;
+        margin-bottom: 10%;
     }
     
     .input_user{
@@ -1502,34 +819,47 @@ footer{
         left: 0px;
         pointer-events: none;
         transition: .5px;
+        font-size: 16px;
     }
     
     .input_mensagem{
-        background: none;
-        border: 1.5px solid black;
+        background: rgba(128, 128, 128, 0.103);
+        border: 0px solid black;
         outline: none;
         font-size: 15px;
         width: 100%;
+        height: 100px;
         letter-spacing: 2px;
+        resize: none;
     }
     
     .input_user:focus ~ .label_input,
     .input_user:valid ~ .label_input{
         top: -20px;
         font-size: 12px;
-        color: dodgerblue;
+        color: #0A3D62;
+        font-weight: 700;
+    }
+    
+    .input_user:valid{
+        border-bottom: 2px inset rgb(0, 172, 0);
+    }
+    
+    .input_user:invalid{
+        border-bottom: 2px inset #165c8f;
     }
     
     
     #submit{
-        background: #0A3D62;
+        background: #165c8f;
         width: 100%;
         border: none;
-        padding: 15px;
+        padding: 10px;
         color: white;
         font-size: 15px;
         cursor: pointer;
         border-radius: 10px;
+        margin-bottom: 10%;
     }
     
     #submit:hover{
@@ -1537,15 +867,111 @@ footer{
         transition: 3s;
     }
     
-    footer{
-        background-color: #0A3D62;
+    .input-mensg{
+        width: 100%;
+        height: 30px;
+        border-radius: 7px;
+        border-color: rgba(128, 128, 128, 0.356);
+    }
+    
+    .container-contato{
+        
+        width: 80%;
+        /* height: 80%; */
+        margin-top: 2%;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-around; 
+    }
+    
+    .form-contato{
+        margin-top: 2%;
+        font-size: 16px;
+        background-color: rgb(197, 197, 197);
+        width: 40%;
+        height: 90%;
+        border-radius: 20px;
+        box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.9);
+    
+        
+    }
+    
+    .list-contato{
+        /* background-color: red; */
+        width: 40%;
+        height: 80%;
+        /* margin: 0%; */
         color: white;
-        height: 7vh;
+    
+    }
+    
+    .list-contato h1{
+        float: left;
+    }
+    
+    .list-contato p{
+        width: 80%;
+        padding: 15px 0 50px 0;
+        float: left;
+        color: rgba(255, 255, 255, 0.623);
+    }
+    
+    .box-icons{
+        height: 10vh;
+        width: 70%;
+        float: left;
+        color: rgba(255, 255, 255, 0.623);
+        padding-bottom: 10px;
+    
+    }
+    
+    .box-icons img{
+        width: 15%;
+        padding-right: 10px;
+    }
+    
+    
+    footer{
+        margin: 0.7% 0 0.7% 0;
         text-align: center;
     }
     
-    footer p{
-        padding: 11px 0 11px 0;
+    .icons-contato{
+        font-size: 30px;
+        padding-right: 10px;
     }
-} */
+    
+    .box-icons table{
+        padding: 0%;
+        margin: 0%;
+    }
+
+}
+
+/* @media screen and (min-width: 501px) and (max-width: 599px){
+    
+}
+
+@media screen and (min-width: 600px) and (max-width: 799px){
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 1024px){
+    
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1279px){
+
+
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1366px){
+
+
+}
+
+@media screen and (min-width: 1367px){  
+
+   
+}  */
 
