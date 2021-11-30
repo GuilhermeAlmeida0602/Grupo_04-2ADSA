@@ -2,4 +2,4 @@
 /Java - Software/TotemSolutions - Login/target/
 
 # Ignorando a classe que contém a URL da Hooks do nosso Slack.
-/TotemSolutions - Login/src/main/java/bandtec/com/br/totemsoluction/slack/
+/Java-Software/TotemSolutions-Login/src/main/java/bandtec/com/br/totemsoluction/slack/Slack.java
