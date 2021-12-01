@@ -47,6 +47,7 @@ public final class ProcessosTelaInicial extends javax.swing.JFrame {
         }
         initComponents();
         imprimirLog();
+        
         try {
             slack.startService();
         } catch (IOException ex) {
@@ -98,6 +99,7 @@ public final class ProcessosTelaInicial extends javax.swing.JFrame {
             }
 
             setIcon();
+            System.out.println("chamdno timer insert");
             timerInsert(fkMaquina, fkDisco);
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -105,22 +107,25 @@ public final class ProcessosTelaInicial extends javax.swing.JFrame {
         }
 
         initComponents();
+        System.out.println("chamando a log");
         imprimirLog();
     }
 
     public void timerInsert(Integer fkMaquina, Integer fkDisco) {
+        System.out.println("chamei timer isnert");
 
         int delay = 4000;   // delay de 4 seg.
-        int interval = 4000;  // intervalo de 4 seg.
+        int interval = 5000;  // intervalo de 4 seg.
         java.util.Timer timer = new java.util.Timer();
 
         timer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
 
+                System.out.println("testando...\n\n\n");
                 try {
-                    for (int i = 0; i < 1; i++) {
+//                    for (int i = 0; i < 1; i++) {
 
-                        System.out.println(i + "  -  Segundo(s)");
+//                        System.out.println(i + "  -  Segundo(s)");
 
                         MaquinaDao maqDao = new MaquinaDao();
                         // Verificando no banco se precisa reiniciar ou limpar o cache
@@ -201,7 +206,7 @@ public final class ProcessosTelaInicial extends javax.swing.JFrame {
                             ex.printStackTrace();
                         }
                         
-                    }
+//                    }
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
@@ -349,7 +354,8 @@ public final class ProcessosTelaInicial extends javax.swing.JFrame {
     public void imprimirLog() {
 
         Log log = new Log();
-        int delay = 120000; // delay para começar a executar (120 segundos)
+        int delay = 1000; // delay para começar a executar (120 segundos)
+//        int delay = 120000; // delay para começar a executar (120 segundos)
         int interval = 120000; // delay para executar o run()    (120 segundos)
 
         java.util.Timer timer = new java.util.Timer();
