@@ -23,7 +23,6 @@ public class Log {
         ProcessosGroup grupoDeProcessos = looca.getGrupoDeProcessos();
         List<Processo> processos = grupoDeProcessos.getProcessos();
         String caminhoDisco = System.getProperty("user.home");
-        
 
         // Data e hora formatada para o nome do diretorio
         String dateTimeDiretorio = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy_HH-mm-ss"));
@@ -32,7 +31,7 @@ public class Log {
         String dateTimeArquivo = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
 
         Integer count = 0;
-        try (FileWriter log = new FileWriter(caminhoDisco + File.separator + "Downloads" +  "Log-INFOSYSTEMS  (" + String.valueOf(dateTimeDiretorio) + ").txt")) {
+        try ( FileWriter log = new FileWriter(caminhoDisco + File.separator + "Downloads" + "Log-INFOSYSTEMS  (" + String.valueOf(dateTimeDiretorio) + ").txt")) {
             PrintWriter gravarLog = new PrintWriter(log);
 
             gravarLog.print("  >> GERAÇÃO DA LOG \n\n");
@@ -58,11 +57,11 @@ public class Log {
 
             // Print dos processo na log
             for (Processo proc : processos) {
-//                if (count <= 10) {
-                gravarLog.printf("Nome do Processo: %s\tPID: %d\tUso de CPU: %.2f\tUso de Memória: %.2f\n", proc.getNome(), proc.getPid(), proc.getUsoCpu(), proc.getUsoMemoria());
-//                    count++;
-//                } else {
-//                }
+                if (count <= 30) {
+                    gravarLog.printf("Nome do Processo: %s\tPID: %d\tUso de CPU: %.2f\tUso de Memória: %.2f\n", proc.getNome(), proc.getPid(), proc.getUsoCpu(), proc.getUsoMemoria());
+                    count++;
+                } else {
+                }
             }
             log.close();
             System.out.println("Arquivo gravado com sucesso!");

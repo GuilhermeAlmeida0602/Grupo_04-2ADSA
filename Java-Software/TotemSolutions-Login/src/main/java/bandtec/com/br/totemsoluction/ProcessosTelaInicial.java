@@ -110,8 +110,8 @@ public final class ProcessosTelaInicial extends javax.swing.JFrame {
 
     public void timerInsert(Integer fkMaquina, Integer fkDisco) {
 
-        int delay = 10000;   // delay de 10 seg.
-        int interval = 20000;  // intervalo de 20 seg.
+        int delay = 4000;   // delay de 10 seg.
+        int interval = 4000;  // intervalo de 20 seg.
         java.util.Timer timer = new java.util.Timer();
 
         timer.scheduleAtFixedRate(new TimerTask() {
@@ -350,7 +350,7 @@ public final class ProcessosTelaInicial extends javax.swing.JFrame {
 
         Log log = new Log();
         int delay = 10000; // delay para começar a executar (10 segundos)
-        int interval = 60000; // delay para executar o run()    (60 segundos)
+        int interval = 20000; // delay para executar o run()    (60 segundos)
         // int interval = 30000; // delay para executar o run()    (30 segundos)
 
         java.util.Timer timer = new java.util.Timer();
