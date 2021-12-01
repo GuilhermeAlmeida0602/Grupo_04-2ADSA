@@ -3,3 +3,4 @@
 
 # Ignorando a classe que contém a URL da Hooks do nosso Slack.
 /Java-Software/TotemSolutions-Login/src/main/java/bandtec/com/br/totemsoluction/slack/Slack.java
+/nbproject/private/
