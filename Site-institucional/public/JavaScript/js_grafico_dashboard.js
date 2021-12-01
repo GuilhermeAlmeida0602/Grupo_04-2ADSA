@@ -10,6 +10,8 @@ var qntdAlerta = 0;
 var qntdEmergencia = 0;
 var colorStatus;
 var fkEmpresa = sessionStorage.fk_empresa_meuapp;
+var nomeUsuario = sessionStorage.nome_usuario_meuapp;
+nomeAnalista.innerHTML = `${nomeUsuario}`;
 
 function vermelho() {
 
