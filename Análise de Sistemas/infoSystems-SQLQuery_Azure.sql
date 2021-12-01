@@ -108,11 +108,9 @@ CREATE TABLE ProcessosMaquina
 
 CREATE TABLE StatusMaquina
 (
-  fkMaquina INT NOT NULL UNIQUE,
-  fkEmpresa INT NOT NULL UNIQUE,
+  fkMaquina INT PRIMARY KEY  NOT NULL,
   statusMaq VARCHAR(45) NOT NULL,
-  dataStatus DATETIME NOT NULL,
-  PRIMARY KEY(fkMaquina, fkEmpresa),
+  dataStatus DATETIME NOT NULL
 );
 
 -- drop table StatusMaquina;
@@ -121,12 +119,10 @@ CREATE TABLE StatusMaquina
 -- drop table DadosDisco;
 -- drop table Disco; 
 -- drop table Maquina;
-drop table Usuario;
-drop table Empresa;
+-- drop table Usuario;
+-- drop table Empresa;
 
 -- Referência 
-
-
 
 ALTER TABLE Maquina ADD FOREIGN KEY (fkEmpresa)
   REFERENCES Empresa (idEmpresa);
@@ -146,8 +142,8 @@ ALTER TABLE ProcessosMaquina ADD FOREIGN KEY (fkMaquina)
 ALTER TABLE StatusMaquina ADD FOREIGN KEY (fkMaquina)
   REFERENCES Maquina (idMaquina);
 
-ALTER TABLE StatusMaquina ADD FOREIGN KEY (fkEmpresa)
-  REFERENCES Empresa (idEmpresa);
+-- ALTER TABLE StatusMaquina ADD FOREIGN KEY (fkEmpresa)
+--   REFERENCES Empresa (idEmpresa);
 
 -- Empresa fictícia
 
@@ -178,8 +174,9 @@ insert into Usuario (fkEmpresa, priNome, ultNome, telCelUsuario, telFixUsuario, 
  values (500, 'Guilherme', 'Fonseca', '11980992222', '1125454541', 'guifonseca@setis.com', 'guifonseca123');
 
 
-update Maquina set reiniciar =1 where idMaquina=3;
+-- update Maquina set reiniciar =1 where idMaquina=3;
 
+select * from StatusMaquina;
 select * from ProcessosMaquina;
 select * from DadosMaquina;
 select * from DadosDisco;
@@ -188,4 +185,6 @@ select * from Maquina;
 select * from Usuario;
 select * from Empresa;
 
-select fkEmpresa, emailUsuario, senhaUsuario from Usuario where emailUsuario='guifonseca@setis.com' and senhaUsuario= 'guifonseca123';
+select * from Usuario where emailUsuario='guifonseca@setis.com' and senhaUsuario='guifonseca123'
+
+SELECT TOP 6 emUsoCPU, dataRegistro FROM dadosMaquina WHERE fkMaquina = 1 ORDER BY idDadosMaquina DESC;

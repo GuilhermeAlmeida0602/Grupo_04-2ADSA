@@ -39,14 +39,14 @@
                 </a>
                 <span class="tooltip">Totens</span>
             </li>
-
+<!-- 
             <li>
                 <a href="#">
                     <i class="fas fa-headset"></i>
                     <span class="links_name">Suporte</span>
                 </a>
                 <span class="tooltip">Suporte</span>
-            </li>
+            </li> -->
 
             <li class="profile" >
                 <a onclick="logoff()">
@@ -171,11 +171,11 @@
                                 <p class="kit_descricao">Informações do Totem</p>
                             </div>
                         </a>
-                        <a href="#" onclick="">
+<!--                         <a href="#" onclick="">
                             <div class="kit_de_ferramentas">
                                 <p class="kit_descricao">Emissão de relatório</p>
                             </div>
-                        </a>
+                        </a> -->
 
                         <div id="abrirModalReiniciar" class="modal">
                             <div class="mensagem_modal">
@@ -526,13 +526,13 @@
                 resposta.json().then(function (resposta) {
                     // console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
-                    // alert(`Resposta: ${resposta[0].emUsoMEM}`)
+                    // alert(`Resposta: ${resposta[0].discoDisponivelHD}`)
 
-                    if (resposta[0].discoDisponivelHD <= 60) {
+                    if (resposta[0].discoDisponivelHD >= 1 && resposta[0].discoDisponivelHD <= 60) {
                         document.querySelectorAll('.quadrado_informativo')[2].classList.add("ok");
-                    } else if (resposta[0].discoDisponivelHD <= 75) {
+                    } else if (resposta[0].discoDisponivelHD > 60 && resposta[0].discoDisponivelHD <= 75) {
                         document.querySelectorAll('.quadrado_informativo')[2].classList.add("alerta");
-                    } else if (resposta[0].discoDisponivelHD > 75) {
+                    } else if (resposta[0].discoDisponivelHD == 0 || resposta[0].discoDisponivelHD > 75) {
                         document.querySelectorAll('.quadrado_informativo')[2].classList.add("emergencia");
                     }
 
