@@ -30,5 +30,4 @@ public class MensagensSlack {
                 + "Recomendamos que uma medida seja tomada o mais rápido possível para evitar problemas.");
         Slack.sendMessage(msgAdeus);
     }
-
 }
