@@ -39,14 +39,14 @@
                 </a>
                 <span class="tooltip">Totens</span>
             </li>
-
+<!-- 
             <li>
                 <a href="#">
                     <i class="fas fa-headset"></i>
                     <span class="links_name">Suporte</span>
                 </a>
                 <span class="tooltip">Suporte</span>
-            </li>
+            </li> -->
 
             <li class="profile" >
                 <a onclick="logoff()">
@@ -526,7 +526,7 @@
                 resposta.json().then(function (resposta) {
                     // console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
-                    alert(`Resposta: ${resposta[0].discoDisponivelHD}`)
+                    // alert(`Resposta: ${resposta[0].discoDisponivelHD}`)
 
                     if (resposta[0].discoDisponivelHD >= 1 && resposta[0].discoDisponivelHD <= 60) {
                         document.querySelectorAll('.quadrado_informativo')[2].classList.add("ok");
