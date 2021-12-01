@@ -519,8 +519,8 @@ public final class HardwareProcesso extends javax.swing.JFrame {
         txConteudo4.setText(String.format("Nome: %s", looca.getProcessador().getNome()));
         txConteudo5.setText(String.format("Identificador: %s", looca.getProcessador().getIdentificador()));
         txConteudo6.setText(String.format("Micro Arquitetura: %s", looca.getProcessador().getMicroarquitetura()));
-        txConteudo7.setText(String.format("Frequência: " + looca.getProcessador().getFrequencia()));
-        txConteudo8.setText(String.format("Nº de Pacotes Físicos: %s", looca.getProcessador().getNumeroPacotesFisicos()));
+        txConteudo7.setText(String.format("Frequência (Hz): " + looca.getProcessador().getFrequencia()));
+        txConteudo8.setText(String.format("Sockets: %s", looca.getProcessador().getNumeroPacotesFisicos()));
         txConteudo9.setText(String.format("Nº de CPU Físicos: %s", looca.getProcessador().getNumeroCpusFisicas()));
         txConteudo10.setText(String.format("Nº de CPU Lógicos: " + looca.getProcessador().getNumeroCpusLogicas()));
         

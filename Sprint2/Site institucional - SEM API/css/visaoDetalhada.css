@@ -1,0 +1,182 @@
+*{
+    font-family: 'Noto Sans JP', sans-serif;
+     margin: 0;
+
+}
+
+.container_grafico{
+    width: 90%;
+    height: 50vh;
+    margin: auto;
+    
+
+}
+
+.quadros{
+    width: 80%;
+    height: 55vh;
+}
+
+
+.desempenho{
+    margin-top: 0%;
+    width:  40%;
+    float: left;
+    
+}
+
+.componentes{
+    border-radius: 20px;
+    box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.75);
+    text-align: center;
+    width: 42%;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+    background: rgba(196, 196, 196, 0.5);
+    float: left;
+    margin: 15px;
+    height: 35%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+    font-size: 29px;
+    line-height: 42px;
+}
+
+.testando123{
+    border-radius: 20px;
+    box-shadow: 15px 17px 4px rgba(10, 61, 98, 0.75);
+    text-align: center;
+    width: 42%;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+    background: red;
+    float: left;
+    margin: 15px;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 29px;
+    line-height: 42px;
+}
+
+a{
+    color: black;
+}
+
+.kit_ferramentas{
+    width: 80%;
+    float: left;
+    margin: auto;
+}
+
+.kit_ferramentas h1{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
+}
+
+.ferramentas{
+    width: 17%;
+    background: rgba(196, 196, 196, 0.5);
+    float: left;
+    margin-left: 10vh;
+    height: 20vh;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0A3D62;
+    color: white;
+    font-size: 90%;
+    font-weight: bold;
+}
+
+.grafico{
+    width: 45%;
+    margin-top: 30px;
+    float: left;
+    
+}
+
+.meu-grafico{
+    width: 45vw;
+    margin: auto;
+    /* padding-bottom: 9%; */
+    /* float: left; */
+
+}
+
+@media only screen and (max-width: 1280px){
+    
+    .container_grafico{
+        width: 90%;
+    }
+
+    .componentes{
+        width: 40%;
+        font-size: 20px;
+        line-height: 42px;
+        
+    }
+
+    .ferramentas{
+        margin-left: 30px !important;
+    }
+
+}
+
+@media only screen and (max-width: 1030px){
+
+
+    .componentes{
+        width: 30%;
+    }
+
+    .quadros{
+        width: 90%;
+        height: 45vh;
+        margin: 10px 0 0 0px;
+    }
+    
+
+    .desempenho{
+        margin-top: 0%;
+        width: 60%;
+       
+        
+    }
+
+}
+
+@media only screen and (max-width: 1370px) {
+    .desempenho{
+        margin-left: 30px;
+        margin-top: 0%;
+        width:  50%;
+        float: left;
+        /* background-color: red; */
+        
+    }
+
+    .ferramentas{
+        width: 20%;
+        margin-left: 40px;   
+    }
+}
+
+@media only screen and (min-width: 1400px){
+    .desempenho{
+        width: 50%;
+    }
+
+    .ferramentas{
+        margin-left: 60px;
+        height: 17vh;
+    }
+}

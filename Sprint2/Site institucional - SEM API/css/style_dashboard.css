@@ -1,0 +1,131 @@
+.span_visao {
+    /* font-weight: bold; */
+    color: #0A3D62;
+}
+
+.container_body {
+    width: 95%;
+    margin: auto;
+}
+
+.sessao_status {
+    margin: 30px auto;
+    width: 70%;
+    text-align: center;
+    float: left;
+}
+
+.p_status{
+    width: 85%;
+    margin: 15px auto 0;
+    text-align: left;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.quadrado_informativo {
+    width: 25%;
+    /* background: rgba(196, 196, 196, 0.5); */
+    margin: 20px 20px;
+    display: inline-block;
+    text-align: center;
+    padding-bottom: 2%;
+    box-shadow: 12px 14px 4px rgba(10, 61, 98, 0.25);
+    border-radius: 12px;
+}
+
+.vermelho {
+    background-color: #EA2027;
+}
+
+.amarelo {
+    background-color: #FFC312;
+}
+
+.verde {
+    background-color: #009432;
+}
+
+.cor_status {
+    margin: 20px;
+    font-size: 23px;
+    font-weight: bold;
+    color: white;
+}
+
+.indicadores_grafico {
+    font-weight: 700;
+}
+
+.sessao_grafico {
+    float: right;
+    margin: 30px auto;
+    width: 30%;
+    text-align: center;
+}
+
+.quadrado_grafico {
+    width: 90%;
+    padding-bottom: 3%;
+    background: rgba(196, 196, 196, 0.18);
+    border-radius: 11px;
+    margin: 55px 0 20px;
+}
+
+.p_grafico {
+    padding: 20px 0 20px;
+    font-weight: 700;
+}
+
+.div_grafico {
+    width: 85%;
+    margin: auto;
+}
+
+.info_totens {
+    margin: 20px 0 20px;
+    /* text-align: left; */
+}
+
+.sessao_tabela {
+    width: 85%;
+    margin: auto;
+}
+
+.p_tabela_status {
+    text-align: left;
+    margin: 40px 0 20px;
+    font-weight: 700;
+}
+
+.table_totens {
+    width: 100%;
+    margin: 30px 0 30px;
+}
+
+.table_totens th, .table_totens td {
+    /* padding: .25em .5em; */
+}
+
+.table_totens td {
+    background-color: #eee;
+    height: 50px;
+}
+
+.table_totens th {
+    background: rgba(196, 196, 196, 0.18);
+    color: black;
+}
+
+.ferramenta{
+    font-size: 24px;
+    margin: 5%;
+    padding: 7%;
+    border-radius: 5px;
+    color: white;
+    background-color: #0A3D62;
+}
