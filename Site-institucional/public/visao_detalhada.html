@@ -394,7 +394,7 @@
                                 });
                             }
 
-                            setTimeout(() => atualizarGraficoCPU(), 60000);
+                            setTimeout(() => atualizarGraficoCPU(), 20000);
 
                         } else {
                             document.getElementById('myChart_CPU1').textContent = `Consumo de CPU não ativo no momento, 
@@ -487,7 +487,7 @@
                                         }
                                     }
                                 });
-                                setTimeout(() => atualizarGraficoRAM(), 60000);
+                                setTimeout(() => atualizarGraficoRAM(), 20000);
                             }
                         } else {
                             document.getElementById('myChart_RAM1').textContent = `Consumo de CPU não ativo no momento, 
@@ -683,7 +683,7 @@
                                     }
                                 }
                             });
-                            setTimeout(() => processosChart(valor), 60000);
+                            setTimeout(() => processosChart(valor), 20000);
                         } else {
                             document.getElementById('myChart_Processos1').textContent = `Sem processos ativos no momento, 
                             abra o TotemSolutions na máquina que será monitorada`;
